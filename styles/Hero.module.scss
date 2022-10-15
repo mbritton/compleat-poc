@@ -1,0 +1,26 @@
+.hero {
+  display: flex;
+  flex: 1;
+  padding: 0;
+  background-color: #4b4b4b;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+.rightOverlay {
+  width: 432px;
+  height: 300px;
+  background-color: #eaeaea;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+}

@@ -1,5 +1,5 @@
 .card {
-  width: 322px;
+  width: 260px;
   height: 300px;
   float: left;
   margin-top: 30px;
@@ -29,17 +29,6 @@
   height: 82px;
 }
 
-.hero {
-  display: flex;
-  flex: 1;
-  padding: 0;
-  background-color: #4b4b4b;
-  justify-content: left;
-  align-items: center;
-  width: 100%;
-  height: 300px;
-}
-
 .heroBottomCards {
   display: flex;
   flex: 1;
@@ -58,7 +47,7 @@
 }
 
 .innerBottom {
-  border: 1px solid black;
+  background-color: #eaeaea;
   width: auto;
   height: 120px;
   margin: 20px 0 0 0;
@@ -76,7 +65,7 @@
 }
 
 .innerTopPicture {
-  background-color: #000000;
+  background-color: #eaeaea;
   width: 124px;
   height: 140px;
   margin: 0;
@@ -92,7 +81,6 @@
   display: flex;
   flex-direction: column;
   font-family: 'EB Garamond', serif;
-  align-items: flex-start;
   font-size: 14px;
 }
 
