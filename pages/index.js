@@ -9,6 +9,7 @@ const Button = styled.button`
   background: ${(props) => (props.primary ? '#535353' : 'grey')};
   font-size: 12px;
   color: white;
+  cursor: pointer;
   font-family: 'EB Garamond', serif;
   height: 30px;
   border: 0;
