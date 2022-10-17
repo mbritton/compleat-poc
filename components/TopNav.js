@@ -1,5 +1,5 @@
 import styles from '@/styles/TopNav.module.scss';
-import { BsSearch } from 'react-icons/bs';
+import { BsSearch, BsArrowRight } from 'react-icons/bs';
 
 const TopNav = ({ children }) => {
   return (

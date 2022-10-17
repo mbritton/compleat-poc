@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 
 export default function Home() {
   useEffect(() => {
-    setTimeout(() => AOS.init(), 100);
+    setTimeout(() => AOS.init(), 1000);
   }, []);
 
   return (
