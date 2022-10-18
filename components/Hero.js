@@ -1,5 +1,6 @@
 import styles from '@/styles/Hero.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
+import { useState } from 'react';
 import { BsXLg } from 'react-icons/bs';
 import Carousel from './Carousel';
 import { RightOverlayButton } from './Core';
@@ -9,12 +10,17 @@ const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 const Hero = ({ children }) => {
   const [emblaRef] = useEmblaCarousel();
+  const [isOpen, setIsOpen] = useState(true);
 
   const RightOverlay = () => {
     return (
       <div className={styles.rightOverlay}>
         <div className={styles.closeIcon}>
-          <BsXLg></BsXLg>
+          <BsXLg
+            onClick={() => {
+              setIsOpen(false);
+            }}
+          ></BsXLg>
         </div>
         <h1>Overlay Title</h1>
         <div className={styles.overlayText}>
