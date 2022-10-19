@@ -1,9 +1,3 @@
-.closeIcon {
-  margin: 24px;
-  cursor: pointer;
-  color: white;
-}
-
 .hero {
   flex-direction: row;
   flex: 1;
@@ -12,29 +6,6 @@
   width: 100%;
   height: 300px;
   color: white;
-}
-
-.overlayText {
-  width: 60%;
-  margin: 24px;
-  font-family: 'EB Garamond', serif;
-  font-size: 13px;
-  color: white;
-}
-
-.rightOverlay {
-  position: absolute;
-  right: 0;
-  z-index: 100;
-  width: 432px;
-  height: 300px;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  h1 {
-    margin: 30px 0 0 24px;
-    color: white;
-    font-weight: 300;
-  }
 }
 
 .rightOverlayclosed {

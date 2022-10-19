@@ -76,7 +76,7 @@ export const CarouselSmallButton = styled.button`
   cursor: pointer;
   height: 30px;
   border: 0;
-  border-radius: 0;
+  border-radius: 4px;
   width: 30px;
   min-height: 8px;
   max-height: 8px;
