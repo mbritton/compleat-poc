@@ -44,12 +44,12 @@ export default function Home() {
         <div className={styles.card}>
           <div className={styles.innerCard}>
             <div className={styles.innerTop}>
-              <div className={styles.innerTopPicture}></div>
               <div className={styles.innerTopText}>
                 <h2>Callout Title</h2>
                 Laboris enim occaecat voluptate officia.
-                <CalloutCardButton primary>Go</CalloutCardButton>
+                <CalloutCardButton>Go</CalloutCardButton>
               </div>
+              <div className={styles.innerTopPicture}></div>
             </div>
             <div className={styles.innerBottom}></div>
           </div>
@@ -57,12 +57,12 @@ export default function Home() {
         <div className={styles.card}>
           <div className={styles.innerCard}>
             <div className={styles.innerTop}>
-              <div className={styles.innerTopPicture}></div>
               <div className={styles.innerTopText}>
                 <h2>Callout Title</h2>
-                Laboris enim occaecat voluptate.
-                <CalloutCardButton primary>Go</CalloutCardButton>
+                Laboris enim occaecat voluptate officia.
+                <CalloutCardButton>Go</CalloutCardButton>
               </div>
+              <div className={styles.innerTopPicture}></div>
             </div>
             <div className={styles.innerBottom}></div>
           </div>

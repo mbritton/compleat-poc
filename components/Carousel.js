@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { mediaByIndex } from '../media';
 import { CarouselSmallButton } from './Core';
 
-const Carousel = ({ slides }) => {
+const Carousel = ({ handleSlide, slides }) => {
   const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
@@ -16,6 +16,7 @@ const Carousel = ({ slides }) => {
 
   const onSelect = useCallback(() => {
     if (!embla) return;
+    handleSlide(selectedIndex);
     setSelectedIndex(embla.selectedScrollSnap());
   }, [embla, setSelectedIndex]);
 

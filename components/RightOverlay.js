@@ -1,7 +1,8 @@
-import styles from '@/styles/RightOverlay.module.scss';
-import { useCallback, useState } from 'react';
-import { BsXLg } from 'react-icons/bs';
 import { RightOverlayButton } from '@/components/Core';
+import styles from '@/styles/RightOverlay.module.scss';
+import { BiDetail } from 'react-icons/bi';
+import { BsXLg } from 'react-icons/bs';
+import { useCallback, useState } from 'react';
 
 const RightOverlay = (props) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -11,14 +12,30 @@ const RightOverlay = (props) => {
   return (
     <div className={isOpen ? styles.rightOverlay : styles.rightOverlayClosed}>
       <div className={styles.closeIcon}>
-        <BsXLg onClick={handleOpen}></BsXLg>
+        {!isOpen ? (
+          <BiDetail
+            className={styles.windowIcon}
+            onClick={handleOpen}
+          ></BiDetail>
+        ) : (
+          <></>
+        )}
+        {isOpen ? <BsXLg onClick={handleOpen}></BsXLg> : <></>}
       </div>
-      <h1>{props.title}</h1>
-      <div className={styles.overlayText}>
-        Sint nisi pariatur eu irure ipsum eiusmod Lorem tempor commodo dolor
-        anim eiusmod incididunt magna.
-      </div>
-      <RightOverlayButton>Overlay Button</RightOverlayButton>
+      {isOpen ? (
+        <>
+          <h1>{props.title}</h1>
+          <div className={styles.overlayText}>
+            Sint nisi pariatur eu irure ipsum eiusmod Lorem tempor commodo dolor
+            anim eiusmod incididunt magna.
+          </div>
+          <RightOverlayButton onClick={handleOpen}>
+            Overlay Button
+          </RightOverlayButton>
+        </>
+      ) : (
+        <></>
+      )}
     </div>
   );
 };

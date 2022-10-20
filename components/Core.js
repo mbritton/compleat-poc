@@ -18,12 +18,12 @@ export const RightOverlayButton = styled.button`
   letter-spacing: 0.75px;
   min-height: 42px;
   max-height: 42px;
-  margin: 20px 0 0 24px;
+  margin: 0 0 40px 24px;
 `;
 
 export const CalloutCardButton = styled.button`
   /* Adapt the colors based on primary prop */
-  background: ${(props) => (props.primary ? '#535353' : 'grey')};
+  background: '#535353';
   font-size: 14px;
   color: white;
   font-weight: 600;
@@ -35,23 +35,9 @@ export const CalloutCardButton = styled.button`
   width: 135px;
   min-height: 32px;
   max-height: 32px;
-  margin: 10px 0 0 0;
-`;
-
-export const CarouselNextButton = styled.button`
-  background: ${(props) => (props.primary ? '#535353' : 'grey')};
-  font-size: 14px;
-  color: white;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'EB Garamond', serif;
-  height: 30px;
-  border: 0;
-  border-radius: 0;
-  width: 135px;
-  min-height: 32px;
-  max-height: 32px;
-  margin: 0 0 0 10px;
+  margin-top: 12px;
+  margin-left: ${(props) => (props.primary ? '10px' : '-16px')};
+  margin-right: ${(props) => (!props.primary ? '10px' : '0')};
 `;
 
 export const CarouselButton = styled.button`
@@ -65,20 +51,18 @@ export const CarouselButton = styled.button`
   border: 0;
   border-radius: 0;
   width: 60px;
-  min-height: 32px;
   max-height: 32px;
   margin: 0 10px 0 10px;
 `;
 
 export const CarouselSmallButton = styled.button`
   background: ${(props) =>
-    props.primary ? 'rgba(162, 162, 162, 0.4)' : 'rgba(162, 162, 162, 0.4)'};
+    props.primary ? 'rgba(162, 162, 162, 1)' : 'rgba(162, 162, 162, 1)'};
   cursor: pointer;
   height: 30px;
   border: 0;
   border-radius: 4px;
-  width: 30px;
-  min-height: 8px;
+  width: 10px;
   max-height: 8px;
   margin: 0 5px 8px 5px;
 `;
