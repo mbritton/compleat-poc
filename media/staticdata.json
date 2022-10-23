@@ -1,0 +1,24 @@
+{
+    "pages": [
+        {
+            "title": "Home",
+            "content": "Home content"
+        },
+        {
+            "title": "About",
+            "content": "About content"
+        },
+        {
+            "title": "Stair Parts",
+            "content": "Parts content"
+        },
+        {
+            "title": "Products",
+            "content": "Products content"
+        },
+        {
+            "title": "Systems",
+            "content": "Systems content"
+        }
+    ]
+}

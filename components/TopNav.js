@@ -1,17 +1,17 @@
 import styles from '@/styles/TopNav.module.scss';
-import { BsSearch } from 'react-icons/bs';
+import { useEffect, useState } from 'react';
 
-const TopNav = ({ children }) => {
+const TopNav = ({ pageObjects }) => {
   return (
     <div className={styles.navWrapper}>
-      <div className={styles.searchWrapper}>
-        {/* <BsSearch className={styles.icon}></BsSearch> */}
-      </div>
       <div className={styles.pageButton}></div>
-      <div className={styles.pageButton}>Page</div>
-      <div className={styles.pageButton}>Page</div>
-      <div className={styles.pageButton}>Page</div>
-      <div className={styles.pageButton}>Page</div>
+      {pageObjects.map((page, i) => {
+        return (
+          <div key={i} className={styles.pageButton}>
+            {page.title}
+          </div>
+        );
+      })}
     </div>
   );
 };

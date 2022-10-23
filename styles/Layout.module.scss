@@ -11,11 +11,10 @@
 
 .main {
   min-height: 100vh;
-  padding: 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: left;
+  justify-content: flex-start;
   align-items: left;
 }
 
@@ -27,6 +26,7 @@
   align-items: flex-end;
   width: 100%;
   height: 82px;
+  background-color: #000000;
 }
 
 .heroBottomCards {
@@ -52,7 +52,7 @@
   width: 100%;
   height: auto;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   flex-direction: column;
 }
 
@@ -111,10 +111,11 @@
   display: flex;
   flex: 1;
   padding: 2rem 0;
-  border-top: 1px solid #eaeaea;
+  border-top: 1px solid black;
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  height: 100px;
 }
 
 .footer a {
@@ -148,7 +149,7 @@
 
 .topBrand {
   display: flex;
-  width: 30%;
+  width: auto;
   height: 75px;
   background-color: #a2a2a2;
   float: left;

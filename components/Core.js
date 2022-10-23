@@ -32,7 +32,7 @@ export const CalloutCardButton = styled.button`
   height: 30px;
   border: 0;
   border-radius: 0;
-  width: 135px;
+  max-width: 135px;
   min-height: 32px;
   max-height: 32px;
   margin-top: 12px;
@@ -62,7 +62,7 @@ export const CarouselSmallButton = styled.button`
   height: 30px;
   border: 0;
   border-radius: 4px;
-  width: 10px;
+  width: 4px;
   max-height: 8px;
   margin: 0 5px 8px 5px;
 `;

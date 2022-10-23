@@ -5,7 +5,10 @@ import { mediaByIndex } from '../media';
 import { CarouselSmallButton } from './Core';
 
 const Carousel = ({ handleSlide, slides }) => {
-  const [viewportRef, embla] = useEmblaCarousel({ skipSnaps: false });
+  const [viewportRef, embla] = useEmblaCarousel({
+    axis: 'y',
+    skipSnaps: false,
+  });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
@@ -16,14 +19,16 @@ const Carousel = ({ handleSlide, slides }) => {
 
   const onSelect = useCallback(() => {
     handleSlide(selectedIndex, mediaByIndex(selectedIndex));
-    embla ? setSelectedIndex(embla.selectedScrollSnap()) : () => {};
+    // if (!embla) return;
+    setSelectedIndex(embla.selectedScrollSnap());
   }, [embla, handleSlide, selectedIndex]);
 
   useEffect(() => {
     if (!embla) return;
-    onSelect();
     setScrollSnaps(embla.scrollSnapList());
     embla.on('select', onSelect);
+    embla.on('reInit', onSelect);
+    onSelect();
   }, [embla, setScrollSnaps, onSelect]);
 
   return (
