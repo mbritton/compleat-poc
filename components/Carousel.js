@@ -15,10 +15,9 @@ const Carousel = ({ handleSlide, slides }) => {
   );
 
   const onSelect = useCallback(() => {
-    if (!embla) return;
-    handleSlide(selectedIndex);
-    setSelectedIndex(embla.selectedScrollSnap());
-  }, [embla, setSelectedIndex]);
+    handleSlide(selectedIndex, mediaByIndex(selectedIndex));
+    embla ? setSelectedIndex(embla.selectedScrollSnap()) : () => {};
+  }, [embla, handleSlide, selectedIndex]);
 
   useEffect(() => {
     if (!embla) return;

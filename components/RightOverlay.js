@@ -6,6 +6,7 @@ import { useCallback, useState } from 'react';
 
 const RightOverlay = (props) => {
   const [isOpen, setIsOpen] = useState(true);
+
   const handleOpen = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
@@ -25,10 +26,7 @@ const RightOverlay = (props) => {
       {isOpen ? (
         <>
           <h1>{props.title}</h1>
-          <div className={styles.overlayText}>
-            Sint nisi pariatur eu irure ipsum eiusmod Lorem tempor commodo dolor
-            anim eiusmod incididunt magna.
-          </div>
+          <div className={styles.overlayText}>{props.content}</div>
           <RightOverlayButton onClick={handleOpen}>
             Overlay Button
           </RightOverlayButton>
