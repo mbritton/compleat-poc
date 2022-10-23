@@ -91,11 +91,26 @@ export default function Home() {
         </div>
       </div>
       <div className={styles.homeContentSection}>
-        <div className={styles.homeContentChunk} data-aos="fade-in"></div>
-        <div className={styles.homeContentChunk} data-aos="fade-in"></div>
-        <div className={styles.homeContentChunk} data-aos="fade-in"></div>
-        <div className={styles.homeContentChunk} data-aos="fade-in"></div>
-        <div className={styles.homeContentChunk} data-aos="fade-in"></div>
+        <div
+          className={styles.homeContentChunk}
+          data-aos="fade-down-left"
+        ></div>
+        <div
+          className={styles.homeContentChunk}
+          data-aos="fade-down-right"
+        ></div>
+        <div
+          className={styles.homeContentChunk}
+          data-aos="fade-down-left"
+        ></div>
+        <div
+          className={styles.homeContentChunk}
+          data-aos="fade-down-right"
+        ></div>
+        <div
+          className={styles.homeContentChunk}
+          data-aos="fade-down-left"
+        ></div>
       </div>
     </div>
   );

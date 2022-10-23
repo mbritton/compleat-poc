@@ -1,3 +1,14 @@
+.bottomBand {
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  border-top: 1px solid white;
+  opacity: 0.33;
+  position: absolute;
+  bottom: 0;
+}
+
 .closeIcon {
   margin: 24px 12px 0 24px;
   cursor: pointer;
@@ -10,6 +21,31 @@
   margin: 14px 14px 26px 34px;
 }
 
+@keyframes animLineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/* lineup class and keyframes */
+.lineUp {
+  animation: 3s animLineUp ease-out;
+  animation-delay: 200ms;
+  animation-iteration-count: 1;
+}
+
 .overlayText {
   min-height: 22px;
   max-height: 52px;
@@ -19,6 +55,7 @@
   font-family: 'EB Garamond', serif;
   font-size: 13px;
   color: white;
+  animation: 3s animLineUp ease-out;
 }
 
 .rightOverlay {

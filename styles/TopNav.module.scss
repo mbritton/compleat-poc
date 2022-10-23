@@ -1,3 +1,21 @@
+@keyframes animLineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .container {
   padding: 0;
 }
@@ -19,6 +37,7 @@
 }
 
 .pageButton {
+  animation: 2s animLineUp ease-out;
   display: flex;
   flex-direction: column;
   width: auto;

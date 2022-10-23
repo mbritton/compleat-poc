@@ -25,7 +25,7 @@ const RightOverlay = (props) => {
       </div>
       {isOpen ? (
         <>
-          <h1>{props.title}</h1>
+          <h1 className={styles.lineUp}>{props.title}</h1>
           <div className={styles.overlayText}>{props.content}</div>
           <RightOverlayButton onClick={handleOpen}>
             Overlay Button
@@ -34,6 +34,7 @@ const RightOverlay = (props) => {
       ) : (
         <></>
       )}
+      <div className={styles.bottomBand}></div>
     </div>
   );
 };

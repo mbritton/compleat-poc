@@ -1,5 +1,5 @@
 import styles from '@/styles/TopNav.module.scss';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 
 const TopNav = ({ pageObjects }) => {
   return (
@@ -8,7 +8,7 @@ const TopNav = ({ pageObjects }) => {
       {pageObjects.map((page, i) => {
         return (
           <div key={i} className={styles.pageButton}>
-            {page.title}
+            <Link href={page.href}>{page.title}</Link>
           </div>
         );
       })}

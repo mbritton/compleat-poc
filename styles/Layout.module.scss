@@ -29,8 +29,26 @@
   background-color: #000000;
 }
 
+@keyframes animLineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .heroBottomCards {
-  display: flex;
+  animation: 2s animLineUp ease-out;
   display: flex;
   padding: 0;
   justify-content: center;

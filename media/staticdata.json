@@ -2,23 +2,28 @@
     "pages": [
         {
             "title": "Home",
-            "content": "Home content"
+            "content": "Home content",
+            "href": "/"
         },
         {
             "title": "About",
-            "content": "About content"
+            "content": "About content",
+            "href": "/about"
         },
         {
             "title": "Stair Parts",
-            "content": "Parts content"
+            "content": "Parts content",
+            "href": "/file-locator"
         },
         {
             "title": "Products",
-            "content": "Products content"
+            "content": "Products content",
+            "href": "/products"
         },
         {
             "title": "Systems",
-            "content": "Systems content"
+            "content": "Systems content",
+            "href": "systems"
         }
     ]
 }
