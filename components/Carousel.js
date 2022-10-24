@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { mediaByIndex } from '../media';
 import { CarouselSmallButton } from './Core';
 
-const Carousel = ({ handleSlide, slides }) => {
+const Carousel = ({ handleSlide, slides, setEmblaObj }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     axis: 'y',
     skipSnaps: false,

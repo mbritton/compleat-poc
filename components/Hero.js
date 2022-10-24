@@ -9,10 +9,12 @@ const slides = Array.from(Array(SLIDE_COUNT).keys());
 
 const Hero = () => {
   const [slide, setSlide] = useState(slides[0]);
+  const handleEmbla = useCallback((emblaInstance) => {
+    console.log('emblaInstance', emblaInstance);
+  });
   const handleSlide = useCallback(
     (slideIndex) => {
       // TODO: send new index to carousel component
-      console.log('slideIndex', slideIndex);
       setSlide(getSlides(slideIndex));
     },
     [setSlide],
@@ -25,7 +27,11 @@ const Hero = () => {
         title={slide.title}
         handleSlide={handleSlide}
       ></RightOverlay>
-      <Carousel handleSlide={handleSlide} slides={slides}></Carousel>
+      <Carousel
+        setEmblaObj={handleEmbla}
+        handleSlide={handleSlide}
+        slides={slides}
+      ></Carousel>
     </div>
   );
 };
