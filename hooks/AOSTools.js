@@ -1,38 +1,12 @@
-import { CalloutCardButton } from '@/components/Core';
-import Hero from '@/components/Hero';
-import styles from '@/styles/About.module.scss';
 import AOS from 'aos';
-import 'aos/dist/aos.css';
 import { useEffect } from 'react';
-import { motion } from 'framer-motion';
 
-const easing = [0.6, 0.5, 0.1, 1];
-
-const fadeInUp = {
-  initial: {
-    opacity: 0,
-  },
-  animate: {
-    opacity: 1,
-    transition: {
-      duration: 1,
-      ease: easing,
-    },
-  },
-};
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
-export default function About() {
+const AOSTools = () => {
   useEffect(() => {
+    let target = () => {};
     setTimeout(
       () =>
-        AOS.init({
+        (target = AOS.init({
           // Global settings:
           disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
           startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
@@ -50,24 +24,12 @@ export default function About() {
           once: false, // whether animation should happen only once - while scrolling down
           mirror: false, // whether elements should animate out while scrolling past them
           anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
-        }),
+        })),
       1000,
     );
   }, []);
 
-  return (
-    <motion.div
-      variants={fadeInUp}
-      exit={{ opacity: 0 }}
-      initial="initial"
-      animate="animate"
-    >
-      <div className={styles.container}>
-        {/* <div className={styles.rightOverlay}></div> */}
-        <div className={styles.aboutHero}></div>
-        {/* <Hero></Hero> */}
-        <div className={styles.homeContentSection}></div>
-      </div>
-    </motion.div>
-  );
-}
+  return [target];
+};
+
+export default AOSTools;

@@ -32,12 +32,13 @@ export const CalloutCardButton = styled.button`
   height: 30px;
   border: 0;
   border-radius: 0;
-  max-width: 135px;
+  max-width: 100%;
   min-height: 32px;
   max-height: 32px;
-  margin-top: 12px;
-  margin-left: ${(props) => (props.primary ? '10px' : '-16px')};
-  margin-right: ${(props) => (!props.primary ? '10px' : '0')};
+  margin: 0 5px 0 5px;
+  // margin-top: 12px;
+  // margin-left: ${(props) => (props.primary ? '10px' : '-16px')};
+  // margin-right: ${(props) => (!props.primary ? '10px' : '0')};
 `;
 
 export const CarouselButton = styled.button`

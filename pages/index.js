@@ -3,9 +3,50 @@ import Hero from '@/components/Hero';
 import styles from '@/styles/Layout.module.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { motion } from 'framer-motion';
 import { useEffect } from 'react';
+import { getCards } from '../media';
+
+const easing = [1, 0.5, 0.5, 0.5];
+
+const fadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: easing,
+    },
+  },
+};
+
+const fadeInUp = {
+  initial: {
+    y: 10,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+      ease: easing,
+    },
+  },
+};
+
+const stagger = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
 
 export default function Home() {
+  const cards = getCards();
   useEffect(() => {
     setTimeout(
       () =>
@@ -31,87 +72,45 @@ export default function Home() {
       1000,
     );
   }, []);
-
   return (
-    <div className={styles.container}>
-      <div className={styles.rightOverlay}></div>
-      <Hero></Hero>
-      <div className={styles.heroBottomCards}>
-        <div className={styles.card}>
-          <div className={styles.innerCard}>
-            <div className={styles.innerTop}>
-              <div className={styles.innerTopPicture}></div>
-              <div className={styles.innerTopText}>
-                <h2>Callout Title</h2>
-                Laboris enim occaecat voluptate officia Lorem.
-                <CalloutCardButton primary>Go</CalloutCardButton>
+    <motion.div
+      variants={fadeIn}
+      exit={{ opacity: 0 }}
+      initial="initial"
+      animate="animate"
+    >
+      <div className={styles.container}>
+        <div className={styles.rightOverlay}></div>
+        <Hero></Hero>
+        <motion.div variants={stagger} className={styles.heroBottomCards}>
+          {cards.map((card, i) => (
+            <motion.div
+              key={i + 'key'}
+              variants={fadeInUp}
+              className={styles.card}
+            >
+              <div className={styles.innerCard}>
+                <div className={styles.innerTop}>
+                  <div className={styles.innerTopPicture}></div>
+                  <div className={styles.innerTopText}>
+                    <h2>{card.title}</h2>
+                    {card.content}
+                    <CalloutCardButton primary>Go</CalloutCardButton>
+                  </div>
+                </div>
+                <div className={styles.innerBottom}></div>
               </div>
-            </div>
-            <div className={styles.innerBottom}></div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.innerCard}>
-            <div className={styles.innerTop}>
-              <div className={styles.innerTopPicture}></div>
-              <div className={styles.innerTopText}>
-                <h2>Callout Title</h2>
-                Laboris enim occaecat voluptate officia Lorem.
-                <CalloutCardButton primary>Go</CalloutCardButton>
-              </div>
-            </div>
-            <div className={styles.innerBottom}></div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.innerCard}>
-            <div className={styles.innerTop}>
-              <div className={styles.innerTopText}>
-                <h2>Callout Title</h2>
-                Laboris enim occaecat voluptate officia.
-                <CalloutCardButton>Go</CalloutCardButton>
-              </div>
-              <div className={styles.innerTopPicture}></div>
-            </div>
-            <div className={styles.innerBottom}></div>
-          </div>
-        </div>
-        <div className={styles.card}>
-          <div className={styles.innerCard}>
-            <div className={styles.innerTop}>
-              <div className={styles.innerTopText}>
-                <h2>Callout Title</h2>
-                Laboris enim occaecat voluptate officia.
-                <CalloutCardButton>Go</CalloutCardButton>
-              </div>
-              <div className={styles.innerTopPicture}></div>
-            </div>
-            <div className={styles.innerBottom}></div>
-          </div>
+            </motion.div>
+          ))}
+        </motion.div>
+        <div className={styles.homeContentSection}>
+          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
+          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
+          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
+          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
+          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
         </div>
       </div>
-      <div className={styles.homeContentSection}>
-        <div
-          className={styles.homeContentChunk}
-          data-aos="fade-down-left"
-        ></div>
-        <div
-          className={styles.homeContentChunk}
-          data-aos="fade-down-right"
-        ></div>
-        <div
-          className={styles.homeContentChunk}
-          data-aos="fade-down-left"
-        ></div>
-        <div
-          className={styles.homeContentChunk}
-          data-aos="fade-down-right"
-        ></div>
-        <div
-          className={styles.homeContentChunk}
-          data-aos="fade-down-left"
-        ></div>
-      </div>
-    </div>
+    </motion.div>
   );
 }

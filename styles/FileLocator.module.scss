@@ -1,3 +1,16 @@
+.aboutHero {
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+  background-color: #000000;
+  height: 300px;
+  width: 100%;
+  color: white;
+  align-items: flex-start;
+  justify-items: flex-start;
+  margin: 0;
+}
+
 .card {
   width: 260px;
   height: 300px;
@@ -9,22 +22,13 @@
   padding: 0;
 }
 
-.footer {
-  display: flex;
+.main {
+  min-height: 100vh;
   flex: 1;
-  padding: 2rem 0;
-  border-top: 1px solid black;
-  justify-content: center;
-  align-items: center;
-  margin-top: 30px;
-  height: 100px;
-}
-
-.footer a {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: left;
 }
 
 .header {
@@ -38,7 +42,26 @@
   background-color: #000000;
 }
 
+@keyframes animLineUp {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  20% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .heroBottomCards {
+  animation: 2s animLineUp ease-out;
   display: flex;
   padding: 0;
   justify-content: center;
@@ -87,14 +110,14 @@
   margin: 0;
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
+  align-items: flex-end;
 }
 
 .innerTopPicture {
   background-color: rgba(206, 206, 206, 0.2);
-  min-width: 95px;
-  max-width: 95px;
-  height: 140px;
+  min-width: 75px;
+  max-width: 75px;
+  height: 120px;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -103,28 +126,34 @@
 .innerTopText {
   background-color: #ffffff;
   width: 80%;
-  min-height: 140px;
-  max-height: 140px;
-  margin: 0 0 0 14px;
+  height: 140px;
+  margin: 0 0 0 20px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   font-family: 'EB Garamond', serif;
   font-size: 14px;
-  color: rgba(0, 0, 0, 0.6);
 }
 
 .innerTopText h2 {
   font-size: 20px;
 }
 
-.main {
-  min-height: 100vh;
-  flex: 1;
+.footer {
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: left;
+  flex: 1;
+  padding: 2rem 0;
+  border-top: 1px solid black;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+  height: 100px;
+}
+
+.footer a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 
 .title a {

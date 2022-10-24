@@ -7,7 +7,7 @@ const TopNav = ({ pageObjects }) => {
       <div className={styles.pageButton}></div>
       {pageObjects.map((page, i) => {
         return (
-          <div key={i} className={styles.pageButton}>
+          <div key={i + 'page'} className={styles.pageButton}>
             <Link href={page.href}>{page.title}</Link>
           </div>
         );

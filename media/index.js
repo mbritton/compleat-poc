@@ -4,30 +4,52 @@ import media3 from './media-3.jpeg';
 import media4 from './media-4.jpeg';
 import media5 from './media-5.jpeg';
 
-export const getSlideContent = (index) => {
+export const getSlides = (index) => {
   const titles = [
-    { title: 'foo', content: 'Excepteur Lorem ipsum non occaecat.' },
+    { title: 'Slide Title', content: 'Excepteur Lorem ipsum non occaecat.' },
     {
-      title: 'bar',
+      title: 'Slide Title 2',
       content:
         'Excepteur nostrud aliquip exercitation quis proident occaecat ullamco.',
     },
     {
-      title: 'baz',
+      title: 'Next Slide Title',
       content:
         'Mollit in irure anim excepteur nostrud eu minim do minim enim aliqua.',
     },
     {
-      title: 'buzz',
+      title: 'Next Slide Title 2',
       content: 'Sint consequat cillum sunt voluptate incididunt irure velit.',
     },
     {
-      title: 'boz',
+      title: 'Next Slide Title 3',
       content:
         'Sit sunt exercitation quis officia elit dolor do voluptate consequat.',
     },
   ];
   return titles[index];
+};
+
+export const getCards = () => {
+  const cards = [
+    {
+      title: 'Card 1',
+      content: 'Adipisicing dolor ullamco incididunt aute esse.',
+    },
+    {
+      title: 'Card 2',
+      content: 'Ut non sit eu enim ut nisi.',
+    },
+    {
+      title: 'Card 3',
+      content: 'Et excepteur nulla ad cupidatat.',
+    },
+    {
+      title: 'Card 4',
+      content: 'Adipisicing dolor ullamco.',
+    },
+  ];
+  return cards;
 };
 
 export const media = [media1, media2, media3, media4, media5];

@@ -3,7 +3,13 @@
         {
             "title": "Home",
             "content": "Home content",
-            "href": "/"
+            "href": "/",
+            "sections": [
+                {
+                    "title": "Section 1",
+                    "content": "Section 1 content"
+                }
+            ]
         },
         {
             "title": "About",

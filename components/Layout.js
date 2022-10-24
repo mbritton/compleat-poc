@@ -10,7 +10,6 @@ const Layout = ({ pages, children }) => {
         <div className={styles.topBrand}></div>
         <TopNav pageObjects={pageObj.pages}></TopNav>
       </div>
-
       <main className={styles.main}>{children}</main>
       <div className={styles.footer}></div>
     </div>
