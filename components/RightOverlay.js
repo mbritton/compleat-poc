@@ -2,8 +2,9 @@ import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
 import { BiDetail } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import CarouselDots from './CarouselDots';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -45,7 +46,7 @@ const stagger = {
   },
 };
 
-const RightOverlay = (props) => {
+const RightOverlay = ({ content, title, slides, handleSlide }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const handleOpen = useCallback(() => {
@@ -70,21 +71,24 @@ const RightOverlay = (props) => {
         )}
         {isOpen ? <BsXLg onClick={handleOpen}></BsXLg> : <></>}
       </motion.div>
-      {isOpen ? (
+      {isOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp} className={styles.card}>
-            {props.title}
+            {title}
           </motion.h1>
           <motion.div variants={fadeInUp} className={styles.overlayText}>
-            {props.content}
+            {content}
           </motion.div>
           <RightOverlayButton onClick={handleOpen}>
             Overlay Button
           </RightOverlayButton>
-          <div className={styles.bottomBand}></div>
+          <div className={styles.bottomBand}>
+            <CarouselDots
+              handleSlide={handleSlide}
+              slides={slides}
+            ></CarouselDots>
+          </div>
         </motion.div>
-      ) : (
-        <></>
       )}
     </div>
   );

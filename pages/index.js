@@ -37,6 +37,19 @@ const fadeInUp = {
   },
 };
 
+const growDown = {
+  initial: {
+    width: 0,
+  },
+  animate: {
+    width: '20%',
+    transition: {
+      duration: 0.4,
+      ease: easing,
+    },
+  },
+};
+
 const stagger = {
   animate: {
     transition: {

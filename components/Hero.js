@@ -11,13 +11,20 @@ const Hero = () => {
   const [slide, setSlide] = useState(slides[0]);
   const handleSlide = useCallback(
     (slideIndex) => {
+      // TODO: send new index to carousel component
+      console.log('slideIndex', slideIndex);
       setSlide(getSlides(slideIndex));
     },
     [setSlide],
   );
   return (
     <div className={styles.hero}>
-      <RightOverlay content={slide.content} title={slide.title}></RightOverlay>
+      <RightOverlay
+        slides={slides}
+        content={slide.content}
+        title={slide.title}
+        handleSlide={handleSlide}
+      ></RightOverlay>
       <Carousel handleSlide={handleSlide} slides={slides}></Carousel>
     </div>
   );

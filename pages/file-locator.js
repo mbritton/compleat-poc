@@ -25,14 +25,16 @@ export default function FileLocator() {
       animate="animate"
     >
       <div className={styles.container}>
-        <div className={styles.aboutHero}></div>
+        <div className={styles.productLocatorHero}></div>
         <motion.div
           variants={fadeInUp}
           exit={{ opacity: 0 }}
           initial="initial"
           animate="animate"
         >
-          <div className={styles.homeContentSection}></div>
+          <div className={styles.homeContentSection}>
+            <div className={styles.leftMenu}> </div>
+          </div>
         </motion.div>
       </div>
     </motion.div>
