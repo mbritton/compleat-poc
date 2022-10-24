@@ -18,6 +18,7 @@ const Carousel = ({ handleSlide, slides }) => {
   );
 
   const onSelect = useCallback(() => {
+    console.log('onSelect');
     handleSlide(selectedIndex, mediaByIndex(selectedIndex));
     // if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());

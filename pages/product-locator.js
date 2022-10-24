@@ -1,4 +1,4 @@
-import styles from '@/styles/FileLocator.module.scss';
+import styles from '@/styles/ProductLocator.module.scss';
 import { motion } from 'framer-motion';
 
 const easing = [0.6, 0.5, 0.1, 1];
@@ -16,7 +16,7 @@ const fadeInUp = {
   },
 };
 
-export default function FileLocator() {
+export default function ProductLocator() {
   return (
     <motion.div
       variants={fadeInUp}

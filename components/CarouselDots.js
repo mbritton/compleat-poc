@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 const CarouselDots = ({ slides, handleSlide }) => {
   const [carouselSlides] = useState(slides);
-
   return (
     <>
       <div className={styles.carouselDotsWrapper}>

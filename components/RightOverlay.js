@@ -5,6 +5,7 @@ import { BsXLg } from 'react-icons/bs';
 import { useCallback, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import CarouselDots from './CarouselDots';
+import useEmblaCarousel from 'embla-carousel-react';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
