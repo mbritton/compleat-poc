@@ -1,11 +1,10 @@
 import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
+import { motion } from 'framer-motion';
+import { useCallback, useEffect, useState } from 'react';
 import { BiDetail } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
-import { useCallback, useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
 import CarouselDots from './CarouselDots';
-import useEmblaCarousel from 'embla-carousel-react';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -47,22 +46,32 @@ const stagger = {
   },
 };
 
-const RightOverlay = ({ content, title, slides, handleSlide }) => {
-  const [isOpen, setIsOpen] = useState(true);
+const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
+  const [myOpen, setMyOpen] = useState(!!isOpen);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setMyOpen(isOpen);
+    }, 100);
+  }, [isOpen]);
 
   const handleOpen = useCallback(() => {
-    setIsOpen(!isOpen);
-  }, [isOpen]);
+    setMyOpen(!myOpen);
+  }, [myOpen]);
   return (
-    <div className={isOpen ? styles.rightOverlay : styles.rightOverlayClosed}>
+    <div
+      className={
+        myOpen === true ? styles.rightOverlay : styles.rightOverlayClosed
+      }
+    >
       <motion.div
         className={styles.closeIcon}
         variants={fadeInRight}
-        exit={{ opacity: 0 }}
+        exit={{ opacity: 1 }}
         initial="initial"
         animate="animate"
       >
-        {!isOpen ? (
+        {!myOpen ? (
           <BiDetail
             className={styles.windowIcon}
             onClick={handleOpen}
@@ -70,9 +79,9 @@ const RightOverlay = ({ content, title, slides, handleSlide }) => {
         ) : (
           <></>
         )}
-        {isOpen ? <BsXLg onClick={handleOpen}></BsXLg> : <></>}
+        {myOpen ? <BsXLg onClick={handleOpen}></BsXLg> : <></>}
       </motion.div>
-      {isOpen && (
+      {myOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp} className={styles.card}>
             {title}
