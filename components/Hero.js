@@ -11,7 +11,7 @@ const Hero = () => {
   const [slide, setSlide] = useState(slides[0]);
   const handleEmbla = useCallback((emblaInstance) => {
     console.log('emblaInstance', emblaInstance);
-  });
+  }, []);
   const handleSlide = useCallback(
     (slideIndex) => {
       // TODO: send new index to carousel component

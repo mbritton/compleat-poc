@@ -1,0 +1,17 @@
+.hero {
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+  max-height: 100%;
+  width: 100%;
+  color: black;
+  align-items: flex-start;
+  justify-items: flex-start;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+}
+
+@media (prefers-color-scheme: light) {
+}
