@@ -2,6 +2,7 @@ import styles from '@/styles/Carousel.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { mediaByIndex } from '../media';
+import Image from 'next/image';
 
 const Carousel = ({ slides, slideIndexNum }) => {
   const [viewportRef, embla] = useEmblaCarousel({
@@ -38,10 +39,11 @@ const Carousel = ({ slides, slideIndexNum }) => {
             {slides.map((index) => (
               <div className={styles.embla__slide} key={index}>
                 <div className={styles.embla__slide__inner}>
-                  <img
+                  <Image
                     className={styles.embla__slide__img}
                     src={mediaByIndex(index).src}
-                    alt={mediaByIndex(index).src}
+                    width={window.innerWidth}
+                    height={300}
                   />
                 </div>
               </div>
