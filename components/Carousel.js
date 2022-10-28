@@ -43,7 +43,7 @@ const Carousel = ({ slides, slideIndexNum }) => {
                     className={styles.embla__slide__img}
                     src={mediaByIndex(index).src}
                     width={window.innerWidth}
-                    height={300}
+                    height={600}
                   />
                 </div>
               </div>
