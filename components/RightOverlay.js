@@ -1,7 +1,7 @@
 import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { BiDetail } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
 import CarouselDots from './CarouselDots';
@@ -49,12 +49,6 @@ const stagger = {
 const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
   const [myOpen, setMyOpen] = useState(!!isOpen);
 
-  useEffect(() => {
-    setTimeout(() => {
-      setMyOpen(isOpen);
-    }, 100);
-  }, [isOpen]);
-
   const handleOpen = useCallback(() => {
     setMyOpen(!myOpen);
   }, [myOpen]);
@@ -71,15 +65,15 @@ const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
         initial="initial"
         animate="animate"
       >
-        {!myOpen ? (
-          <BiDetail
-            className={styles.windowIcon}
-            onClick={handleOpen}
-          ></BiDetail>
-        ) : (
-          <></>
+        {!myOpen && (
+          <div className={styles.topBand}>
+            <BiDetail
+              className={styles.windowIcon}
+              onClick={handleOpen}
+            ></BiDetail>
+          </div>
         )}
-        {myOpen ? <BsXLg onClick={handleOpen}></BsXLg> : <></>}
+        {myOpen && <BsXLg onClick={handleOpen}></BsXLg>}
       </motion.div>
       {myOpen && (
         <motion.div variants={stagger}>

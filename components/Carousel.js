@@ -2,9 +2,8 @@ import styles from '@/styles/Carousel.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
 import { useCallback, useEffect, useState } from 'react';
 import { mediaByIndex } from '../media';
-import { CarouselSmallButton } from './Core';
 
-const Carousel = ({ handleSlide, slides, setEmblaObj }) => {
+const Carousel = ({ slides, slideIndexNum }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     axis: 'y',
     skipSnaps: false,
@@ -18,11 +17,9 @@ const Carousel = ({ handleSlide, slides, setEmblaObj }) => {
   );
 
   const onSelect = useCallback(() => {
-    console.log('onSelect');
-    handleSlide(selectedIndex, mediaByIndex(selectedIndex));
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-  }, [embla, handleSlide, selectedIndex]);
+  }, [embla]);
 
   useEffect(() => {
     if (!embla) return;
@@ -30,7 +27,8 @@ const Carousel = ({ handleSlide, slides, setEmblaObj }) => {
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
     onSelect();
-  }, [embla, setScrollSnaps, onSelect]);
+    scrollTo(slideIndexNum);
+  }, [embla, setScrollSnaps, onSelect, slideIndexNum, scrollTo]);
 
   return (
     <>
@@ -47,17 +45,6 @@ const Carousel = ({ handleSlide, slides, setEmblaObj }) => {
                   />
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-        <div className={styles.carouselButtonsWrapper}>
-          <div className="embla__dots">
-            {scrollSnaps.map((_, index) => (
-              <CarouselSmallButton
-                key={index}
-                selected={index === selectedIndex}
-                onClick={() => scrollTo(index)}
-              ></CarouselSmallButton>
             ))}
           </div>
         </div>

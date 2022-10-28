@@ -4,7 +4,6 @@ import Carousel from './Carousel';
 import RightOverlay from './RightOverlay';
 import { getSlides } from '../media';
 import { motion } from 'framer-motion';
-import { boolean } from 'yup';
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -20,7 +19,7 @@ const scaleUpVertical = {
     height: 300,
     opacity: 1,
     transition: {
-      duration: 0.4,
+      duration: 1,
       ease: easing,
     },
   },
@@ -36,24 +35,21 @@ const stagger = {
 
 const Hero = () => {
   const [slide, setSlide] = useState(slides[0]);
-  const [overlayOpen, setOverlayOpen] = useState(false);
+  const [overlayOpen, setOverlayOpen] = useState(true);
+  const [si, setSi] = useState(0);
 
-  const handleEmbla = useCallback((emblaInstance) => {
-    console.log('emblaInstance', emblaInstance);
-  }, []);
-  const handleSlide = useCallback(
-    (slideIndex) => {
-      // setOverlayOpen(true);
-      // TODO: send new index to carousel component
-      setSlide(getSlides(slideIndex));
-    },
-    [setSlide],
-  );
+  const handleSlide = (slideIndex) => {
+    setSi(slideIndex);
+    setSlide(getSlides(slideIndex));
+  };
 
   const handleAnimationComplete = useCallback(() => {
-    console.log('handleAnimationComplete', overlayOpen);
     setOverlayOpen(!overlayOpen);
   }, [overlayOpen]);
+
+  useEffect(() => {
+    handleSlide(0);
+  }, []);
 
   return (
     <motion.div
@@ -67,15 +63,12 @@ const Hero = () => {
       <RightOverlay
         isOpen={overlayOpen}
         slides={slides}
+        slideIndexNum={si}
         content={slide.content}
         title={slide.title}
         handleSlide={handleSlide}
       ></RightOverlay>
-      <Carousel
-        setEmblaObj={handleEmbla}
-        handleSlide={handleSlide}
-        slides={slides}
-      ></Carousel>
+      <Carousel slideIndexNum={si} slides={slides}></Carousel>
     </motion.div>
   );
 };
