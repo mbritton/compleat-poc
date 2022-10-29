@@ -1,8 +1,8 @@
 import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
-import { useCallback, useState } from 'react';
-import { BiDetail } from 'react-icons/bi';
+import { useCallback, useEffect, useState } from 'react';
+import { BiDetail, BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
 import { BsXLg } from 'react-icons/bs';
 import CarouselDots from './CarouselDots';
 
@@ -46,12 +46,20 @@ const stagger = {
   },
 };
 
-const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
+const RightOverlay = ({
+  isOpen,
+  content,
+  title,
+  slides,
+  handleSlide,
+  slideIndexNum,
+}) => {
   const [myOpen, setMyOpen] = useState(!!isOpen);
 
   const handleOpen = useCallback(() => {
     setMyOpen(!myOpen);
   }, [myOpen]);
+
   return (
     <div
       className={
@@ -59,21 +67,24 @@ const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
       }
     >
       <motion.div
-        className={styles.closeIcon}
+        className={myOpen ? styles.closeIconOpen : styles.closeIcon}
         variants={fadeInRight}
         exit={{ opacity: 1 }}
         initial="initial"
         animate="animate"
       >
-        {!myOpen && (
-          <div className={styles.topBand}>
-            <BiDetail
-              className={styles.windowIcon}
-              onClick={handleOpen}
-            ></BiDetail>
+        {!myOpen ? (
+          <div className={styles.topControlsWrapper}>
+            <div className={styles.openOverlay}>
+              <BiChevronsLeft onClick={handleOpen}></BiChevronsLeft>
+            </div>
           </div>
+        ) : (
+          <BiChevronsRight
+            className={styles.windowIcon}
+            onClick={handleOpen}
+          ></BiChevronsRight>
         )}
-        {myOpen && <BsXLg onClick={handleOpen}></BsXLg>}
       </motion.div>
       {myOpen && (
         <motion.div variants={stagger}>
@@ -88,6 +99,7 @@ const RightOverlay = ({ isOpen, content, title, slides, handleSlide }) => {
           </RightOverlayButton>
           <div className={styles.bottomBand}>
             <CarouselDots
+              slideIndex={slideIndexNum}
               handleSlide={handleSlide}
               slides={slides}
             ></CarouselDots>

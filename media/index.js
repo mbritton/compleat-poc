@@ -1,3 +1,14 @@
+// Home page bottom cards, top row
+import card1 from './media-06.jpg';
+import card2 from './media-11.jpg';
+import card3 from './media-12.jpg';
+import card4 from './media-14.jpg';
+// Home page bottom cards, bottom row
+import card5 from './media-07.jpg';
+import card6 from './media-08.jpg';
+import card7 from './media-13.jpg';
+import card8 from './media-15.jpg';
+
 // Embla carousel images
 import media1 from './media-1.jpg';
 import media2 from './media-2.jpg';
@@ -34,27 +45,30 @@ export const getSlides = (index) => {
 export const getCards = () => {
   return [
     {
-      title: 'Card 1',
+      title: 'Modern System',
       content: 'Adipisicing dolor ullamco incididunt aute esse.',
-      image: '',
+      image: '/media/media-4.jpg',
     },
     {
-      title: 'Card 2',
+      title: 'Craftsman',
       content: 'Ut non sit eu enim ut nisi.',
-      image: '',
+      image: '/media/media-4.jpg',
     },
     {
-      title: 'Card 3',
+      title: 'Showcase',
       content: 'Et excepteur nulla ad cupidatat.',
-      image: '',
+      image: '/media/media-4.jpg',
     },
     {
-      title: 'Card 4',
+      title: 'Parts & Accessories',
       content: 'Adipisicing dolor ullamco.',
-      image: '',
+      image: '/media/media-4.jpg',
     },
   ];
 };
-
 export const media = [media1, media2, media3, media4, media5];
+export const cards = [card1, card2, card3, card4];
+export const cardBottoms = [card5, card6, card7, card8];
+export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
+export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];

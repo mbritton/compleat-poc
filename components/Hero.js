@@ -1,5 +1,5 @@
 import styles from '@/styles/Hero.module.scss';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import Carousel from './Carousel';
 import RightOverlay from './RightOverlay';
 import { getSlides } from '../media';
@@ -34,21 +34,29 @@ const stagger = {
 };
 
 const Hero = () => {
+  const childRef = useRef(null);
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
-  const [si, setSi] = useState(0);
+  const [si, setSi] = useState();
 
-  const handleSlide = (slideIndex) => {
+  const handleSlide = useCallback((slideIndex) => {
     setSi(slideIndex);
     setSlide(getSlides(slideIndex));
-  };
+  }, []);
+
+  const handleControlDot = useCallback((slideIndex) => {
+    console.log('handleControlDot', slideIndex);
+    setSlide(getSlides(slideIndex));
+    console.log('childRef', childRef);
+  }, []);
 
   const handleAnimationComplete = useCallback(() => {
     setOverlayOpen(!overlayOpen);
   }, [overlayOpen]);
 
-  useEffect(() => {
-    handleSlide(0);
+  const handleCarouselScrub = useCallback((slideIndex) => {
+    setSi(slideIndex);
+    setSlide(getSlides(slideIndex));
   }, []);
 
   return (
@@ -66,9 +74,13 @@ const Hero = () => {
         slideIndexNum={si}
         content={slide.content}
         title={slide.title}
-        handleSlide={handleSlide}
+        handleSlide={handleControlDot}
       ></RightOverlay>
-      <Carousel slideIndexNum={si} slides={slides}></Carousel>
+      <Carousel
+        handleCarouselScrub={handleCarouselScrub}
+        slideIndexNum={si}
+        slides={slides}
+      ></Carousel>
     </motion.div>
   );
 };

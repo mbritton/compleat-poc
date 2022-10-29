@@ -1,10 +1,10 @@
 import styles from '@/styles/Carousel.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useEffect, useState } from 'react';
-import { mediaByIndex } from '../media';
 import Image from 'next/image';
+import { useCallback, useEffect, useImperativeHandle, useState } from 'react';
+import { mediaByIndex } from '../media';
 
-const Carousel = ({ slides, slideIndexNum }) => {
+const Carousel = ({ slides, slideIndexNum, handleCarouselScrub, ref }) => {
   const [viewportRef, embla] = useEmblaCarousel({
     axis: 'y',
     skipSnaps: false,
@@ -13,14 +13,17 @@ const Carousel = ({ slides, slideIndexNum }) => {
   const [scrollSnaps, setScrollSnaps] = useState([]);
 
   const scrollTo = useCallback(
-    (index) => embla && embla.scrollTo(index),
+    (index) => {
+      embla && embla.scrollTo(index);
+    },
     [embla],
   );
 
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-  }, [embla]);
+    handleCarouselScrub(selectedIndex);
+  }, [embla, handleCarouselScrub, selectedIndex]);
 
   useEffect(() => {
     if (!embla) return;
@@ -28,8 +31,8 @@ const Carousel = ({ slides, slideIndexNum }) => {
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
     onSelect();
-    scrollTo(slideIndexNum);
-  }, [embla, setScrollSnaps, onSelect, slideIndexNum, scrollTo]);
+    console.log('slideIndexNum CHANGED', slideIndexNum);
+  }, [embla, setScrollSnaps, onSelect, scrollTo, slideIndexNum]);
 
   return (
     <>
