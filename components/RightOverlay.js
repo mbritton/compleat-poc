@@ -1,10 +1,10 @@
 import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
-import { useCallback, useEffect, useState } from 'react';
-import { BiDetail, BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
-import { BsXLg } from 'react-icons/bs';
+import { useCallback, useContext, useEffect, useState } from 'react';
+import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
 import CarouselDots from './CarouselDots';
+import { HeroContext } from './HeroContext';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -46,15 +46,9 @@ const stagger = {
   },
 };
 
-const RightOverlay = ({
-  isOpen,
-  content,
-  title,
-  slides,
-  handleSlide,
-  slideIndexNum,
-}) => {
-  const [myOpen, setMyOpen] = useState(!!isOpen);
+const RightOverlay = (props) => {
+  const heroContext = useContext(HeroContext);
+  const [myOpen, setMyOpen] = useState(!!props.isOpen);
 
   const handleOpen = useCallback(() => {
     setMyOpen(!myOpen);
@@ -89,19 +83,19 @@ const RightOverlay = ({
       {myOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp} className={styles.card}>
-            {title}
+            {heroContext.slide.title}
           </motion.h1>
           <motion.div variants={fadeInUp} className={styles.overlayText}>
-            {content}
+            {heroContext.slide.content}
           </motion.div>
           <RightOverlayButton onClick={handleOpen}>
             Overlay Button
           </RightOverlayButton>
           <div className={styles.bottomBand}>
             <CarouselDots
-              slideIndex={slideIndexNum}
-              handleSlide={handleSlide}
-              slides={slides}
+              slideIndex={heroContext.selectedNum}
+              handleSlide={props.handleSlide}
+              slides={props.slides}
             ></CarouselDots>
           </div>
         </motion.div>

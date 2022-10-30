@@ -35,45 +35,41 @@ const stagger = {
 };
 
 const Hero = () => {
+  // Used in context
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
-
   const [selectedNum, setSelectedNum] = useState(0);
 
   const handleControlDot = (slideIndex) => {
-    setSelectedNum(slideIndex);
     setSlide(getSlides(slideIndex));
+    setSelectedNum(slideIndex);
   };
 
-  const handleAnimationComplete = useCallback(() => {
-    setOverlayOpen(!overlayOpen);
-  }, [overlayOpen]);
+  const handleCarouselScrub = (slideIndex) => {};
 
-  const handleCarouselScrub = useCallback((slideIndex) => {
-    setSlide(getSlides(slideIndex));
+  useEffect(() => {
+    setSlide(getSlides(0));
+    setSelectedNum(0);
   }, []);
 
   return (
-    <HeroContext.Provider value={{ selectedNum, setSelectedNum }}>
+    <HeroContext.Provider value={{ selectedNum, setSelectedNum, slide, setSlide }}>
       <motion.div
         className={styles.hero}
         variants={scaleUpVertical}
         exit={{ opacity: 0 }}
         initial="initial"
         animate="animate"
-        onAnimationComplete={() => handleAnimationComplete()}
+        onAnimationComplete={() => setOverlayOpen(!overlayOpen)}
       >
-        <RightOverlay
+        <RightOverlay 
+          slide={slide}
           isOpen={overlayOpen}
           slides={slides}
-          slideIndexNum={selectedNum}
-          content={slide.content}
-          title={slide.title}
           handleSlide={handleControlDot}
         ></RightOverlay>
         <Carousel
           handleCarouselScrub={handleCarouselScrub}
-          slideIndexNum={selectedNum}
           slides={slides}
         ></Carousel>
       </motion.div>

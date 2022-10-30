@@ -12,7 +12,7 @@ const Carousel = (props) => {
   });
 
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const myContext = useContext(HeroContext);
+  const heroContext = useContext(HeroContext);
 
   const scrollTo = useCallback(
     (index) => {
@@ -24,7 +24,7 @@ const Carousel = (props) => {
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-    props.handleCarouselScrub(selectedIndex);
+    props.handleCarouselScrub(heroContext);
   }, [embla]);
 
   useEffect(() => {
@@ -32,11 +32,10 @@ const Carousel = (props) => {
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
     onSelect();
-    scrollTo(myContext.selectedNum);
-  }, [embla, myContext.selectedNum, onSelect, scrollTo]);
+    scrollTo(heroContext.selectedNum);
+  }, [embla, heroContext.selectedNum, onSelect, scrollTo]);
 
   return (
-    <>
       <div className={styles.embla}>
         <div className={styles.embla__viewport} ref={viewportRef}>
           <div className={styles.embla__container}>
@@ -55,7 +54,6 @@ const Carousel = (props) => {
           </div>
         </div>
       </div>
-    </>
   );
 };
 
