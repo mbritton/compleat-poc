@@ -57,6 +57,15 @@
   flex-direction: column;
 }
 
+.logoDefault {
+  width: 286px;
+  border: 1px solid;
+  position: absolute;
+  top: 260px;
+  left: 142px;
+  z-index: 456;
+}
+
 .main {
   min-height: 100vh;
   flex: 1;

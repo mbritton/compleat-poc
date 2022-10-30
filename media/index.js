@@ -8,7 +8,6 @@ import card5 from './media-07.jpg';
 import card6 from './media-08.jpg';
 import card7 from './media-13.jpg';
 import card8 from './media-15.jpg';
-
 // Embla carousel images
 import media1 from './media-1.jpg';
 import media2 from './media-2.jpg';
@@ -18,7 +17,10 @@ import media5 from './media-5.jpeg';
 
 export const getSlides = (index) => {
   const titles = [
-    { title: 'Slide Title', content: 'Excepteur Lorem ipsum non occaecat.' },
+    {
+      title: 'The Complete Stair System',
+      content: 'Excepteur Lorem ipsum non occaecat.',
+    },
     {
       title: 'Slide Title 2',
       content:
@@ -47,22 +49,18 @@ export const getCards = () => {
     {
       title: 'Modern System',
       content: 'Adipisicing dolor ullamco incididunt aute esse.',
-      image: '/media/media-4.jpg',
     },
     {
       title: 'Craftsman',
       content: 'Ut non sit eu enim ut nisi.',
-      image: '/media/media-4.jpg',
     },
     {
       title: 'Showcase',
       content: 'Et excepteur nulla ad cupidatat.',
-      image: '/media/media-4.jpg',
     },
     {
       title: 'Parts & Accessories',
       content: 'Adipisicing dolor ullamco.',
-      image: '/media/media-4.jpg',
     },
   ];
 };

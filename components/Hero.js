@@ -37,17 +37,9 @@ const Hero = () => {
   const childRef = useRef(null);
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
-  const [si, setSi] = useState();
-
-  const handleSlide = useCallback((slideIndex) => {
-    setSi(slideIndex);
-    setSlide(getSlides(slideIndex));
-  }, []);
 
   const handleControlDot = useCallback((slideIndex) => {
-    console.log('handleControlDot', slideIndex);
     setSlide(getSlides(slideIndex));
-    console.log('childRef', childRef);
   }, []);
 
   const handleAnimationComplete = useCallback(() => {
@@ -55,7 +47,7 @@ const Hero = () => {
   }, [overlayOpen]);
 
   const handleCarouselScrub = useCallback((slideIndex) => {
-    setSi(slideIndex);
+    console.log('handleCarouselScrub');
     setSlide(getSlides(slideIndex));
   }, []);
 
@@ -71,14 +63,15 @@ const Hero = () => {
       <RightOverlay
         isOpen={overlayOpen}
         slides={slides}
-        slideIndexNum={si}
+        slideIndexNum={0}
         content={slide.content}
         title={slide.title}
         handleSlide={handleControlDot}
       ></RightOverlay>
       <Carousel
+        ref={childRef}
         handleCarouselScrub={handleCarouselScrub}
-        slideIndexNum={si}
+        slideIndexNum={0}
         slides={slides}
       ></Carousel>
     </motion.div>
