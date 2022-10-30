@@ -1,9 +1,10 @@
 import styles from '@/styles/Hero.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import Carousel from './Carousel';
 import RightOverlay from './RightOverlay';
 import { getSlides } from '../media';
 import { motion } from 'framer-motion';
+import { HeroContext } from './HeroContext';
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -34,47 +35,49 @@ const stagger = {
 };
 
 const Hero = () => {
-  const childRef = useRef(null);
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
 
-  const handleControlDot = useCallback((slideIndex) => {
+  const [selectedNum, setSelectedNum] = useState(0);
+
+  const handleControlDot = (slideIndex) => {
+    setSelectedNum(slideIndex);
     setSlide(getSlides(slideIndex));
-  }, []);
+  };
 
   const handleAnimationComplete = useCallback(() => {
     setOverlayOpen(!overlayOpen);
   }, [overlayOpen]);
 
   const handleCarouselScrub = useCallback((slideIndex) => {
-    console.log('handleCarouselScrub');
     setSlide(getSlides(slideIndex));
   }, []);
 
   return (
-    <motion.div
-      className={styles.hero}
-      variants={scaleUpVertical}
-      exit={{ opacity: 0 }}
-      initial="initial"
-      animate="animate"
-      onAnimationComplete={() => handleAnimationComplete()}
-    >
-      <RightOverlay
-        isOpen={overlayOpen}
-        slides={slides}
-        slideIndexNum={0}
-        content={slide.content}
-        title={slide.title}
-        handleSlide={handleControlDot}
-      ></RightOverlay>
-      <Carousel
-        ref={childRef}
-        handleCarouselScrub={handleCarouselScrub}
-        slideIndexNum={0}
-        slides={slides}
-      ></Carousel>
-    </motion.div>
+    <HeroContext.Provider value={{ selectedNum, setSelectedNum }}>
+      <motion.div
+        className={styles.hero}
+        variants={scaleUpVertical}
+        exit={{ opacity: 0 }}
+        initial="initial"
+        animate="animate"
+        onAnimationComplete={() => handleAnimationComplete()}
+      >
+        <RightOverlay
+          isOpen={overlayOpen}
+          slides={slides}
+          slideIndexNum={selectedNum}
+          content={slide.content}
+          title={slide.title}
+          handleSlide={handleControlDot}
+        ></RightOverlay>
+        <Carousel
+          handleCarouselScrub={handleCarouselScrub}
+          slideIndexNum={selectedNum}
+          slides={slides}
+        ></Carousel>
+      </motion.div>
+    </HeroContext.Provider>
   );
 };
 

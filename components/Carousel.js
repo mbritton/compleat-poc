@@ -1,16 +1,18 @@
 import styles from '@/styles/Carousel.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
-import { useCallback, useEffect, useImperativeHandle, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { mediaByIndex } from '../media';
+import { HeroContext } from './HeroContext';
 
-const Carousel = ({ slides, slideIndexNum, handleCarouselScrub, ref }) => {
+const Carousel = (props) => {
   const [viewportRef, embla] = useEmblaCarousel({
     axis: 'y',
     skipSnaps: false,
   });
+
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState([]);
+  const myContext = useContext(HeroContext);
 
   const scrollTo = useCallback(
     (index) => {
@@ -22,24 +24,23 @@ const Carousel = ({ slides, slideIndexNum, handleCarouselScrub, ref }) => {
   const onSelect = useCallback(() => {
     if (!embla) return;
     setSelectedIndex(embla.selectedScrollSnap());
-    handleCarouselScrub(selectedIndex);
-  }, [embla, handleCarouselScrub, selectedIndex]);
+    props.handleCarouselScrub(selectedIndex);
+  }, [embla]);
 
   useEffect(() => {
     if (!embla) return;
-    setScrollSnaps(embla.scrollSnapList());
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
     onSelect();
-    console.log('slideIndexNum CHANGED', slideIndexNum);
-  }, [embla, setScrollSnaps, onSelect, scrollTo, slideIndexNum]);
+    scrollTo(myContext.selectedNum);
+  }, [embla, myContext.selectedNum, onSelect, scrollTo]);
 
   return (
     <>
       <div className={styles.embla}>
         <div className={styles.embla__viewport} ref={viewportRef}>
           <div className={styles.embla__container}>
-            {slides.map((index) => (
+            {props.slides.map((index) => (
               <div className={styles.embla__slide} key={index}>
                 <div className={styles.embla__slide__inner}>
                   <Image
