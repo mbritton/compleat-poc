@@ -29,10 +29,6 @@ const stagger = {
   },
 };
 
-const outputCardImage = (image) => {
-  return;
-};
-
 const BottomCards = ({ cards }) => {
   return (
     <div className={styles.heroBottomCards}>
@@ -52,6 +48,7 @@ const BottomCards = ({ cards }) => {
                     src={cardByIndex(i)}
                     width={154}
                     height={182}
+                    alt="card"
                   />
                 </div>
                 <div className={styles.innerTopText}>
@@ -66,7 +63,8 @@ const BottomCards = ({ cards }) => {
                   objectPosition="top left"
                   src={cardBottomsByIndex(i)}
                   width={260}
-                  height={182}
+                  height={182} 
+                  alt="card"
                 />
               </div>
             </div>

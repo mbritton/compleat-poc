@@ -1,10 +1,10 @@
 import styles from '@/styles/Hero.module.scss';
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import Carousel from './Carousel';
-import RightOverlay from './RightOverlay';
-import { getSlides } from '../media';
 import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { getSlides } from '../media';
+import Carousel from './Carousel';
 import { HeroContext } from './HeroContext';
+import RightOverlay from './RightOverlay';
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -36,7 +36,6 @@ const stagger = {
 
 const Hero = () => {
   // Used in context
-  const heroContext = useContext(HeroContext);
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
   const [selectedNum, setSelectedNum] = useState(0);
@@ -63,7 +62,11 @@ const Hero = () => {
         exit={{ opacity: 0 }}
         initial="initial"
         animate="animate"
-        onAnimationComplete={() => setOverlayOpen(!overlayOpen)}
+        onAnimationComplete={() => {
+          setTimeout(() => {
+            setOverlayOpen(false);
+          }, 1000);
+        }}
       >
         <RightOverlay
           slide={slide}

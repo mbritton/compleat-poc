@@ -1,18 +1,29 @@
 import TopNav from '@/components/TopNav';
 import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useRouter } from 'next/router';
+import { useCallback, useState } from 'react';
 import { brandingLogo } from '../media';
+import { brandingLogoSmall } from '../media';
 
 const Layout = ({ pages, children }) => {
   const [pageObj] = useState(JSON.parse(pages));
-  const outputLogo = () => {
+  const router = useRouter();
+
+  const outputLogo = useCallback(() => {
+    const isHome = router.asPath === '/';
     return (
-      <div className={styles.logoDefault}>
-        <Image src={brandingLogo} width={287} height={86} alt="LOGO" />
+      <div className={isHome ? styles.logoDefault : styles.logoHeader}>
+        <Image
+          src={isHome ? brandingLogo : brandingLogoSmall}
+          width={287}
+          height={86}
+          alt="LOGO"
+        />
       </div>
     );
-  };
+  },[router]);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>

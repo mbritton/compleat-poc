@@ -1,7 +1,9 @@
+// All branding goes here
+import logo from './logo-white-text.png'; 
+import logoSmall from './logo-black-text-sm.png'; 
 // Home page bottom cards, top row
 import card1 from './media-06.jpg';
 import card2 from './media-11.jpg';
-import logo from './logo-white-text.png';
 import card3 from './media-12.jpg';
 import card4 from './media-14.jpg';
 // Home page bottom cards, bottom row
@@ -65,6 +67,7 @@ export const getCards = () => {
     },
   ];
 };
+
 export const media = [media1, media2, media3, media4, media5];
 export const cards = [card1, card2, card3, card4];
 export const cardBottoms = [card5, card6, card7, card8];
@@ -72,3 +75,4 @@ export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
 export const brandingLogo = logo;
+export const brandingLogoSmall = logoSmall;

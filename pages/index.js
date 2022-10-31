@@ -22,34 +22,6 @@ const fadeIn = {
   },
 };
 
-const fadeInUp = {
-  initial: {
-    y: 10,
-    opacity: 0,
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      ease: easing,
-    },
-  },
-};
-
-const growDown = {
-  initial: {
-    width: 0,
-  },
-  animate: {
-    width: '20%',
-    transition: {
-      duration: 0.4,
-      ease: easing,
-    },
-  },
-};
-
 const stagger = {
   animate: {
     transition: {

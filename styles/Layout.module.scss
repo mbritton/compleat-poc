@@ -1,3 +1,20 @@
+@keyframes animLineUp {
+  0% {
+    opacity: 1;
+    transform: translateY(15%);
+  }
+  20% {
+    opacity:1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
 .container {
   padding: 0;
 }
@@ -58,10 +75,19 @@
 }
 
 .logoDefault {
+  animation: 2.5s animLineUp ease-out;
   width: 286px;
   position: absolute;
   top: 140px;
   left: 142px;
+  z-index: 456;
+}
+
+.logoHeader {
+  width: 120px;
+  position: absolute;
+  top: 26px;
+  left: 42px;
   z-index: 456;
 }
 
