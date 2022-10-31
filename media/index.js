@@ -1,6 +1,7 @@
 // Home page bottom cards, top row
 import card1 from './media-06.jpg';
 import card2 from './media-11.jpg';
+import logo from './logo-white-text.png';
 import card3 from './media-12.jpg';
 import card4 from './media-14.jpg';
 // Home page bottom cards, bottom row
@@ -70,3 +71,4 @@ export const cardBottoms = [card5, card6, card7, card8];
 export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
+export const brandingLogo = logo;

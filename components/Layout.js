@@ -2,13 +2,14 @@ import TopNav from '@/components/TopNav';
 import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
 import { useState } from 'react';
+import { brandingLogo } from '../media';
 
 const Layout = ({ pages, children }) => {
   const [pageObj] = useState(JSON.parse(pages));
   const outputLogo = () => {
     return (
       <div className={styles.logoDefault}>
-        <Image src={'/logo-white-text.png'} width={287} height={86} />
+        <Image src={brandingLogo} width={287} height={86} alt="LOGO" />
       </div>
     );
   };

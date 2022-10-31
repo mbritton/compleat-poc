@@ -1,5 +1,5 @@
 import styles from '@/styles/Hero.module.scss';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import Carousel from './Carousel';
 import RightOverlay from './RightOverlay';
 import { getSlides } from '../media';
@@ -36,6 +36,7 @@ const stagger = {
 
 const Hero = () => {
   // Used in context
+  const heroContext = useContext(HeroContext);
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(true);
   const [selectedNum, setSelectedNum] = useState(0);
@@ -45,15 +46,17 @@ const Hero = () => {
     setSelectedNum(slideIndex);
   };
 
-  const handleCarouselScrub = (slideIndex) => {};
+  const handleCarouselScrub = (slideIndex) => {
+  };
 
   useEffect(() => {
     setSlide(getSlides(0));
-    setSelectedNum(0);
   }, []);
 
   return (
-    <HeroContext.Provider value={{ selectedNum, setSelectedNum, slide, setSlide }}>
+    <HeroContext.Provider
+      value={{ selectedNum, setSelectedNum, slide, setSlide }}
+    >
       <motion.div
         className={styles.hero}
         variants={scaleUpVertical}
@@ -62,7 +65,7 @@ const Hero = () => {
         animate="animate"
         onAnimationComplete={() => setOverlayOpen(!overlayOpen)}
       >
-        <RightOverlay 
+        <RightOverlay
           slide={slide}
           isOpen={overlayOpen}
           slides={slides}

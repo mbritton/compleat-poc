@@ -10,8 +10,8 @@ const Carousel = (props) => {
     axis: 'y',
     skipSnaps: false,
   });
+  const [tempSelectedIndex, setTempSelectedIndex] = useState(0);
 
-  const [selectedIndex, setSelectedIndex] = useState(0);
   const heroContext = useContext(HeroContext);
 
   const scrollTo = useCallback(
@@ -23,37 +23,37 @@ const Carousel = (props) => {
 
   const onSelect = useCallback(() => {
     if (!embla) return;
-    setSelectedIndex(embla.selectedScrollSnap());
-    props.handleCarouselScrub(heroContext);
-  }, [embla]);
+    console.log('heroContext.selectedNum', heroContext.selectedNum);
+    setTempSelectedIndex(heroContext.selectedNum);
+    props.handleCarouselScrub(tempSelectedIndex);
+  }, [embla, tempSelectedIndex]);
 
   useEffect(() => {
     if (!embla) return;
     embla.on('select', onSelect);
     embla.on('reInit', onSelect);
-    onSelect();
     scrollTo(heroContext.selectedNum);
   }, [embla, heroContext.selectedNum, onSelect, scrollTo]);
 
   return (
-      <div className={styles.embla}>
-        <div className={styles.embla__viewport} ref={viewportRef}>
-          <div className={styles.embla__container}>
-            {props.slides.map((index) => (
-              <div className={styles.embla__slide} key={index}>
-                <div className={styles.embla__slide__inner}>
-                  <Image
-                    className={styles.embla__slide__img}
-                    src={mediaByIndex(index).src}
-                    width={window.innerWidth}
-                    height={600}
-                  />
-                </div>
+    <div className={styles.embla}>
+      <div className={styles.embla__viewport} ref={viewportRef}>
+        <div className={styles.embla__container}>
+          {props.slides.map((index) => (
+            <div className={styles.embla__slide} key={index}>
+              <div className={styles.embla__slide__inner}>
+                <Image
+                  className={styles.embla__slide__img}
+                  src={mediaByIndex(index).src}
+                  width={window.innerWidth}
+                  height={600}
+                />
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
       </div>
+    </div>
   );
 };
 
