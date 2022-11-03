@@ -3,6 +3,7 @@ import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
 import { useCallback, useContext, useEffect, useState } from 'react';
 import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
+import { boolean } from 'yup';
 import CarouselDots from './CarouselDots';
 import { HeroContext } from './HeroContext';
 
@@ -41,46 +42,58 @@ const fadeInRight = {
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.3,
     },
   },
 };
 
 const RightOverlay = (props) => {
   const heroContext = useContext(HeroContext);
-  const [myOpen, setMyOpen] = useState(!!props.isOpen);
 
-  const handleOpen = useCallback(() => {
-    setMyOpen(!myOpen);
-  }, [myOpen]);
+  const handleOpen = useCallback((doOpen) => {
+    // setMyOpen(!heroContext.overlayOpen);
+    heroContext.setOverlayOpen(doOpen);
+  }, [heroContext.setOverlayOpen]);
+
+  const outputChevron = useCallback(() => {
+    return !heroContext.overlayOpen ? (
+      <div className={styles.topControlsWrapper}>
+        <div className={styles.openOverlay} onClick={() => handleOpen(true)}>
+          <BiChevronsLeft></BiChevronsLeft>
+        </div>
+      </div>
+    ) : (
+      <BiChevronsRight
+        className={styles.windowIcon}
+        onClick={() => handleOpen(false)}
+      ></BiChevronsRight>
+    );
+  }, [handleOpen, heroContext.overlayOpen]);
+
+  useEffect(() => {
+    console.log('heroContext', heroContext.overlayOpen);
+  }, [heroContext.overlayOpen]);
 
   return (
     <div
       className={
-        myOpen === true ? styles.rightOverlay : styles.rightOverlayClosed
+        heroContext.overlayOpen
+          ? styles.rightOverlay
+          : styles.rightOverlayClosed
       }
     >
       <motion.div
-        className={myOpen ? styles.closeIconOpen : styles.closeIcon}
+        className={
+          !heroContext.overlayOpen ? styles.closeIconOpen : styles.closeIcon
+        }
         variants={fadeInRight}
         exit={{ opacity: 1 }}
         initial="initial"
         animate="animate"
       >
-        {!myOpen ? (
-          <div className={styles.topControlsWrapper}>
-            <div className={styles.openOverlay}>
-              <BiChevronsLeft onClick={handleOpen}></BiChevronsLeft>
-            </div>
-          </div>
-        ) : (
-          <BiChevronsRight
-            className={styles.windowIcon}
-            onClick={handleOpen}
-          ></BiChevronsRight>
-        )}
+        {outputChevron()}
       </motion.div>
-      {myOpen && (
+      {heroContext.overlayOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp} className={styles.card}>
             {heroContext.slide.title}
@@ -88,7 +101,7 @@ const RightOverlay = (props) => {
           <motion.div variants={fadeInUp} className={styles.overlayText}>
             {heroContext.slide.content}
           </motion.div>
-          <RightOverlayButton onClick={handleOpen}>
+          <RightOverlayButton onClick={() => handleOpen(false)}>
             Overlay Button
           </RightOverlayButton>
           <div className={styles.bottomBand}>

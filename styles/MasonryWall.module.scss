@@ -1,0 +1,19 @@
+.container {
+  padding: 0;
+}
+
+.masonryWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid blue;
+}
+
+@media (max-width: 600px) {
+}
+
+@media (prefers-color-scheme: dark) {
+}

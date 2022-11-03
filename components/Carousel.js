@@ -23,10 +23,8 @@ const Carousel = (props) => {
 
   const onSelect = useCallback(() => {
     if (!embla) return;
-    console.log('heroContext.selectedNum', heroContext.selectedNum);
-    setTempSelectedIndex(heroContext.selectedNum);
-    props.handleCarouselScrub(tempSelectedIndex);
-  }, [embla, tempSelectedIndex]);
+    props.handleCarouselScrub(embla.selectedScrollSnap());
+  }, [embla, props]);
 
   useEffect(() => {
     if (!embla) return;
@@ -46,7 +44,7 @@ const Carousel = (props) => {
                   className={styles.embla__slide__img}
                   src={mediaByIndex(index).src}
                   width={window.innerWidth}
-                  height={600}
+                  height={600} alt=""
                 />
               </div>
             </div>

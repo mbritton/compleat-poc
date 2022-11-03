@@ -1,6 +1,6 @@
 import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 import { getSlides } from '../media';
 import Carousel from './Carousel';
 import { HeroContext } from './HeroContext';
@@ -13,14 +13,14 @@ const easing = [1, 0.5, 0.5, 0.5];
 
 const scaleUpVertical = {
   initial: {
-    height: 280,
-    opacity: 1,
+    height: 200,
+    opacity: 0,
   },
   animate: {
     height: 300,
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: .5,
       ease: easing,
     },
   },
@@ -37,24 +37,27 @@ const stagger = {
 const Hero = () => {
   // Used in context
   const [slide, setSlide] = useState(slides[0]);
-  const [overlayOpen, setOverlayOpen] = useState(true);
+  const [overlayOpen, setOverlayOpen] = useState(false);
   const [selectedNum, setSelectedNum] = useState(0);
 
-  const handleControlDot = (slideIndex) => {
-    setSlide(getSlides(slideIndex));
-    setSelectedNum(slideIndex);
-  };
-
-  const handleCarouselScrub = (slideIndex) => {
-  };
+  const handleCarouselActions = 
+    (slideIndex) => {
+      setSlide(getSlides(slideIndex));
+      setSelectedNum(slideIndex);
+    };
 
   useEffect(() => {
     setSlide(getSlides(0));
+    
   }, []);
+
+  useEffect(() => {
+    console.log('overlayOpen', overlayOpen);
+  }, [setOverlayOpen, overlayOpen]);
 
   return (
     <HeroContext.Provider
-      value={{ selectedNum, setSelectedNum, slide, setSlide }}
+      value={{ selectedNum, setSelectedNum, slide, setSlide, overlayOpen, setOverlayOpen }}
     >
       <motion.div
         className={styles.hero}
@@ -64,18 +67,18 @@ const Hero = () => {
         animate="animate"
         onAnimationComplete={() => {
           setTimeout(() => {
-            setOverlayOpen(false);
-          }, 1000);
+            setOverlayOpen(true);
+          }, 500);
         }}
       >
         <RightOverlay
           slide={slide}
           isOpen={overlayOpen}
           slides={slides}
-          handleSlide={handleControlDot}
+          handleSlide={handleCarouselActions}
         ></RightOverlay>
         <Carousel
-          handleCarouselScrub={handleCarouselScrub}
+          handleCarouselScrub={handleCarouselActions}
           slides={slides}
         ></Carousel>
       </motion.div>
