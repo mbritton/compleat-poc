@@ -1,9 +1,9 @@
+import { ColorBox } from '@/components/Core';
 import styles from '@/styles/ProductLocator.module.scss';
 import { motion } from 'framer-motion';
-import MasonryWall from '../components/MasonryWall';
 import shuffle from 'lodash/shuffle';
-import styled from 'styled-components';
 import { useState } from 'react';
+import MasonryWall from '../components/MasonryWall';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
@@ -20,31 +20,16 @@ const fadeInUp = {
   },
 };
 
-const ColorBox = styled.div`
-  border-radius: 0;
-  transition: 0.5s;
-  justify-content: center;
-  align-content: center;
-  display: grid;
-  color: black;
-  cursor: pointer;
-  :hover {
-    transform: scale(1.06);
-    box-shadow: 0 0 12px 0 ${(props) => props.theme.lightGray};
-    border-radius: 12px
-  }
-`;
-
 const data = [
-  [`5em`, `rgba(0,0,0,.1)`],
-  [`2em`, `rgba(0,0,0,.1)`],
-  [`4em`, `rgba(0,0,0,.1)`],
-  [`7em`, `rgba(0,0,0,.1)`],
-  [`1em`, `rgba(0,0,0,.1)`],
-  [`3em`, `rgba(0,0,0,.1)`],
-  [`2em`, `rgba(0,0,0,.1)`],
-  [`5em`, `rgba(0,0,0,.1)`],
-  [`5em`, `rgba(0,0,0,.1)`],
+  [`5em`, `rgba(0,0,0,.07)`],
+  [`2em`, `rgba(0,0,0,.07)`],
+  [`4em`, `rgba(0,0,0,.07)`],
+  [`7em`, `rgba(0,0,0,.07)`],
+  [`1em`, `rgba(0,0,0,.07)`],
+  [`3em`, `rgba(0,0,0,.07)`],
+  [`2em`, `rgba(0,0,0,.07)`],
+  [`5em`, `rgba(0,0,0,.07)`],
+  [`5em`, `rgba(0,0,0,.07)`],
 ];
 
 const getRandomInt = (min, max) => {

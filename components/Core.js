@@ -67,3 +67,29 @@ export const CarouselSmallButton = styled.button`
   max-height: 8px;
   margin: 0 5px 8px 5px;
 `;
+
+export const MasonryDiv = styled.div`
+  display: grid;
+  grid-auto-flow: column;
+  grid-gap: ${(props) => props.gap || `1em`};
+`;
+
+export const Col = styled.div`
+  display: grid;
+  grid-gap: ${(props) => props.gap || `1em`};
+`;
+
+export const ColorBox = styled.div`
+  border-radius: 0;
+  transition: 0.5s;
+  justify-content: center;
+  align-content: center;
+  display: grid;
+  color: black;
+  cursor: pointer;
+  :hover {
+    transform: scale(1.06);
+    box-shadow: 0 0 12px 0 ${(props) => props.theme.lightGray};
+    border-radius: 12px
+  }
+`;
