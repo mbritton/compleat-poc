@@ -8,7 +8,7 @@
 
 .navWrapper {
   width: 100%;
-  height: 75px;
+  height: 90px;
   background-color: #ffffff;
   justify-content: center;
   align-items: flex-end;
@@ -35,6 +35,26 @@
   letter-spacing: 0.75px;
   cursor: pointer;
 }
+
+.pageButtonDim {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  height: 40px;
+  float: left;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20px 0 20px;
+  font-family: 'EB Garamond', serif;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.75px;
+  cursor: pointer;
+  opacity: .5;
+}
+
 
 .searchWrapper {
   width: 200px;

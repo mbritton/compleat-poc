@@ -18,7 +18,7 @@ const Layout = ({ pages, children }) => {
           src={isHome ? brandingLogo : brandingLogoSmall}
           width={287}
           height={86}
-          alt="LOGO"
+          alt="Compleat Stair Logo"
         />
       </div>
     );
@@ -28,7 +28,7 @@ const Layout = ({ pages, children }) => {
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.topBrand}></div>
-        <TopNav pageObjects={pageObj.pages}></TopNav>
+        <TopNav path={router.asPath} pageObjects={pageObj.pages}></TopNav>
       </div>
       {outputLogo()}
       <main className={styles.main}>{children}</main>

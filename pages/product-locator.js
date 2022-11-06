@@ -54,7 +54,6 @@ export default function ProductLocator() {
           variants={fadeInUp}
           exit={{ opacity: 0 }}
           initial="initial"
-          animate="animate"
         >
           <div className={styles.homeContentSection}>
             <div className={styles.leftMenu}> </div>
