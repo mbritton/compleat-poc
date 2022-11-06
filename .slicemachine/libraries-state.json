@@ -1,0 +1,86 @@
+{
+  "slices": {
+    "components": {
+      "about_text": {
+        "library": "slices",
+        "id": "about_text",
+        "name": "AboutText",
+        "description": "AboutText",
+        "model": {
+          "id": "about_text",
+          "type": "SharedSlice",
+          "name": "AboutText",
+          "description": "AboutText",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "AboutText",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "heading1",
+                    "label": "Title",
+                    "placeholder": "This is where it all begins..."
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "content": {
+                  "type": "Text",
+                  "config": {
+                    "label": "content",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "version": "sktwi1xtmkfgx8626",
+            "items": [
+              {}
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Becoming",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Deserunt Lorem ipsum adipisicing officia consequat incididunt voluptate aliquip officia voluptate ad est. Est aliqua exercitation nostrud ullamco aliqua laboris ex officia est fugiat deserunt cillum eu. Minim officia consectetur irure ex nostrud ex.",
+                  "spans": []
+                }
+              ],
+              "content": "easily"
+            },
+            "slice_type": "about_text"
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      }
+    }
+  }
+}

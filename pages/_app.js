@@ -2,6 +2,10 @@ import Layout from '@/components/Layout';
 import '@/styles/globals.scss';
 import useSWR from 'swr';
 import { AnimatePresence } from 'framer-motion';
+import { PrismicProvider } from '@prismicio/react';
+import { PrismicPreview } from '@prismicio/next';
+import { repositoryName } from '../prismicio';
+import Link from 'next/link';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -14,11 +18,21 @@ function MyApp({ Component, pageProps }) {
 
   if (data) {
     return (
-      <AnimatePresence exitBeforeEnter>
-        <Layout pages={data}>
-          <Component {...pageProps} />
-        </Layout>
-      </AnimatePresence>
+      <PrismicProvider
+        internalLinkComponent={({ href, ...props }) => (
+          <Link href={href}>
+            <a {...props} />
+          </Link>
+        )}
+      >
+        <PrismicPreview repositoryName={repositoryName}>
+          <AnimatePresence exitBeforeEnter>
+            <Layout pages={data}>
+              <Component {...pageProps} />
+            </Layout>
+          </AnimatePresence>
+        </PrismicPreview>
+      </PrismicProvider>
     );
   }
 }
