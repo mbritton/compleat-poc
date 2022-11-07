@@ -6,8 +6,9 @@ import 'aos/dist/aos.css';
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { SliceZone } from '@prismicio/react';
-import { createClient, prismicH } from '../prismicio';
+import { createClient } from '../prismicio';
 import { components } from '../slices';
+import { prismicH } from '@prismicio/helpers';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
@@ -31,7 +32,7 @@ const stagger = {
   },
 };
 
-export default function About({page, navigation, settings}) {
+export default function About({page}) {
   useEffect(() => {
     setTimeout(
       () =>
@@ -59,10 +60,10 @@ export default function About({page, navigation, settings}) {
   }, []);
 
   useEffect(() => {
-    console.log('page', page);
-    console.log('navigation', navigation);
-    console.log('settings', settings);
-  }, [navigation, page, settings]);
+    setTimeout(() => {
+      console.log('page', page);
+    }, 0);
+  }, []);
 
   return (
     <motion.div
@@ -72,36 +73,21 @@ export default function About({page, navigation, settings}) {
       animate="animate"
     >
       <div className={styles.container}>
-        {/* <div className={styles.rightOverlay}></div> */}
-        <div className={styles.aboutHero}></div>
-        <p></p>
-        {/* <SliceZone slices={page.data.slices} components={components} /> */}
-        {/* <Hero></Hero> */}
+        <div className={styles.aboutHero}>
+          <SliceZone slices={page.data.slices} components={components} />
+        </div>
         <div className={styles.homeContentSection}></div>
       </div>
     </motion.div>
   );
 }
 
-// export async function getStaticProps({ params, previewData }) {
-//   const client = createClient({ previewData });
-//   console.log('params', params);
-//   const page = await client.getByUID('about_page_text', params.uid);
-
-//   return {
-//     props: {
-//       page,
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const client = createClient();
-
-//   const pages = await client.getAllByTag('about');
-
-//   return {
-//     paths: pages.map((page) => prismicH.asLink(page)),
-//     fallback: false,
-//   };
-// }
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+  const page = await client.getSingle('about_page_text');
+  return {
+    props: {
+      page,
+    },
+  };
+}

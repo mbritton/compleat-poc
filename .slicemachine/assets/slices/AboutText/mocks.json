@@ -9,18 +9,17 @@
       "title": [
         {
           "type": "heading1",
-          "text": "Unless",
+          "text": "Hidden",
           "spans": []
         }
       ],
       "description": [
         {
           "type": "paragraph",
-          "text": "Exercitation elit magna commodo velit minim pariatur consectetur in dolor laboris minim ea laboris elit. Reprehenderit aliqua est mollit sit enim duis commodo anim eu labore. Ad veniam duis occaecat dolor enim ipsum.",
+          "text": "Aliquip fugiat ullamco ipsum magna tempor pariatur aliqua voluptate sunt ea enim esse minim irure velit.",
           "spans": []
         }
-      ],
-      "content": "topic"
+      ]
     },
     "slice_type": "about_text"
   }

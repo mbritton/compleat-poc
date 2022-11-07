@@ -61,16 +61,6 @@ interface AboutTextSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
-    /**
-     * content field in *AboutText → Primary*
-     *
-     * - **Field Type**: Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: about_text.primary.content
-     * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
-     *
-     */
-    content: prismicT.KeyTextField;
 }
 /**
  * Default variation for AboutText Slice

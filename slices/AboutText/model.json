@@ -14,9 +14,10 @@
         "title": {
           "type": "StructuredText",
           "config": {
-            "single": "heading1",
             "label": "Title",
-            "placeholder": "This is where it all begins..."
+            "placeholder": "This is where it all begins...",
+            "allowTargetBlank": true,
+            "single": "heading1"
           }
         },
         "description": {
@@ -25,14 +26,7 @@
             "label": "Description",
             "placeholder": "A nice description of your feature",
             "allowTargetBlank": true,
-            "single": "paragraph"
-          }
-        },
-        "content": {
-          "type": "Text",
-          "config": {
-            "label": "content",
-            "placeholder": ""
+            "multi": "paragraph"
           }
         }
       },
