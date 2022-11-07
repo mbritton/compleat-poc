@@ -51,10 +51,6 @@ const Hero = () => {
     
   }, []);
 
-  useEffect(() => {
-    console.log('overlayOpen', overlayOpen);
-  }, [setOverlayOpen, overlayOpen]);
-
   return (
     <HeroContext.Provider
       value={{ selectedNum, setSelectedNum, slide, setSlide, overlayOpen, setOverlayOpen }}

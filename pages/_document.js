@@ -31,6 +31,11 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <script
+            async
+            defer
+            src="https://static.cdn.prismic.io/prismic.js?new=true&repo=compleat"
+          ></script>
           <link
             href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;1,500&display=swap"
             rel="stylesheet"

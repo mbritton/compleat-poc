@@ -3,6 +3,17 @@
     "about_page_text": {}
   },
   "slices": {
-    "AboutText": {}
+    "AboutText": {
+      "default": {
+        "primary": {
+          "description": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    }
   }
 }

@@ -70,10 +70,6 @@ const RightOverlay = (props) => {
     );
   }, [handleOpen, heroContext.overlayOpen]);
 
-  useEffect(() => {
-    console.log('heroContext', heroContext.overlayOpen);
-  }, [heroContext.overlayOpen]);
-
   return (
     <div
       className={
