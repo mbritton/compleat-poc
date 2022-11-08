@@ -25,13 +25,13 @@ function MyApp({ Component, pageProps }) {
           </Link>
         )}
       >
-        <PrismicPreview repositoryName={repositoryName}>
-          <AnimatePresence exitBeforeEnter>
-            <Layout pages={data}>
+        <AnimatePresence exitBeforeEnter>
+          <Layout pages={data}>
+            <PrismicPreview repositoryName={repositoryName}>
               <Component {...pageProps} />
-            </Layout>
-          </AnimatePresence>
-        </PrismicPreview>
+            </PrismicPreview>
+          </Layout>
+        </AnimatePresence>
       </PrismicProvider>
     );
   }
