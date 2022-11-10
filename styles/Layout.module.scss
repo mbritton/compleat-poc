@@ -57,19 +57,22 @@
 }
 
 .homeContentChunk {
+  display: flex;
   background-color: #eaeaea;
   width: 60%;
-  height: 200px;
+  // height: auto;
+  // max-height: 292px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;
 }
 
 .homeContentSection {
-  background-color: white;
+  display: flex;
+  position: relative;
   width: 100%;
   height: auto;
-  display: flex;
+  
   justify-content: flex-start;
   flex-direction: column;
 }

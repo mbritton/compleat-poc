@@ -1,10 +1,10 @@
 import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
-import React, { useCallback, useContext, useEffect, useState } from 'react';
-import { getSlides } from '../media';
-import Carousel from './Carousel';
-import { HeroContext } from './HeroContext';
-import RightOverlay from './RightOverlay';
+import React, { useEffect, useState } from 'react';
+import { getSlides, mediaByIndex } from '../media';
+import Carousel from '@/components/Carousel';
+import { CarouselContext } from '@/components/CarouselContext';
+import RightOverlay from '@/components/RightOverlay';
 
 const SLIDE_COUNT = 5;
 const slides = Array.from(Array(SLIDE_COUNT).keys());
@@ -34,6 +34,13 @@ const stagger = {
   },
 };
 
+const embla__container = {
+  marginTop: '-600px',
+  display: 'flex',
+  flexDirection: 'column',
+  userSelect: 'none',
+};
+
 const Hero = () => {
   // Used in context
   const [slide, setSlide] = useState(slides[0]);
@@ -47,13 +54,19 @@ const Hero = () => {
     };
 
   useEffect(() => {
-    setSlide(getSlides(0));
-    
+    handleCarouselActions(0);
   }, []);
 
   return (
-    <HeroContext.Provider
-      value={{ selectedNum, setSelectedNum, slide, setSlide, overlayOpen, setOverlayOpen }}
+    <CarouselContext.Provider
+      value={{
+        selectedNum,
+        setSelectedNum,
+        slide,
+        setSlide,
+        overlayOpen,
+        setOverlayOpen,
+      }}
     >
       <motion.div
         className={styles.hero}
@@ -74,11 +87,13 @@ const Hero = () => {
           handleSlide={handleCarouselActions}
         ></RightOverlay>
         <Carousel
+          emblaContainerStyle={embla__container}
+          slideLookupFunction={mediaByIndex}
           handleCarouselScrub={handleCarouselActions}
           slides={slides}
         ></Carousel>
       </motion.div>
-    </HeroContext.Provider>
+    </CarouselContext.Provider>
   );
 };
 

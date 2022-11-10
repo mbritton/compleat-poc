@@ -1,11 +1,10 @@
 import { RightOverlayButton } from '@/components/Core';
 import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
-import { useCallback, useContext, useEffect, useState } from 'react';
+import { useCallback, useContext } from 'react';
 import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
-import { boolean } from 'yup';
+import { CarouselContext } from './CarouselContext';
 import CarouselDots from './CarouselDots';
-import { HeroContext } from './HeroContext';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -48,15 +47,14 @@ const stagger = {
 };
 
 const RightOverlay = (props) => {
-  const heroContext = useContext(HeroContext);
+  const carouselContext = useContext(CarouselContext);
 
   const handleOpen = useCallback((doOpen) => {
-    // setMyOpen(!heroContext.overlayOpen);
-    heroContext.setOverlayOpen(doOpen);
-  }, [heroContext.setOverlayOpen]);
+    carouselContext.setOverlayOpen(doOpen);
+  }, [carouselContext]);
 
   const outputChevron = useCallback(() => {
-    return !heroContext.overlayOpen ? (
+    return !carouselContext.overlayOpen ? (
       <div className={styles.topControlsWrapper}>
         <div className={styles.openOverlay} onClick={() => handleOpen(true)}>
           <BiChevronsLeft></BiChevronsLeft>
@@ -68,19 +66,19 @@ const RightOverlay = (props) => {
         onClick={() => handleOpen(false)}
       ></BiChevronsRight>
     );
-  }, [handleOpen, heroContext.overlayOpen]);
+  }, [handleOpen, carouselContext.overlayOpen]);
 
   return (
     <div
       className={
-        heroContext.overlayOpen
+        carouselContext.overlayOpen
           ? styles.rightOverlay
           : styles.rightOverlayClosed
       }
     >
       <motion.div
         className={
-          !heroContext.overlayOpen ? styles.closeIconOpen : styles.closeIcon
+          !carouselContext.overlayOpen ? styles.closeIconOpen : styles.closeIcon
         }
         variants={fadeInRight}
         exit={{ opacity: 1 }}
@@ -89,20 +87,20 @@ const RightOverlay = (props) => {
       >
         {outputChevron()}
       </motion.div>
-      {heroContext.overlayOpen && (
+      {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp} className={styles.card}>
-            {heroContext.slide.title}
+            {carouselContext.slide.title}
           </motion.h1>
           <motion.div variants={fadeInUp} className={styles.overlayText}>
-            {heroContext.slide.content}
+            {carouselContext.slide.content}
           </motion.div>
           <RightOverlayButton onClick={() => handleOpen(false)}>
             Overlay Button
           </RightOverlayButton>
           <div className={styles.bottomBand}>
             <CarouselDots
-              slideIndex={heroContext.selectedNum}
+              slideIndex={carouselContext.selectedNum}
               handleSlide={props.handleSlide}
               slides={props.slides}
             ></CarouselDots>

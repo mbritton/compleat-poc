@@ -1,5 +1,6 @@
 import BottomCards from '@/components/BottomCards';
 import Hero from '@/components/Hero';
+import StairTypes from '@/components/StairTypes';
 import styles from '@/styles/Layout.module.scss';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
@@ -71,11 +72,13 @@ export default function Home() {
           <BottomCards cards={cards} />
         </motion.div>
         <div className={styles.homeContentSection}>
-          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
-          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
-          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
-          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
-          <div className={styles.homeContentChunk} data-aos="fade-up"></div>
+          <div className={styles.homeContentChunk} data-aos="fade-up">
+            <StairTypes />
+          </div>
+          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
+          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
+          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
+          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
         </div>
       </div>
     </motion.div>
