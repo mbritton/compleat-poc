@@ -75,10 +75,6 @@ export default function Home() {
           <div className={styles.homeContentChunk} data-aos="fade-up">
             <StairTypes />
           </div>
-          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
-          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
-          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
-          <div className={styles.homeContentChunk} data-aos="fade-up">&nbsp;</div>
         </div>
       </div>
     </motion.div>

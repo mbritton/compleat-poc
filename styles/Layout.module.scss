@@ -53,18 +53,15 @@
   padding: 0;
   justify-content: center;
   width: 100%;
-  height: 384px;
+  height: 300px;
 }
 
 .homeContentChunk {
   display: flex;
   background-color: #eaeaea;
   min-width: 1028px;
-  max-width: 1028px;
   min-height: 300px;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
+  margin: 20px auto 0 auto;
 }
 
 .homeContentSection {
@@ -72,7 +69,6 @@
   position: relative;
   width: 100%;
   height: auto;
-  
   justify-content: flex-start;
   flex-direction: column;
 }
