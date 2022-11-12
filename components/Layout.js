@@ -13,9 +13,9 @@ const Layout = ({ pages, children }) => {
   const outputLogo = useCallback(() => {
     const isHome = router.asPath === '/';
     return (
-      <div className={isHome ? styles.logoDefault : styles.logoHeader}>
+      <div className={isHome ? styles.logoHeader : styles.logoHeader}>
         <Image
-          src={isHome ? brandingLogo : brandingLogoSmall}
+          src={isHome ? brandingLogoSmall : brandingLogoSmall}
           width={287}
           height={86}
           alt="Compleat Stair Logo"
