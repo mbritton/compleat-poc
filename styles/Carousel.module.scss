@@ -12,16 +12,13 @@
 .embla {
   position: relative;
   background-color: rgb(142, 15, 15);
-  // height: auto;
 }
 
 .embla__viewport {
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   padding: 0;
   width: 100%;
-  max-height: 300px;
 }
 
 .embla__viewport.is-draggable {
@@ -33,41 +30,20 @@
   cursor: grabbing;
 }
 
-// .embla__container {
-//   margin-top: -600px;
-//   display: flex;
-//   flex-direction: column;
-//   user-select: none;
-//   -webkit-touch-callout: none;
-//   -khtml-user-select: none;
-//   -webkit-tap-highlight-color: transparent;
-// }
-
 .embla__slide {
-  position: relative;
+  flex: 0 0 100%;
   min-width: 100%;
-  margin-top: 0;
+  margin: 0;
   height: 300px;
 }
 
 .embla__slide__inner {
-  border: 1px solid green;
   position: relative;
-  overflow: hidden;
-  height: 300px;
   width: 100%;
+  margin: 0;
 }
 
 .embla__slide__img {
-  position: absolute;
   display: block;
-  height: 300px;
-  object-fit: fill !important;
-  // top: 50%;
-  // left: 50%;
-  // right: 100%;
-  // width: 100%;
-  // min-height: 100%;
-  // min-width: 100%;
-  // max-width: none;
+  margin: 0;
 }

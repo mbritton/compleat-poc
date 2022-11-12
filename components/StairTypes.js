@@ -1,30 +1,28 @@
 import styles from '@/styles/StairTypes.module.scss';
-import { useContext, useEffect, useState } from 'react';
-import { stairTypesByIndex, stairTypes, getStairTypeSlides } from '../media';
-import Carousel from './Carousel';
-import { CarouselContext } from './CarouselContext';
-import CarouselDots from './CarouselDots';
+import { useEffect, useState } from 'react';
+import { stairTypesByIndex, stairTypes, stairTypeTitles } from '../media';
+import Carousel from '@/components/Carousel';
+import { CarouselContext } from '@/components/CarouselContext';
+import CarouselDots from '@/components/CarouselDots';
 
-const SLIDE_COUNT = 7;
-const slides = Array.from(Array(SLIDE_COUNT).keys());
-// const slides = getStairTypeSlides(0);
+const slides = Array.from(Array(stairTypes.length).keys());
 
 const embla__container = {
   justifyContent: 'center',
-  marginTop: '-900px',
-  display: 'flex',
-  flexDirection: 'column',
+  display: 'grid',
+  gridAutoFlow: 'row',
+  gridAutoColumns: '100%',
   userSelect: 'none',
+  height: 300,
 };
 
 const StairTypes = ({ props }) => {
-  const carouselContext = useContext(CarouselContext);
   const [selectedNum, setSelectedNum] = useState(0);
   const [slide, setSlide] = useState();
 
   const handleCarouselActions = (slideIndex) => {
-    setSlide(getStairTypeSlides(slideIndex));
     setSelectedNum(slideIndex);
+    setSlide(stairTypeTitles[slideIndex]);
   };
 
   useEffect(() => {
@@ -52,12 +50,17 @@ const StairTypes = ({ props }) => {
       </div>
       <div className={styles.stairTypesMiddle}>
         <CarouselDots
+          isTextList={true}
+          slideNodes={stairTypeTitles}
           slideIndex={selectedNum}
           handleSlide={handleCarouselActions}
           slides={slides}
         ></CarouselDots>
       </div>
-      <div className={styles.stairTypesRight}>right</div>
+      <div className={styles.stairTypesRight}>
+        <h1>{stairTypeTitles[selectedNum].title}</h1>
+        {stairTypeTitles[selectedNum].content}
+      </div>
     </div>
   );
 };

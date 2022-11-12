@@ -1,13 +1,12 @@
 import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { getSlides, mediaByIndex } from '../media';
+import { getSlides, mediaByIndex, media } from '../media';
 import Carousel from '@/components/Carousel';
 import { CarouselContext } from '@/components/CarouselContext';
 import RightOverlay from '@/components/RightOverlay';
 
-const SLIDE_COUNT = 5;
-const slides = Array.from(Array(SLIDE_COUNT).keys());
+const slides = Array.from(Array(media.length).keys());
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -35,10 +34,14 @@ const stagger = {
 };
 
 const embla__container = {
-  marginTop: '-600px',
-  display: 'flex',
-  flexDirection: 'column',
+  justifyContent: 'center',
+  marginTop: '0',
+  display: 'grid',
+  gridAutoFlow: 'row',
+  gridAutoColumns: '100%',
   userSelect: 'none',
+  height: 300,
+  border: '1px solid blue',
 };
 
 const Hero = () => {
@@ -47,11 +50,10 @@ const Hero = () => {
   const [overlayOpen, setOverlayOpen] = useState(false);
   const [selectedNum, setSelectedNum] = useState(0);
 
-  const handleCarouselActions = 
-    (slideIndex) => {
-      setSlide(getSlides(slideIndex));
-      setSelectedNum(slideIndex);
-    };
+  const handleCarouselActions = (slideIndex) => {
+    setSelectedNum(slideIndex);
+    setSlide(getSlides(slideIndex));
+  };
 
   useEffect(() => {
     handleCarouselActions(0);

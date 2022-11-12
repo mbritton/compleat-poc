@@ -1,13 +1,14 @@
 import styles from '@/styles/Carousel.module.scss';
 import useEmblaCarousel from 'embla-carousel-react';
-import Image from 'next/image';
 import React, { useCallback, useContext, useEffect } from 'react';
-import { CarouselContext } from './CarouselContext';
+import { CarouselContext } from '@/components/CarouselContext';
+import { stairTypeTitles } from '../media';
 
 const Carousel = (props) => {
   const [viewportRef, embla] = useEmblaCarousel({
     axis: 'y',
-    skipSnaps: false,
+    skipSnaps: true,
+    startIndex: 0,
   });
 
   const currentContext = useContext(CarouselContext);
@@ -35,21 +36,9 @@ const Carousel = (props) => {
     <div className={styles.embla}>
       <div className={styles.embla__viewport} ref={viewportRef}>
         <div style={props.emblaContainerStyle}>
-          {props.slides.map((index) => (
-            <div
-              className={styles.embla__slide}
-              key={index}
-            >
-              <Image
-                key={index + 'carouselImage' + Math.random()}
-                className={styles.embla__slide__img}
-                src={props.slideLookupFunction(index).src}
-                width={window.innerWidth}
-                height={600}
-                objectFit="contain"
-                objectPosition="top left"
-                alt=""
-              />
+          {stairTypeTitles.map((slideNode, index) => (
+            <div className={styles.embla__slide} key={index}>
+              <img src={props.slideLookupFunction(index).src} alt={slideNode.title} />
             </div>
           ))}
         </div>

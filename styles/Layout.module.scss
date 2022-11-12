@@ -59,9 +59,9 @@
 .homeContentChunk {
   display: flex;
   background-color: #eaeaea;
-  width: 60%;
-  // height: auto;
-  // max-height: 292px;
+  min-width: 1028px;
+  max-width: 1028px;
+  min-height: 300px;
   margin: auto;
   margin-top: 20px;
   margin-bottom: 20px;

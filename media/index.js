@@ -26,44 +26,41 @@ import stairType5 from './stairType-5.jpg';
 import stairType6 from './stairType-6.jpg';
 import stairType7 from './stairType-7.jpg';
 
-export const getStairTypeSlides = (index) => {
-  const titles = [
-    {
-      title: 'Curve',
-      content: 'Excepteur Lorem ipsum non occaecat.',
-    },
-    {
-      title: 'Spiral',
-      content:
-        'Excepteur nostrud aliquip exercitation quis proident occaecat ullamco.',
-    },
-    {
-      title: 'Box',
-      content:
-        'Mollit in irure anim excepteur nostrud eu minim do minim enim aliqua.',
-    },
-    {
-      title: 'Box with Knee Wall',
-      content:
-        'Consectetur mollit reprehenderit deserunt velit nostrud nostrud voluptate exercitation.',
-    },
-    {
-      title: 'Double Open Tread',
-      content: 'Dolore nulla laborum exercitation commodo sunt.',
-    },
-    {
-      title: 'Flare',
-      content:
-        'Sit sunt exercitation quis officia elit dolor do voluptate consequat.',
-    },
-    {
-      title: 'Double Open Riser / Open Stringer',
-      content:
-        'Voluptate amet ea duis eiusmod nulla et anim cillum duis eiusmod fugiat quis officia deserunt.',
-    },
-  ];
-  return titles[index];
-};
+export const stairTypeTitles = [
+  {
+    title: 'Curve',
+    content: 'Excepteur Lorem ipsum non occaecat.',
+  },
+  {
+    title: 'Spiral',
+    content:
+      'Excepteur nostrud aliquip exercitation quis proident occaecat ullamco.',
+  },
+  {
+    title: 'Box',
+    content:
+      'Mollit in irure anim excepteur nostrud eu minim do minim enim aliqua.',
+  },
+  {
+    title: 'Box with Knee Wall',
+    content:
+      'Consectetur mollit reprehenderit deserunt velit nostrud nostrud voluptate exercitation.',
+  },
+  {
+    title: 'Double Open Tread',
+    content: 'Dolore nulla laborum exercitation commodo sunt.',
+  },
+  {
+    title: 'Flare',
+    content:
+      'Sit sunt exercitation quis officia elit dolor do voluptate consequat.',
+  },
+  {
+    title: 'Double Open Riser / Open Stringer',
+    content:
+      'Voluptate amet ea duis eiusmod nulla et anim cillum duis eiusmod fugiat quis officia deserunt.',
+  },
+];
 
 export const getSlides = (index) => {
   const titles = [

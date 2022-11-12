@@ -3,8 +3,8 @@ import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
 import { useCallback, useContext } from 'react';
 import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
-import { CarouselContext } from './CarouselContext';
-import CarouselDots from './CarouselDots';
+import { CarouselContext } from '@/components/CarouselContext';
+import CarouselDots from '@/components/CarouselDots';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -100,6 +100,8 @@ const RightOverlay = (props) => {
           </RightOverlayButton>
           <div className={styles.bottomBand}>
             <CarouselDots
+              isTextList={false}
+              slideNodes={carouselContext.slides}
               slideIndex={carouselContext.selectedNum}
               handleSlide={props.handleSlide}
               slides={props.slides}

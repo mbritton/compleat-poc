@@ -1,23 +1,39 @@
 import styles from '@/styles/CarouselDots.module.scss';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
-const CarouselDots = ({ slides, handleSlide, slideIndex }) => {
+const CarouselDots = ({ isTextList, slides, handleSlide, slideIndex, slideNodes }) => {
   const [carouselSlides] = useState(slides);
+
   return (
     <>
-      <div className={styles.carouselDotsWrapper}>
-        {carouselSlides.map((slide, i) => (
+      {!isTextList ? (
+        <div className={styles.carouselDotsWrapper}>
+          {carouselSlides.map((slide, i) => (
+            <div
+              onClick={() => {
+                handleSlide(i);
+              }}
+              className={
+                i === slideIndex
+                  ? styles.carouselDotSelected
+                  : styles.carouselDot
+              }
+              key={i + 'slide'}
+            ></div>
+          ))}
+        </div>
+      ) : (
+        slideNodes &&
+        slideNodes.map((slide, i) => (
           <div
-            onClick={() => {
-              handleSlide(i);
-            }}
-            className={
-              i === slideIndex ? styles.carouselDotSelected : styles.carouselDot
-            }
+            onMouseOver={() => handleSlide(i)}
+            className={i === slideIndex ? styles.carouselTextItemSelected : styles.carouselTextItem}
             key={i + 'slide'}
-          ></div>
-        ))}
-      </div>
+          >
+            {slide.title}
+          </div>
+        ))
+      )}
     </>
   );
 };
