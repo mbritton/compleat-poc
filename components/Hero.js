@@ -41,7 +41,6 @@ const embla__container = {
   gridAutoColumns: '100%',
   userSelect: 'none',
   height: 300,
-  border: '1px solid blue',
 };
 
 const Hero = () => {

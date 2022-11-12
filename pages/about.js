@@ -1,14 +1,11 @@
-import { CalloutCardButton } from '@/components/Core';
-import Hero from '@/components/Hero';
 import styles from '@/styles/About.module.scss';
+import { SliceZone } from '@prismicio/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { SliceZone } from '@prismicio/react';
+import { useEffect } from 'react';
 import { createClient } from '../prismicio';
 import { components } from '../slices';
-import { prismicH } from '@prismicio/helpers';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
