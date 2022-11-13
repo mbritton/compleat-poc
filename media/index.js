@@ -13,7 +13,7 @@ import card7 from './media-13.jpg';
 import card8 from './media-15.jpg';
 // Right Overlay Inset Images
 import inset1 from './right-overlay-inset-1.jpg';
-import inset2 from './right-overlay-inset-1.jpg';
+import inset2 from './right-overlay-inset-2.jpg';
 import inset3 from './right-overlay-inset-1.jpg';
 import inset4 from './right-overlay-inset-1.jpg';
 import inset5 from './right-overlay-inset-1.jpg';
@@ -73,25 +73,50 @@ export const getSlides = (index) => {
     {
       title: 'The Complete Stair System',
       content: 'Excepteur Lorem ipsum non occaecat.',
+      inset: {
+        title: 'Inset Title 1',
+        content: 'Inset Content 1',
+        src: inset1,
+      },
     },
     {
       title: 'Slide Title 2',
       content:
         'Excepteur nostrud aliquip exercitation quis proident occaecat ullamco.',
+      inset: {
+        title: 'Inset Title 2',
+        content: 'Inset Content 2 Exercitation id reprehenderit ad occaecat.',
+        src: inset2,
+      },
     },
     {
       title: 'Next Slide Title',
       content:
         'Mollit in irure anim excepteur nostrud eu minim do minim enim aliqua.',
+      inset: {
+        title: 'Inset Title 3',
+        content: 'Inset Content 3',
+        src: inset3,
+      },
     },
     {
       title: 'Next Slide Title 2',
       content: 'Sint consequat cillum sunt voluptate incididunt irure velit.',
+      inset: {
+        title: 'Inset Title 4',
+        content: 'Inset Content 4',
+        src: inset4,
+      },
     },
     {
       title: 'Next Slide Title 3',
       content:
         'Sit sunt exercitation quis officia elit dolor do voluptate consequat.',
+      inset: {
+        title: 'Inset Title 5',
+        content: 'Inset Content 5',
+        src: inset5,
+      },
     },
   ];
   return titles[index];

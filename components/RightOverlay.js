@@ -90,7 +90,6 @@ const RightOverlay = (props) => {
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
           <HeroSlideInsets
-            selectedSlideIndex={carouselContext.selectedNum}
             slide={props.slide}
           ></HeroSlideInsets>
           <motion.h1 variants={fadeInUp} className={styles.card}>

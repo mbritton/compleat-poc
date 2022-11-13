@@ -48,6 +48,10 @@ const StairTypes = ({ props }) => {
           ></Carousel>
         </CarouselContext.Provider>
       </div>
+      <div className={styles.stairTypesRight}>
+        <h1>{stairTypeTitles[selectedNum].title}</h1>
+        {stairTypeTitles[selectedNum].content}
+      </div>
       <div className={styles.stairTypesMiddle}>
         <CarouselDots
           isTextList={true}
@@ -56,10 +60,6 @@ const StairTypes = ({ props }) => {
           handleSlide={handleCarouselActions}
           slides={slides}
         ></CarouselDots>
-      </div>
-      <div className={styles.stairTypesRight}>
-        <h1>{stairTypeTitles[selectedNum].title}</h1>
-        {stairTypeTitles[selectedNum].content}
       </div>
     </div>
   );
