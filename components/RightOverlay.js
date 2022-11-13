@@ -5,6 +5,7 @@ import { useCallback, useContext } from 'react';
 import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
 import { CarouselContext } from '@/components/CarouselContext';
 import CarouselDots from '@/components/CarouselDots';
+import HeroSlideInsets from './HeroSlideInsets';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -89,6 +90,10 @@ const RightOverlay = (props) => {
       </motion.div>
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
+          <HeroSlideInsets
+            selectedSlideIndex={carouselContext.selectedNum}
+            slide={props.slide}
+          ></HeroSlideInsets>
           <motion.h1 variants={fadeInUp} className={styles.card}>
             {carouselContext.slide.title}
           </motion.h1>

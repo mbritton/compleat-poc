@@ -1,10 +1,10 @@
-import styles from '@/styles/Hero.module.scss';
-import { motion } from 'framer-motion';
-import React, { useEffect, useState } from 'react';
-import { getSlides, mediaByIndex, media } from '../media';
 import Carousel from '@/components/Carousel';
 import { CarouselContext } from '@/components/CarouselContext';
 import RightOverlay from '@/components/RightOverlay';
+import styles from '@/styles/Hero.module.scss';
+import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { getSlides, media, mediaByIndex } from '../media';
 
 const slides = Array.from(Array(media.length).keys());
 

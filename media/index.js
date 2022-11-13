@@ -11,6 +11,12 @@ import card5 from './media-07.jpg';
 import card6 from './media-08.jpg';
 import card7 from './media-13.jpg';
 import card8 from './media-15.jpg';
+// Right Overlay Inset Images
+import inset1 from './right-overlay-inset-1.jpg';
+import inset2 from './right-overlay-inset-1.jpg';
+import inset3 from './right-overlay-inset-1.jpg';
+import inset4 from './right-overlay-inset-1.jpg';
+import inset5 from './right-overlay-inset-1.jpg';
 // Embla carousel images
 import media1 from './media-1.jpg';
 import media2 from './media-2.jpg';
@@ -114,7 +120,7 @@ export const getCards = () => {
 
 export const media = [media1, media2, media3, media4, media5];
 export const cards = [card1, card2, card3, card4];
-export const cardBottoms = [card5, card6, card7, card8];
+export const cardBottoms = [card7, card7, card7, card7];
 export const stairTypes = [
   stairType1,
   stairType2,
@@ -124,9 +130,13 @@ export const stairTypes = [
   stairType6,
   stairType7,
 ];
+const rightOverlayIndexes = [inset1, inset2, inset3, inset4, inset5];
 export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
+
 export const stairTypesByIndex = (index) => stairTypes[index % stairTypes.length];
+export const rightOverlayInsetsByIndex = (index) =>
+  rightOverlayIndexes[index % rightOverlayIndexes.length];
 export const brandingLogo = logo;
 export const brandingLogoSmall = logoSmall;

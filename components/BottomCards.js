@@ -31,7 +31,6 @@ const stagger = {
 
 const BottomCards = ({ cards }) => {
   return (
-    <div className={styles.heroBottomCards}>
       <motion.div variants={stagger} className={styles.heroBottomCards}>
         {cards.map((card, i) => (
           <motion.div
@@ -59,8 +58,8 @@ const BottomCards = ({ cards }) => {
               </div>
               <div className={styles.innerBottom}>
                 <Image
-                  objectFit="none"
-                  objectPosition="top left"
+                  objectFit="contain"
+                  objectPosition="top center"
                   src={cardBottomsByIndex(i)}
                   width={260}
                   height={182} 
@@ -71,7 +70,6 @@ const BottomCards = ({ cards }) => {
           </motion.div>
         ))}
       </motion.div>
-    </div>
   );
 };
 

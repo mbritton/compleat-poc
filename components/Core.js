@@ -31,7 +31,7 @@ export const CalloutCardButton = styled.button`
   font-family: 'EB Garamond', serif;
   height: 30px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 0;
   max-width: 100%;
   min-height: 32px;
   max-height: 32px;
