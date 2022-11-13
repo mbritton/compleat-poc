@@ -1,10 +1,9 @@
-import { RightOverlayButton } from '@/components/Core';
+import { CarouselContext } from '@/components/CarouselContext';
+import CarouselDots from '@/components/CarouselDots';
 import styles from '@/styles/RightOverlay.module.scss';
 import { motion } from 'framer-motion';
 import { useCallback, useContext } from 'react';
 import { BiChevronsLeft, BiChevronsRight } from 'react-icons/bi';
-import { CarouselContext } from '@/components/CarouselContext';
-import CarouselDots from '@/components/CarouselDots';
 import HeroSlideInsets from './HeroSlideInsets';
 
 const easing = [1, 0.5, 0.5, 0.5];
@@ -100,9 +99,6 @@ const RightOverlay = (props) => {
           <motion.div variants={fadeInUp} className={styles.overlayText}>
             {carouselContext.slide.content}
           </motion.div>
-          <RightOverlayButton onClick={() => handleOpen(false)}>
-            Overlay Button
-          </RightOverlayButton>
           <div className={styles.bottomBand}>
             <CarouselDots
               isTextList={false}

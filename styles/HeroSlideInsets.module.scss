@@ -1,6 +1,6 @@
 .insetsWrapper {
   position: absolute;
-  left: -500px;
+  left: -730px;
   background-color: rgba(0,0,0,.3);
   padding: 0;
   max-height: 300px;
@@ -11,7 +11,23 @@
   justify-items: flex-start;
   margin: 0;
   overflow: hidden;
-  z-index: 200;
+}
+
+.insetsDescriptionWrapper {
+  position: absolute;
+  left: -370px;
+  padding: 10px;
+  padding-top: 20px;
+  max-height: 130px;
+  max-width: 300px;
+  font-size: small;
+  line-height: 16px;
+  min-height: 130px;
+  color: white;
+  align-items: flex-start;
+  justify-items: flex-start;
+  margin: 10px 0 0 0;
+  overflow: hidden;
 }
 
 @media (max-width: 600px) {
