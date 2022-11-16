@@ -35,7 +35,7 @@ const MasonryWall = ({ children, gap, minWidth = 500, ...rest }) => {
 
   const resizeHandler = () =>
     setNumCols(Math.ceil(ref.current.offsetWidth / minWidth));
-  useEffect(resizeHandler, []);
+  useEffect(resizeHandler, [minWidth]);
   useEventListener(`resize`, resizeHandler);
 
   return (

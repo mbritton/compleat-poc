@@ -31,7 +31,19 @@ import stairType4 from './stairType-4.jpg';
 import stairType5 from './stairType-5.jpg';
 import stairType6 from './stairType-6.jpg';
 import stairType7 from './stairType-7.jpg';
-
+// Product tests
+import productTest1 from './product-test-horiz.png';
+import productTest2 from './product-test-vert.png';
+import productTest3 from './product-test-horiz.png';
+import productTest4 from './product-test-vert.png';
+import productTest5 from './product-test-horiz.png';
+import productTest6 from './product-test-vert.png';
+import productTest7 from './product-test-horiz.png';
+import productTest8 from './product-test-vert.png';
+import productTest9 from './product-test-horiz.png';
+import productTest10 from './product-test-vert.png';
+import productTest11 from './product-test-horiz.png';
+import productTest12 from './product-test-vert.png';
 export const stairTypeTitles = [
   {
     title: 'Curve',
@@ -74,8 +86,8 @@ export const getSlides = (index) => {
       title: 'The Complete Stair System',
       content: 'Excepteur Lorem ipsum non occaecat.',
       inset: {
-        title: 'Inset Title 1',
-        content: 'Inset Content 1',
+        title: 'Holiday House',
+        content: 'Sit irure excepteur cillum occaecat et veniam commodo.',
         src: inset1,
       },
     },
@@ -155,11 +167,26 @@ export const stairTypes = [
   stairType6,
   stairType7,
 ];
+
+export const productTests = [
+  productTest1,
+  productTest2,
+  productTest3,
+  productTest4,
+  productTest5,
+  productTest6,
+  productTest7,
+  productTest8,
+  productTest9,
+  productTest10,
+  productTest11,
+  productTest12,
+];
+
 const rightOverlayIndexes = [inset1, inset2, inset3, inset4, inset5];
 export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
-
 export const stairTypesByIndex = (index) => stairTypes[index % stairTypes.length];
 export const rightOverlayInsetsByIndex = (index) =>
   rightOverlayIndexes[index % rightOverlayIndexes.length];

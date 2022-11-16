@@ -18,7 +18,7 @@ const fadeInUp = {
       duration: 0.4,
       ease: easing,
     },
-  },
+  }, 
 };
 
 const stagger = {

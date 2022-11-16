@@ -37,7 +37,7 @@ const fadeInRight = {
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.5,
     },
   },
 };
@@ -47,12 +47,9 @@ const HeroSlideInsets = ({ slide }) => {
     <motion.div
       variants={stagger}
       exit={{ opacity: 0 }}
-      initial="initial"
-      animate="animate"
     >
       <motion.div
-        animate={fadeInRight}
-        initial="initial"
+        animate={fadeInUp}
         className={styles.insetsWrapper}
       >
         <Image
@@ -65,8 +62,7 @@ const HeroSlideInsets = ({ slide }) => {
         />
       </motion.div>
       <motion.div
-        animate="animate"
-        initial="initial"
+        animate={fadeInRight}
         className={styles.insetsDescriptionWrapper}
       >
         <h2>{slide.inset.title}</h2>

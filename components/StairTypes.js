@@ -16,7 +16,7 @@ const embla__container = {
   height: 300,
 };
 
-const StairTypes = ({ props }) => {
+const StairTypes = () => {
   const [selectedNum, setSelectedNum] = useState(0);
   const [slide, setSlide] = useState();
 
@@ -48,11 +48,11 @@ const StairTypes = ({ props }) => {
           ></Carousel>
         </CarouselContext.Provider>
       </div>
-      <div className={styles.stairTypesRight}>
+      <div className={styles.stairTypesMiddle}>
         <h1>{stairTypeTitles[selectedNum].title}</h1>
         {stairTypeTitles[selectedNum].content}
       </div>
-      <div className={styles.stairTypesMiddle}>
+      <div className={styles.stairTypesRight}>
         <CarouselDots
           isTextList={true}
           slideNodes={stairTypeTitles}

@@ -1,9 +1,12 @@
-import { ColorBox } from '@/components/Core';
+import { ProductBox, ColorBox } from '@/components/Core';
 import styles from '@/styles/ProductLocator.module.scss';
 import { motion } from 'framer-motion';
 import shuffle from 'lodash/shuffle';
-import { useState } from 'react';
-import MasonryWall from '../components/MasonryWall';
+import { useEffect, useState } from 'react';
+import MasonryWall from '@/components/MasonryWall';
+import { ProductFooter } from '@/components/Core';
+import { productTests } from '../media';
+import Image from 'next/image';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
@@ -50,30 +53,33 @@ export default function ProductLocator() {
     >
       <div className={styles.container}>
         <div className={styles.productLocatorHero}></div>
-        <motion.div
-          variants={fadeInUp}
-          exit={{ opacity: 0 }}
-          initial="initial"
-        >
+        <motion.div variants={fadeInUp} exit={{ opacity: 0 }} initial="initial">
           <div className={styles.homeContentSection}>
             <div className={styles.leftMenu}> </div>
             <div className={styles.content}>
               <MasonryWall>
-                {divs.map(([minHeight, background], index) => (
-                  <ColorBox
-                    key={index}
-                    style={{ background, minHeight }}
-                    onClick={() => setDivs(shuffle)}
-                  >
-                    <img
-                      alt={index + Math.random(1)}
-                      src={`https://picsum.photos/200/${getRandomInt(
-                        200,
-                        300,
-                      )}/?${Math.random(1)}`}
-                    />
-                  </ColorBox>
-                ))}
+                {productTests.map(
+                  (productImage, index) => (
+                    <ProductBox key={index + 'pb'}>
+                      <Image
+                        objectFit="cover"
+                        objectPosition="center"
+                        src={productImage.src}
+                        width={productImage.width}
+                        height={productImage.height}
+                        alt="card"
+                      />
+                      <ProductFooter>
+                        <span className={styles.productTitle}>
+                          Product Title
+                        </span>
+                        <span className={styles.productNumber}>
+                          Product Number
+                        </span>
+                      </ProductFooter>
+                    </ProductBox>
+                  ),
+                )}
               </MasonryWall>
             </div>
           </div>

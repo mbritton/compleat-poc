@@ -36,9 +36,6 @@ export const CalloutCardButton = styled.button`
   min-height: 32px;
   max-height: 32px;
   margin: 0 5px 0 5px;
-  // margin-top: 12px;
-  // margin-left: ${(props) => (props.primary ? '10px' : '-16px')};
-  // margin-right: ${(props) => (!props.primary ? '10px' : '0')};
 `;
 
 export const CarouselButton = styled.button`
@@ -82,14 +79,39 @@ export const Col = styled.div`
 export const ColorBox = styled.div`
   border-radius: 0;
   transition: 0.5s;
-  justify-content: center;
+  justify-content: flex-end;
   align-content: center;
   display: grid;
   color: black;
   cursor: pointer;
   :hover {
     transform: scale(1.06);
-    box-shadow: 0 0 12px 0 ${(props) => props.theme.lightGray};
-    border-radius: 12px
+    box-shadow: 0 0 6px 0 ${(props) => props.theme.lightGray};
   }
+`;
+
+export const ProductBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-content: center;
+  color: black;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .07);
+`;
+
+export const ProductFooter = styled.div`
+  background-color: #ffffff;
+  justify-content: center;
+  flex-direction: row;
+  align-content: center;
+  display: flex;
+  color: black;
+  cursor: pointer;
+  width: 100%;
+  height: 60px;
+  border-top: 1px solid #e1e1e1;
+  justify-content: space-between;
 `;

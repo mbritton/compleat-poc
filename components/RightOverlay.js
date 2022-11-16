@@ -41,7 +41,7 @@ const fadeInRight = {
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: .3,
     },
   },
 };
@@ -89,9 +89,7 @@ const RightOverlay = (props) => {
       </motion.div>
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
-          <HeroSlideInsets
-            slide={props.slide}
-          ></HeroSlideInsets>
+            <HeroSlideInsets slide={props.slide}></HeroSlideInsets>
           <motion.h1 variants={fadeInUp} className={styles.card}>
             {carouselContext.slide.title}
           </motion.h1>
