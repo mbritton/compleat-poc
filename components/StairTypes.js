@@ -1,9 +1,9 @@
-import styles from '@/styles/StairTypes.module.scss';
-import { useEffect, useState } from 'react';
-import { stairTypesByIndex, stairTypes, stairTypeTitles } from '../media';
 import Carousel from '@/components/Carousel';
 import { CarouselContext } from '@/components/CarouselContext';
 import CarouselDots from '@/components/CarouselDots';
+import styles from '@/styles/StairTypes.module.scss';
+import { useEffect, useState } from 'react';
+import { stairTypes, stairTypesByIndex, stairTypeTitles } from '../media';
 
 const slides = Array.from(Array(stairTypes.length).keys());
 
@@ -49,7 +49,6 @@ const StairTypes = () => {
         </CarouselContext.Provider>
       </div>
       <div className={styles.stairTypesMiddle}>
-        <h1>{stairTypeTitles[selectedNum].title}</h1>
         {stairTypeTitles[selectedNum].content}
       </div>
       <div className={styles.stairTypesRight}>

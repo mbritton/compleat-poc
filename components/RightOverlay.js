@@ -76,20 +76,9 @@ const RightOverlay = (props) => {
           : styles.rightOverlayClosed
       }
     >
-      <motion.div
-        className={
-          !carouselContext.overlayOpen ? styles.closeIconOpen : styles.closeIcon
-        }
-        variants={fadeInRight}
-        exit={{ opacity: 1 }}
-        initial="initial"
-        animate="animate"
-      >
-        {outputChevron()}
-      </motion.div>
+      <HeroSlideInsets slide={carouselContext.slide}></HeroSlideInsets>
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
-            <HeroSlideInsets slide={props.slide}></HeroSlideInsets>
           <motion.h1 variants={fadeInUp} className={styles.card}>
             {carouselContext.slide.title}
           </motion.h1>

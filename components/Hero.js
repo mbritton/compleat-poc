@@ -5,6 +5,7 @@ import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { getSlides, media, mediaByIndex } from '../media';
+import HeroSlideInsets from './HeroSlideInsets';
 
 const slides = Array.from(Array(media.length).keys());
 
@@ -21,14 +22,6 @@ const scaleUpVertical = {
     transition: {
       duration: .5,
       ease: easing,
-    },
-  },
-};
-
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
     },
   },
 };
@@ -81,12 +74,16 @@ const Hero = () => {
           }, 500);
         }}
       >
-        <RightOverlay
-          slide={slide}
-          isOpen={overlayOpen}
-          slides={slides}
-          handleSlide={handleCarouselActions}
-        ></RightOverlay>
+        {/* <HeroSlideInsets slide={slide}></HeroSlideInsets> */}
+        {overlayOpen && (
+          <RightOverlay
+            slide={slide}
+            isOpen={overlayOpen}
+            slides={slides}
+            handleSlide={handleCarouselActions}
+          ></RightOverlay>
+        )}
+
         <Carousel
           emblaContainerStyle={embla__container}
           slideLookupFunction={mediaByIndex}

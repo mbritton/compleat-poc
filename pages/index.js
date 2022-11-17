@@ -65,7 +65,6 @@ export default function Home() {
       initial="initial"
       animate="animate"
     >
-        <div className={styles.rightOverlay}></div>
         <Hero></Hero>
         <motion.div variants={stagger} className={styles.heroBottomCards}>
           <BottomCards cards={cards} />

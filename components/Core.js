@@ -25,7 +25,7 @@ export const CalloutCardButton = styled.button`
   /* Adapt the colors based on primary prop */
   background: '#535353';
   font-size: 14px;
-  color: white;
+  color: black;
   font-weight: 600;
   cursor: pointer;
   font-family: 'EB Garamond', serif;

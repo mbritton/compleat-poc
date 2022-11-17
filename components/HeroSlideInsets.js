@@ -1,6 +1,7 @@
 import styles from '@/styles/HeroSlideInsets.module.scss';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import { useEffect } from 'react';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -34,40 +35,26 @@ const fadeInRight = {
   },
 };
 
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.5,
-    },
-  },
-};
-
 const HeroSlideInsets = ({ slide }) => {
+  useEffect(() => {
+    console.log('slide', slide);
+  }, [slide]);
   return (
-    <motion.div
-      variants={stagger}
-      exit={{ opacity: 0 }}
-    >
-      <motion.div
-        animate={fadeInUp}
-        className={styles.insetsWrapper}
-      >
+    <motion.div exit={{ opacity: 1 }}>
+      <motion.div animate={fadeInUp} className={styles.insetsWrapper}>
         <Image
           objectFit="cover"
           objectPosition="top left"
-          src={slide.inset.src}
+          src={typeof slide !== 'number' && slide.inset ? slide.inset.src : ''}
           width={600}
           height={266}
-          alt={slide.inset.title}
+          alt={typeof slide !== 'number' && slide.inset ? slide.inset.title : ''}
         />
       </motion.div>
-      <motion.div
-        animate={fadeInRight}
-        className={styles.insetsDescriptionWrapper}
-      >
-        <h2>{slide.inset.title}</h2>
-        {slide.inset.content}
-      </motion.div>
+      <div animate={fadeInRight} className={styles.insetsDescriptionWrapper}>
+        <h2>{typeof slide !== 'number' && slide.inset ? slide.inset.title : ''}</h2>
+        {typeof slide !== 'number' && slide.inset ? slide.inset.content : ''}
+      </div>
     </motion.div>
   );
 };
