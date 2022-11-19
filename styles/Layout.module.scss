@@ -24,10 +24,12 @@
   flex: 1;
   padding: 2rem 0;
   border-top: 1px solid black;
+  color: white;
+  background-color: #5a0a0a;
   justify-content: center;
   align-items: center;
-  margin-top: 30px;
-  height: 100px;
+  margin-top: 100px;
+  height: 200px;
 }
 
 .footer a {
@@ -86,7 +88,7 @@
 .logoHeader {
   width: 120px;
   position: absolute;
-  top: 40px;
+  top: 50px;
   left: 42px;
   z-index: 456;
 }

@@ -1,8 +1,8 @@
-import { CalloutCardButton } from '@/components/Core';
 import styles from '@/styles/BottomCards.module.scss';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { cardByIndex, cardBottomsByIndex } from '../media';
+import parse from 'html-react-parser'
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -24,7 +24,7 @@ const fadeInUp = {
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.3,
     },
   },
 };
@@ -52,8 +52,7 @@ const BottomCards = ({ cards }) => {
                 </div>
                 <div className={styles.innerTopText}>
                   <h2>{card.title}</h2>
-                  {card.content}
-                  <CalloutCardButton primary>Go</CalloutCardButton>
+                  {parse(card.content)}
                 </div>
               </div>
               <div className={styles.innerBottom}>

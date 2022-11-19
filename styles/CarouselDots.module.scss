@@ -10,21 +10,17 @@
 }
 
 .carouselTextItem {
-  // max-width: 80%;
   height: 18px;
   text-align: left;
   font-weight: normal;
-  // margin: 9px auto;
   text-transform: capitalize;
   opacity: .7;
 }
 
 .carouselTextItemSelected {
-  // max-width: 80%;
   text-align: left;
   height: 18px;
   font-weight: bold;
-  // margin: 9px auto;
   text-transform: capitalize;
 }
 
@@ -34,6 +30,7 @@
 
 .carouselDot {
   cursor: pointer;
+  border-radius: 50%;
   width: 10px;
   height: 10px;
   padding: 0;
@@ -54,5 +51,5 @@
   display: block;
   float: left;
   background-color: white;
-  border: 1px solid white;
+  border-radius: 50%;
 }

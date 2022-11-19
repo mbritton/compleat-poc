@@ -3,7 +3,6 @@ import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useCallback, useState } from 'react';
-import { brandingLogo } from '../media';
 import { brandingLogoSmall } from '../media';
 
 const Layout = ({ pages, children }) => {
@@ -13,7 +12,7 @@ const Layout = ({ pages, children }) => {
   const outputLogo = useCallback(() => {
     const isHome = router.asPath === '/';
     return (
-      <div className={isHome ? styles.logoHeader : styles.logoHeader}>
+      <div className={styles.logoHeader}>
         <Image
           src={isHome ? brandingLogoSmall : brandingLogoSmall}
           width={287}

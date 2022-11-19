@@ -44,6 +44,7 @@ import productTest9 from './images/product-test-horiz.png';
 import productTest10 from './images/product-test-vert.png';
 import productTest11 from './images/product-test-horiz.png';
 import productTest12 from './images/product-test-vert.png';
+
 export const stairTypeTitles = [
   {
     title: 'Curve',
@@ -80,7 +81,7 @@ export const stairTypeTitles = [
   },
 ];
 
-export const getSlides = (index) => {
+export const getFeatured = (index) => {
   const titles = [
     {
       title: 'The Complete Stair System',
@@ -138,19 +139,23 @@ export const getCards = () => {
   return [
     {
       title: 'Modern System',
-      content: 'Adipisicing dolor ullamco incididunt aute esse.',
+      content:
+        'Adipisicing dolor ullamco incididunt aute esse. Proident cupidatat cillum cupidatat <a href="http://www.mikebritton.com">iusmod proident >></a>',
     },
     {
       title: 'Craftsman',
-      content: 'Ut non sit eu enim ut nisi.',
+      content:
+        'Adipisicing dolor ullamco incididunt aute esse. Proident cupidatat cillum cupidatat <a href="http://www.mikebritton.com">iusmod proident >></a>',
     },
     {
       title: 'Showcase',
-      content: 'Et excepteur nulla ad cupidatat.',
+      content:
+        'Adipisicing dolor ullamco incididunt aute esse. Proident cupidatat cillum cupidatat <a href="http://www.mikebritton.com">iusmod proident >></a>',
     },
     {
       title: 'Parts & Accessories',
-      content: 'Adipisicing dolor ullamco.',
+      content:
+        'Adipisicing dolor ullamco incidt cillum cupidatat <a href="/products">iusmod proident >></a>',
     },
   ];
 };

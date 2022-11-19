@@ -79,7 +79,7 @@ const RightOverlay = (props) => {
       <HeroSlideInsets slide={carouselContext.slide}></HeroSlideInsets>
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
-          <motion.h1 variants={fadeInUp} className={styles.card}>
+          <motion.h1 variants={fadeInUp}>
             {carouselContext.slide.title}
           </motion.h1>
           <motion.div variants={fadeInUp} className={styles.overlayText}>

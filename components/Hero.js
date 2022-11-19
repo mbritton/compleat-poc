@@ -4,8 +4,7 @@ import RightOverlay from '@/components/RightOverlay';
 import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
-import { getSlides, media, mediaByIndex } from '../media';
-import HeroSlideInsets from './HeroSlideInsets';
+import { getFeatured, media, mediaByIndex } from '../media';
 
 const slides = Array.from(Array(media.length).keys());
 
@@ -44,7 +43,7 @@ const Hero = () => {
 
   const handleCarouselActions = (slideIndex) => {
     setSelectedNum(slideIndex);
-    setSlide(getSlides(slideIndex));
+    setSlide(getFeatured(slideIndex));
   };
 
   useEffect(() => {
@@ -74,7 +73,6 @@ const Hero = () => {
           }, 500);
         }}
       >
-        {/* <HeroSlideInsets slide={slide}></HeroSlideInsets> */}
         {overlayOpen && (
           <RightOverlay
             slide={slide}

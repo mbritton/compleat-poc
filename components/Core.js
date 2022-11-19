@@ -21,23 +21,6 @@ export const RightOverlayButton = styled.button`
   margin: 0 0 40px 24px;
 `;
 
-export const CalloutCardButton = styled.button`
-  /* Adapt the colors based on primary prop */
-  background: '#535353';
-  font-size: 14px;
-  color: black;
-  font-weight: 600;
-  cursor: pointer;
-  font-family: 'EB Garamond', serif;
-  height: 30px;
-  border: 0;
-  border-radius: 0;
-  max-width: 100%;
-  min-height: 32px;
-  max-height: 32px;
-  margin: 0 5px 0 5px;
-`;
-
 export const CarouselButton = styled.button`
   background: ${(props) => (props.primary ? 'rgba(0,0,0,0)' : 'rgba(0,0,0,0)')};
   font-size: 24px;

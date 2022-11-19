@@ -4,11 +4,10 @@ import Link from 'next/link';
 const TopNav = ({ path, pageObjects }) => {
   return (
     <div className={styles.navWrapper}>
-      <div className={styles.pageButton}></div>
-      {pageObjects.map((page, i) => {
+      {pageObjects.map((page, index) => {
         return (
           <div
-            key={i + 'page'}
+            key={index + 'page'}
             className={
               page.href === path ? styles.pageButton : styles.pageButtonDim
             }
