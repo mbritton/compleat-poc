@@ -1,9 +1,12 @@
 import styles from '@/styles/TopNav.module.scss';
 import Link from 'next/link';
+import Tools from './Tools';
 
 const TopNav = ({ path, pageObjects }) => {
   return (
     <div className={styles.navWrapper}>
+      <Tools />
+    <div className={styles.pageButtonsWrapper}>
       {pageObjects.map((page, index) => {
         return (
           <div
@@ -16,6 +19,7 @@ const TopNav = ({ path, pageObjects }) => {
           </div>
         );
       })}
+    </div>
     </div>
   );
 };

@@ -1,0 +1,23 @@
+.container {
+  padding: 0;
+}
+
+.toolsWrapper {
+  position: fixed;
+  right: 20px;
+  top: 40px;
+  width: 100px;
+  height: 40px;
+  justify-content: space-evenly;
+  font-size: 20px;
+  align-items: flex-start;
+  color: rgb(108, 108, 108);
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 600px) {
+}
+
+@media (prefers-color-scheme: dark) {
+}
