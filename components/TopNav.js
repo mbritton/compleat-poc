@@ -1,6 +1,6 @@
 import styles from '@/styles/TopNav.module.scss';
 import Link from 'next/link';
-import Tools from './Tools';
+import Tools from '@/components/Tools';
 
 const TopNav = ({ path, pageObjects }) => {
   return (

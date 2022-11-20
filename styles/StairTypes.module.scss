@@ -1,3 +1,9 @@
+
+.smallerTitle {
+  font-size: 24px;
+  margin-right: -12px;
+}
+
 .stairTypesWrapper {
   padding: 0;
   min-width: 100%;
@@ -28,7 +34,7 @@
   display: flex;
   flex-direction: column;
   color: #eaeaea;
-  padding: 0 15px 30px 15px;
+  padding: 10px 15px 40px 15px;
   justify-content: space-around;
   align-items: left;
   min-width: 260px;
@@ -37,20 +43,33 @@
   text-align: left;
 }
 
+.stairTypesTitle {
+  font-size: 52px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+  color:#000000;
+  line-height: 1.2;
+  position: absolute;
+  bottom: 4px;
+}
+
 .stairTypesMiddle {
   background-color: rgba(167, 167, 167, 0.2);
   display: flex;
   flex-direction: column;
   padding: 0;
-  justify-content: flex-start;
+  border: 1px solid ;
+  justify-content: space-between;
   align-items: flex-start;
-  color:#7b7b7b;
+  color:#000000;
   min-width: 300px;
   max-width: 100%;
   max-height: 300px;
-  padding: 20px;
+  padding: 40px 20px 0 20px;
   h1 {
-    color: #000000;
+    font-size: 4.5em;
+    color: #FFFFFF;
   }
 }
 

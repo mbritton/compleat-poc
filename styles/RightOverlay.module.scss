@@ -42,29 +42,6 @@
   bottom: 0;
 }
 
-.closeIcon {
-  margin: 0;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  color: white;
-  margin-right: 30px;
-}
-
-.closeIconOpen {
-  margin: 0 0 0 20px;
-  cursor: pointer;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  color: white;
-}
-
-.icon {
-  margin: 0;
-}
-
 .openOverlay {
   width: 30px;
   height: 30px;
@@ -94,7 +71,7 @@
   right: 0;
   z-index: 100;
   width: 432px;
-  height: 300px;
+  height: 299px;
   background-color: rgba(0, 0, 0, 0.6);
   h1 {
     margin: 40px 0 0 24px;

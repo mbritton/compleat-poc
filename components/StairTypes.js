@@ -50,6 +50,9 @@ const StairTypes = () => {
       </div>
       <div className={styles.stairTypesMiddle}>
         {stairTypeTitles[selectedNum].content}
+        <div className={styles.stairTypesTitle}>
+          <span className={styles.smallerTitle}>Stair</span> Types
+        </div>
       </div>
       <div className={styles.stairTypesRight}>
         <CarouselDots
