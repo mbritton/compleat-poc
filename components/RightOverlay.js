@@ -53,21 +53,6 @@ const RightOverlay = (props) => {
     carouselContext.setOverlayOpen(doOpen);
   }, [carouselContext]);
 
-  const outputChevron = useCallback(() => {
-    return !carouselContext.overlayOpen ? (
-      <div className={styles.topControlsWrapper}>
-        <div className={styles.openOverlay} onClick={() => handleOpen(true)}>
-          <BiChevronsLeft></BiChevronsLeft>
-        </div>
-      </div>
-    ) : (
-      <BiChevronsRight
-        className={styles.windowIcon}
-        onClick={() => handleOpen(false)}
-      ></BiChevronsRight>
-    );
-  }, [handleOpen, carouselContext.overlayOpen]);
-
   return (
     <div
       className={
@@ -76,7 +61,6 @@ const RightOverlay = (props) => {
           : styles.rightOverlayClosed
       }
     >
-      <HeroSlideInsets slide={carouselContext.slide}></HeroSlideInsets>
       {carouselContext.overlayOpen && (
         <motion.div variants={stagger}>
           <motion.h1 variants={fadeInUp}>

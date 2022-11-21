@@ -69,11 +69,19 @@ export default function About({page}) {
       initial="initial"
       animate="animate"
     >
+      <div className={styles.aboutHero}>
+        <div className={styles.aboutHero__content}>&nbsp;</div>
+        <div className={styles.aboutHero__right}>&nbsp;</div>
+      </div>
       <div className={styles.container}>
-        <div className={styles.aboutHero}>
-          <SliceZone slices={page.data.slices} components={components} />
+        <div className={styles.sliceZone}>
+          <div className={styles.sliceZoneWhite}>
+            <SliceZone slices={page.data.slices} components={components} />
+            <div className={styles.rightVertical}></div>
+          </div>
+          <div className={styles.aboutHero__belowSquareL}></div>
+          <div className={styles.aboutHero__belowSquareR}></div>
         </div>
-        <div className={styles.homeContentSection}></div>
       </div>
     </motion.div>
   );

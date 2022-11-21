@@ -5,6 +5,7 @@ import styles from '@/styles/Hero.module.scss';
 import { motion } from 'framer-motion';
 import React, { useEffect, useState } from 'react';
 import { getFeatured, media, mediaByIndex } from '../media';
+import HeroSlideInsets from '@/components/HeroSlideInsets';
 
 const slides = Array.from(Array(media.length).keys());
 
@@ -73,6 +74,13 @@ const Hero = () => {
           }, 500);
         }}
       >
+        <Carousel
+          emblaContainerStyle={embla__container}
+          slideLookupFunction={mediaByIndex}
+          handleCarouselScrub={handleCarouselActions}
+          slides={slides}
+        ></Carousel>
+        <HeroSlideInsets slide={slide}></HeroSlideInsets>
         {overlayOpen && (
           <RightOverlay
             slide={slide}
@@ -81,13 +89,6 @@ const Hero = () => {
             handleSlide={handleCarouselActions}
           ></RightOverlay>
         )}
-
-        <Carousel
-          emblaContainerStyle={embla__container}
-          slideLookupFunction={mediaByIndex}
-          handleCarouselScrub={handleCarouselActions}
-          slides={slides}
-        ></Carousel>
       </motion.div>
     </CarouselContext.Provider>
   );

@@ -17,7 +17,7 @@ const Layout = ({ pages, children }) => {
           src={isHome ? brandingLogoSmall : brandingLogoSmall}
           width={287}
           height={86}
-          alt="Compleat Stair Logo"
+          alt="Compleat Stair"
         />
       </div>
     );

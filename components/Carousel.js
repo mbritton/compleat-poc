@@ -38,7 +38,7 @@ const Carousel = (props) => {
         <div style={props.emblaContainerStyle}>
           {stairTypeTitles.map((slideNode, index) => (
             <div className={styles.embla__slide} key={index}>
-              <img src={props.slideLookupFunction(index).src} alt={slideNode.title} />
+              <img className={styles.carouselImage} src={props.slideLookupFunction(index).src} alt={slideNode.title} />
             </div>
           ))}
         </div>

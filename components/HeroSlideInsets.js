@@ -40,7 +40,8 @@ const HeroSlideInsets = ({ slide }) => {
     console.log('slide', slide);
   }, [slide]);
   return (
-    <motion.div exit={{ opacity: 1 }}>
+    <motion.div exit={{ opacity: 1 }} className={styles.insetsOuterWrapper}>
+      <motion.div animate={fadeInUp} className={styles.insetsMiddleWrapper}>
       <motion.div animate={fadeInUp} className={styles.insetsWrapper}>
         <Image
           objectFit="cover"
@@ -48,13 +49,18 @@ const HeroSlideInsets = ({ slide }) => {
           src={typeof slide !== 'number' && slide.inset ? slide.inset.src : ''}
           width={600}
           height={266}
-          alt={typeof slide !== 'number' && slide.inset ? slide.inset.title : ''}
+          alt={
+            typeof slide !== 'number' && slide.inset ? slide.inset.title : ''
+          }
         />
       </motion.div>
       <div animate={fadeInRight} className={styles.insetsDescriptionWrapper}>
-        <h2>{typeof slide !== 'number' && slide.inset ? slide.inset.title : ''}</h2>
+        <h2>
+          {typeof slide !== 'number' && slide.inset ? slide.inset.title : ''}
+        </h2>
         {typeof slide !== 'number' && slide.inset ? slide.inset.content : ''}
       </div>
+      </motion.div>
     </motion.div>
   );
 };
