@@ -56,12 +56,6 @@ export default function About({page}) {
     );
   }, []);
 
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('page', page);
-    }, 0);
-  }, []);
-
   return (
     <motion.div
       variants={fadeInUp}
