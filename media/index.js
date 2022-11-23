@@ -22,7 +22,7 @@ import media1 from './images/media-1.jpg';
 import media2 from './images/media-2.jpg';
 import media3 from './images/media-3.jpg';
 import media4 from './images/media-4.jpg';
-import media5 from './images/media-5.jpeg';
+// import media5 from './images/media-5.jpeg';
 // Stair Types images
 import stairType1 from './images/stairType-1.jpg';
 import stairType2 from './images/stairType-2.jpg';
@@ -160,7 +160,7 @@ export const getCards = () => {
   ];
 };
 
-export const media = [media1, media2, media3, media4, media5];
+export const media = [media1, media2, media3, media4];
 export const cards = [card1, card2, card3, card4];
 export const cardBottoms = [card7, card7, card7, card7];
 export const stairTypes = [

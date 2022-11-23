@@ -65,15 +65,24 @@ export default function Home() {
       initial="initial"
       animate="animate"
     >
-        <Hero></Hero>
-        <motion.div variants={stagger} className={styles.heroBottomCards}>
-          <BottomCards cards={cards} />
-        </motion.div>
-        <div className={styles.homeContentSection}>
-          <div className={styles.homeContentChunk} data-aos="fade-up">
-            <StairTypes />
-          </div>
+      <Hero></Hero>
+      <motion.div variants={stagger} className={styles.heroBottomCards}>
+        <BottomCards cards={cards} />
+      </motion.div>
+      <div className={styles.homeContentSection}>
+        <div className={styles.homeContentChunk} data-aos="fade-up">
+          <StairTypes />
         </div>
+      </div>
+      <div className={styles.homeContentChunk} data-aos="fade-up">
+        <div className={styles.homeContentSectionBlank}></div>
+      </div>
+      <div className={styles.homeContentChunk} data-aos="fade-up">
+        <div className={styles.homeContentSectionBlank}></div>
+      </div>
+      <div className={styles.homeContentChunk} data-aos="fade-up">
+        <div className={styles.homeContentSectionBlank}></div>
+      </div>
     </motion.div>
   );
 }

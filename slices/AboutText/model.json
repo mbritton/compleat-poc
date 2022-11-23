@@ -28,6 +28,14 @@
             "allowTargetBlank": true,
             "multi": "paragraph"
           }
+        },
+        "abouthero_belowsquareL": {
+          "type": "Image",
+          "config": {
+            "label": "aboutHero_belowSquareL",
+            "constraint": {},
+            "thumbnails": []
+          }
         }
       },
       "items": {},

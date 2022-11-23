@@ -6,6 +6,7 @@ import { motion } from 'framer-motion';
 import { useEffect } from 'react';
 import { createClient } from '../prismicio';
 import { components } from '../slices';
+import { Image } from 'next/image';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
@@ -56,6 +57,10 @@ export default function About({page}) {
     );
   }, []);
 
+  useEffect(() => {
+    console.log(page);
+  });
+
   return (
     <motion.div
       variants={fadeInUp}
@@ -73,6 +78,14 @@ export default function About({page}) {
             <SliceZone slices={page.data.slices} components={components} />
             <div className={styles.rightVertical}></div>
           </div>
+          {/* <Image
+            objectFit="cover"
+            objectPosition="top left"
+            src={''}
+            width={154}
+            height={182}
+            alt="card"
+          /> */}
           <div className={styles.aboutHero__belowSquareL}></div>
           <div className={styles.aboutHero__belowSquareR}></div>
         </div>

@@ -61,6 +61,16 @@ interface AboutTextSliceDefaultPrimary {
      *
      */
     description: prismicT.RichTextField;
+    /**
+     * aboutHero_belowSquareL field in *AboutText → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: about_text.primary.abouthero_belowsquareL
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    abouthero_belowsquareL: prismicT.ImageField<never>;
 }
 /**
  * Default variation for AboutText Slice
