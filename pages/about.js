@@ -3,7 +3,7 @@ import { SliceZone } from '@prismicio/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import { useCallback, useEffect } from 'react';
 import { createClient } from '../prismicio';
 import { components } from '../slices';
 import { Image } from 'next/image';
@@ -58,8 +58,18 @@ export default function About({page}) {
   }, []);
 
   useEffect(() => {
-    console.log(page);
-  });
+    // console.log(page.data.slices[0].primary.abouthero_belowsquarel.url);
+    console.log('SLICES', getSlices(page.data.slices));
+  }, []);
+
+  const getSlices = useCallback((pageData) => {
+    let newAr = [];
+    pageData ? (
+    pageData.map((slice, i) => {
+        i > 0 ? newAr.push(slice) : null;
+      })) : null;
+    return newAr;
+  }, []);
 
   return (
     <motion.div
@@ -86,7 +96,7 @@ export default function About({page}) {
             height={182}
             alt="card"
           /> */}
-          <div className={styles.aboutHero__belowSquareL}></div>
+          <div className={styles.aboutHero__belowSquareL}>asass</div>
           <div className={styles.aboutHero__belowSquareR}></div>
         </div>
       </div>

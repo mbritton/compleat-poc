@@ -12,6 +12,9 @@
           "choices": {
             "about_text": {
               "type": "SharedSlice"
+            },
+            "about_images": {
+              "type": "SharedSlice"
             }
           }
         }

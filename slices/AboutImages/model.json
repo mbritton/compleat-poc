@@ -1,0 +1,74 @@
+{
+  "id": "about_images",
+  "type": "SharedSlice",
+  "name": "AboutImages",
+  "description": "AboutImages",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "AboutImages",
+      "primary": {
+        "abouthero_belowsquarel": {
+          "type": "Image",
+          "config": {
+            "label": "aboutHero_belowSquareL",
+            "constraint": {
+              "width": 2800,
+              "height": 3197
+            },
+            "thumbnails": []
+          }
+        },
+        "aboutHero_belowSquareR": {
+          "type": "Image",
+          "config": {
+            "label": "aboutHero_belowSquareR",
+            "constraint": {
+              "width": 1452,
+              "height": 1936
+            },
+            "thumbnails": []
+          }
+        },
+        "abouthero_content": {
+          "type": "Image",
+          "config": {
+            "label": "aboutHero_content",
+            "constraint": {
+              "width": 2800,
+              "height": 1860
+            },
+            "thumbnails": []
+          }
+        },
+        "aboutHero_right": {
+          "type": "Image",
+          "config": {
+            "label": "aboutHero_right",
+            "constraint": {
+              "width": 2848,
+              "height": 4288
+            },
+            "thumbnails": []
+          }
+        },
+        "rightvertical": {
+          "type": "Image",
+          "config": {
+            "label": "rightVertical",
+            "constraint": {
+              "width": 200,
+              "height": 2400
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

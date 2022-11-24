@@ -1,6 +1,7 @@
 {
   "_cts": {
-    "about_page_text": {}
+    "about_page_text": {},
+    "about_page_images": {}
   },
   "slices": {
     "AboutText": {
@@ -17,9 +18,27 @@
               "patternType": "HEADING",
               "blocks": 1
             }
+          }
+        }
+      }
+    },
+    "AboutImages": {
+      "default": {
+        "primary": {
+          "abouthero_belowsquarel": {
+            "content": "https://images.prismic.io/compleat/6c5ae81e-a3d9-4bbb-be89-975734621d17_about-01.png"
           },
-          "abouthero_belowsquareL": {
+          "abouthero_content": {
             "content": "https://images.prismic.io/compleat/0b4ea9a7-dd91-472a-92c7-f1de944c8723_about-00.png"
+          },
+          "aboutHero_belowSquareR": {
+            "content": "https://images.prismic.io/compleat/21558516-b1e0-45dc-b557-debcb25b8e44_about-04.png"
+          },
+          "aboutHero_right": {
+            "content": "https://images.prismic.io/compleat/dd7bbfb8-1f4f-4ee7-89f4-1ecd4cf7cdff_about-06.png"
+          },
+          "rightvertical": {
+            "content": "https://images.prismic.io/compleat/d0f0b32b-bf6c-49c7-aeab-86f4342d53b4_about-05.png"
           }
         }
       }

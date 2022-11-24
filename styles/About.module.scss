@@ -53,23 +53,29 @@
 }
 
 .aboutHero__belowSquareL {
-  border: 1px solid #000000;
   width: 222px;
   height: 196px;
   position: absolute; 
   background-color: #000000;
   top: 310px;
   left: -455px;
+  background-image: url("../media/images/about-01.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .aboutHero__belowSquareR {
-  border: 1px solid #000000;
   width: 222px;
   height: 196px;
   position: absolute; 
   background-color: #000000;
   top: 310px;
-  left: -220px;
+  left: -222px;
+  background-image: url("../media/images/about-04.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 .container {
