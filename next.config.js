@@ -4,6 +4,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: false,
   images: {
+    domains: ['images.prismic.io'],
     remotePatterns: [
       {
         protocol: 'https',
