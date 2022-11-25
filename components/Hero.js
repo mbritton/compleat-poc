@@ -20,7 +20,7 @@ const scaleUpVertical = {
     height: 300,
     opacity: 1,
     transition: {
-      duration: .5,
+      duration: 0.5,
       ease: easing,
     },
   },
@@ -37,7 +37,6 @@ const embla__container = {
 };
 
 const Hero = () => {
-  // Used in context
   const [slide, setSlide] = useState(slides[0]);
   const [overlayOpen, setOverlayOpen] = useState(false);
   const [selectedNum, setSelectedNum] = useState(0);

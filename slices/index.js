@@ -2,13 +2,16 @@
 
 import AboutImages from './AboutImages';
 import AboutText from './AboutText';
+import Logos from './Logos';
 
 export {
 	AboutImages,
 	AboutText,
+	Logos,
 };
 
 export const components = {
 	about_images: AboutImages,
 	about_text: AboutText,
+	logos: Logos,
 };

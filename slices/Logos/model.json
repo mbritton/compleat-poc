@@ -1,0 +1,30 @@
+{
+  "id": "logos",
+  "type": "SharedSlice",
+  "name": "Logos",
+  "description": "Logos",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Logos",
+      "primary": {
+        "logo_white_text": {
+          "type": "Image",
+          "config": {
+            "label": "logo_white_text",
+            "constraint": {
+              "width": 573,
+              "height": 174
+            },
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

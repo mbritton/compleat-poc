@@ -64,7 +64,36 @@ type AboutPageTextDocumentDataSlicesSlice = AboutTextSlice | AboutImagesSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type AboutPageTextDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutPageTextDocumentData>, "about_page_text", Lang>;
-export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument;
+/** Content for Logos documents */
+interface LogosDocumentData {
+    /**
+     * Slice Zone field in *Logos*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logos.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<LogosDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Logos → Slice Zone*
+ *
+ */
+type LogosDocumentDataSlicesSlice = LogosSlice;
+/**
+ * Logos document from Prismic
+ *
+ * - **API ID**: `logos`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LogosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<LogosDocumentData>, "logos", Lang>;
+export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument | LogosDocument;
 /**
  * Primary content in AboutImages → Primary
  *
@@ -193,11 +222,50 @@ type AboutTextSliceVariation = AboutTextSliceDefault;
  *
  */
 export type AboutTextSlice = prismicT.SharedSlice<"about_text", AboutTextSliceVariation>;
+/**
+ * Primary content in Logos → Primary
+ *
+ */
+interface LogosSliceDefaultPrimary {
+    /**
+     * logo_white_text field in *Logos → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logos.primary.logo_white_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_white_text: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for Logos Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `Logos`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogosSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<LogosSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *Logos*
+ *
+ */
+type LogosSliceVariation = LogosSliceDefault;
+/**
+ * Logos Shared Slice
+ *
+ * - **API ID**: `logos`
+ * - **Description**: `Logos`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogosSlice = prismicT.SharedSlice<"logos", LogosSliceVariation>;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice };
+        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
     }
 }

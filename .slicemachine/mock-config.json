@@ -1,7 +1,8 @@
 {
   "_cts": {
     "about_page_text": {},
-    "about_page_images": {}
+    "about_page_images": {},
+    "logos": {}
   },
   "slices": {
     "AboutText": {
@@ -39,6 +40,15 @@
           },
           "rightvertical": {
             "content": "https://images.prismic.io/compleat/d0f0b32b-bf6c-49c7-aeab-86f4342d53b4_about-05.png"
+          }
+        }
+      }
+    },
+    "Logos": {
+      "default": {
+        "primary": {
+          "logo_white_text": {
+            "content": "https://images.prismic.io/compleat/85bc0a2a-bb95-46db-b1f5-a9f048f413c1_logo-white-text.png"
           }
         }
       }
