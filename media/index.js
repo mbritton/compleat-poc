@@ -1,8 +1,8 @@
 // Home page bottom cards, top row
-import card1 from './images/media-06.jpg';
-import card2 from './images/media-11.jpg';
-import card3 from './images/media-12.jpg';
-import card4 from './images/media-14.jpg';
+import card1 from './images/bottom_cards_00.jpg';
+import card2 from './images/bottom_cards_01.jpg';
+import card3 from './images/bottom_cards_02.jpg';
+import card4 from './images/bottom_cards_03.jpg';
 // Home page bottom cards, bottom row
 import card5 from './images/media-07.jpg';
 import card6 from './images/media-08.jpg';

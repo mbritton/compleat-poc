@@ -91,12 +91,12 @@ export default function Home({ page }) {
   );
 }
 
-// export async function getStaticProps({ previewData }) {
-//   const client = createClient({ previewData });
-//   const page = await client.getSingle('home_bottom_cards');
-//   return {
-//     props: {
-//       page,
-//     },
-//   };
-// }
+export async function getStaticProps({ previewData }) {
+  const client = createClient({ previewData });
+  const page = await client.getByID('home_bottom_cards');
+  return {
+    props: {
+      page,
+    },
+  };
+}

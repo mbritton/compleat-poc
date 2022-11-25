@@ -257,7 +257,10 @@
                   "type": "Image",
                   "config": {
                     "label": "home_card00_image",
-                    "constraint": {},
+                    "constraint": {
+                      "width": 576,
+                      "height": 720
+                    },
                     "thumbnails": []
                   }
                 },
@@ -283,7 +286,10 @@
                   "type": "Image",
                   "config": {
                     "label": "home_card01_image",
-                    "constraint": {},
+                    "constraint": {
+                      "width": 576,
+                      "height": 720
+                    },
                     "thumbnails": []
                   }
                 },
@@ -309,7 +315,10 @@
                   "type": "Image",
                   "config": {
                     "label": "home_card02_image",
-                    "constraint": {},
+                    "constraint": {
+                      "width": 576,
+                      "height": 720
+                    },
                     "thumbnails": []
                   }
                 },
@@ -335,7 +344,10 @@
                   "type": "Image",
                   "config": {
                     "label": "home_card03_image",
-                    "constraint": {},
+                    "constraint": {
+                      "width": 576,
+                      "height": 720
+                    },
                     "thumbnails": []
                   }
                 }
@@ -356,94 +368,94 @@
               "home_card00_title": [
                 {
                   "type": "heading2",
-                  "text": "Flies",
+                  "text": "Since",
                   "spans": []
                 }
               ],
               "home_card00_text": [
                 {
                   "type": "paragraph",
-                  "text": "Deserunt ut dolor ullamco eu irure occaecat commodo sint consectetur incididunt esse deserunt sunt incididunt excepteur. Est eu non nisi.",
+                  "text": "Quis magna excepteur Lorem fugiat aliquip sit fugiat fugiat sit incididunt excepteur. Irure excepteur do laborum non dolore exercitation.",
                   "spans": []
                 }
               ],
               "home_card00_image": {
                 "dimensions": {
-                  "width": 900,
-                  "height": 500
+                  "width": 576,
+                  "height": 720
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1593642532973-d31b6557fa68"
+                "url": "https://images.prismic.io/compleat/15c58f52-fcad-4e8c-88e5-59a84e3638c9_bottom_cards_00.jpg"
               },
               "home_card01_title": [
                 {
                   "type": "heading2",
-                  "text": "Putting",
+                  "text": "Standard",
                   "spans": []
                 }
               ],
               "home_card01_text": [
                 {
                   "type": "paragraph",
-                  "text": "Lorem veniam nisi sit elit adipisicing nisi commodo.",
+                  "text": "Magna labore cupidatat in dolor labore reprehenderit anim do exercitation consectetur. Irure velit laboris veniam cupidatat. Eu deserunt cillum aliquip elit proident ex irure pariatur anim.",
                   "spans": []
                 }
               ],
               "home_card01_image": {
                 "dimensions": {
-                  "width": 900,
-                  "height": 500
+                  "width": 576,
+                  "height": 720
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"
+                "url": "https://images.prismic.io/compleat/8bcadf95-ce88-49d5-9bdd-b5db4f965850_bottom_cards_01.jpg"
               },
               "home_card02_title": [
                 {
                   "type": "heading2",
-                  "text": "Deeply",
+                  "text": "Character",
                   "spans": []
                 }
               ],
               "home_card02_text": [
                 {
                   "type": "paragraph",
-                  "text": "Culpa excepteur consequat veniam cupidatat aliquip nulla veniam.",
+                  "text": "Sint eiusmod Lorem mollit. Nisi fugiat culpa laborum duis dolor non aliqua consequat Lorem.",
                   "spans": []
                 }
               ],
               "home_card02_image": {
                 "dimensions": {
-                  "width": 900,
-                  "height": 500
+                  "width": 576,
+                  "height": 720
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"
+                "url": "https://images.prismic.io/compleat/48997fc0-0919-482f-a80d-688925e74118_bottom_cards_02.jpg"
               },
               "home_card03_title": [
                 {
                   "type": "heading2",
-                  "text": "Became",
+                  "text": "Rocky",
                   "spans": []
                 }
               ],
               "home_card03_text": [
                 {
                   "type": "paragraph",
-                  "text": "Commodo veniam amet qui. Magna culpa occaecat aliqua nisi aute do ad ullamco velit nisi.",
+                  "text": "Cillum eu culpa adipisicing. Culpa anim commodo pariatur in magna cillum in sunt qui dolore proident do quis.",
                   "spans": []
                 }
               ],
               "home_card03_image": {
                 "dimensions": {
-                  "width": 900,
-                  "height": 500
+                  "width": 576,
+                  "height": 720
                 },
                 "alt": null,
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"
+                "url": "https://images.prismic.io/compleat/f42a793d-0087-490d-89bf-fcb87bb84175_bottom_cards_03.jpg"
               }
             },
             "slice_type": "home_bottom_cards"

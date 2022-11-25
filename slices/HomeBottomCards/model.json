@@ -33,7 +33,10 @@
           "type": "Image",
           "config": {
             "label": "home_card00_image",
-            "constraint": {},
+            "constraint": {
+              "width": 576,
+              "height": 720
+            },
             "thumbnails": []
           }
         },
@@ -59,7 +62,10 @@
           "type": "Image",
           "config": {
             "label": "home_card01_image",
-            "constraint": {},
+            "constraint": {
+              "width": 576,
+              "height": 720
+            },
             "thumbnails": []
           }
         },
@@ -85,7 +91,10 @@
           "type": "Image",
           "config": {
             "label": "home_card02_image",
-            "constraint": {},
+            "constraint": {
+              "width": 576,
+              "height": 720
+            },
             "thumbnails": []
           }
         },
@@ -111,7 +120,10 @@
           "type": "Image",
           "config": {
             "label": "home_card03_image",
-            "constraint": {},
+            "constraint": {
+              "width": 576,
+              "height": 720
+            },
             "thumbnails": []
           }
         }

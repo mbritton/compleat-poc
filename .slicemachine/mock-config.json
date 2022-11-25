@@ -107,6 +107,18 @@
               "patternType": "PARAGRAPH",
               "blocks": 1
             }
+          },
+          "home_card00_image": {
+            "content": "https://images.prismic.io/compleat/15c58f52-fcad-4e8c-88e5-59a84e3638c9_bottom_cards_00.jpg"
+          },
+          "home_card01_image": {
+            "content": "https://images.prismic.io/compleat/8bcadf95-ce88-49d5-9bdd-b5db4f965850_bottom_cards_01.jpg"
+          },
+          "home_card02_image": {
+            "content": "https://images.prismic.io/compleat/48997fc0-0919-482f-a80d-688925e74118_bottom_cards_02.jpg"
+          },
+          "home_card03_image": {
+            "content": "https://images.prismic.io/compleat/f42a793d-0087-490d-89bf-fcb87bb84175_bottom_cards_03.jpg"
           }
         }
       }
