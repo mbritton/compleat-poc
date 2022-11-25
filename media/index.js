@@ -8,12 +8,6 @@ import card5 from './images/media-07.jpg';
 import card6 from './images/media-08.jpg';
 import card7 from './images/media-13.jpg';
 import card8 from './images/media-15.jpg';
-// Right Overlay Inset Images
-import inset1 from './images/right-overlay-inset-1.jpg';
-import inset2 from './images/right-overlay-inset-2.jpg';
-import inset3 from './images/right-overlay-inset-1.jpg';
-import inset4 from './images/right-overlay-inset-1.jpg';
-import inset5 from './images/right-overlay-inset-1.jpg';
 // Embla carousel images
 import media1 from './images/media-1.jpg';
 import media2 from './images/media-2.jpg';
@@ -86,7 +80,7 @@ export const getFeatured = (index) => {
       inset: {
         title: 'Holiday House',
         content: 'Sit irure excepteur cillum occaecat et veniam commodo.',
-        src: inset1,
+        src: 'https://images.prismic.io/compleat/2b54c62d-17dc-401f-8df8-f85fbf0fb6ba_right-overlay-inset-1.jpg',
       },
     },
     {
@@ -96,7 +90,7 @@ export const getFeatured = (index) => {
       inset: {
         title: 'Inset Title 2',
         content: 'Inset Content 2 Exercitation id reprehenderit ad occaecat.',
-        src: inset2,
+        src: 'https://images.prismic.io/compleat/81d2bcbb-d658-4b18-a42d-5d4d18a0d1b3_right-overlay-inset-2.jpg',
       },
     },
     {
@@ -106,7 +100,7 @@ export const getFeatured = (index) => {
       inset: {
         title: 'Inset Title 3',
         content: 'Inset Content 3',
-        src: inset3,
+        src: 'https://images.prismic.io/compleat/2b54c62d-17dc-401f-8df8-f85fbf0fb6ba_right-overlay-inset-1.jpg',
       },
     },
     {
@@ -115,7 +109,7 @@ export const getFeatured = (index) => {
       inset: {
         title: 'Inset Title 4',
         content: 'Inset Content 4',
-        src: inset4,
+        src: 'https://images.prismic.io/compleat/2b54c62d-17dc-401f-8df8-f85fbf0fb6ba_right-overlay-inset-1.jpg',
       },
     },
     {
@@ -125,7 +119,7 @@ export const getFeatured = (index) => {
       inset: {
         title: 'Inset Title 5',
         content: 'Inset Content 5',
-        src: inset5,
+        src: 'https://images.prismic.io/compleat/2b54c62d-17dc-401f-8df8-f85fbf0fb6ba_right-overlay-inset-1.jpg',
       },
     },
   ];
@@ -185,11 +179,11 @@ export const productTests = [
   productTest12,
 ];
 
-const rightOverlayIndexes = [inset1, inset2, inset3, inset4, inset5];
+// const rightOverlayIndexes = [inset1, inset2, inset3, inset4, inset5];
 export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
 export const stairTypesByIndex = (index) =>
   stairTypes[index % stairTypes.length];
-export const rightOverlayInsetsByIndex = (index) =>
-  rightOverlayIndexes[index % rightOverlayIndexes.length];
+// export const rightOverlayInsetsByIndex = (index) =>
+//   rightOverlayIndexes[index % rightOverlayIndexes.length];

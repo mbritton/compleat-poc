@@ -67,6 +67,17 @@ export type AboutPageTextDocument<Lang extends string = string> = prismicT.Prism
 /** Content for Home Bottom Cards documents */
 interface HomeBottomCardsDocumentData {
     /**
+     * test_static_field field in *Home Bottom Cards*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.test_static_field
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    test_static_field: prismicT.RichTextField;
+    /**
      * Slice Zone field in *Home Bottom Cards*
      *
      * - **Field Type**: Slice Zone

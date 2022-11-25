@@ -4,11 +4,11 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: false,
   images: {
-    domains: ['images.prismic.io'],
+    domains: ['**.prismic.io'],
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.prismic.io',
+        hostname: '**.prismic.io',
         port: '',
         pathname: '/compleat/**',
       },

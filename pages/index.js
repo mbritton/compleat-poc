@@ -7,8 +7,6 @@ import { motion } from 'framer-motion';
 import { getCards } from '../media';
 import AOS from 'aos';
 import { useEffect } from 'react';
-import { createClient } from '../prismicio';
-import { components } from '../slices';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -89,14 +87,4 @@ export default function Home({ page }) {
       </div>
     </motion.div>
   );
-}
-
-export async function getStaticProps({ previewData }) {
-  const client = createClient({ previewData });
-  const page = await client.getSingle('about_page_text');
-  return {
-    props: {
-      page,
-    },
-  };
 }
