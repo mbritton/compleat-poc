@@ -2,7 +2,8 @@
   "_cts": {
     "about_page_text": {},
     "about_page_images": {},
-    "logos": {}
+    "logos": {},
+    "home_bottom_cards": {}
   },
   "slices": {
     "AboutText": {
@@ -49,6 +50,63 @@
         "primary": {
           "logo_white_text": {
             "content": "https://images.prismic.io/compleat/85bc0a2a-bb95-46db-b1f5-a9f048f413c1_logo-white-text.png"
+          },
+          "logo_black_text": {
+            "content": "https://images.prismic.io/compleat/402b4afe-3fbd-4aca-9184-e374ac5f5041_logo-black-text-sm.png"
+          }
+        }
+      }
+    },
+    "HomeBottomCards": {
+      "default": {
+        "primary": {
+          "home_card00_title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "home_card00_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "home_card01_title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "home_card01_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "home_card02_title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "home_card02_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
+          },
+          "home_card03_title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          },
+          "home_card03_text": {
+            "config": {
+              "patternType": "PARAGRAPH",
+              "blocks": 1
+            }
           }
         }
       }

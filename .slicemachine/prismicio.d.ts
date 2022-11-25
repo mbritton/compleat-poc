@@ -64,6 +64,35 @@ type AboutPageTextDocumentDataSlicesSlice = AboutTextSlice | AboutImagesSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type AboutPageTextDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<AboutPageTextDocumentData>, "about_page_text", Lang>;
+/** Content for Home Bottom Cards documents */
+interface HomeBottomCardsDocumentData {
+    /**
+     * Slice Zone field in *Home Bottom Cards*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<HomeBottomCardsDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Home Bottom Cards → Slice Zone*
+ *
+ */
+type HomeBottomCardsDocumentDataSlicesSlice = never;
+/**
+ * Home Bottom Cards document from Prismic
+ *
+ * - **API ID**: `home_bottom_cards`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeBottomCardsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomeBottomCardsDocumentData>, "home_bottom_cards", Lang>;
 /** Content for Logos documents */
 interface LogosDocumentData {
     /**
@@ -93,7 +122,7 @@ type LogosDocumentDataSlicesSlice = LogosSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type LogosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<LogosDocumentData>, "logos", Lang>;
-export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument | LogosDocument;
+export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument | HomeBottomCardsDocument | LogosDocument;
 /**
  * Primary content in AboutImages → Primary
  *
@@ -223,6 +252,155 @@ type AboutTextSliceVariation = AboutTextSliceDefault;
  */
 export type AboutTextSlice = prismicT.SharedSlice<"about_text", AboutTextSliceVariation>;
 /**
+ * Primary content in HomeBottomCards → Primary
+ *
+ */
+interface HomeBottomCardsSliceDefaultPrimary {
+    /**
+     * home_card00_title field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Add a title for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card00_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card00_title: prismicT.TitleField;
+    /**
+     * home_card00_text field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Add content for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card00_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card00_text: prismicT.RichTextField;
+    /**
+     * home_card00_image field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.primary.home_card00_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    home_card00_image: prismicT.ImageField<never>;
+    /**
+     * home_card01_title field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Add a title for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card01_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card01_title: prismicT.TitleField;
+    /**
+     * home_card01_text field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Add content for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card01_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card01_text: prismicT.RichTextField;
+    /**
+     * home_card01_image field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.primary.home_card01_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    home_card01_image: prismicT.ImageField<never>;
+    /**
+     * home_card02_title field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Add a title for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card02_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card02_title: prismicT.TitleField;
+    /**
+     * home_card02_text field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Add content for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card02_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card02_text: prismicT.RichTextField;
+    /**
+     * home_card02_image field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.primary.home_card02_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    home_card02_image: prismicT.ImageField<never>;
+    /**
+     * home_card03_title field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: Add a title for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card03_title
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card03_title: prismicT.TitleField;
+    /**
+     * home_card03_text field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: Add content for this card
+     * - **API ID Path**: home_bottom_cards.primary.home_card03_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    home_card03_text: prismicT.RichTextField;
+    /**
+     * home_card03_image field in *HomeBottomCards → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.primary.home_card03_image
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    home_card03_image: prismicT.ImageField<never>;
+}
+/**
+ * Default variation for HomeBottomCards Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `HomeBottomCards`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HomeBottomCardsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeBottomCardsSliceDefaultPrimary>, never>;
+/**
+ * Slice variation for *HomeBottomCards*
+ *
+ */
+type HomeBottomCardsSliceVariation = HomeBottomCardsSliceDefault;
+/**
+ * HomeBottomCards Shared Slice
+ *
+ * - **API ID**: `home_bottom_cards`
+ * - **Description**: `HomeBottomCards`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type HomeBottomCardsSlice = prismicT.SharedSlice<"home_bottom_cards", HomeBottomCardsSliceVariation>;
+/**
  * Primary content in Logos → Primary
  *
  */
@@ -237,6 +415,16 @@ interface LogosSliceDefaultPrimary {
      *
      */
     logo_white_text: prismicT.ImageField<never>;
+    /**
+     * logo_black_text field in *Logos → Primary*
+     *
+     * - **Field Type**: Image
+     * - **Placeholder**: *None*
+     * - **API ID Path**: logos.primary.logo_black_text
+     * - **Documentation**: https://prismic.io/docs/core-concepts/image
+     *
+     */
+    logo_black_text: prismicT.ImageField<never>;
 }
 /**
  * Default variation for Logos Slice
@@ -266,6 +454,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
+        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, HomeBottomCardsDocumentData, HomeBottomCardsDocumentDataSlicesSlice, HomeBottomCardsDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, HomeBottomCardsSliceDefaultPrimary, HomeBottomCardsSliceDefault, HomeBottomCardsSliceVariation, HomeBottomCardsSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
     }
 }

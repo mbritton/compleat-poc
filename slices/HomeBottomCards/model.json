@@ -1,0 +1,123 @@
+{
+  "id": "home_bottom_cards",
+  "type": "SharedSlice",
+  "name": "HomeBottomCards",
+  "description": "HomeBottomCards",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "HomeBottomCards",
+      "primary": {
+        "home_card00_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card00_title",
+            "placeholder": "Add a title for this card",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "home_card00_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card00_text",
+            "placeholder": "Add content for this card",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,rtl"
+          }
+        },
+        "home_card00_image": {
+          "type": "Image",
+          "config": {
+            "label": "home_card00_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "home_card01_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card01_title",
+            "placeholder": "Add a title for this card",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "home_card01_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card01_text",
+            "placeholder": "Add content for this card",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,rtl,list-item,o-list-item,strong,em"
+          }
+        },
+        "home_card01_image": {
+          "type": "Image",
+          "config": {
+            "label": "home_card01_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "home_card02_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card02_title",
+            "placeholder": "Add a title for this card",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "home_card02_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card02_text",
+            "placeholder": "Add content for this card",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink,list-item,o-list-item,rtl,strong,em"
+          }
+        },
+        "home_card02_image": {
+          "type": "Image",
+          "config": {
+            "label": "home_card02_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "home_card03_title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card03_title",
+            "placeholder": "Add a title for this card",
+            "allowTargetBlank": true,
+            "single": "heading2"
+          }
+        },
+        "home_card03_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "home_card03_text",
+            "placeholder": "Add content for this card",
+            "allowTargetBlank": true,
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,rtl"
+          }
+        },
+        "home_card03_image": {
+          "type": "Image",
+          "config": {
+            "label": "home_card03_image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import { getCards } from '../media';
 import AOS from 'aos';
 import { useEffect } from 'react';
+import usePrismicSlides from '@/hooks/usePrismicSlides';
+import { createClient } from '../prismicio';
 
 const easing = [1, 0.5, 0.5, 0.5];
 
@@ -31,7 +33,7 @@ const stagger = {
   },
 };
 
-export default function Home() {
+export default function Home({ page }) {
   const cards = getCards();
   useEffect(() => {
     setTimeout(
@@ -57,6 +59,7 @@ export default function Home() {
         }),
       500,
     );
+    console.log('page!', page);
   }, []);
   return (
     <motion.div
@@ -87,3 +90,13 @@ export default function Home() {
     </motion.div>
   );
 }
+
+// export async function getStaticProps({ previewData }) {
+//   const client = createClient({ previewData });
+//   const page = await client.getSingle('home_bottom_cards');
+//   return {
+//     props: {
+//       page,
+//     },
+//   };
+// }

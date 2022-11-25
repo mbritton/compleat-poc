@@ -1,0 +1,9 @@
+import MyComponent from '../../../../slices/HomeBottomCards';
+
+export default {
+  title: 'slices/HomeBottomCards'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","version":"sktwi1xtmkfgx8626","items":[{}],"primary":{"home_card00_title":[{"type":"heading2","text":"Flies","spans":[]}],"home_card00_text":[{"type":"paragraph","text":"Deserunt ut dolor ullamco eu irure occaecat commodo sint consectetur incididunt esse deserunt sunt incididunt excepteur. Est eu non nisi.","spans":[]}],"home_card00_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1593642532973-d31b6557fa68"},"home_card01_title":[{"type":"heading2","text":"Putting","spans":[]}],"home_card01_text":[{"type":"paragraph","text":"Lorem veniam nisi sit elit adipisicing nisi commodo.","spans":[]}],"home_card01_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1596195689404-24d8a8d1c6ea"},"home_card02_title":[{"type":"heading2","text":"Deeply","spans":[]}],"home_card02_text":[{"type":"paragraph","text":"Culpa excepteur consequat veniam cupidatat aliquip nulla veniam.","spans":[]}],"home_card02_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1587613865763-4b8b0d19e8ab"},"home_card03_title":[{"type":"heading2","text":"Became","spans":[]}],"home_card03_text":[{"type":"paragraph","text":"Commodo veniam amet qui. Magna culpa occaecat aliqua nisi aute do ad ullamco velit nisi.","spans":[]}],"home_card03_image":{"dimensions":{"width":900,"height":500},"alt":null,"copyright":null,"url":"https://images.unsplash.com/photo-1589321578146-4c1ba445cc88"}},"slice_type":"home_bottom_cards","id":"_Default"}} />
+_Default.storyName = ''

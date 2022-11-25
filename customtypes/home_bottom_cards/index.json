@@ -1,0 +1,17 @@
+{
+  "id": "home_bottom_cards",
+  "label": "Home Bottom Cards",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {}
+        }
+      }
+    }
+  }
+}

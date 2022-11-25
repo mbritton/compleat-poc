@@ -21,6 +21,17 @@
             },
             "thumbnails": []
           }
+        },
+        "logo_black_text": {
+          "type": "Image",
+          "config": {
+            "label": "logo_black_text",
+            "constraint": {
+              "width": 573,
+              "height": 172
+            },
+            "thumbnails": []
+          }
         }
       },
       "items": {},
