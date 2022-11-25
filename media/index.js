@@ -1,6 +1,6 @@
 // All branding goes here
-import logo from './images/logo-white-text.png'; 
-import logoSmall from './images/logo-black-text-sm.png'; 
+import logo from './images/logo-white-text.png';
+import logoSmall from './images/logo-black-text-sm.png';
 // Home page bottom cards, top row
 import card1 from './images/media-06.jpg';
 import card2 from './images/media-11.jpg';
@@ -192,7 +192,8 @@ const rightOverlayIndexes = [inset1, inset2, inset3, inset4, inset5];
 export const cardBottomsByIndex = (index) => cardBottoms[index % cards.length];
 export const cardByIndex = (index) => cards[index % cards.length];
 export const mediaByIndex = (index) => media[index % media.length];
-export const stairTypesByIndex = (index) => stairTypes[index % stairTypes.length];
+export const stairTypesByIndex = (index) =>
+  stairTypes[index % stairTypes.length];
 export const rightOverlayInsetsByIndex = (index) =>
   rightOverlayIndexes[index % rightOverlayIndexes.length];
 export const brandingLogo = logo;

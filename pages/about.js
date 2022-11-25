@@ -1,12 +1,14 @@
+import usePrismicSlides from '@/hooks/usePrismicSlides';
 import styles from '@/styles/About.module.scss';
 import { SliceZone } from '@prismicio/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { motion } from 'framer-motion';
-import { useCallback, useEffect } from 'react';
+import { useEffect } from 'react';
 import { createClient } from '../prismicio';
 import { components } from '../slices';
-import { Image } from 'next/image';
+
+const PAGE_NAME = 'about';
 
 const easing = [0.6, 0.5, 0.1, 1];
 
@@ -30,7 +32,9 @@ const stagger = {
   },
 };
 
-export default function About({page}) {
+export default function About({ page }) {
+  const { outputImageURL, outputTextSlices } = usePrismicSlides();
+
   useEffect(() => {
     setTimeout(
       () =>
@@ -55,20 +59,7 @@ export default function About({page}) {
         }),
       1000,
     );
-  }, []);
-
-  useEffect(() => {
-    // console.log(page.data.slices[0].primary.abouthero_belowsquarel.url);
-    console.log('SLICES', getSlices(page.data.slices));
-  }, []);
-
-  const getSlices = useCallback((pageData) => {
-    let newAr = [];
-    pageData ? (
-    pageData.map((slice, i) => {
-        i > 0 ? newAr.push(slice) : null;
-      })) : null;
-    return newAr;
+    console.log('PAGE', page);
   }, []);
 
   return (
@@ -79,25 +70,71 @@ export default function About({page}) {
       animate="animate"
     >
       <div className={styles.aboutHero}>
-        <div className={styles.aboutHero__content}>&nbsp;</div>
-        <div className={styles.aboutHero__right}>&nbsp;</div>
+        <div
+          className={styles.aboutHero__content}
+          style={{
+            backgroundImage: outputImageURL(
+              page.data.slices,
+              `${PAGE_NAME}_images`,
+              `${PAGE_NAME}hero_content`,
+            ),
+          }}
+        >
+          &nbsp;
+        </div>
+        <div
+          className={styles.aboutHero__right}
+          style={{
+            backgroundImage: outputImageURL(
+              page.data.slices,
+              `${PAGE_NAME}_images`,
+              `${PAGE_NAME}Hero_right`,
+            ),
+          }}
+        >
+          &nbsp;
+        </div>
       </div>
       <div className={styles.container}>
         <div className={styles.sliceZone}>
           <div className={styles.sliceZoneWhite}>
-            <SliceZone slices={page.data.slices} components={components} />
-            <div className={styles.rightVertical}></div>
+            <SliceZone
+              slices={outputTextSlices(page.data.slices, `${PAGE_NAME}_text`)}
+              components={components}
+            />
+            <div
+              className={styles.rightVertical}
+              style={{
+                backgroundImage: outputImageURL(
+                  page.data.slices,
+                  `${PAGE_NAME}_images`,
+                  'rightvertical',
+                ),
+              }}
+            ></div>
           </div>
-          {/* <Image
-            objectFit="cover"
-            objectPosition="top left"
-            src={''}
-            width={154}
-            height={182}
-            alt="card"
-          /> */}
-          <div className={styles.aboutHero__belowSquareL}>asass</div>
-          <div className={styles.aboutHero__belowSquareR}></div>
+          <div
+            className={styles.aboutHero__belowSquareL}
+            style={{
+              backgroundImage: outputImageURL(
+                page.data.slices,
+                `${PAGE_NAME}_images`,
+                'abouthero_belowsquarel',
+              ),
+            }}
+          >
+            &nbsp;
+          </div>
+          <div
+            className={styles.aboutHero__belowSquareR}
+            style={{
+              backgroundImage: outputImageURL(
+                page.data.slices,
+                `${PAGE_NAME}_images`,
+                'aboutHero_belowSquareR',
+              ),
+            }}
+          ></div>
         </div>
       </div>
     </motion.div>

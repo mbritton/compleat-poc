@@ -74,6 +74,7 @@ export default function Home() {
           <StairTypes />
         </div>
       </div>
+      <p></p>
       <div className={styles.homeContentChunk} data-aos="fade-up">
         <div className={styles.homeContentSectionBlank}></div>
       </div>
