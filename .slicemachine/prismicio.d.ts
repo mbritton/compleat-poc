@@ -133,7 +133,36 @@ type LogosDocumentDataSlicesSlice = LogosSlice;
  * @typeParam Lang - Language API ID of the document.
  */
 export type LogosDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<LogosDocumentData>, "logos", Lang>;
-export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument | HomeBottomCardsDocument | LogosDocument;
+/** Content for Products documents */
+interface ProductsDocumentData {
+    /**
+     * Slice Zone field in *Products*
+     *
+     * - **Field Type**: Slice Zone
+     * - **Placeholder**: *None*
+     * - **API ID Path**: products.slices[]
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+     *
+     */
+    slices: prismicT.SliceZone<ProductsDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Products → Slice Zone*
+ *
+ */
+type ProductsDocumentDataSlicesSlice = never;
+/**
+ * Products document from Prismic
+ *
+ * - **API ID**: `products`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProductsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<ProductsDocumentData>, "products", Lang>;
+export type AllDocumentTypes = AboutPageImagesDocument | AboutPageTextDocument | HomeBottomCardsDocument | LogosDocument | ProductsDocument;
 /**
  * Primary content in AboutImages → Primary
  *
@@ -465,6 +494,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, HomeBottomCardsDocumentData, HomeBottomCardsDocumentDataSlicesSlice, HomeBottomCardsDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, HomeBottomCardsSliceDefaultPrimary, HomeBottomCardsSliceDefault, HomeBottomCardsSliceVariation, HomeBottomCardsSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
+        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, HomeBottomCardsDocumentData, HomeBottomCardsDocumentDataSlicesSlice, HomeBottomCardsDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, ProductsDocumentData, ProductsDocumentDataSlicesSlice, ProductsDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, HomeBottomCardsSliceDefaultPrimary, HomeBottomCardsSliceDefault, HomeBottomCardsSliceVariation, HomeBottomCardsSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
     }
 }

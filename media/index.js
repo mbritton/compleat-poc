@@ -4,16 +4,12 @@ import card2 from './images/bottom_cards_01.jpg';
 import card3 from './images/bottom_cards_02.jpg';
 import card4 from './images/bottom_cards_03.jpg';
 // Home page bottom cards, bottom row
-import card5 from './images/media-07.jpg';
-import card6 from './images/media-08.jpg';
 import card7 from './images/media-13.jpg';
-import card8 from './images/media-15.jpg';
 // Embla carousel images
 import media1 from './images/media-1.jpg';
 import media2 from './images/media-2.jpg';
 import media3 from './images/media-3.jpg';
 import media4 from './images/media-4.jpg';
-// import media5 from './images/media-5.jpeg';
 // Stair Types images
 import stairType1 from './images/stairType-1.jpg';
 import stairType2 from './images/stairType-2.jpg';

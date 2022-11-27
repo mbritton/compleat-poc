@@ -57,7 +57,6 @@ export default function Home({ page }) {
         }),
       500,
     );
-    console.log('page!', page);
   }, []);
   return (
     <motion.div

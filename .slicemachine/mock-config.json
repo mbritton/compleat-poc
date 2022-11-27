@@ -3,7 +3,8 @@
     "about_page_text": {},
     "about_page_images": {},
     "logos": {},
-    "home_bottom_cards": {}
+    "home_bottom_cards": {},
+    "products": {}
   },
   "slices": {
     "AboutText": {
