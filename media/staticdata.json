@@ -30,6 +30,11 @@
             "title": "Systems",
             "content": "Systems content",
             "href": "/systems"
+        },
+        {
+            "title": "Visualizer",
+            "content": "Visuaizer content",
+            "href": "/visualizer"
         }
     ]
 }

@@ -6,6 +6,7 @@ import { PrismicProvider } from '@prismicio/react';
 import { PrismicPreview } from '@prismicio/next';
 import { repositoryName } from '../prismicio';
 import Link from 'next/link';
+import '@/styles/3d/x3dom.css';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 

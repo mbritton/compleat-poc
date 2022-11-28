@@ -1,5 +1,3 @@
-import { CalloutCardButton } from '@/components/Core';
-import Hero from '@/components/Hero';
 import styles from '@/styles/About.module.scss';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
@@ -17,13 +15,6 @@ const fadeInUp = {
     transition: {
       duration: 1,
       ease: easing,
-    },
-  },
-};
-const stagger = {
-  animate: {
-    transition: {
-      staggerChildren: 0.1,
     },
   },
 };
