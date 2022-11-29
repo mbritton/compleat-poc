@@ -67,17 +67,6 @@ export type AboutPageTextDocument<Lang extends string = string> = prismicT.Prism
 /** Content for Home Bottom Cards documents */
 interface HomeBottomCardsDocumentData {
     /**
-     * test_static_field field in *Home Bottom Cards*
-     *
-     * - **Field Type**: Rich Text
-     * - **Placeholder**: *None*
-     * - **API ID Path**: home_bottom_cards.test_static_field
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-     *
-     */
-    test_static_field: prismicT.RichTextField;
-    /**
      * Slice Zone field in *Home Bottom Cards*
      *
      * - **Field Type**: Slice Zone
@@ -292,12 +281,12 @@ type AboutTextSliceVariation = AboutTextSliceDefault;
  */
 export type AboutTextSlice = prismicT.SharedSlice<"about_text", AboutTextSliceVariation>;
 /**
- * Primary content in HomeBottomCards → Primary
+ * Primary content in HomeBottomCardsSlice → Primary
  *
  */
 interface HomeBottomCardsSliceDefaultPrimary {
     /**
-     * home_card00_title field in *HomeBottomCards → Primary*
+     * home_card00_title field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: Add a title for this card
@@ -307,7 +296,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card00_title: prismicT.TitleField;
     /**
-     * home_card00_text field in *HomeBottomCards → Primary*
+     * home_card00_text field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Add content for this card
@@ -317,7 +306,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card00_text: prismicT.RichTextField;
     /**
-     * home_card00_image field in *HomeBottomCards → Primary*
+     * home_card00_image field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
@@ -327,7 +316,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card00_image: prismicT.ImageField<never>;
     /**
-     * home_card01_title field in *HomeBottomCards → Primary*
+     * home_card01_title field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: Add a title for this card
@@ -337,7 +326,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card01_title: prismicT.TitleField;
     /**
-     * home_card01_text field in *HomeBottomCards → Primary*
+     * home_card01_text field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Add content for this card
@@ -347,7 +336,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card01_text: prismicT.RichTextField;
     /**
-     * home_card01_image field in *HomeBottomCards → Primary*
+     * home_card01_image field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
@@ -357,7 +346,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card01_image: prismicT.ImageField<never>;
     /**
-     * home_card02_title field in *HomeBottomCards → Primary*
+     * home_card02_title field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: Add a title for this card
@@ -367,7 +356,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card02_title: prismicT.TitleField;
     /**
-     * home_card02_text field in *HomeBottomCards → Primary*
+     * home_card02_text field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Add content for this card
@@ -377,7 +366,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card02_text: prismicT.RichTextField;
     /**
-     * home_card02_image field in *HomeBottomCards → Primary*
+     * home_card02_image field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
@@ -387,7 +376,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card02_image: prismicT.ImageField<never>;
     /**
-     * home_card03_title field in *HomeBottomCards → Primary*
+     * home_card03_title field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Title
      * - **Placeholder**: Add a title for this card
@@ -397,7 +386,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card03_title: prismicT.TitleField;
     /**
-     * home_card03_text field in *HomeBottomCards → Primary*
+     * home_card03_text field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Rich Text
      * - **Placeholder**: Add content for this card
@@ -407,7 +396,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
      */
     home_card03_text: prismicT.RichTextField;
     /**
-     * home_card03_image field in *HomeBottomCards → Primary*
+     * home_card03_image field in *HomeBottomCardsSlice → Primary*
      *
      * - **Field Type**: Image
      * - **Placeholder**: *None*
@@ -418,7 +407,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
     home_card03_image: prismicT.ImageField<never>;
 }
 /**
- * Default variation for HomeBottomCards Slice
+ * Default variation for HomeBottomCardsSlice Slice
  *
  * - **API ID**: `default`
  * - **Description**: `HomeBottomCards`
@@ -427,12 +416,12 @@ interface HomeBottomCardsSliceDefaultPrimary {
  */
 export type HomeBottomCardsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeBottomCardsSliceDefaultPrimary>, never>;
 /**
- * Slice variation for *HomeBottomCards*
+ * Slice variation for *HomeBottomCardsSlice*
  *
  */
 type HomeBottomCardsSliceVariation = HomeBottomCardsSliceDefault;
 /**
- * HomeBottomCards Shared Slice
+ * HomeBottomCardsSlice Shared Slice
  *
  * - **API ID**: `home_bottom_cards`
  * - **Description**: `HomeBottomCards`

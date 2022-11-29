@@ -220,12 +220,12 @@
       "home_bottom_cards": {
         "library": "slices",
         "id": "home_bottom_cards",
-        "name": "HomeBottomCards",
+        "name": "HomeBottomCardsSlice",
         "description": "HomeBottomCards",
         "model": {
           "id": "home_bottom_cards",
           "type": "SharedSlice",
-          "name": "HomeBottomCards",
+          "name": "HomeBottomCardsSlice",
           "description": "HomeBottomCards",
           "variations": [
             {
@@ -308,7 +308,7 @@
                     "label": "home_card02_text",
                     "placeholder": "Add content for this card",
                     "allowTargetBlank": true,
-                    "multi": "paragraph,hyperlink,list-item,o-list-item,rtl,strong,em"
+                    "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,rtl"
                   }
                 },
                 "home_card02_image": {
@@ -368,14 +368,14 @@
               "home_card00_title": [
                 {
                   "type": "heading2",
-                  "text": "Since",
+                  "text": "Exact",
                   "spans": []
                 }
               ],
               "home_card00_text": [
                 {
                   "type": "paragraph",
-                  "text": "Quis magna excepteur Lorem fugiat aliquip sit fugiat fugiat sit incididunt excepteur. Irure excepteur do laborum non dolore exercitation.",
+                  "text": "Ullamco dolore ipsum pariatur sit elit minim reprehenderit aliquip labore consequat. Occaecat non proident qui incididunt dolor est mollit do sunt sunt quis adipisicing dolor pariatur.",
                   "spans": []
                 }
               ],
@@ -391,14 +391,14 @@
               "home_card01_title": [
                 {
                   "type": "heading2",
-                  "text": "Standard",
+                  "text": "Direct",
                   "spans": []
                 }
               ],
               "home_card01_text": [
                 {
                   "type": "paragraph",
-                  "text": "Magna labore cupidatat in dolor labore reprehenderit anim do exercitation consectetur. Irure velit laboris veniam cupidatat. Eu deserunt cillum aliquip elit proident ex irure pariatur anim.",
+                  "text": "Irure nisi sit aliquip aliqua incididunt proident ad aliquip ad sint commodo est. Laboris qui est nostrud dolor ut. Anim tempor tempor ipsum irure proident ea exercitation dolor labore occaecat.",
                   "spans": []
                 }
               ],
@@ -414,14 +414,14 @@
               "home_card02_title": [
                 {
                   "type": "heading2",
-                  "text": "Character",
+                  "text": "Corner",
                   "spans": []
                 }
               ],
               "home_card02_text": [
                 {
                   "type": "paragraph",
-                  "text": "Sint eiusmod Lorem mollit. Nisi fugiat culpa laborum duis dolor non aliqua consequat Lorem.",
+                  "text": "Reprehenderit anim veniam commodo deserunt culpa amet et labore.",
                   "spans": []
                 }
               ],
@@ -437,14 +437,14 @@
               "home_card03_title": [
                 {
                   "type": "heading2",
-                  "text": "Rocky",
+                  "text": "Stairs",
                   "spans": []
                 }
               ],
               "home_card03_text": [
                 {
                   "type": "paragraph",
-                  "text": "Cillum eu culpa adipisicing. Culpa anim commodo pariatur in magna cillum in sunt qui dolore proident do quis.",
+                  "text": "Enim incididunt nulla et anim ipsum excepteur duis commodo eu ullamco in irure deserunt. Deserunt reprehenderit ea voluptate reprehenderit et eiusmod proident amet.",
                   "spans": []
                 }
               ],
@@ -465,7 +465,13 @@
           "fileName": "index",
           "extension": "js"
         },
-        "screenshotPaths": {}
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/mikebritton/Development/mikebritton/next/compleat-poc/.slicemachine/assets/slices/HomeBottomCardsSlice/default/preview.png",
+            "width": 1280,
+            "height": 800
+          }
+        }
       },
       "logos": {
         "library": "slices",

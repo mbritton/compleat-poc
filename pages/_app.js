@@ -10,11 +10,11 @@ import '@/styles/3d/x3dom.css';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
-function MyApp({ Component, pageProps }) {
+function CompleatApp({ Component, pageProps }) {
   const { data, error } = useSWR('/api/staticdata', fetcher);
 
   if (error) return <div>failed to load</div>;
-  // TODO: Component with timing and state transitions for user
+  // TODO: Loading component with timing and state transitions for user
   if (!data) return <div>loading...</div>;
 
   if (data) {
@@ -38,4 +38,4 @@ function MyApp({ Component, pageProps }) {
   }
 }
 
-export default MyApp;
+export default CompleatApp;

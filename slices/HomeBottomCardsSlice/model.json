@@ -1,7 +1,7 @@
 {
   "id": "home_bottom_cards",
   "type": "SharedSlice",
-  "name": "HomeBottomCards",
+  "name": "HomeBottomCardsSlice",
   "description": "HomeBottomCards",
   "variations": [
     {
@@ -84,7 +84,7 @@
             "label": "home_card02_text",
             "placeholder": "Add content for this card",
             "allowTargetBlank": true,
-            "multi": "paragraph,hyperlink,list-item,o-list-item,rtl,strong,em"
+            "multi": "paragraph,strong,em,hyperlink,list-item,o-list-item,rtl"
           }
         },
         "home_card02_image": {

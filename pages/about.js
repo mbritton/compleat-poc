@@ -59,7 +59,6 @@ export default function About({ page }) {
         }),
       1000,
     );
-    console.log('PAGE', page);
   }, []);
 
   return (

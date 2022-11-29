@@ -2,19 +2,19 @@
 
 import AboutImages from './AboutImages';
 import AboutText from './AboutText';
-import HomeBottomCards from './HomeBottomCards';
+import HomeBottomCardsSlice from './HomeBottomCardsSlice';
 import Logos from './Logos';
 
 export {
 	AboutImages,
 	AboutText,
-	HomeBottomCards,
+	HomeBottomCardsSlice,
 	Logos,
 };
 
 export const components = {
 	about_images: AboutImages,
 	about_text: AboutText,
-	home_bottom_cards: HomeBottomCards,
+	home_bottom_cards: HomeBottomCardsSlice,
 	logos: Logos,
 };

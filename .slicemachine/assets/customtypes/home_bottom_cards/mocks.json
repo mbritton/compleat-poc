@@ -11,13 +11,6 @@
   "lang": "en-us",
   "alternate_languages": [],
   "data": {
-    "test_static_field": [
-      {
-        "type": "paragraph",
-        "text": "Ut Lorem laboris amet officia veniam in veniam qui aliquip dolor cillum minim duis ipsum aliqua.",
-        "spans": []
-      }
-    ],
     "slices": []
   }
 }

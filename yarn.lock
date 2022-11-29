@@ -2843,11 +2843,6 @@ destroy@1.2.0:
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.2.0.tgz#4803735509ad8be552934c67df614f94e66fa015"
   integrity sha512-2sJGJTaXIIaR1w4iJSNoN0hnMY7Gpc/n8D4qSCJw8QqFWXf7cuAgnEHxBpweaVcPevC2l3KpjYCx3NypQQgaJg==
 
-detect-node@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/detect-node/-/detect-node-2.1.0.tgz#c9c70775a49c3d03bc2c06d9a73be550f978f8b1"
-  integrity sha512-T0NIuQpnTvFDATNuHN5roPwSBG83rFsuO+MXXH9/3N1eFbn4wcPjttvjMLEPWJ0RGUYgQE7cGgS3tNxbqCGM7g==
-
 devtools-protocol@0.0.1019158:
   version "0.0.1019158"
   resolved "https://registry.yarnpkg.com/devtools-protocol/-/devtools-protocol-0.0.1019158.tgz#4b08d06108a784a2134313149626ba55f030a86f"
@@ -6593,6 +6588,13 @@ text-table@^0.2.0:
   resolved "https://registry.yarnpkg.com/text-table/-/text-table-0.2.0.tgz#7f5ee823ae805207c00af2df4a84ec3fcfa570b4"
   integrity sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==
 
+three-x3d-loader@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/three-x3d-loader/-/three-x3d-loader-0.4.0.tgz#716d28b106b3195ebe1eb1ca746c6a64a11853c5"
+  integrity sha512-jo/h6MZrXMdzWypporVw6WXuNuCShkc/peaDwing1nOBfC9mjVwjRwcqv9oYGTj31I5nJukwqlzyookxZIXyzQ==
+  dependencies:
+    xmldom "^0.1.27"
+
 through2@^2.0.0, through2@~2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.5.tgz#01c1e39eb31d07cb7d03a96a70823260b23132cd"
@@ -6991,6 +6993,11 @@ x3dom@^1.8.1:
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/x3dom/-/x3dom-1.8.1.tgz#c5f2c48c37f6fcc4a74a5e66baf6551ba0091e8a"
   integrity sha512-rlKMA0pWkBUqoC75fjSm1rRJhdlnqXcCgEP5MHsspcO5pdkr0J52oO5EmmR1eOCzex5U4qAlyG8aFVoZy8wtfA==
+
+xmldom@^0.1.27:
+  version "0.1.31"
+  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.1.31.tgz#b76c9a1bd9f0a9737e5a72dc37231cf38375e2ff"
+  integrity sha512-yS2uJflVQs6n+CyjHoaBmVSqIDevTAWrzMmjG1Gc7h1qQ7uVozNhEPJAwZXWyGQ/Gafo3fCwrcaokezLPupVyQ==
 
 xtend@~4.0.1:
   version "4.0.2"
