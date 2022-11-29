@@ -82,7 +82,7 @@ interface HomeBottomCardsDocumentData {
  * Slice for *Home Bottom Cards → Slice Zone*
  *
  */
-type HomeBottomCardsDocumentDataSlicesSlice = never;
+type HomeBottomCardsDocumentDataSlicesSlice = HomeBottomCardsSlice;
 /**
  * Home Bottom Cards document from Prismic
  *
@@ -407,6 +407,22 @@ interface HomeBottomCardsSliceDefaultPrimary {
     home_card03_image: prismicT.ImageField<never>;
 }
 /**
+ * Item in HomeBottomCardsSlice → Items
+ *
+ */
+export interface HomeBottomCardsSliceDefaultItem {
+    /**
+     * test_select field in *HomeBottomCardsSlice → Items*
+     *
+     * - **Field Type**: Select
+     * - **Placeholder**: *None*
+     * - **API ID Path**: home_bottom_cards.items[].test_select
+     * - **Documentation**: https://prismic.io/docs/core-concepts/select
+     *
+     */
+    test_select: prismicT.SelectField<"1" | "2">;
+}
+/**
  * Default variation for HomeBottomCardsSlice Slice
  *
  * - **API ID**: `default`
@@ -414,7 +430,7 @@ interface HomeBottomCardsSliceDefaultPrimary {
  * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
  *
  */
-export type HomeBottomCardsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeBottomCardsSliceDefaultPrimary>, never>;
+export type HomeBottomCardsSliceDefault = prismicT.SharedSliceVariation<"default", Simplify<HomeBottomCardsSliceDefaultPrimary>, Simplify<HomeBottomCardsSliceDefaultItem>>;
 /**
  * Slice variation for *HomeBottomCardsSlice*
  *
@@ -483,6 +499,6 @@ declare module "@prismicio/client" {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, HomeBottomCardsDocumentData, HomeBottomCardsDocumentDataSlicesSlice, HomeBottomCardsDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, ProductsDocumentData, ProductsDocumentDataSlicesSlice, ProductsDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, HomeBottomCardsSliceDefaultPrimary, HomeBottomCardsSliceDefault, HomeBottomCardsSliceVariation, HomeBottomCardsSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
+        export type { AboutPageImagesDocumentData, AboutPageImagesDocumentDataSlicesSlice, AboutPageImagesDocument, AboutPageTextDocumentData, AboutPageTextDocumentDataSlicesSlice, AboutPageTextDocument, HomeBottomCardsDocumentData, HomeBottomCardsDocumentDataSlicesSlice, HomeBottomCardsDocument, LogosDocumentData, LogosDocumentDataSlicesSlice, LogosDocument, ProductsDocumentData, ProductsDocumentDataSlicesSlice, ProductsDocument, AllDocumentTypes, AboutImagesSliceDefaultPrimary, AboutImagesSliceDefault, AboutImagesSliceVariation, AboutImagesSlice, AboutTextSliceDefaultPrimary, AboutTextSliceDefault, AboutTextSliceVariation, AboutTextSlice, HomeBottomCardsSliceDefaultPrimary, HomeBottomCardsSliceDefaultItem, HomeBottomCardsSliceDefault, HomeBottomCardsSliceVariation, HomeBottomCardsSlice, LogosSliceDefaultPrimary, LogosSliceDefault, LogosSliceVariation, LogosSlice };
     }
 }

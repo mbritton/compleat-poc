@@ -3,20 +3,22 @@
     "variation": "default",
     "version": "sktwi1xtmkfgx8626",
     "items": [
-      {}
+      {
+        "test_select": "2"
+      }
     ],
     "primary": {
       "home_card00_title": [
         {
           "type": "heading2",
-          "text": "Exact",
+          "text": "Clothes",
           "spans": []
         }
       ],
       "home_card00_text": [
         {
           "type": "paragraph",
-          "text": "Ullamco dolore ipsum pariatur sit elit minim reprehenderit aliquip labore consequat. Occaecat non proident qui incididunt dolor est mollit do sunt sunt quis adipisicing dolor pariatur.",
+          "text": "Reprehenderit aute eu excepteur sit dolore laborum ipsum esse reprehenderit dolor culpa.",
           "spans": []
         }
       ],
@@ -32,14 +34,14 @@
       "home_card01_title": [
         {
           "type": "heading2",
-          "text": "Direct",
+          "text": "Brain",
           "spans": []
         }
       ],
       "home_card01_text": [
         {
           "type": "paragraph",
-          "text": "Irure nisi sit aliquip aliqua incididunt proident ad aliquip ad sint commodo est. Laboris qui est nostrud dolor ut. Anim tempor tempor ipsum irure proident ea exercitation dolor labore occaecat.",
+          "text": "Cillum culpa duis velit adipisicing adipisicing esse ex mollit est pariatur veniam officia sunt cupidatat. Mollit in cillum excepteur quis enim adipisicing exercitation duis nulla ex laboris id quis.",
           "spans": []
         }
       ],
@@ -55,14 +57,14 @@
       "home_card02_title": [
         {
           "type": "heading2",
-          "text": "Corner",
+          "text": "Wrapped",
           "spans": []
         }
       ],
       "home_card02_text": [
         {
           "type": "paragraph",
-          "text": "Reprehenderit anim veniam commodo deserunt culpa amet et labore.",
+          "text": "Sunt id ad nostrud consectetur adipisicing veniam reprehenderit est aute tempor magna consectetur. Eu duis veniam ad esse sint consectetur commodo ad veniam magna minim aute laborum quis.",
           "spans": []
         }
       ],
@@ -78,14 +80,14 @@
       "home_card03_title": [
         {
           "type": "heading2",
-          "text": "Stairs",
+          "text": "Canal",
           "spans": []
         }
       ],
       "home_card03_text": [
         {
           "type": "paragraph",
-          "text": "Enim incididunt nulla et anim ipsum excepteur duis commodo eu ullamco in irure deserunt. Deserunt reprehenderit ea voluptate reprehenderit et eiusmod proident amet.",
+          "text": "Fugiat cillum eu irure excepteur ullamco quis eiusmod non. Non pariatur ex et occaecat aliquip do id eu laborum. Magna labore eu est id aute tempor velit ut incididunt veniam nostrud tempor.",
           "spans": []
         }
       ],
