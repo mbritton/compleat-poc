@@ -14,14 +14,14 @@ export default function Visualizer() {
         console.log('done', x3d);
         // x3d.DefaultX3D().refresh();
       });
-    }, 4000);
+    }, 1000);
   }, []);
 
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizer}>
-        <x3d is="x3d" width="100%" height="100%">
-          <scene is="x3d" width="100%" height="100%">
+        <x3d is="x3d" width="620" height="620">
+          <scene is="x3d">
             <inline
               is="x3d"
               nameSpaceName="myScene"
@@ -31,6 +31,7 @@ export default function Visualizer() {
           </scene>
         </x3d>
       </div>
+      <div className={styles.cover} onClick={() => setShowCover(false)}></div>
     </div>
   );
 }

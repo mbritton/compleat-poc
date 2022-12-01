@@ -72,7 +72,8 @@ export const getFeatured = (index) => {
   const titles = [
     {
       title: 'The Complete Stair System',
-      content: 'Excepteur Lorem ipsum non occaecat.',
+      content:
+        'Consequat consectetur dolor consectetur eiusmod. Cupidatat quis est mollit sit qui ex fugiat laborum in in officia. Reprehenderit sint amet laboris sint. Cupidatat eiusmod consectetur est incididunt. Esse velit adipisicing enim proident ex eiusmod duis culpa adipisicing..',
       inset: {
         title: 'Holiday House',
         content: 'Sit irure excepteur cillum occaecat et veniam commodo.',

@@ -1,0 +1,50 @@
+{
+    "series": [
+        {
+            "name": "modern",
+            "products": [
+                {
+                    "product00": {
+                        "name": "product00",
+                        "id": "123",
+                        "available": true,
+                        "inStock": 10,
+                        "price": 100
+                    }
+                }
+            ]
+        }
+    ],
+    "systems": [
+        {
+            "name": "system00",
+            "products": [
+                {
+                    "product00": {
+                        "name": "product00",
+                        "id": "123",
+                        "available": true,
+                        "inStock": 10,
+                        "price": 100
+                    }
+                }
+            ]
+        }
+    ],
+    "accessories": [
+        {
+            "name": "accessory00",
+            "products": [
+                {
+                    "product00": {
+                        "name": "product00",
+                        "id": "123",
+                        "available": true,
+                        "inStock": 10,
+                        "price": 100
+                    }
+                }
+            ]
+        }
+    ]
+}
