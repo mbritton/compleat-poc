@@ -187,6 +187,11 @@
           "home_card03_image": {
             "content": "https://images.prismic.io/compleat/f42a793d-0087-490d-89bf-fcb87bb84175_bottom_cards_03.jpg"
           }
+        },
+        "items": {
+          "test_select": {
+            "content": "1"
+          }
         }
       }
     }

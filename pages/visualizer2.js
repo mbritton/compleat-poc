@@ -1,86 +1,112 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import styles from '@/styles/Visualizer2.module.scss';
-import { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { x3dLoader, x3dParser } from 'three-x3d-loader';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import useSWR from 'swr';
-
-const fetcher = (url) =>
-  fetch(url).then((res) => {
-    return res;
-  });
+import * as THREE from 'three';
+import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
+import { x3dLoader, x3dParser } from 'three-x3d-loader';
+import * as renderX3D from '@/utils/renderX3D.js';
 
 export default function Visualizer2() {
-  const mountRef = useRef(null);
-  const { data, error } = useSWR(
-    'https://prismic-io.s3.amazonaws.com/compleat/8ea368f1-d682-4709-aca2-0f5bd7b2e2ff_3dspiral.x3d',
-    fetcher,
-  );
+  let scene;
+  const [data, setData] = useState();
+  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+  let renderer = new THREE.WebGLRenderer();
+  const uri3D =
+    'https://prismic-io.s3.amazonaws.com/compleat/5a879a6d-c070-4515-84f2-c896981ecc98_3dspiral.x3d';
 
-  console.log('data', data);
+  const mountRef = useRef();
 
-  // if (error) return <div>failed to load</div>;
-  // // TODO: Loading component with timing and state transitions for user
-  // if (!xmlData) return <div>loading...</div>;
+  const fetcher = async (url) => res;
 
-  const onWindowResize = (camera, renderer) => {
+  const parse = (xmlData) => {
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
+    console.log('xmlDoc', xmlDoc);
+    setTimeout(() => {
+      renderX3D(THREE, xmlDoc, scene, false);
+    }, 1000);
+  };
+
+  const loadModel = async (xmlData) => {
+    let loader = new THREE.FileLoader(THREE.DefaultLoadingManager);
+    loader.load(
+      uri3D,
+      (text) => {
+        // this.scene.add(parse3D(text))
+        // console.log('text', text);
+        parse(text);
+      },
+      (ref) => {
+        // console.log('LOADING', ref);
+      },
+      () => {},
+    );
+  };
+
+  // const parseModel = (threeVar, xmlData) => {
+  //   console.log('PARSEMODEL', xmlData);
+  //   const x3d = x3dParser(THREE, xmlData.value);
+  //   return x3d;
+  // };
+
+  // if (data !== undefined) {
+  //   console.log('XML DATA', data);
+  //   // const xmlData = parseModel(THREE, data);
+  // }
+
+  const onWindowResize = useCallback((camera, renderer) => {
     const { clientWidth, clientHeight } = mountRef.current;
     camera.aspect = clientWidth / clientHeight;
     camera.updateProjectionMatrix();
     renderer?.setSize(clientWidth, clientHeight);
+  }, []);
+
+  const loadModel2 = async (uintVar) => {
+    const loader = new FBXLoader();
+
+    const group = loader.parse(uintVar.blob, '');
+    scene.add(group);
+
+    reader.readAsArrayBuffer(blob);
   };
 
   useEffect(() => {
-    const scene = new THREE.Scene();
+    scene = new THREE.Scene();
+
+    const { clientWidth, clientHeight } = mountRef.current;
     const camera = new THREE.PerspectiveCamera(
       75,
-      window.innerWidth / window.innerHeight,
+      clientWidth / clientHeight,
       0.1,
       1000,
     );
-    const renderer = new THREE.WebGLRenderer();
 
-    renderer.setSize(620, 620);
+    renderer.setSize(clientWidth, clientHeight);
     mountRef.current.appendChild(renderer.domElement);
+
     window.addEventListener(
       'resize',
-      () => onWindowResize(camera, renderer),
+      () => {
+        onWindowResize(camera, renderer);
+      },
       false,
     );
 
-    console.log('data', data);
-    console.log('error', error);
-    console.log('THREE', THREE);
-    console.log('scene', scene);
-
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-
+    onWindowResize(camera, renderer);
     // scene && data && THREE ? x3dParser(THREE, data, scene, material) : null;
-    scene && data && THREE ? data.x3dParser(THREE, data, scene) : null;
-
-    // const geometry = new THREE.BoxGeometry();
-    // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    // const cube = new THREE.Mesh(geometry, material);
-    // scene.add(cube);
-
-    // camera.position.z = 5;
-
-    // const animate = () => {
-    //   requestAnimationFrame(animate);
-
-    //   cube.rotation.x += 0.01;
-    //   cube.rotation.y += 0.01;
-
-    //   renderer.render(scene, camera);
-    // };
-
-    // animate();
-
-    // onWindowResize(camera, renderer);
 
     return () => {
-      mountRef.current.removeChild(renderer.domElement);
+      mountRef && mountRef.current
+        ? mountRef.current.removeChild(renderer.domElement)
+        : null;
     };
   }, []);
+
+  useEffect(() => {
+    loadModel(uri3D);
+  }, []);
+
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizer}>

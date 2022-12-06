@@ -1,6 +1,9 @@
-<x3d x="0px" y="0px" showlog="false" showstat="false" width="1042px" height="454px">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<x3d x="0px" y="0px" showlog="false" showstat="false" width="1042px" height="454px" profile='Immersive' version='3.3'
+    xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation =' https://www.web3d.org/specifications/x3d-3.3.xsd '>
     <param name="disableDoubleClick" value="true" />
-    <scene id="X3DElement_scene" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" pickmode="idBuf" dopickpass="true">
+    <Scene is="x3d" id="X3DElement_scene" render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" pickmode="idBuf" dopickpass="true">
         <viewpoint position="0 0 700.8" centerofrotation="0 0 0" fieldofview="0.785398" orientation="0,0,0,0" znear="-1" zfar="-1"></viewpoint>
         <navigationinfo type="turntable" headlight="true" typeparams="-0.4,60,0.05,2.8" explorationmode="all" avatarsize="0.25,1.6,0.75" speed="1" transitiontime="1" transitiontype="LINEAR "></navigationinfo>
         <appearance sorttype="auto" alphaclipthreshold="0.1">
@@ -4294,7 +4297,7 @@
                 </indexedfaceset>
             </shape>
         </transform>
-    </scene>
+    </Scene>
     <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="2084" height="908"></canvas>
     <div id="x3dom-state-viewer" style="display: none">
         <div class="x3dom-states-rendermode-hardware">
