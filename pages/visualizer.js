@@ -12,7 +12,6 @@ export default function Visualizer() {
     setTimeout(() => {
       x3DLoad().then((x3d) => {
         console.log('done', x3d);
-        // x3d.DefaultX3D().refresh();
       });
     }, 1000);
   }, []);

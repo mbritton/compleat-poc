@@ -474,10 +474,10 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
   };
 
   var getTree = function (x3dXml) {
-    var tree = { string: 'Scene', children: [] };
+    var tree = { string: 'scene', children: [] };
 
     for (var i = 0; i < x3dXml.documentElement.childNodes.length; i++) {
-      if (x3dXml.documentElement.childNodes[i].nodeName === 'Scene') {
+      if (x3dXml.documentElement.childNodes[i].nodeName === 'scene') {
         parseChildren(x3dXml.documentElement.childNodes[i], tree);
         return tree;
       }
@@ -570,37 +570,44 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
       parts.push(part[0]);
     }
 
+    var isRecordingFaces = false;
+    var isRecordingPoints = false;
+    var isRecordingAngles = false;
+    var isRecordingColors = false;
+    var recordingFieldname = false;
+    var points;
+
     // trigger several recorders
     switch (fieldName) {
       case 'skyAngle':
       case 'groundAngle':
-        this.recordingFieldname = fieldName;
+        recordingFieldname = fieldName;
         this.isRecordingAngles = true;
         this.angles = [];
         break;
       case 'skyColor':
       case 'color':
       case 'groundColor':
-        this.recordingFieldname = fieldName;
-        this.isRecordingColors = true;
+        recordingFieldname = fieldName;
+        isRecordingColors = true;
         this.colors = [];
         break;
       case 'vector':
       case 'point':
-        this.recordingFieldname = fieldName;
-        this.isRecordingPoints = true;
-        this.points = [];
+        recordingFieldname = fieldName;
+        isRecordingPoints = true;
+        points = [];
         break;
       case 'coordIndex':
       case 'index':
       case 'texCoordIndex':
-        this.recordingFieldname = fieldName;
-        this.isRecordingFaces = true;
+        recordingFieldname = fieldName;
+        isRecordingFaces = true;
         this.useStrip = type == 'indexedtrianglestripset' ? true : false;
         this.indexes = [];
     }
 
-    if (this.isRecordingFaces) {
+    if (isRecordingFaces) {
       if (parts.length > 0) {
         index = [];
         parts = parts.splice(1);
@@ -631,7 +638,6 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
               ]);
             }
           }
-          console.log(this.indexes);
         } else {
           for (var ind = 0; ind < parts.length; ind++) {
             // the part should either be positive integer or -1
@@ -650,12 +656,12 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
         }
       }
       // this.indexes = index
-      this.isRecordingFaces = false;
-      node[this.recordingFieldname] = this.indexes;
-    } else if (this.isRecordingPoints) {
+      isRecordingFaces = false;
+      node[recordingFieldname] = this.indexes;
+    } else if (isRecordingPoints) {
       if (node.nodeType == 'coordinate') {
         while (null !== (parts = float3_pattern.exec(value))) {
-          this.points.push({
+          points.push({
             x: parseFloat(parts[1]),
             y: parseFloat(parts[2]),
             z: parseFloat(parts[3]),
@@ -665,7 +671,7 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
 
       if (node.nodeType == 'texturecoordinate') {
         while (null !== (parts = float2_pattern.exec(value))) {
-          this.points.push({
+          points.push({
             x: parseFloat(parts[1]),
             y: parseFloat(parts[2]),
           });
@@ -681,9 +687,9 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
         }
       }
 
-      this.isRecordingPoints = false;
-      node.points = this.points;
-    } else if (this.isRecordingAngles) {
+      isRecordingPoints = false;
+      node.points = points;
+    } else if (isRecordingAngles) {
       if (parts.length > 0) {
         for (var ind = 0; ind < parts.length; ind++) {
           if (!float_pattern.test(parts[ind])) {
@@ -695,8 +701,8 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
       }
 
       this.isRecordingAngles = false;
-      node[this.recordingFieldname] = this.angles;
-    } else if (this.isRecordingColors) {
+      node[recordingFieldname] = this.angles;
+    } else if (isRecordingColors) {
       while (null !== (parts = float3_pattern.exec(value))) {
         this.colors.push({
           r: parseFloat(parts[1]),
@@ -705,8 +711,8 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
         });
       }
 
-      this.isRecordingColors = false;
-      node[this.recordingFieldname] = this.colors;
+      isRecordingColors = false;
+      node[recordingFieldname] = this.colors;
     } else if (parts[parts.length - 1] !== 'NULL' && fieldName !== 'children') {
       switch (fieldName) {
         case 'diffuseColor':
@@ -804,7 +810,6 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
 
     return property;
   };
-
   renderNode(getTree(x3dXml), scene);
 }
 

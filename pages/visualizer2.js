@@ -12,9 +12,9 @@ export default function Visualizer2() {
   const [data, setData] = useState();
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
   let renderer = new THREE.WebGLRenderer();
-  const uri3D =
-    'https://prismic-io.s3.amazonaws.com/compleat/5a879a6d-c070-4515-84f2-c896981ecc98_3dspiral.x3d';
-
+  // const uri3D =
+  //   'https://prismic-io.s3.amazonaws.com/compleat/58837d5a-6963-475d-88f6-9ece2c1fa486_3dspiral.x3d';
+  const uri3D = 'media/3dspiral.x3d';
   const mountRef = useRef();
 
   const fetcher = async (url) => res;
@@ -23,8 +23,9 @@ export default function Visualizer2() {
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
     console.log('xmlDoc', xmlDoc);
+
     setTimeout(() => {
-      renderX3D(THREE, xmlDoc, scene, false);
+      renderX3D(THREE, xmlDoc, scene, true);
     }, 1000);
   };
 
