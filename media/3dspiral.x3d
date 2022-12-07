@@ -7,14 +7,14 @@
         <viewpoint position="0 0 700.8" centerofrotation="0 0 0" fieldofview="0.785398" orientation="0,0,0,0" znear="-1" zfar="-1"></viewpoint>
         <navigationinfo type="turntable" headlight="true" typeparams="-0.4,60,0.05,2.8" explorationmode="all" avatarsize="0.25,1.6,0.75" speed="1" transitiontime="1" transitiontype="LINEAR "></navigationinfo>
         <appearance sorttype="auto" alphaclipthreshold="0.1">
-            <texture def="treadTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" scale="true" hidechildren="true"></texture>
+            <texture def="treadTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatT="true" hidechildren="true"></texture>
             <material def="treadMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="handrailTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" scale="true" hidechildren="true"></texture>
+            <texture def="handrailTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatT="true" hidechildren="true"></texture>
             <material def="handrailMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="stringMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="postTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" scale="true" hidechildren="true"></texture>
+            <texture def="postTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatT="true" hidechildren="true"></texture>
             <material def="postMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="floorTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" scale="true" hidechildren="true"></texture>
+            <texture def="floorTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatT="true" hidechildren="true"></texture>
             <material def="floorMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="balusterMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="wellMat" diffusecolor="1 1 1" transparency="0.7" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
