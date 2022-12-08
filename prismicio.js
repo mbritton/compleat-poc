@@ -1,7 +1,5 @@
 import * as prismic from '@prismicio/client';
 import * as prismicNext from '@prismicio/next';
-import * as prismicH from '@prismicio/helpers';
-import * as asLink from '@prismicio/helpers'
 import sm from './sm.json';
 
 /**

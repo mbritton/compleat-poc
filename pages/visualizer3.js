@@ -7162,8 +7162,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1 4 5 6 7 -1 5 4 1 0 -1
-"
+                  coordindex="0 1 2 3 -1 4 5 6 7 -1 5 4 1 0 -1"
                   texcoordindex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1"
                   solid="true"
                   ccw="true"
@@ -7179,8 +7178,7 @@ export default function Visualizer3() {
                   <coordinate
                     is="x3d"
                     point=" 177.61 94.9 177.15 177.61 94.9 -177.14 177.61 101.88 -177.14 177.61 101.88 177.15
- 77.61 94.9 -4.32 77.61 94.9 6.31 77.61 101.88 6.31 77.61 101.88 -4.32
-"
+ 77.61 94.9 -4.32 77.61 94.9 6.31 77.61 101.88 6.31 77.61 101.88 -4.32"
                   >
                     {' '}
                   </coordinate>
@@ -7221,8 +7219,7 @@ export default function Visualizer3() {
 26 28 29 27 -1 8 5 4 -1 1 10 8 -1 8 4 1 -1 
 1 12 10 -1 1 14 12 -1 0 16 14 -1 14 1 0 -1 
 0 18 16 -1 0 20 18 -1 0 22 20 -1 0 24 22 -1 
-0 26 24 -1 0 28 26 -1
-"
+0 26 24 -1 0 28 26 -1"
                   texcoordindex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 
 16 17 18 19 -1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 31 -1 
 32 33 34 35 -1 36 37 38 39 -1 40 41 42 43 -1 44 45 46 47 -1 
@@ -7289,8 +7286,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1 4 1 0 -1
-"
+                  coordindex="0 1 2 3 -1 4 1 0 -1"
                   texcoordindex="0 1 2 3 -1 4 5 6 -1"
                   solid="true"
                   ccw="true"
@@ -7344,8 +7340,7 @@ export default function Visualizer3() {
 0 16 17 -1 0 15 16 -1 0 14 15 -1 0 13 14 -1 
 0 12 13 -1 0 11 12 -1 0 10 11 -1 0 9 10 -1 
 1 8 9 -1 9 0 1 -1 1 7 8 -1 1 6 7 -1 
-1 5 6 -1 1 4 5 -1 1 3 4 -1
-"
+1 5 6 -1 1 4 5 -1 1 3 4 -1"
                   texcoordindex="0 1 2 -1 3 4 5 -1 6 7 8 -1 9 10 11 -1 
 12 13 14 -1 15 16 17 -1 18 19 20 -1 21 22 23 -1 
 24 25 26 -1 27 28 29 -1 30 31 32 -1 33 34 35 -1 
@@ -7409,8 +7404,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1
-"
+                  coordindex="0 1 2 3 -1"
                   texcoordindex="0 1 2 3 -1"
                   solid="true"
                   ccw="true"
@@ -7463,13 +7457,10 @@ export default function Visualizer3() {
                   is="x3d"
                   coordindex="1 2 3 4 -1 4 0 1 -1 13 14 0 -1 0 12 13 -1 
 0 11 12 -1 0 10 11 -1 0 9 10 -1 0 8 9 -1 
-0 7 8 -1 0 6 7 -1 0 5 6 -1 0 4 5 -1
-
-"
+0 7 8 -1 0 6 7 -1 0 5 6 -1 0 4 5 -1"
                   texcoordindex="0 1 2 3 -1 4 5 6 -1 7 8 9 -1 10 11 12 -1 
 13 14 15 -1 16 17 18 -1 19 20 21 -1 22 23 24 -1 
-25 26 27 -1 28 29 30 -1 31 32 33 -1 34 35 36 -1
-"
+25 26 27 -1 28 29 30 -1 31 32 33 -1 34 35 36 -1"
                   solid="true"
                   ccw="true"
                   usegeocache="true"
@@ -7588,8 +7579,7 @@ export default function Visualizer3() {
                 >
                   <coordinate
                     is="x3d"
-                    point=" 177.61 -192.85 177.15 177.61 -192.85 -177.14 -177.6 -192.85 -177.14 -177.6 -192.85 177.15
-"
+                    point=" 177.61 -192.85 177.15 177.61 -192.85 -177.14 -177.6 -192.85 -177.14 -177.6 -192.85 177.15"
                   >
                     {' '}
                   </coordinate>
@@ -7652,13 +7642,13 @@ export default function Visualizer3() {
             </transform>
           </scene>
           <canvas
-            className={'x3dom-canvas'}
+            className="x3dom-canvas"
             id="x3dom-1669505032236-canvas"
             tabIndex="0"
             width="2084"
             height="908"
           ></canvas>
-          <div id="x3dom-state-viewer" style="display: none">
+          <div id="x3dom-state-viewer">
             <div className="x3dom-states-rendermode-hardware">
               Hardware-Rendering
             </div>
@@ -7715,9 +7705,9 @@ export default function Visualizer3() {
               </li>
             </ul>
           </div>
-          <div className="x3dom-progress" style="display: none">
+          <div className="x3dom-progress">
             <strong>Loading: 0</strong>
-            <span style="width: 25%"></span>
+            <span></span>
           </div>
         </x3d>
       </div>
