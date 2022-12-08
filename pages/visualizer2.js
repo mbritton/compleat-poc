@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import styles from '@/styles/Visualizer2.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import useSWR from 'swr';
 import * as THREE from 'three';
 import { FBXLoader } from 'three/examples/jsm/loaders/FBXLoader.js';
@@ -8,39 +8,42 @@ import { x3dLoader, x3dParser } from 'three-x3d-loader';
 import * as renderX3D from '@/utils/renderX3D.js';
 
 export default function Visualizer2() {
-  let scene;
+  let scene = new THREE.Scene();
   const [data, setData] = useState();
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
   let renderer = new THREE.WebGLRenderer();
+  // const uri3D =
+  //   'https://prismic-io.s3.amazonaws.com/compleat/52ee8689-41bd-4610-88e3-e352a205f6f6_3dspiral.x3d';
   const uri3D =
-    'https://prismic-io.s3.amazonaws.com/compleat/52ee8689-41bd-4610-88e3-e352a205f6f6_3dspiral.x3d';
+    'https://prismic-io.s3.amazonaws.com/compleat/af67bdf6-eee6-4923-9779-e150355dd1c6_Deer.x3d';
   const mountRef = useRef();
 
-  const fetcher = async (url) => res;
+  // const fetcher = async (url) => res;
 
-  const parse = (xmlData) => {
+  const parse = useCallback((xmlData) => {
+    console.log('xmlData', xmlData);
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(xmlData, 'text/xml');
     setTimeout(() => {
-      renderX3D(THREE, xmlDoc, scene, false);
+      renderX3D(THREE, xmlDoc, scene, true);
     }, 1000);
-  };
+  }, []);
 
-  const loadModel = async (xmlData) => {
+  const loadModel = useCallback(async (xmlData) => {
     let loader = new THREE.FileLoader(THREE.DefaultLoadingManager);
     loader.load(
-      uri3D,
+      xmlData,
       (text) => {
-        // this.scene.add(parse3D(text))
-        console.log('text', text);
-        parse(text);
+        // console.log('asas', parse(text));
+        const loadR = x3dLoader(THREE, text, scene, material);
+        console.log('loadR', loadR);
       },
       (ref) => {
-        // console.log('LOADING', ref);
+        console.log('LOADING', ref);
       },
       () => {},
     );
-  };
+  }, []);
 
   // const parseModel = (threeVar, xmlData) => {
   //   console.log('PARSEMODEL', xmlData);
@@ -54,10 +57,10 @@ export default function Visualizer2() {
   // }
 
   const onWindowResize = useCallback((camera, renderer) => {
-    const { clientWidth, clientHeight } = mountRef.current;
-    camera.aspect = clientWidth / clientHeight;
-    camera.updateProjectionMatrix();
-    renderer?.setSize(clientWidth, clientHeight);
+    // const { clientWidth, clientHeight } = mountRef.current;
+    // camera.aspect = clientWidth / clientHeight;
+    // camera.updateProjectionMatrix();
+    // renderer?.setSize(clientWidth, clientHeight);
   }, []);
 
   const loadModel2 = async (uintVar) => {
@@ -86,18 +89,18 @@ export default function Visualizer2() {
     window.addEventListener(
       'resize',
       () => {
-        onWindowResize(camera, renderer);
+        // onWindowResize(camera, renderer);
       },
       false,
     );
 
-    onWindowResize(camera, renderer);
+    // onWindowResize(camera, renderer);
     // scene && data && THREE ? x3dParser(THREE, data, scene, material) : null;
-
+    // return mountRef?.current?.removeChild(renderer.domElement);
     return () => {
       mountRef && mountRef.current
         ? mountRef.current.removeChild(renderer.domElement)
-        : null;
+        : console.log('no mountRef');
     };
   }, []);
 

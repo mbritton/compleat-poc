@@ -1,10 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-import styles from '@/styles/Visualizer2.module.scss';
+import styles from '@/styles/Visualizer3.module.scss';
 
 export default function Visualizer3() {
   return (
     <div className={styles.visualizerWrapper}>
-      <div className={styles.visualizer}>
+      <div className={styles.visualizerThree}>
+        {/* <div className={styles.visualizer}> */}
         <x3d
           is="x3d"
           x="0px"
@@ -29,7 +29,7 @@ export default function Visualizer3() {
           >
             <viewpoint
               is="x3d"
-              position="0 0 700.8"
+              position="0 0 -400"
               centerofrotation="0 0 0"
               fieldofview="0.785398"
               orientation="0,0,0,0"
@@ -7641,75 +7641,8 @@ export default function Visualizer3() {
               </shape>
             </transform>
           </scene>
-          <canvas
-            className="x3dom-canvas"
-            id="x3dom-1669505032236-canvas"
-            tabIndex="0"
-            width="2084"
-            height="908"
-          ></canvas>
-          <div id="x3dom-state-viewer">
-            <div className="x3dom-states-rendermode-hardware">
-              Hardware-Rendering
-            </div>
-            <ul className="x3dom-states-list">
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">FPS</div>
-                <div className="x3dom-states-item-value">0.06</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">ANIM</div>
-                <div className="x3dom-states-item-value">0.00</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">TRAVERSE</div>
-                <div className="x3dom-states-item-value">0.10</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">SORT</div>
-                <div className="x3dom-states-item-value">0.00</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">RENDER</div>
-                <div className="x3dom-states-item-value">1.10</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">DRAW</div>
-                <div className="x3dom-states-item-value">0.01</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">PICKING</div>
-                <div className="x3dom-states-item-value">3.10</div>
-              </li>
-            </ul>
-            <ul className="x3dom-states-list">
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">#NODES:</div>
-                <div className="x3dom-states-item-value">165</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">#SHAPES:</div>
-                <div className="x3dom-states-item-value">82</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">#DRAWS:</div>
-                <div className="x3dom-states-item-value">82</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">#POINTS:</div>
-                <div className="x3dom-states-item-value">14,304</div>
-              </li>
-              <li className="x3dom-states-item">
-                <div className="x3dom-states-item-title">#TRIS:</div>
-                <div className="x3dom-states-item-value">4,768</div>
-              </li>
-            </ul>
-          </div>
-          <div className="x3dom-progress">
-            <strong>Loading: 0</strong>
-            <span></span>
-          </div>
         </x3d>
+        {/* </div> */}
       </div>
     </div>
   );
