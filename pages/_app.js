@@ -1,12 +1,10 @@
 import Layout from '@/components/Layout';
-import '@/styles/globals.scss';
-import useSWR from 'swr';
-import { AnimatePresence } from 'framer-motion';
-import { PrismicProvider } from '@prismicio/react';
-import { PrismicPreview } from '@prismicio/next';
-import { repositoryName } from '../prismicio';
-import Link from 'next/link';
 import '@/styles/3d/x3dom.css';
+import '@/styles/globals.scss';
+import { PrismicProvider } from '@prismicio/react';
+import { AnimatePresence } from 'framer-motion';
+import Link from 'next/link';
+import useSWR from 'swr';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
@@ -28,9 +26,7 @@ function CompleatApp({ Component, pageProps }) {
       >
         <AnimatePresence exitBeforeEnter>
           <Layout pages={data}>
-            <PrismicPreview repositoryName={repositoryName}>
-              <Component {...pageProps} />
-            </PrismicPreview>
+            <Component {...pageProps} />
           </Layout>
         </AnimatePresence>
       </PrismicProvider>

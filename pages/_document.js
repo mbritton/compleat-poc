@@ -57,10 +57,10 @@ export default class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
           {/* <script async src="http://www.x3dom.org/release/x3dom.js"></script> */}
-          <link
+          {/* <link
             rel="stylesheet"
             href="http://www.x3dom.org/release/x3dom.css"
-          ></link>
+          ></link> */}
         </Head>
         <body>
           <Main />
