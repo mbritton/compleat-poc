@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { x3dLoader, x3dParser } from 'three-x3d-loader';
 import { renderX3D } from '@/utils/renderX3D';
-import { Scene } from 'react-three-fiber';
+import { Scene, Canvas } from 'react-three-fiber';
 
 export default function Visualizer2() {
   const mountRef = useRef();
@@ -15,7 +15,7 @@ export default function Visualizer2() {
   const { clientWidth, clientHeight } = useState(mountRef.current);
   const camera = new THREE.PerspectiveCamera(75, clientWidth / 1200, 1, 1000);
   const uri3D =
-    'https://prismic-io.s3.amazonaws.com/compleat/f97be1c9-2a96-4b6a-8799-ea4a39fec88e_3dspiral.x3d';
+    'https://prismic-io.s3.amazonaws.com/compleat/0faa9e99-bb84-4409-9dc5-93978912c290_3dspiral.x3d';
 
   const convertModel = (xmlString) => {
     const parser = new DOMParser();
@@ -29,26 +29,8 @@ export default function Visualizer2() {
       (text) => {
         // Get it as an XML object
         const myObj = convertModel(text);
-        // console.log('myObj', myObj);
-        // const nodes = myObj.getElementsByTagName('*');
-        // for (const node of nodes) {
-        // Get the node name and convert it to lowercase
-        // let nodeName = node.nodeName.toLowerCase();
-        // nodeName = nodeName.replace(/-(\w)/g, (nodeName, letter) =>
-        //   letter.toUpperCase(),
-        // );
-        // console.log('nodeName', nodeName);
-        // node.nodeName = nodeName;
-
-        // var div = document.getElementsByTagName('div')[0];
-        // var p = document.createElement('p');
-        // p.innerHTML = div.innerHTML;
-        // div.parentNode.replaceChild(p, div);
-        // }
         console.log('scene', scene);
-        setTimeout(() => {
-          () => renderX3D(THREE, myObj, scene, material);
-        }, 1000);
+        () => renderX3D(THREE, myObj, scene, material);
 
         // x3dom.reload();
       },
