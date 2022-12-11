@@ -1,12 +1,27 @@
 import styles from '@/styles/Visualizer3.module.scss';
 
 export default function Visualizer3() {
+  setTimeout(() => {
+    const x3d = document.getElementById('X3DElement_scene');
+    const x3dEl = document.getElementById('X3DElement');
+    x3dEl.setAttribute('render', 'true');
+    x3dEl.setAttribute('reload', 'true');
+    console.log('x3dEl', x3dEl);
+    console.log('x3d', x3d);
+    // x3d.render();
+    // const x3dChildren = x3d.children;
+    // const x3dChildrenArray = Array.from(x3dChildren);
+    // const x3dChildrenArrayLength = x3dChildrenArray.length;
+    // console.log('window.x3d', x3d);
+    // x3d.setAttribute('render', 'true');
+  }, 2000);
+
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizerThree}>
-        {/* <div className={styles.visualizer}> */}
         <x3d
           is="x3d"
+          id="X3DElement"
           x="0px"
           y="0px"
           showlog="false"
@@ -45,7 +60,7 @@ export default function Visualizer3() {
               avatarsize="0.25,1.6,0.75"
               speed="1"
               transitiontime="1"
-              transitiontype="LINEAR "
+              transitiontype="LINEAR"
             ></navigationinfo>
             <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
               <texture
@@ -7642,7 +7657,6 @@ export default function Visualizer3() {
             </transform>
           </scene>
         </x3d>
-        {/* </div> */}
       </div>
     </div>
   );

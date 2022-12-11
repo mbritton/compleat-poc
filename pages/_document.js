@@ -61,6 +61,12 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="http://www.x3dom.org/release/x3dom.css"
           ></link>
+          {/* <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.js"
+            integrity="sha512-yewcaF6iD3IU62N4N33Y8C7Zo3jx50MUaEMII/kQAdWnLdw4f3rab2Ay9Xp4O6waXDZhx7i/nvm+qGuJhXF+uw=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+          ></script> */}
         </Head>
         <body>
           <Main />

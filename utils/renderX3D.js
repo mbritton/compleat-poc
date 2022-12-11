@@ -298,7 +298,7 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
         'indexedtriangleset' === data.nodeType ||
         'indexedtrianglestripset' === data.nodeType
       ) {
-        var geometry = new THREE.Geometry();
+        var geometry = new THREE.BufferGeometry();
 
         var indexes, uvIndexes, uvs, normals, colors;
 

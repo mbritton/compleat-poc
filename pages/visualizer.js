@@ -11,7 +11,7 @@ export default function Visualizer() {
   useEffect(() => {
     setTimeout(() => {
       x3DLoad().then((x3d) => {
-        console.log('done', x3d);
+        x3dom.reload();
       });
     }, 1000);
   }, []);
