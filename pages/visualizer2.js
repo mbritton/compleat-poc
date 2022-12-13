@@ -3,19 +3,25 @@ import styles from '@/styles/Visualizer2.module.scss';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { x3dLoader, x3dParser } from 'three-x3d-loader';
-import { renderX3D } from '@/utils/renderX3D';
-import { Scene, Canvas } from 'react-three-fiber';
+import * as renderX3D from '@/utils/renderX3D';
 
 export default function Visualizer2() {
-  const mountRef = useRef();
-  let scene = new THREE.Scene();
-  const [data, setData] = useState();
+  let mountRef = useRef();
+  const clientWidth = window.innerWidth;
+  const clientHeight = 1000;
+  const scene = new THREE.Scene();
   const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  let renderer = new THREE.WebGLRenderer();
-  const { clientWidth, clientHeight } = useState(mountRef.current);
-  const camera = new THREE.PerspectiveCamera(75, clientWidth / 1200, 1, 1000);
+  const renderer = new THREE.WebGLRenderer();
+  let ambientLight;
+  const camera = new THREE.PerspectiveCamera(
+    75,
+    clientWidth / clientHeight,
+    1,
+    1000,
+  );
+  let xmlDOM;
   const uri3D =
-    'https://prismic-io.s3.amazonaws.com/compleat/0faa9e99-bb84-4409-9dc5-93978912c290_3dspiral.x3d';
+    'https://prismic-io.s3.amazonaws.com/compleat/41b785a8-fad1-4b3e-9127-688b8490be93_3dspiral-position-000.x3d';
 
   const convertModel = (xmlString) => {
     const parser = new DOMParser();
@@ -27,12 +33,28 @@ export default function Visualizer2() {
     await loader.load(
       xmlData,
       (text) => {
-        // Get it as an XML object
-        const myObj = convertModel(text);
-        console.log('scene', scene);
-        () => renderX3D(THREE, myObj, scene, material);
+        xmlDOM = convertModel(text);
+        // scene.add(xmlDOM.body);
 
-        // x3dom.reload();
+        scene.background = new THREE.Color(0xf2f5ff);
+
+        ambientLight = new THREE.AmbientLight(0x404040); // soft white light
+        scene.add(ambientLight);
+
+        const light = new THREE.HemisphereLight(0x404040, 0xffffff, 1);
+        scene.add(light);
+
+        camera.position.z = -30;
+        camera.position.x = 1;
+        camera.position.y = 0;
+        camera.aspect = clientWidth / clientHeight;
+        camera.lookAt(new THREE.Vector3(0, 0, 0));
+        camera.updateProjectionMatrix();
+
+        const geometry = new THREE.BoxGeometry(1, 1, 1);
+        const material = new THREE.MeshBasicMaterial({ color: '#433F81' });
+        let cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
       },
       () => {
         console.log('progress');
@@ -43,42 +65,20 @@ export default function Visualizer2() {
     );
   }, []);
 
-  const onWindowResize = useCallback((camera, renderer) => {
-    camera = !camera
-      ? new THREE.PerspectiveCamera(75, clientWidth / 1200, 1, 1000)
-      : null;
-
-    camera.aspect = clientWidth / 1200;
-    camera.lookAt(scene.position);
-    camera.updateProjectionMatrix();
-    renderer?.setSize(clientWidth, clientHeight);
-  }, []);
-
-  // const loadModel2 = async (uintVar) => {
-  //   const loader = new FBXLoader();
-
-  //   const group = loader.parse(uintVar.blob, '');
-  //   scene.add(group);
-
-  //   reader.readAsArrayBuffer(blob);
-  // };
+  const onWindowResize = useCallback(() => {
+    renderer.setSize(clientWidth, clientHeight);
+  }, [clientWidth, clientHeight]);
 
   useEffect(() => {
-    const { clientWidth, clientHeight } = mountRef.current;
-    camera.aspect = clientWidth / clientHeight;
-    camera.updateProjectionMatrix();
-
-    // renderer.setSize(clientWidth, 1200);
     mountRef.current.appendChild(renderer.domElement);
 
-    console.log('mountRef', mountRef.current);
-    console.log('renderer.domElement', renderer.domElement);
-
-    // scene.add(mountRef.current);
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: '#433F81' });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    loadModel(uri3D).then(() => {
+      onWindowResize();
+      setTimeout(() => {
+        renderX3D(THREE, xmlDOM, scene, material);
+        renderer.render(scene, camera);
+      }, 1000);
+    });
 
     return () => {
       mountRef && mountRef.current
@@ -87,17 +87,10 @@ export default function Visualizer2() {
     };
   }, []);
 
-  useEffect(() => {
-    onWindowResize();
-    // x3dLoader(THREE);
-    loadModel(uri3D);
-  }, []);
-
   return (
     <div className={styles.visualizerWrapper}>
-      <div className={styles.visualizer}>
+      <div className={styles.visualizer} ref={mountRef}>
         <div ref={mountRef}></div>
-        {/* <Scene camera={camera} scene={scene} renderer={renderer} /> */}
       </div>
     </div>
   );

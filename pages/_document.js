@@ -59,7 +59,7 @@ export default class MyDocument extends Document {
           <script async src="http://www.x3dom.org/release/x3dom.js"></script>
           <link
             rel="stylesheet"
-            href="http://www.x3dom.org/release/x3dom.css"
+            href="https://prismic-io.s3.amazonaws.com/compleat/17f5a7fd-4671-4306-8a62-24a5ca2d13ec_x3dom.css"
           ></link>
           {/* <script
             src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.147.0/three.js"

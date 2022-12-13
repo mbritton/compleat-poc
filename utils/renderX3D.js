@@ -1,10 +1,10 @@
-function renderX3D(THREE, x3dXml, scene, useImageTexture) {
+export const renderX3D = (THREE, x3dXml, scene, useImageTexture) => {
   useImageTexture = useImageTexture === false ? false : true;
   scene = scene || new THREE.Scene();
-  var defines = {};
-  var float_pattern = /(\b|\-|\+)([\d\.e]+)/;
-  var float2_pattern = /([\d\.\+\-e]+)\s+([\d\.\+\-e]+)/g;
-  var float3_pattern = /([\d\.\+\-e]+)\s+([\d\.\+\-e]+)\s+([\d\.\+\-e]+)/g;
+  const defines = {};
+  const float_pattern = /(\b|\-|\+)([\d\.e]+)/;
+  const float2_pattern = /([\d\.\+\-e]+)\s+([\d\.\+\-e]+)/g;
+  const float3_pattern = /([\d\.\+\-e]+)\s+([\d\.\+\-e]+)\s+([\d\.\+\-e]+)/g;
 
   /**
    * Interpolates colors a and b following their relative distance
@@ -15,12 +15,12 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
    * @param float t
    * @returns {Color}
    */
-  var interpolateColors = function (a, b, t) {
-    var deltaR = a.r - b.r;
-    var deltaG = a.g - b.g;
-    var deltaB = a.b - b.b;
+  const interpolateColors = (a, b, t) => {
+    const deltaR = a.r - b.r;
+    const deltaG = a.g - b.g;
+    const deltaB = a.b - b.b;
 
-    var c = new THREE.Color();
+    const c = new THREE.Color();
 
     c.r = a.r - t * deltaR;
     c.g = a.g - t * deltaG;
@@ -51,13 +51,7 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
    * @param colors
    * @param boolean directionIsDown Whether to work bottom up or top down.
    */
-  var paintFaces = function (
-    geometry,
-    radius,
-    angles,
-    colors,
-    directionIsDown,
-  ) {
+  var paintFaces = (geometry, radius, angles, colors, directionIsDown) => {
     var f, n, p, vertexIndex, color;
 
     var direction = directionIsDown ? 1 : -1;
@@ -406,7 +400,6 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
           defines[geometry.name] = geometry;
         }
         parent.geometry = geometry;
-        //parent.geometry = geometry;
       }
 
       return;
@@ -453,13 +446,23 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
           parent.material = material;
         }
 
-        if ('imagetexture' === child.nodeType && useImageTexture) {
-          //var tex = THREE.ImageUtils.loadTexture("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAIAAACQkWg2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABYSURBVDhPxc9BCsAgDERRj96j9WZpyI+CYxCKlL6VJfMXbfbSX8Ed8mOmAdMr8M5DNwVj2gJvaYqANXbBuoY0B4FbG1m7s592fh4Z7zx0GqCcog42vg7MHh1jhetTOqUmAAAAAElFTkSuQmCC");
-          var tex = THREE.ImageUtils.loadTexture(child.url);
+        if ('imagetexture' === child.nodeType && useImageTexture && child.url) {
+          let texInstance;
+          const tex = new THREE.TextureLoader().load(
+            child.url,
+            (textureInstance) => {
+              texInstance = textureInstance;
+              if (texInstance && parent.material !== undefined) {
+                parent.material.map = texInstance;
+              }
+            },
+            () => {},
+            () => {
+              return;
+            },
+          );
           tex.wrapS = THREE.RepeatWrapping;
           tex.wrapT = THREE.RepeatWrapping;
-
-          parent.material.map = tex;
         }
       }
 
@@ -474,10 +477,10 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
   };
 
   var getTree = function (x3dXml) {
-    var tree = { string: 'scene', children: [] };
+    var tree = { string: 'Scene', children: [] };
 
     for (var i = 0; i < x3dXml.documentElement.childNodes.length; i++) {
-      if (x3dXml.documentElement.childNodes[i].nodeName === 'scene') {
+      if (x3dXml.documentElement.childNodes[i].nodeName === 'Scene') {
         parseChildren(x3dXml.documentElement.childNodes[i], tree);
         return tree;
       }
@@ -546,11 +549,9 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
         break;
 
       default:
-        //group = nodeName.toLowerCase();
         group = '';
         break;
     }
-
     return group;
   };
 
@@ -810,7 +811,8 @@ function renderX3D(THREE, x3dXml, scene, useImageTexture) {
 
     return property;
   };
+
   renderNode(getTree(x3dXml), scene);
-}
+};
 
 module.exports = renderX3D;

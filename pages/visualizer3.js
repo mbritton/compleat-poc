@@ -44,7 +44,7 @@ export default function Visualizer3() {
           >
             <viewpoint
               is="x3d"
-              position="0 0 -400"
+              position="0 0 -200"
               centerofrotation="0 0 0"
               fieldofview="0.785398"
               orientation="0,0,0,0"
@@ -63,14 +63,14 @@ export default function Visualizer3() {
               transitiontype="LINEAR"
             ></navigationinfo>
             <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-              <texture
+              <imagetexture
                 is="x3d"
                 def="treadTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
                 repeatt="true"
                 hidechildren="true"
-              ></texture>
+              ></imagetexture>
               <material
                 is="x3d"
                 def="treadMat"
@@ -81,14 +81,14 @@ export default function Visualizer3() {
                 shininess="0.2"
                 specularcolor="0,0,0"
               ></material>
-              <texture
+              <imagetexture
                 is="x3d"
                 def="handrailTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
                 repeatt="true"
                 hidechildren="true"
-              ></texture>
+              ></imagetexture>
               <material
                 is="x3d"
                 def="handrailMat"
@@ -109,14 +109,14 @@ export default function Visualizer3() {
                 shininess="0.2"
                 specularcolor="0,0,0"
               ></material>
-              <texture
+              <imagetexture
                 is="x3d"
                 def="postTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
                 repeatt="true"
                 hidechildren="true"
-              ></texture>
+              ></imagetexture>
               <material
                 is="x3d"
                 def="postMat"
@@ -127,14 +127,14 @@ export default function Visualizer3() {
                 shininess="0.2"
                 specularcolor="0,0,0"
               ></material>
-              <texture
+              <imagetexture
                 is="x3d"
                 def="floorTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
                 repeatt="true"
                 hidechildren="true"
-              ></texture>
+              ></imagetexture>
               <material
                 is="x3d"
                 def="floorMat"
@@ -185,7 +185,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -271,7 +271,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -357,7 +357,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -443,7 +443,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -529,7 +529,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -615,7 +615,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -701,7 +701,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -787,7 +787,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -873,7 +873,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -959,7 +959,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1045,7 +1045,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1111,7 +1111,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1186,7 +1186,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="treadTex"></texture>
+                  <imagetexture is="x3d" use="treadTex"></imagetexture>
                   <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1251,7 +1251,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="stringTex"></texture>
+                  <imagetexture is="x3d" use="stringTex"></imagetexture>
                   <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1325,7 +1325,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="stringTex"></texture>
+                  <imagetexture is="x3d" use="stringTex"></imagetexture>
                   <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1408,7 +1408,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="stringTex"></texture>
+                  <imagetexture is="x3d" use="stringTex"></imagetexture>
                   <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1482,7 +1482,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="stringTex"></texture>
+                  <imagetexture is="x3d" use="stringTex"></imagetexture>
                   <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1556,7 +1556,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="handrailTex"></texture>
+                  <imagetexture is="x3d" use="handrailTex"></imagetexture>
                   <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -1930,7 +1930,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="handrailTex"></texture>
+                  <imagetexture is="x3d" use="handrailTex"></imagetexture>
                   <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -2307,7 +2307,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="handrailTex"></texture>
+                  <imagetexture is="x3d" use="handrailTex"></imagetexture>
                   <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -2684,7 +2684,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="handrailTex"></texture>
+                  <imagetexture is="x3d" use="handrailTex"></imagetexture>
                   <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3068,7 +3068,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="handrailTex"></texture>
+                  <imagetexture is="x3d" use="handrailTex"></imagetexture>
                   <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3445,7 +3445,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="postTex"></texture>
+                  <imagetexture is="x3d" use="postTex"></imagetexture>
                   <material is="x3d" use="postMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3501,7 +3501,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3574,7 +3574,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3647,7 +3647,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3720,7 +3720,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3793,7 +3793,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3866,7 +3866,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -3939,7 +3939,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4012,7 +4012,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4085,7 +4085,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4158,7 +4158,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4231,7 +4231,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4304,7 +4304,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4377,7 +4377,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4450,7 +4450,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4523,7 +4523,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4596,7 +4596,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4669,7 +4669,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4742,7 +4742,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4815,7 +4815,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4888,7 +4888,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -4961,7 +4961,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5034,7 +5034,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5107,7 +5107,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5180,7 +5180,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5253,7 +5253,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5326,7 +5326,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5399,7 +5399,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5472,7 +5472,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5545,7 +5545,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5618,7 +5618,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5691,7 +5691,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5764,7 +5764,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5837,7 +5837,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5910,7 +5910,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -5983,7 +5983,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6056,7 +6056,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6129,7 +6129,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6202,7 +6202,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6275,7 +6275,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6348,7 +6348,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6421,7 +6421,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6494,7 +6494,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6567,7 +6567,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6640,7 +6640,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6713,7 +6713,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6786,7 +6786,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6859,7 +6859,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -6932,7 +6932,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7005,7 +7005,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="balusterTex"></texture>
+                  <imagetexture is="x3d" use="balusterTex"></imagetexture>
                   <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7078,7 +7078,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="wellTex"></texture>
+                  <imagetexture is="x3d" use="wellTex"></imagetexture>
                   <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7172,7 +7172,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="wellTex"></texture>
+                  <imagetexture is="x3d" use="wellTex"></imagetexture>
                   <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7223,7 +7223,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="wellTex"></texture>
+                  <imagetexture is="x3d" use="wellTex"></imagetexture>
                   <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7296,7 +7296,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="wellTex"></texture>
+                  <imagetexture is="x3d" use="wellTex"></imagetexture>
                   <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7345,7 +7345,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7414,7 +7414,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7465,7 +7465,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7525,7 +7525,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7573,7 +7573,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
@@ -7624,7 +7624,7 @@ export default function Visualizer3() {
                 ispickable="true"
               >
                 <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
-                  <texture is="x3d" use="floorTex"></texture>
+                  <imagetexture is="x3d" use="floorTex"></imagetexture>
                   <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset

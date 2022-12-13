@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.2//EN" "http://www.web3d.org/specifications/x3d-3.2.dtd">
 <x3d is="x3d" x="0px" y="0px" showlog="false" showstat="false" width="1042px" height="454px" profile='Immersive' version='3.3'
     xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation =' https://www.web3d.org/specifications/x3d-3.3.xsd '>
     <param name="disableDoubleClick" value="true" />
@@ -7,14 +7,14 @@
         <viewpoint is="x3d" position="0 0 500" centerofrotation="0 0 0" fieldofview="0.785398" orientation="0,0,0,0" znear="-1" zfar="-1"></viewpoint>
         <navigationinfo type="turntable" headlight="true" typeparams="-0.4,60,0.05,2.8" explorationmode="all" avatarsize="0.25,1.6,0.75" speed="1" transitiontime="1" transitiontype="LINEAR "></navigationinfo>
         <appearance sorttype="auto" alphaclipthreshold="0.1">
-            <texture def="treadTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></texture>
+            <imagetexture def="treadTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></imagetexture>
             <material def="treadMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="handrailTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></texture>
+            <imagetexture def="handrailTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></imagetexture>
             <material def="handrailMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="stringMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="postTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></texture>
+            <imagetexture def="postTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></imagetexture>
             <material def="postMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
-            <texture def="floorTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></texture>
+            <imagetexture def="floorTex" url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg" repeats="true" repeatt="true" hidechildren="true"></imagetexture>
             <material def="floorMat" diffusecolor="1 1 1" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="balusterMat" diffusecolor="0.01 0.01 0.01" transparency="0" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
             <material def="wellMat" diffusecolor="1 1 1" transparency="0.7" ambientintensity="0.2" emissivecolor="0,0,0" shininess="0.2" specularcolor="0,0,0"></material>
@@ -22,7 +22,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -68,7 +68,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -114,7 +114,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -160,7 +160,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -206,7 +206,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -252,7 +252,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -298,7 +298,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -344,7 +344,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -390,7 +390,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -436,7 +436,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
@@ -482,7 +482,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 4 5 6 7 8 9 10 11 -1 12 13 14 15 16 17 18 19 20 21 22 23 -1 0 23 22 1 -1 1 22 21 2 -1 
@@ -510,7 +510,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 25 24 1 -1 1 24 23 2 -1 2 23 22 3 -1 3 22 21 4 -1 
@@ -547,7 +547,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="treadTex"></texture>
+                    <imagetexture use="treadTex"></imagetexture>
                     <material use="treadMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 17 16 1 -1 1 16 15 2 -1 2 15 14 3 -1 3 14 13 4 -1 
@@ -576,7 +576,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="stringTex"></texture>
+                    <imagetexture use="stringTex"></imagetexture>
                     <material use="stringMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
@@ -612,7 +612,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="stringTex"></texture>
+                    <imagetexture use="stringTex"></imagetexture>
                     <material use="stringMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
@@ -655,7 +655,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="stringTex"></texture>
+                    <imagetexture use="stringTex"></imagetexture>
                     <material use="stringMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
@@ -691,7 +691,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="stringTex"></texture>
+                    <imagetexture use="stringTex"></imagetexture>
                     <material use="stringMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
@@ -727,7 +727,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="handrailTex"></texture>
+                    <imagetexture use="handrailTex"></imagetexture>
                     <material use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 3 0 2 -1 4 0 3 -1 5 4 3 -1 
@@ -1063,7 +1063,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="handrailTex"></texture>
+                    <imagetexture use="handrailTex"></imagetexture>
                     <material use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
@@ -1402,7 +1402,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="handrailTex"></texture>
+                    <imagetexture use="handrailTex"></imagetexture>
                     <material use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
@@ -1741,7 +1741,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="handrailTex"></texture>
+                    <imagetexture use="handrailTex"></imagetexture>
                     <material use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
@@ -2087,7 +2087,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="handrailTex"></texture>
+                    <imagetexture use="handrailTex"></imagetexture>
                     <material use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
@@ -2426,7 +2426,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="postTex"></texture>
+                    <imagetexture use="postTex"></imagetexture>
                     <material use="postMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 7 -1 7 6 1 0 -1 6 5 2 1 -1 
@@ -2444,7 +2444,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2477,7 +2477,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2510,7 +2510,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2543,7 +2543,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2576,7 +2576,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2609,7 +2609,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2642,7 +2642,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2675,7 +2675,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2708,7 +2708,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2741,7 +2741,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2774,7 +2774,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2807,7 +2807,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2840,7 +2840,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2873,7 +2873,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2906,7 +2906,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2939,7 +2939,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -2972,7 +2972,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3005,7 +3005,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3038,7 +3038,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3071,7 +3071,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3104,7 +3104,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3137,7 +3137,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3170,7 +3170,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3203,7 +3203,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3236,7 +3236,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3269,7 +3269,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3302,7 +3302,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3335,7 +3335,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3368,7 +3368,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3401,7 +3401,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3434,7 +3434,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3467,7 +3467,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3500,7 +3500,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3533,7 +3533,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3566,7 +3566,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3599,7 +3599,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3632,7 +3632,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3665,7 +3665,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3698,7 +3698,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3731,7 +3731,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3764,7 +3764,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3797,7 +3797,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3830,7 +3830,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3863,7 +3863,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3896,7 +3896,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3929,7 +3929,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3962,7 +3962,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -3995,7 +3995,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -4028,7 +4028,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="balusterTex"></texture>
+                    <imagetexture use="balusterTex"></imagetexture>
                     <material use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
@@ -4061,7 +4061,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="wellTex"></texture>
+                    <imagetexture use="wellTex"></imagetexture>
                     <material use="wellMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 7 -1 5 8 9 6 -1 8 10 11 9 -1 
@@ -4119,7 +4119,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="wellTex"></texture>
+                    <imagetexture use="wellTex"></imagetexture>
                     <material use="wellMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 7 -1 5 4 1 0 -1
@@ -4134,7 +4134,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="wellTex"></texture>
+                    <imagetexture use="wellTex"></imagetexture>
                     <material use="wellMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 5 6 7 -1 5 8 9 6 -1 8 10 11 9 -1 
@@ -4172,7 +4172,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="wellTex"></texture>
+                    <imagetexture use="wellTex"></imagetexture>
                     <material use="wellMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1 4 1 0 -1
@@ -4186,7 +4186,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="1 2 3 -1 23 24 0 -1 0 22 23 -1 0 21 22 -1 
@@ -4220,7 +4220,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1
@@ -4234,7 +4234,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="1 2 3 4 -1 4 0 1 -1 13 14 0 -1 0 12 13 -1 
@@ -4259,7 +4259,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 -1
@@ -4272,7 +4272,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1
@@ -4286,7 +4286,7 @@
         <transform render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" center="0,0,0" translation="0,0,0" rotation="0,0,0,0" scale="1,1,1" scaleorientation="0,0,0,0">
             <shape render="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" ispickable="true">
                 <appearance sorttype="auto" alphaclipthreshold="0.1">
-                    <texture use="floorTex"></texture>
+                    <imagetexture use="floorTex"></imagetexture>
                     <material use="floorMat"></material>
                 </appearance>
                 <indexedfaceset coordindex="0 1 2 3 -1

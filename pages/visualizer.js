@@ -25,7 +25,7 @@ export default function Visualizer() {
               is="x3d"
               nameSpaceName="myScene"
               mapDEFToID="false"
-              url="https://prismic-io.s3.amazonaws.com/compleat/c3ee90f2-a2d0-45af-ab22-8dd920a65688_3dspiral.x3d"
+              url="https://prismic-io.s3.amazonaws.com/compleat/a70a27f2-b285-4970-9cda-5514d1b8f580_3dspiral.x3d"
             ></inline>
           </scene>
         </x3d>

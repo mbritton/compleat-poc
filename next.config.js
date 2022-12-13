@@ -9,13 +9,11 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: '**.prismic.io',
-        port: '',
         pathname: '/compleat/**',
       },
       {
         protocol: 'https',
         hostname: 'prismic.io',
-        port: '',
         pathname: '/compleat/**',
       },
     ],
