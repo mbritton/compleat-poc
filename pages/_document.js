@@ -56,6 +56,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
+          <script>X3DOM_SECURITY_OFF = true;</script>
           <script async src="http://www.x3dom.org/release/x3dom.js"></script>
           <link
             rel="stylesheet"

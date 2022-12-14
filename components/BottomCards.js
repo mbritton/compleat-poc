@@ -34,14 +34,8 @@ const stagger = {
 };
 
 const BottomCards = ({ page, cards }) => {
-  useEffect(() => {
-    setTimeout(() => {
-      console.log('bottom cards', page);
-    }, 1000);
-  }, []);
   return (
     <motion.div variants={stagger} className={styles.heroBottomCards}>
-      {/*  For testing purposes */}
       <SliceZone components={components} slices={page?.data.slices} />
       {cards.map((card, i) => (
         <motion.div key={i + 'key'} variants={fadeInUp} className={styles.card}>

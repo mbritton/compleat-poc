@@ -6,20 +6,20 @@ const TopNav = ({ path, pageObjects }) => {
   return (
     <div className={styles.navWrapper}>
       <Tools />
-    <div className={styles.pageButtonsWrapper}>
-      {pageObjects.map((page, index) => {
-        return (
-          <div
-            key={index + 'page'}
-            className={
-              page.href === path ? styles.pageButton : styles.pageButtonDim
-            }
-          >
-            <Link href={page.href}>{page.title}</Link>
-          </div>
-        );
-      })}
-    </div>
+      <div className={styles.pageButtonsWrapper}>
+        {pageObjects.map((page, index) => {
+          return (
+            <div
+              key={index + 'page'}
+              className={
+                page.href === path ? styles.pageButton : styles.pageButtonDim
+              }
+            >
+              <Link href={page.href}>{page.title}</Link>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

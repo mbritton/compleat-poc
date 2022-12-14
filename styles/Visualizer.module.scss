@@ -1,8 +1,19 @@
+.expand {
+  position: absolute;
+  right: 0;
+  margin: 20px 220px 0 0;
+  cursor: pointer;
+  z-index: 100;
+}
+
 .visualizer {
-  width: 620px;
+  display: flex;
+  flex-direction: row;
+  width: 75%;
   height: 620px;
   margin: auto;
   border: 1px solid #000000;
+  margin-top: 100px;
 }
 
 .visualizerCover {

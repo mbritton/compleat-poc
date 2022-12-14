@@ -7,8 +7,6 @@ import * as renderX3D from '@/utils/renderX3D';
 import { Object3D } from 'three';
 import { parse } from 'path';
 
-THREE.Cache.enabled = true;
-
 export default function Visualizer2() {
   let mountRef = useRef();
   const clientWidth = window.innerWidth;
@@ -24,6 +22,7 @@ export default function Visualizer2() {
     1000,
   );
   let xmlDOM;
+  THREE.Cache.enabled = true;
   const uri3D =
     'https://prismic-io.s3.amazonaws.com/compleat/aa5b53fb-91f9-4aa8-9ab7-e40beac0e77e_3dspiral-position-000.x3d';
 
@@ -44,8 +43,7 @@ export default function Visualizer2() {
   }, []);
 
   const renderModel = useCallback((foo) => {
-    console.log('renderModel', foo);
-
+    console.log('foo', foo);
     scene.background = new THREE.Color(0xf2f5ff);
 
     ambientLight = new THREE.AmbientLight(0x404040); // soft white light
@@ -71,26 +69,7 @@ export default function Visualizer2() {
 
   const loadModel = useCallback(async (xmlData) => {
     await parseModel().then((xmlDOMRet) => {
-      // console.log('xmlDOMRet', xmlDOMRet);
-      // xmlDOM = parser.parseFromString(text, 'text/xml');
-      // const xmlDomObj = parseModel(xmlDOM);
-      // renderX3D(THREE, xmlDOMRet, scene, material);
-      // renderer.render(scene, camera);
-      // scene.background = new THREE.Color(0xf2f5ff);
-      // ambientLight = new THREE.AmbientLight(0x404040); // soft white light
-      // scene.add(ambientLight);
-      // const light = new THREE.HemisphereLight(0x404040, 0xffffff, 1);
-      // scene.add(light);
-      // camera.position.z = -30;
-      // camera.position.x = 1;
-      // camera.position.y = 0;
-      // camera.aspect = clientWidth / clientHeight;
-      // camera.lookAt(new THREE.Vector3(0, 0, 0));
-      // camera.updateProjectionMatrix();
-      // const geometry = new THREE.BoxGeometry(1, 1, 1);
-      // const material = new THREE.MeshBasicMaterial({ color: '#433F81' });
-      // let cube = new THREE.Mesh(geometry, material);
-      // scene.add(cube);
+      // Detemine if the model is X3D or VRML, says copilot
     });
   }, []);
 
@@ -103,10 +82,6 @@ export default function Visualizer2() {
 
     loadModel(uri3D).then(() => {
       onWindowResize();
-      // setTimeout(() => {
-      //   // renderX3D(THREE, xmlDOM, scene, material);
-      //   // renderer.render(scene, camera);
-      // }, 1000);
     });
 
     return () => {
