@@ -10,12 +10,12 @@ export default function Visualizer3() {
     const x3dEl = document.getElementById('X3DElement');
     x3dEl.setAttribute('render', 'true');
     x3dEl.setAttribute('reload', 'true');
-    console.log('x3dEl', x3dEl);
-    console.log('x3d', x3d);
 
-    x3DLoad().then((x3d) => {
-      x3dom.reload();
-    });
+    setTimeout(() => {
+      x3DLoad().then((x3d) => {
+        x3dom.reload();
+      });
+    }, 1000);
     // x3d.render();
     // const x3dChildren = x3d.children;
     // const x3dChildrenArray = Array.from(x3dChildren);
@@ -55,7 +55,7 @@ export default function Visualizer3() {
             fieldofview="2"
             orientation="0,0,0,0"
             zfar="-1"
-            viewAll="true"
+            viewAll="false"
             znear="-1"
           ></viewpoint>
           <navigationinfo

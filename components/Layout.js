@@ -2,21 +2,29 @@ import TopNav from '@/components/TopNav';
 import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Layout({ page, pages, children }) {
   const [pageObj] = useState(JSON.parse(pages));
   const router = useRouter();
 
+  useEffect(() => {
+    console.log('page', page);
+    console.log('router.asPath', router.asPath);
+    console.log('pageObj.pages', pageObj.pages);
+  }, []);
+
   return (
     <div className={styles.container}>
       <div className={styles.header}>
         <div className={styles.topBrand}></div>
-        <TopNav
-          page={page}
-          path={router.asPath}
-          pageObjects={pageObj.pages}
-        ></TopNav>
+        {router.asPath !== '/visualizer3' && (
+          <TopNav
+            page={page}
+            path={router.asPath}
+            pageObjects={pageObj.pages}
+          ></TopNav>
+        )}
       </div>
       <div className={styles.logoHeader}>
         <Image

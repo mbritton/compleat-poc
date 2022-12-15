@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
 <x3d is="x3d" x="0px" y="0px" showlog="false" showstat="false" width="1042px" height="454px" profile='Immersive' version='3.3'
-    xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation =' https://www.web3d.org/specifications/x3d-3.3.xsd '>
+    xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation ='https://www.web3d.org/specifications/x3d-3.3.xsd '>
     <param name="disableDoubleClick" value="true" />
     <Scene is="x3d" id="X3DElement_scene" render="true" visible="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" pickmode="idBuf" dopickpass="true">
         <viewpoint viewAll="true" is="x3d" position="0 30 -300" centerofrotation="0 0 0" fieldofview="0.785398" orientation="0,0,0,0" znear="-1" zfar="-1"></viewpoint>
