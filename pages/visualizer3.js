@@ -11,12 +11,12 @@ export default function Visualizer3() {
     x3dEl.setAttribute('render', 'true');
     x3dEl.setAttribute('reload', 'true');
 
-    setTimeout(() => {
-      x3DLoad().then((x3d) => {
-        x3d ? x3d.reload() : console.log('x3dom not loaded');
+    // setTimeout(() => {
+    //   x3DLoad().then((x3d) => {
+        // x3d ? x3d.reload() : console.log('x3dom not loaded');
         // x3dom ? x3dom.reload() : console.log('x3dom not loaded');
       });
-    }, 5000);
+    // }, 5000);
     // x3d.render();
     // const x3dChildren = x3d.children;
     // const x3dChildrenArray = Array.from(x3dChildren);
