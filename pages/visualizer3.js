@@ -49,13 +49,12 @@ export default function Visualizer3() {
         >
           <viewpoint
             is="x3d"
-            position="0 30 -300"
-            bind="true"
+            position="0 0 -600"
             centerofrotation="0 0 0"
-            fieldofview="2"
+            fieldofview="0.785398"
             orientation="0,0,0,0"
             zfar="-1"
-            viewAll="false"
+            viewAll="true"
             znear="-1"
           ></viewpoint>
           <navigationinfo
