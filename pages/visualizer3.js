@@ -16,7 +16,7 @@ export default function Visualizer3() {
         console.log('x3dom', x3dom);
         x3dom ? x3dom.reload() : console.log('x3dom not loaded');
       });
-    }, 2000);
+    }, 5000);
     // x3d.render();
     // const x3dChildren = x3d.children;
     // const x3dChildrenArray = Array.from(x3dChildren);
