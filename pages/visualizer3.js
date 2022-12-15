@@ -1,22 +1,21 @@
 import styles from '@/styles/Visualizer3.module.scss';
-// import { x3dom } from 'x3dom';
 
-// export async function x3DLoad() {
-//   return await import('x3dom');
-// }
+export async function x3DLoad() {
+  return await import('x3dom');
+}
 
 export default function Visualizer3() {
   setTimeout(() => {
-    // const x3d = document.getElementById('X3DElement_scene');
-    // const x3dEl = document.getElementById('X3DElement');
-    // x3dEl.setAttribute('render', 'true');
-    // x3dEl.setAttribute('reload', 'true');
-    // setTimeout(() => {
-    //   x3DLoad().then((x3d) => {
-    // x3d ? x3d.reload() : console.log('x3dom not loaded');
-    // x3dom ? x3dom.reload() : console.log('x3dom not loaded');
-    // });
-    // }, 5000);
+    const x3d = document.getElementById('X3DElement_scene');
+    const x3dEl = document.getElementById('X3DElement');
+    x3dEl.setAttribute('render', 'true');
+    x3dEl.setAttribute('reload', 'true');
+
+    setTimeout(() => {
+      x3DLoad().then((x3d) => {
+        x3dom.reload();
+      });
+    }, 1000);
     // x3d.render();
     // const x3dChildren = x3d.children;
     // const x3dChildrenArray = Array.from(x3dChildren);
