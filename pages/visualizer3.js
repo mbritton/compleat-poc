@@ -13,7 +13,6 @@ export default function Visualizer3() {
 
     setTimeout(() => {
       x3DLoad().then((x3d) => {
-        console.log('x3dom', x3dom);
         x3dom ? x3dom.reload() : console.log('x3dom not loaded');
       });
     }, 5000);
