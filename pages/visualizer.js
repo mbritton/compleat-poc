@@ -15,7 +15,7 @@ export default function Visualizer() {
       x3DLoad().then((x3d) => {
         x3dom.reload();
       });
-    }, 1000);
+    }, 2000);
   }, []);
 
   const handleClick = useCallback((e, path) => {

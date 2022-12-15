@@ -13,7 +13,8 @@ export default function Visualizer3() {
 
     setTimeout(() => {
       x3DLoad().then((x3d) => {
-        x3dom.reload();
+        console.log('x3d', x3d);
+        // x3dom.reload();
       });
     }, 1000);
     // x3d.render();
@@ -54,7 +55,6 @@ export default function Visualizer3() {
             fieldofview="0.785398"
             orientation="0,0,0,0"
             zfar="-1"
-            viewAll="true"
             znear="-1"
           ></viewpoint>
           <navigationinfo
@@ -64,7 +64,7 @@ export default function Visualizer3() {
             typeparams="-0.4,60,0.05,2.8"
             explorationmode="all"
             avatarsize="0.25,1.6,0.75"
-            speed="1"
+            speed="0"
             transitiontime="1"
             transitiontype="LINEAR"
           ></navigationinfo>
