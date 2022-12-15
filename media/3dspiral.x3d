@@ -4298,7 +4298,7 @@
             </shape>
         </transform>
     </Scene>
-    <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="2084" height="908"></canvas>
+    <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="1042" height="458"></canvas>
     <div id="x3dom-state-viewer" style="display: none">
         <div class="x3dom-states-rendermode-hardware">
                   Hardware-Rendering

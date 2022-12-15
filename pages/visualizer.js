@@ -13,10 +13,12 @@ export default function Visualizer() {
   useEffect(() => {
     setTimeout(() => {
       x3DLoad().then((x3d) => {
+        console.log('x3d', x3d);
         setShowContent(true);
+        console.log('x3dom', x3dom);
         x3dom.reload();
       });
-    }, 1000);
+    }, 500);
   }, []);
 
   const handleClick = useCallback((e, path) => {
@@ -46,7 +48,7 @@ export default function Visualizer() {
                 nameSpaceName="myScene"
                 mapDEFToID="false"
                 contentType="model/x3d+xml"
-                url="https://prismic-io.s3.amazonaws.com/compleat/af5b1872-1a8b-4264-9893-e0c7cf384b5f_3dspiral.x3d"
+                url="https://prismic-io.s3.amazonaws.com/compleat/360232f2-1735-4cd1-8be7-965db425cfaa_3dspiral.x3d"
               ></inline>
             </scene>
           </x3d>
