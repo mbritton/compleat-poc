@@ -1,16 +1,16 @@
 import styles from '@/styles/Visualizer3.module.scss';
+// import { x3dom } from 'x3dom';
 
-export async function x3DLoad() {
-  return await import('x3dom');
-}
+// export async function x3DLoad() {
+//   return await import('x3dom');
+// }
 
 export default function Visualizer3() {
   setTimeout(() => {
-    const x3d = document.getElementById('X3DElement_scene');
-    const x3dEl = document.getElementById('X3DElement');
-    x3dEl.setAttribute('render', 'true');
-    x3dEl.setAttribute('reload', 'true');
-
+    // const x3d = document.getElementById('X3DElement_scene');
+    // const x3dEl = document.getElementById('X3DElement');
+    // x3dEl.setAttribute('render', 'true');
+    // x3dEl.setAttribute('reload', 'true');
     // setTimeout(() => {
     //   x3DLoad().then((x3d) => {
     // x3d ? x3d.reload() : console.log('x3dom not loaded');
