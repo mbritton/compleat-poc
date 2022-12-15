@@ -1,28 +1,27 @@
 import styles from '@/styles/Visualizer3.module.scss';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export async function x3DLoad() {
   return await import('x3dom');
 }
 
 export default function Visualizer3() {
-  const [showContent, setShowContent] = useState(false);
+  const [showContent, setShowContent] = useState(true);
+  let sceneRef = useRef();
 
   // setTimeout(() => {
   // const x3d = document.getElementById('X3DElement_scene');
-  let x3dEl;
+  // let x3dEl = document.getElementById('X3DElement');
 
   useEffect(() => {
     setTimeout(() => {
       x3DLoad().then((x3d) => {
-        console.log('x3d', x3d);
+        // console.log('x3d', x3d);
         setShowContent(true);
-        setTimeout(() => {
-          x3dEl = document.getElementById('X3DElement');
-          // x3dEl.setAttribute('render', 'true');
-          // x3dEl.setAttribute('reload', 'true');
-          x3dom.reload();
-        }, 1000);
+        sceneRef.current.setAttribute('render', 'true');
+        sceneRef.current.setAttribute('reload', 'true');
+        console.log('reload', x3dom);
+        x3dom.reload();
       });
     }, 1000);
   }, []);
@@ -46,6 +45,7 @@ export default function Visualizer3() {
         showstat="false"
         profile="Immersive"
         version="3.3"
+        ref={sceneRef}
       >
         <param name="disableDoubleClick" value="true" />
         {showContent && (
@@ -214,9 +214,7 @@ export default function Visualizer3() {
 16 19 18 17 -1 17 18 35 0 -1 23 24 25 -1 25 22 23 -1 
 25 21 22 -1 25 20 21 -1 25 26 27 28 19 20 -1 31 32 33 34 35 18 -1 
 18 19 28 29 30 31 -1 3 4 5 6 7 8 9 10 11 12 -1 17 0 1 -1 1 16 17 -1 
-1 15 16 -1 1 14 15 -1 1 13 14 -1 1 2 3 12 13 -1
-
-"
+1 15 16 -1 1 14 15 -1 1 13 14 -1 1 2 3 12 13 -1"
                   texcoordindex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1 12 13 14 15 -1 
 16 17 18 19 -1 20 21 22 23 -1 24 25 26 27 -1 28 29 30 31 -1 
 32 33 34 35 -1 36 37 38 39 -1 40 41 42 43 -1 44 45 46 47 -1 
@@ -7595,8 +7593,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1
-"
+                  coordindex="0 1 2 3 -1"
                   texcoordindex="0 1 2 3 -1"
                   solid="true"
                   ccw="true"

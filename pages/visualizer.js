@@ -16,7 +16,7 @@ export default function Visualizer() {
         setShowContent(true);
         x3dom.reload();
       });
-    }, 2000);
+    }, 1000);
   }, []);
 
   const handleClick = useCallback((e, path) => {
