@@ -20,22 +20,22 @@ export default function Visualizer() {
 
   const handleClick = useCallback((e, path) => {
     if (path === '/about') {
-      console.log('I clicked on the About Page');
+      console.log('I clicked');
     }
     if (path === '/posts') {
-      console.log('I clicked on the Posts Page');
+      console.log('I clicked');
     }
   }, []);
 
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizer}>
-        <Link href="/visualizer3">
+        {/* <Link href="/visualizer3">
           <BiExpandAlt
             className={styles.expand}
             onClick={(e) => handleClick(e, '/visualizer3')}
           />
-        </Link>
+        </Link> */}
         <x3d is="x3d">
           <scene is="x3d">
             <navigationInfo is="x3d" type="turntable"></navigationInfo>
