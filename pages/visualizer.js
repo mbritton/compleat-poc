@@ -8,11 +8,12 @@ export async function x3DLoad() {
 }
 
 export default function Visualizer() {
-  const [showCover, setShowCover] = useState(true);
+  const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       x3DLoad().then((x3d) => {
+        setShowContent(true);
         x3dom.reload();
       });
     }, 2000);
@@ -36,19 +37,22 @@ export default function Visualizer() {
             onClick={(e) => handleClick(e, '/visualizer3')}
           />
         </Link> */}
-        <x3d is="x3d">
-          <scene is="x3d">
-            <navigationInfo is="x3d" type="turntable"></navigationInfo>
-            <inline
-              is="x3d"
-              nameSpaceName="myScene"
-              mapDEFToID="false"
-              url="https://prismic-io.s3.amazonaws.com/compleat/af5b1872-1a8b-4264-9893-e0c7cf384b5f_3dspiral.x3d"
-            ></inline>
-          </scene>
-        </x3d>
+        {showContent && (
+          <x3d is="x3d">
+            <scene is="x3d">
+              <navigationInfo is="x3d" type="turntable"></navigationInfo>
+              <inline
+                is="x3d"
+                nameSpaceName="myScene"
+                mapDEFToID="false"
+                contentType="model/x3d+xml"
+                url="https://prismic-io.s3.amazonaws.com/compleat/af5b1872-1a8b-4264-9893-e0c7cf384b5f_3dspiral.x3d"
+              ></inline>
+            </scene>
+          </x3d>
+        )}
       </div>
-      <div className={styles.cover} onClick={() => setShowCover(false)}></div>
+      {/* <div className={styles.cover} onClick={() => setShowCover(false)}></div> */}
     </div>
   );
 }
