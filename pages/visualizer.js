@@ -18,7 +18,7 @@ export default function Visualizer() {
         console.log('x3dom', x3dom);
         x3dom.reload();
       });
-    }, 500);
+    }, 1000);
   }, []);
 
   const handleClick = useCallback((e, path) => {
@@ -33,12 +33,12 @@ export default function Visualizer() {
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizer}>
-        {/* <Link href="/visualizer3">
+        <Link href="/visualizer3">
           <BiExpandAlt
             className={styles.expand}
             onClick={(e) => handleClick(e, '/visualizer3')}
           />
-        </Link> */}
+        </Link>
         {showContent && (
           <x3d is="x3d">
             <scene is="x3d">
