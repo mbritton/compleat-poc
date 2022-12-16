@@ -71,6 +71,7 @@ export default function Visualizer3() {
               zfar="-1"
             ></viewpoint>
             <navigationinfo
+              is="x3d"
               type="turntable"
               headlight="true"
               typeparams="-0.4,60,0.05,2.8"
@@ -80,8 +81,9 @@ export default function Visualizer3() {
               transitiontime="1"
               transitiontype="LINEAR "
             ></navigationinfo>
-            <appearance sorttype="auto" alphaclipthreshold="0.1">
+            <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
               <texture
+                is="x3d"
                 def="treadTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
@@ -89,6 +91,7 @@ export default function Visualizer3() {
                 hidechildren="true"
               ></texture>
               <material
+                is="x3d"
                 def="treadMat"
                 diffusecolor="0.01 0.01 0.01"
                 transparency="0"
@@ -98,6 +101,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <texture
+                is="x3d"
                 def="handrailTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
@@ -105,6 +109,7 @@ export default function Visualizer3() {
                 hidechildren="true"
               ></texture>
               <material
+                is="x3d"
                 def="handrailMat"
                 diffusecolor="1 1 1"
                 transparency="0"
@@ -114,6 +119,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <material
+                is="x3d"
                 def="stringMat"
                 diffusecolor="0.01 0.01 0.01"
                 transparency="0"
@@ -123,6 +129,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <texture
+                is="x3d"
                 def="postTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
@@ -130,6 +137,7 @@ export default function Visualizer3() {
                 hidechildren="true"
               ></texture>
               <material
+                is="x3d"
                 def="postMat"
                 diffusecolor="1 1 1"
                 transparency="0"
@@ -139,6 +147,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <texture
+                is="x3d"
                 def="floorTex"
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
@@ -146,6 +155,7 @@ export default function Visualizer3() {
                 hidechildren="true"
               ></texture>
               <material
+                is="x3d"
                 def="floorMat"
                 diffusecolor="1 1 1"
                 transparency="0"
@@ -155,6 +165,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <material
+                is="x3d"
                 def="balusterMat"
                 diffusecolor="0.01 0.01 0.01"
                 transparency="0"
@@ -164,6 +175,7 @@ export default function Visualizer3() {
                 specularcolor="0,0,0"
               ></material>
               <material
+                is="x3d"
                 def="wellMat"
                 diffusecolor="1 1 1"
                 transparency="0.7"
@@ -174,6 +186,8 @@ export default function Visualizer3() {
               ></material>
             </appearance>
             <transform
+              is="x3d"
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -184,16 +198,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -225,6 +241,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 2.8 -170.08 -6.53 13.67 -170.08 -74.24 8.53 -170.08 -74.89 3.36 -170.08 -75.19
  -1.82 -170.08 -75.13 -6.99 -170.08 -74.72 -12.11 -170.08 -73.97 -17.18 -170.08 -72.86
  -22.15 -170.08 -71.42 -27.02 -170.08 -69.63 -31.75 -170.08 -67.53 -5.95 -170.08 -0.07
@@ -237,6 +254,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -5.8 0 -7.07 1.15 -7.07 1.15 -5.8 1.15 -5.8 1.15 -7.07 1.23 -7.07 1.23 -5.8 1.23 -5.8 1.23 -7.07 1.32 -7.07 1.32 -5.8 1.32 -5.8 1.32 -7.07 1.41 -7.07 1.41 -5.8 
 1.41 -5.8 1.41 -7.07 1.49 -7.07 1.49 -5.8 1.49 -5.8 1.49 -7.07 1.58 -7.07 1.58 -5.8 1.58 -5.8 1.58 -7.07 1.67 -7.07 1.67 -5.8 1.67 -5.8 1.67 -7.07 1.75 -7.07 1.75 -5.8 
 1.75 -5.8 1.75 -7.07 1.84 -7.07 1.84 -5.8 1.84 -5.8 1.84 -7.07 1.93 -7.07 1.93 -5.8 1.93 -5.8 1.93 -7.07 3.13 -7.07 3.13 -5.8 3.13 -5.8 3.13 -7.07 3.16 -7.07 3.16 -5.8 
@@ -251,6 +269,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -261,16 +280,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -302,6 +323,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -1.13 -147.42 -6.13 -25.63 -147.42 -70.18 -30.37 -147.42 -68.18 -34.97 -147.42 -65.87
  -39.39 -147.42 -63.25 -43.64 -147.42 -60.33 -47.67 -147.42 -57.14 -51.48 -147.42 -53.68
  -55.05 -147.42 -49.98 -58.37 -147.42 -46.04 -61.4 -147.42 -41.88 -5.68 -147.42 3.27
@@ -314,6 +336,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -14.27 0 -15.54 1.15 -15.54 1.15 -14.27 1.15 -14.27 1.15 -15.54 1.23 -15.54 1.23 -14.27 1.23 -14.27 1.23 -15.54 1.32 -15.54 1.32 -14.27 1.32 -14.27 1.32 -15.54 1.41 -15.54 1.41 -14.27 
 1.41 -14.27 1.41 -15.54 1.49 -15.54 1.49 -14.27 1.49 -14.27 1.49 -15.54 1.58 -15.54 1.58 -14.27 1.58 -14.27 1.58 -15.54 1.66 -15.54 1.66 -14.27 1.66 -14.27 1.66 -15.54 1.75 -15.54 1.75 -14.27 
 1.75 -14.27 1.75 -15.54 1.83 -15.54 1.83 -14.27 1.83 -14.27 1.83 -15.54 1.92 -15.54 1.92 -14.27 1.92 -14.27 1.92 -15.54 3.12 -15.54 3.12 -14.27 3.12 -14.27 3.12 -15.54 3.14 -15.54 3.14 -14.27 
@@ -328,6 +351,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -338,16 +362,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -379,6 +405,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -4.33 -124.75 -3.81 -57.61 -124.75 -46.98 -60.73 -124.75 -42.85 -63.57 -124.75 -38.51
  -66.1 -124.75 -33.99 -68.32 -124.75 -29.31 -70.22 -124.75 -24.49 -71.79 -124.75 -19.55
  -73.01 -124.75 -14.51 -73.89 -124.75 -9.41 -74.43 -124.75 -4.25 -3.09 -124.75 7
@@ -391,6 +418,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -0.97 0 -2.24 1.15 -2.24 1.15 -0.97 1.15 -0.97 1.15 -2.24 1.23 -2.24 1.23 -0.97 1.23 -0.97 1.23 -2.24 1.32 -2.24 1.32 -0.97 1.32 -0.97 1.32 -2.24 1.41 -2.24 1.41 -0.97 
 1.41 -0.97 1.41 -2.24 1.49 -2.24 1.49 -0.97 1.49 -0.97 1.49 -2.24 1.58 -2.24 1.58 -0.97 1.58 -0.97 1.58 -2.24 1.67 -2.24 1.67 -0.97 1.67 -0.97 1.67 -2.24 1.75 -2.24 1.75 -0.97 
 1.75 -0.97 1.75 -2.24 1.84 -2.24 1.84 -0.97 1.84 -0.97 1.84 -2.24 1.93 -2.24 1.93 -0.97 1.93 -0.97 1.93 -2.24 3.13 -2.24 3.13 -0.97 3.13 -0.97 3.13 -2.24 3.16 -2.24 3.16 -0.97 
@@ -405,6 +433,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -415,16 +444,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -456,6 +487,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -5.93 -102.09 -0.2 -73.68 -102.09 -10.88 -74.31 -102.09 -5.74 -74.59 -102.09 -0.57
  -74.52 -102.09 4.61 -74.1 -102.09 9.78 -73.33 -102.09 14.9 -72.21 -102.09 19.96
  -70.75 -102.09 24.93 -68.95 -102.09 29.79 -66.83 -102.09 34.52 0.55 -102.09 8.54
@@ -468,6 +500,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -12.6 0 -13.87 1.15 -13.87 1.15 -12.6 1.15 -12.6 1.15 -13.87 1.23 -13.87 1.23 -12.6 1.23 -12.6 1.23 -13.87 1.32 -13.87 1.32 -12.6 1.32 -12.6 1.32 -13.87 1.41 -13.87 1.41 -12.6 
 1.41 -12.6 1.41 -13.87 1.49 -13.87 1.49 -12.6 1.49 -12.6 1.49 -13.87 1.58 -13.87 1.58 -12.6 1.58 -12.6 1.58 -13.87 1.67 -13.87 1.67 -12.6 1.67 -12.6 1.67 -13.87 1.75 -13.87 1.75 -12.6 
 1.75 -12.6 1.75 -13.87 1.84 -13.87 1.84 -12.6 1.84 -12.6 1.84 -13.87 1.93 -13.87 1.93 -12.6 1.93 -12.6 1.93 -13.87 3.13 -13.87 3.13 -12.6 3.13 -12.6 3.13 -13.87 3.16 -13.87 3.16 -12.6 
@@ -482,6 +515,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -492,16 +526,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -533,6 +569,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -5.52 -79.42 3.73 -69.51 -79.42 28.41 -67.48 -79.42 33.17 -65.13 -79.42 37.79
  -62.48 -79.42 42.24 -59.52 -79.42 46.5 -56.29 -79.42 50.55 -52.79 -79.42 54.37
  -49.03 -79.42 57.94 -45.05 -79.42 61.25 -40.84 -79.42 64.28 4.47 -79.42 8.05
@@ -545,6 +582,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -4.29 0 -5.56 1.15 -5.56 1.15 -4.29 1.15 -4.29 1.15 -5.56 1.23 -5.56 1.23 -4.29 1.23 -4.29 1.23 -5.56 1.32 -5.56 1.32 -4.29 1.32 -4.29 1.32 -5.56 1.41 -5.56 1.41 -4.29 
 1.41 -4.29 1.41 -5.56 1.49 -5.56 1.49 -4.29 1.49 -4.29 1.49 -5.56 1.58 -5.56 1.58 -4.29 1.58 -4.29 1.58 -5.56 1.67 -5.56 1.67 -4.29 1.67 -4.29 1.67 -5.56 1.75 -5.56 1.75 -4.29 
 1.75 -4.29 1.75 -5.56 1.84 -5.56 1.84 -4.29 1.84 -4.29 1.84 -5.56 1.93 -5.56 1.93 -4.29 1.93 -4.29 1.93 -5.56 3.13 -5.56 3.13 -4.29 3.13 -4.29 3.13 -5.56 3.16 -5.56 3.16 -4.29 
@@ -559,6 +597,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -569,16 +608,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -610,6 +651,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -3.19 -56.76 6.92 -46.22 -56.76 60.33 -42.08 -56.76 63.44 -37.73 -56.76 66.26
  -33.2 -56.76 68.78 -28.52 -56.76 70.99 -23.69 -56.76 72.88 -18.75 -56.76 74.43
  -13.71 -56.76 75.64 -8.6 -56.76 76.51 -3.44 -56.76 77.02 7.62 -56.76 5.66
@@ -622,6 +664,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -8.35 0 -9.62 1.15 -9.62 1.15 -8.35 1.15 -8.35 1.15 -9.62 1.23 -9.62 1.23 -8.35 1.23 -8.35 1.23 -9.62 1.32 -9.62 1.32 -8.35 1.32 -8.35 1.32 -9.62 1.41 -9.62 1.41 -8.35 
 1.41 -8.35 1.41 -9.62 1.49 -9.62 1.49 -8.35 1.49 -8.35 1.49 -9.62 1.58 -9.62 1.58 -8.35 1.58 -8.35 1.58 -9.62 1.67 -9.62 1.67 -8.35 1.67 -8.35 1.67 -9.62 1.75 -9.62 1.75 -8.35 
 1.75 -8.35 1.75 -9.62 1.84 -9.62 1.84 -8.35 1.84 -8.35 1.84 -9.62 1.93 -9.62 1.93 -8.35 1.93 -8.35 1.93 -9.62 3.13 -9.62 3.13 -8.35 3.13 -8.35 3.13 -9.62 3.16 -9.62 3.16 -8.35 
@@ -636,6 +679,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -646,16 +690,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -687,6 +733,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 0.43 -34.09 8.52 -10.08 -34.09 76.29 -4.93 -34.09 76.91 0.24 -34.09 77.18
  5.42 -34.09 77.1 10.59 -34.09 76.66 15.71 -34.09 75.87 20.76 -34.09 74.74
  25.73 -34.09 73.27 30.59 -34.09 71.46 35.31 -34.09 69.33 9.14 -34.09 2.01
@@ -699,6 +746,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -12.5 0 -13.77 1.15 -13.77 1.15 -12.5 1.15 -12.5 1.15 -13.77 1.23 -13.77 1.23 -12.5 1.23 -12.5 1.23 -13.77 1.32 -13.77 1.32 -12.5 1.32 -12.5 1.32 -13.77 1.41 -13.77 1.41 -12.5 
 1.41 -12.5 1.41 -13.77 1.49 -13.77 1.49 -12.5 1.49 -12.5 1.49 -13.77 1.58 -13.77 1.58 -12.5 1.58 -12.5 1.58 -13.77 1.67 -13.77 1.67 -12.5 1.67 -12.5 1.67 -13.77 1.75 -13.77 1.75 -12.5 
 1.75 -12.5 1.75 -13.77 1.84 -13.77 1.84 -12.5 1.84 -12.5 1.84 -13.77 1.93 -13.77 1.93 -12.5 1.93 -12.5 1.93 -13.77 3.13 -13.77 3.13 -12.5 3.13 -12.5 3.13 -13.77 3.16 -13.77 3.16 -12.5 
@@ -713,6 +761,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -723,16 +772,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -764,6 +815,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 4.35 -11.43 8.09 29.2 -11.43 72.01 33.96 -11.43 69.97 38.58 -11.43 67.61
  43.02 -11.43 64.95 47.27 -11.43 61.98 51.31 -11.43 58.74 55.12 -11.43 55.23
  58.68 -11.43 51.46 61.98 -11.43 47.47 65 -11.43 43.25 8.64 -11.43 -1.9
@@ -776,6 +828,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -2.85 0 -4.12 1.15 -4.12 1.15 -2.85 1.15 -2.85 1.15 -4.12 1.23 -4.12 1.23 -2.85 1.23 -2.85 1.23 -4.12 1.32 -4.12 1.32 -2.85 1.32 -2.85 1.32 -4.12 1.41 -4.12 1.41 -2.85 
 1.41 -2.85 1.41 -4.12 1.49 -4.12 1.49 -2.85 1.49 -2.85 1.49 -4.12 1.58 -4.12 1.58 -2.85 1.58 -2.85 1.58 -4.12 1.67 -4.12 1.67 -2.85 1.67 -2.85 1.67 -4.12 1.75 -4.12 1.75 -2.85 
 1.75 -2.85 1.75 -4.12 1.84 -4.12 1.84 -2.85 1.84 -2.85 1.84 -4.12 1.93 -4.12 1.93 -2.85 1.93 -2.85 1.93 -4.12 3.13 -4.12 3.13 -2.85 3.13 -2.85 3.13 -4.12 3.16 -4.12 3.16 -2.85 
@@ -790,6 +843,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -800,16 +854,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -841,6 +897,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 7.54 11.24 5.76 61.06 11.24 48.64 64.16 11.24 44.49 66.97 11.24 40.14
  69.48 11.24 35.6 71.67 11.24 30.91 73.55 11.24 26.08 75.08 11.24 21.13
  76.28 11.24 16.09 77.14 11.24 10.98 77.64 11.24 5.82 6.24 11.24 -5.05
@@ -853,6 +910,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -14.28 0 -15.55 1.15 -15.55 1.15 -14.28 1.15 -14.28 1.15 -15.55 1.23 -15.55 1.23 -14.28 1.23 -14.28 1.23 -15.55 1.32 -15.55 1.32 -14.28 1.32 -14.28 1.32 -15.55 1.41 -15.55 1.41 -14.28 
 1.41 -14.28 1.41 -15.55 1.49 -15.55 1.49 -14.28 1.49 -14.28 1.49 -15.55 1.58 -15.55 1.58 -14.28 1.58 -14.28 1.58 -15.55 1.67 -15.55 1.67 -14.28 1.67 -14.28 1.67 -15.55 1.75 -15.55 1.75 -14.28 
 1.75 -14.28 1.75 -15.55 1.84 -15.55 1.84 -14.28 1.84 -14.28 1.84 -15.55 1.93 -15.55 1.93 -14.28 1.93 -14.28 1.93 -15.55 3.13 -15.55 3.13 -14.28 3.13 -14.28 3.13 -15.55 3.16 -15.55 3.16 -14.28 
@@ -867,6 +925,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -877,16 +936,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 35 34 1 -1 1 34 33 2 -1 2 33 32 3 -1 3 32 31 4 -1 
 4 31 30 5 -1 5 30 29 6 -1 6 29 28 7 -1 7 28 27 8 -1 
 8 27 26 9 -1 9 26 25 10 -1 10 25 24 11 -1 11 24 23 12 -1 
@@ -918,6 +979,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 9.13 33.9 2.14 76.93 33.9 12.46 77.53 33.9 7.31 77.78 33.9 2.13
  77.69 33.9 -3.05 77.24 33.9 -8.21 76.44 33.9 -13.33 75.29 33.9 -18.38
  73.8 33.9 -23.35 71.98 33.9 -28.2 69.83 33.9 -32.91 2.59 33.9 -6.56
@@ -930,6 +992,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -8.89 0 -10.16 1.15 -10.16 1.15 -8.89 1.15 -8.89 1.15 -10.16 1.23 -10.16 1.23 -8.89 1.23 -8.89 1.23 -10.16 1.32 -10.16 1.32 -8.89 1.32 -8.89 1.32 -10.16 1.41 -10.16 1.41 -8.89 
 1.41 -8.89 1.41 -10.16 1.49 -10.16 1.49 -8.89 1.49 -8.89 1.49 -10.16 1.58 -10.16 1.58 -8.89 1.58 -8.89 1.58 -10.16 1.67 -10.16 1.67 -8.89 1.67 -8.89 1.67 -10.16 1.75 -10.16 1.75 -8.89 
 1.75 -8.89 1.75 -10.16 1.84 -10.16 1.84 -8.89 1.84 -8.89 1.84 -10.16 1.93 -10.16 1.93 -8.89 1.93 -8.89 1.93 -10.16 3.13 -10.16 3.13 -8.89 3.13 -8.89 3.13 -10.16 3.16 -10.16 3.16 -8.89 
@@ -944,6 +1007,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -954,16 +1018,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 4 5 6 7 8 9 10 11 -1 12 13 14 15 16 17 18 19 20 21 22 23 -1 0 23 22 1 -1 1 22 21 2 -1 
 2 21 20 3 -1 3 20 19 4 -1 4 19 18 5 -1 5 18 17 6 -1 
 6 17 16 7 -1 7 16 15 8 -1 8 15 14 9 -1 9 14 13 10 -1 
@@ -985,6 +1051,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 8.69 56.56 -1.79 72.54 56.56 -26.81 70.49 56.56 -31.57 68.11 56.56 -36.18
  65.43 56.56 -40.61 62.46 56.56 -44.85 59.2 56.56 -48.88 55.68 56.56 -52.68
  51.91 56.56 -56.24 47.9 56.56 -59.52 43.68 56.56 -62.53 -1.32 56.56 -6.05
@@ -994,6 +1061,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="-0.96 -1.09 0.18 -1.09 0.18 -0.96 0.17 -0.83 0.16 -0.7 0.14 -0.57 0.11 -0.45 0.08 -0.33 0.04 -0.21 0 -0.1 -0.05 0.01 -1.09 -0.9 -1.09 0.9 -0.05 0 0 0.11 0.04 0.22 0.08 0.34 0.11 0.46 0.14 0.58 0.16 0.71 0.17 0.84 0.18 0.97 0.18 1.1 -0.96 1.1 0 -7.43 0 -8.7 1.15 -8.7 1.15 -7.43 1.15 -7.43 1.15 -8.7 1.23 -8.7 1.23 -7.43 
 1.23 -7.43 1.23 -8.7 1.32 -8.7 1.32 -7.43 1.32 -7.43 1.32 -8.7 1.41 -8.7 1.41 -7.43 1.41 -7.43 1.41 -8.7 1.49 -8.7 1.49 -7.43 1.49 -7.43 1.49 -8.7 1.58 -8.7 1.58 -7.43 
 1.58 -7.43 1.58 -8.7 1.67 -8.7 1.67 -7.43 1.67 -7.43 1.67 -8.7 1.75 -8.7 1.75 -7.43 1.75 -7.43 1.75 -8.7 1.84 -8.7 1.84 -7.43 1.84 -7.43 1.84 -8.7 1.93 -8.7 1.93 -7.43 
@@ -1003,6 +1071,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1013,16 +1082,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 25 24 1 -1 1 24 23 2 -1 2 23 22 3 -1 3 22 21 4 -1 
 4 21 20 5 -1 5 20 19 6 -1 6 19 18 7 -1 7 18 17 8 -1 
 8 17 16 9 -1 9 16 15 10 -1 10 15 14 11 -1 11 14 13 12 -1 
@@ -1050,6 +1121,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 6.66 79.23 -5.37 49.08 79.23 -58.6 44.86 79.23 -61.73 40.44 79.23 -64.56
  35.84 79.23 -67.08 31.07 79.23 -69.28 26.16 79.23 -71.14 21.14 79.23 -72.66
  20.37 79.23 -67.86 12.84 79.23 -69.07 13.67 79.23 -74.24 10.18 79.23 -74.72
@@ -1059,6 +1131,7 @@ export default function Visualizer3() {
  49.08 74.78 -58.6 6.66 74.78 -5.37"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -1.82 0 -3.09 1.14 -3.09 1.14 -1.82 1.14 -1.82 1.14 -3.09 1.23 -3.09 1.23 -1.82 1.23 -1.82 1.23 -3.09 1.31 -3.09 1.31 -1.82 1.31 -1.82 1.31 -3.09 1.4 -3.09 1.4 -1.82 
 1.4 -1.82 1.4 -3.09 1.49 -3.09 1.49 -1.82 1.49 -1.82 1.49 -3.09 1.58 -3.09 1.58 -1.82 1.58 -1.82 1.58 -3.09 1.66 -3.09 1.66 -1.82 1.66 -1.82 1.66 -3.09 1.75 -3.09 1.75 -1.82 
 1.75 -1.82 1.75 -3.09 1.87 -3.09 1.87 -1.82 1.87 -1.82 1.87 -3.09 1.96 -3.09 1.96 -1.82 1.96 -1.82 1.96 -3.09 2.02 -3.09 2.02 -1.82 2.02 -1.82 2.02 -3.09 2.08 -3.09 2.08 -1.82 
@@ -1071,6 +1144,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1081,16 +1155,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="treadTex"></texture>
-                  <material use="treadMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="treadTex"></texture>
+                  <material is="x3d" use="treadMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 17 16 1 -1 1 16 15 2 -1 2 15 14 3 -1 3 14 13 4 -1 
 4 13 12 5 -1 5 12 11 6 -1 6 11 10 7 -1 7 10 9 8 -1 
 8 9 17 0 -1 12 13 14 -1 14 11 12 -1 14 10 11 -1 
@@ -1114,6 +1190,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 6.66 106.34 -4.7 6.66 106.34 -75.04 1.59 106.34 -75.21 -79.69 106.34 -75.21
  -79.69 106.34 -6.63 1.59 106.34 -6.63 2.97 106.34 -6.5 4.3 106.34 -6.13
  5.55 106.34 -5.52 5.55 101.89 -5.52 4.3 101.89 -6.13 2.97 101.89 -6.5
@@ -1121,6 +1198,7 @@ export default function Visualizer3() {
  6.66 101.89 -75.04 6.66 101.89 -4.7"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -1.49 0 -2.76 1.18 -2.76 1.18 -1.49 1.18 -1.49 1.18 -2.76 1.26 -2.76 1.26 -1.49 1.26 -1.49 1.26 -2.76 2.62 -2.76 2.62 -1.49 2.62 -1.49 2.62 -2.76 3.76 -2.76 3.76 -1.49 
 3.76 -1.49 3.76 -2.76 5.11 -2.76 5.11 -1.49 5.11 -1.49 5.11 -2.76 5.14 -2.76 5.14 -1.49 5.14 -1.49 5.14 -2.76 5.16 -2.76 5.16 -1.49 5.16 -1.49 5.16 -2.76 5.18 -2.76 5.18 -1.49 
 5.18 -1.49 5.18 -2.76 5.21 -2.76 5.21 -1.49 -1.58 0.85 -1.58 -1.18 -0.44 -1.18 -0.44 -1.18 -1.59 0.89 -1.58 0.85 -0.44 -1.18 -1.59 0.92 -1.59 0.89 
@@ -1131,6 +1209,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1141,16 +1220,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="stringTex"></texture>
-                  <material use="stringMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="stringTex"></texture>
+                  <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
 7 9 8 -1 9 10 8 -1 9 11 10 -1 11 3 10 -1 
 11 0 3 -1 1 12 2 -1 1 13 12 -1 13 14 12 -1 
@@ -1178,6 +1259,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 3.22 101.89 -0.96 3.22 -52.12 -0.96 6.47 -52.12 -4.87 6.47 101.89 -4.87
  -0.65 101.89 -0.2 -2.95 101.89 -5.13 -5.14 101.89 -2.58 0.08 101.89 -1.05
  0.12 101.89 -6.48 1.1 101.89 -1.5 3.48 101.89 -6.39 2.22 101.89 -1.47
@@ -1186,6 +1268,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 2.57 0 2.57 0.13 0 0.13 0.1 0 0 0 0.03 -0.07 0.02 0 0 0 -0.01 -0.12 0.1 0 0 0 0.03 -0.07 
 0.02 0 0 0 -0.01 -0.12 0.1 0 0 0 0.03 -0.07 0.02 0 0 0 -0.01 -0.12 0.1 0 0 0 0.03 -0.07 
 0.02 0 0 0 -0.01 -0.12 0.34 0 0 0 0.32 -0.12 0.33 0 0 0 0 -0.12 0.34 0 0 0 0.32 -0.12 
@@ -1198,6 +1281,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1208,16 +1292,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="stringTex"></texture>
-                  <material use="stringMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="stringTex"></texture>
+                  <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
 7 9 8 -1 9 10 8 -1 9 11 10 -1 11 12 10 -1 
 11 13 12 -1 13 3 12 -1 13 0 3 -1 1 14 2 -1 
@@ -1249,6 +1335,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 3.17 52.66 2.98 3.17 -128.9 2.98 6.33 -128.9 6.96 6.33 52.66 6.96
  3.22 101.89 -0.96 8.41 101.89 -2.4 6.47 101.89 -4.87 3.87 101.89 -0.14
  9.2 101.89 0.63 4.13 101.89 0.87 8.7 101.89 3.73 3.96 101.89 1.91
@@ -1258,6 +1345,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 3.03 0 3.03 0.13 0 0.13 0.09 0 0 0 0.03 -0.07 0.02 0 0 0 -0.01 -0.12 0.09 0 0 0 0.03 -0.07 
 0.02 0 0 0 -0.01 -0.12 0.09 0 0 0 0.03 -0.07 0.02 0 0 0 -0.01 -0.12 0.75 0 0 0 0.74 -0.12 
 0.74 0 0 0 0 -0.12 0.12 0 0 0 0.06 -0.09 0.09 0 0 0 0 -0.12 0.12 0 0 0 0.06 -0.09 
@@ -1272,6 +1360,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1282,16 +1371,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="stringTex"></texture>
-                  <material use="stringMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="stringTex"></texture>
+                  <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
 7 9 8 -1 9 10 8 -1 9 11 10 -1 11 3 10 -1 
 11 0 3 -1 1 12 2 -1 1 13 12 -1 13 14 12 -1 
@@ -1319,6 +1410,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -0.68 -24.09 2.13 -0.68 -192.75 2.13 -5.22 -192.75 4.4 -5.22 -24.09 4.4
  3.17 52.66 2.98 2.94 31.38 8.49 6.33 52.66 6.96 2.04 31.38 3.49
  -0.77 10.11 8.24 0.81 10.11 3.41 -3.91 -11.16 6.26 -0.24 -11.16 2.75
@@ -1327,6 +1419,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 2.82 0 2.82 0.13 0 0.13 0.37 0 0 0 0.36 -0.12 0.36 0 0 0 0 -0.12 0.37 0 0 0 0.36 -0.12 
 0.36 0 0 0 0 -0.12 0.37 0 0 0 0.36 -0.12 0.36 0 0 0 0 -0.12 0.24 0 0 0 0.21 -0.11 
 0.22 0 0 0 0 -0.12 0.09 0 0 0 0.02 -0.05 0.02 0 0 0 -0.01 -0.12 0.37 0 0 0 0.36 -0.12 
@@ -1339,6 +1432,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1349,16 +1443,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="stringTex"></texture>
-                  <material use="stringMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="stringTex"></texture>
+                  <material is="x3d" use="stringMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 -1 4 7 5 -1 7 8 5 -1 
 7 9 8 -1 9 10 8 -1 9 11 10 -1 11 3 10 -1 
 11 0 3 -1 1 12 2 -1 1 13 12 -1 13 14 12 -1 
@@ -1386,6 +1482,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 0.95 -100.89 -1.46 0.95 -192.75 -1.46 -0.35 -192.75 -6.38 -0.35 -100.89 -6.38
  -0.68 -24.09 2.13 -6.03 -43.29 1.14 -5.22 -24.09 4.4 -0.95 -43.29 1.04
  -5.35 -62.49 -2.15 -0.72 -62.49 -0.06 -3.33 -81.69 -4.83 -0.05 -81.69 -0.95
@@ -1394,6 +1491,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 1.54 0 1.54 0.13 0 0.13 0.34 0 0 0 0.32 -0.12 0.33 0 0 0 0 -0.12 0.34 0 0 0 0.32 -0.12 
 0.33 0 0 0 0 -0.12 0.34 0 0 0 0.32 -0.12 0.33 0 0 0 0 -0.12 0.34 0 0 0 0.32 -0.12 
 0.33 0 0 0 0 -0.12 0.1 0 0 0 0.03 -0.07 0.02 0 0 0 -0.01 -0.12 0.1 0 0 0 0.03 -0.07 
@@ -1406,6 +1504,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1416,16 +1515,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="handrailTex"></texture>
-                  <material use="handrailMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="handrailTex"></texture>
+                  <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 3 0 2 -1 4 0 3 -1 5 4 3 -1 
 6 4 5 -1 7 6 5 -1 8 6 7 -1 9 8 7 -1 
 10 8 9 -1 11 10 9 -1 12 10 11 -1 13 12 11 -1 
@@ -1625,6 +1726,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 1.75 190.1 -69.97 1.59 190.2 -69.97 1.59 190.2 -76.64 1.77 190.1 -76.64
  3.77 188.88 -69.94 3.97 188.88 -76.6 5.78 187.65 -69.85 6.17 187.65 -76.5
  7.78 186.43 -69.7 8.37 186.43 -76.34 9.79 185.2 -69.5 10.56 185.2 -76.12
@@ -1675,6 +1777,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0.01 0.08 0 0.08 0 -0.09 0.01 -0.09 0.01 0.08 0 -0.09 0.05 0.08 0.01 0.08 0.01 -0.09 0.05 -0.09 0.05 0.08 0.01 -0.09 
 0.09 0.08 0.05 0.08 0.05 -0.09 0.09 -0.09 0.09 0.08 0.05 -0.09 0.13 0.08 0.09 0.08 0.09 -0.09 0.13 -0.09 0.13 0.08 0.09 -0.09 
 0.17 0.08 0.14 0.08 0.13 -0.09 0.18 -0.09 0.17 0.08 0.13 -0.09 0.22 0.08 0.18 0.08 0.18 -0.09 0.22 -0.09 0.22 0.08 0.18 -0.09 
@@ -1773,6 +1876,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -1783,16 +1887,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="handrailTex"></texture>
-                  <material use="handrailMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="handrailTex"></texture>
+                  <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
 6 5 4 -1 7 5 6 -1 8 7 6 -1 9 7 8 -1 
 10 9 8 -1 11 9 10 -1 12 11 10 -1 13 11 12 -1 
@@ -1994,6 +2100,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 69.21 135.65 -20.55 69.17 135.73 -20.67 75.56 135.65 -22.58 69.79 134.43 -18.62
  76.2 134.43 -20.46 70.32 133.2 -16.68 76.78 133.2 -18.34 70.79 131.97 -14.72
  77.29 131.97 -16.2 71.21 130.75 -12.75 77.75 130.75 -14.05 71.57 129.52 -10.77
@@ -2044,6 +2151,7 @@ export default function Visualizer3() {
  39.56 83.31 60.94"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0.08 0 0.08 0 -0.09 0.05 0.08 0.01 0.08 0 -0.09 0.05 -0.09 0.05 0.08 0 -0.09 0.09 0.08 0.05 0.08 0.05 -0.09 
 0.09 -0.09 0.09 0.08 0.05 -0.09 0.13 0.08 0.09 0.08 0.09 -0.09 0.13 -0.09 0.13 0.08 0.09 -0.09 0.17 0.08 0.13 0.08 0.13 -0.09 
 0.17 -0.09 0.17 0.08 0.13 -0.09 0.21 0.08 0.17 0.08 0.17 -0.09 0.21 -0.09 0.21 0.08 0.17 -0.09 0.26 0.08 0.22 0.08 0.21 -0.09 
@@ -2143,6 +2251,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -2153,16 +2262,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="handrailTex"></texture>
-                  <material use="handrailMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="handrailTex"></texture>
+                  <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
 6 5 4 -1 7 5 6 -1 8 7 6 -1 9 7 8 -1 
 10 9 8 -1 11 9 10 -1 12 11 10 -1 13 11 12 -1 
@@ -2364,6 +2475,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 41.12 79.97 59.93 41.22 80.05 59.86 44.83 79.98 65.46 39.43 78.75 61.02
  42.98 78.75 66.67 37.71 77.52 62.07 41.1 77.52 67.81 35.96 76.3 63.07
  39.19 76.3 68.91 34.19 75.07 64.02 37.25 75.07 69.95 32.39 73.85 64.92
@@ -2414,6 +2526,7 @@ export default function Visualizer3() {
  -45.68 27.41 53.91"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0.08 0 0.08 0 -0.09 0.05 0.08 0.01 0.08 0 -0.09 0.05 -0.09 0.05 0.08 0 -0.09 0.09 0.08 0.05 0.08 0.05 -0.09 
 0.09 -0.09 0.09 0.08 0.05 -0.09 0.13 0.08 0.09 0.08 0.09 -0.09 0.13 -0.09 0.13 0.08 0.09 -0.09 0.17 0.08 0.13 0.08 0.13 -0.09 
 0.17 -0.09 0.17 0.08 0.13 -0.09 0.21 0.08 0.17 0.08 0.17 -0.09 0.21 -0.09 0.21 0.08 0.17 -0.09 0.26 0.08 0.22 0.08 0.21 -0.09 
@@ -2513,6 +2626,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -2523,16 +2637,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="handrailTex"></texture>
-                  <material use="handrailMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="handrailTex"></texture>
+                  <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
 6 5 4 -1 7 5 6 -1 8 7 6 -1 9 7 8 -1 
 10 9 8 -1 11 9 10 -1 12 11 10 -1 13 11 12 -1 
@@ -2738,6 +2854,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -44.28 24.07 55.13 -44.18 24.15 55.21 -48.59 24.07 60.22 -45.8 22.85 53.81
  -50.25 22.85 58.77 -47.28 21.62 52.44 -51.87 21.62 57.27 -48.72 20.4 51.03
  -53.45 20.4 55.74 -50.12 19.17 49.59 -54.98 19.17 54.15 -51.48 17.94 48.1
@@ -2789,6 +2906,7 @@ export default function Visualizer3() {
  -61.68 -29.27 -31.14"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0.08 0 0.08 0 -0.09 0.05 0.08 0.01 0.08 0 -0.09 0.05 -0.09 0.05 0.08 0 -0.09 0.09 0.08 0.05 0.08 0.05 -0.09 
 0.09 -0.09 0.09 0.08 0.05 -0.09 0.13 0.08 0.09 0.08 0.09 -0.09 0.13 -0.09 0.13 0.08 0.09 -0.09 0.17 0.08 0.13 0.08 0.13 -0.09 
 0.17 -0.09 0.17 0.08 0.13 -0.09 0.21 0.08 0.17 0.08 0.17 -0.09 0.21 -0.09 0.21 0.08 0.17 -0.09 0.26 0.08 0.22 0.08 0.21 -0.09 
@@ -2890,6 +3008,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -2900,16 +3019,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="handrailTex"></texture>
-                  <material use="handrailMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="handrailTex"></texture>
+                  <material is="x3d" use="handrailMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 3 0 2 -1 4 3 2 -1 5 3 4 -1 
 6 5 4 -1 7 5 6 -1 8 7 6 -1 9 7 8 -1 
 10 9 8 -1 11 9 10 -1 12 11 10 -1 13 11 12 -1 
@@ -3111,6 +3232,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -62.5 -32.6 -29.47 -62.55 -32.52 -29.36 -68.52 -32.6 -32.33 -61.61 -33.83 -31.28
  -67.54 -33.83 -34.31 -60.67 -35.05 -33.06 -66.52 -35.05 -36.26 -59.67 -36.28 -34.81
  -65.43 -36.28 -38.18 -58.63 -37.5 -36.53 -64.29 -37.5 -40.06 -57.55 -38.73 -38.23
@@ -3161,6 +3283,7 @@ export default function Visualizer3() {
  12.84 -83.72 -69.07"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0.08 0 0.08 0 -0.09 0.05 0.08 0.01 0.08 0 -0.09 0.05 -0.09 0.05 0.08 0 -0.09 0.09 0.08 0.05 0.08 0.05 -0.09 
 0.09 -0.09 0.09 0.08 0.05 -0.09 0.13 0.08 0.09 0.08 0.09 -0.09 0.13 -0.09 0.13 0.08 0.09 -0.09 0.17 0.08 0.13 0.08 0.13 -0.09 
 0.17 -0.09 0.17 0.08 0.13 -0.09 0.21 0.08 0.17 0.08 0.17 -0.09 0.21 -0.09 0.21 0.08 0.17 -0.09 0.26 0.08 0.22 0.08 0.21 -0.09 
@@ -3260,6 +3383,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3270,16 +3394,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="postTex"></texture>
-                  <material use="postMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="postTex"></texture>
+                  <material is="x3d" use="postMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 7 -1 7 6 1 0 -1 6 5 2 1 -1 
 5 4 3 2 -1 4 7 0 3 -1
 "
@@ -3297,11 +3423,13 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 20.37 -194.65 -67.86 21.58 -194.65 -75.39 21.58 -71.02 -75.39 20.37 -71.02 -67.86
  12.84 -71.02 -69.07 14.05 -71.02 -76.6 14.05 -194.65 -76.6 12.84 -194.65 -69.07
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="-0.19 0.08 -0.19 -0.11 1.87 -0.11 1.87 0.08 1.87 -0.07 1.87 0.12 -0.19 0.12 -0.19 -0.07 0 -0.19 0.13 -0.19 0.13 0 0 0 0 -0.19 2.07 -0.19 2.07 0 0 0 
 0 -0.19 0.13 -0.19 0.13 0 0 0 0 -0.19 2.07 -0.19 2.07 0 0 0"
                   ></texturecoordinate>
@@ -3309,6 +3437,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3319,16 +3448,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3354,6 +3485,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 2.47 189.71 -73.3 2.61 189.62 -72.81 2.64 189.62 -73.78 3.02 189.37 -72.51
  3.06 189.37 -74.08 3.53 189.06 -72.49 3.57 189.06 -74.06 3.95 188.8 -72.78
  3.97 188.8 -73.75 4.12 188.71 -73.27 4.12 106.34 -73.27 3.95 106.34 -72.78
@@ -3362,6 +3494,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.28 0 0.29 -1.38 0.29 -1.38 0.28 0 0.29 0 0.31 -1.38 0.31 -1.38 0.29 
@@ -3373,6 +3506,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3383,16 +3517,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3418,6 +3554,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 13.64 183.18 -72.32 13.72 183.09 -71.82 13.88 183.09 -72.77 14.07 182.84 -71.45
  14.34 182.84 -73 14.57 182.52 -71.36 14.85 182.52 -72.91 15.03 182.27 -71.59
  15.2 182.27 -72.54 15.27 182.18 -72.04 15.27 -170.08 -72.04 15.03 -170.08 -71.59
@@ -3426,6 +3563,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.46 0 0.48 -5.88 0.48 -5.88 0.46 0 0.48 0 0.49 -5.88 0.49 -5.88 0.48 
@@ -3437,6 +3575,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3447,16 +3586,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3482,6 +3623,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 24.55 176.65 -69.67 24.54 176.55 -69.16 24.85 176.55 -70.08 24.84 176.3 -68.75
  25.34 176.3 -70.23 25.32 175.99 -68.58 25.82 175.99 -70.07 25.81 175.74 -68.74
  26.12 175.74 -69.66 26.11 175.64 -69.15 26.11 79.23 -69.15 25.81 79.23 -68.74
@@ -3490,6 +3632,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.03 0 0.04 -1.62 0.04 -1.62 0.03 0 0.04 0 0.06 -1.61 0.06 -1.62 0.04 
@@ -3501,6 +3644,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3511,16 +3655,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3546,6 +3692,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 34.93 170.12 -65.41 34.85 170.02 -64.91 35.29 170.02 -65.77 35.08 169.77 -64.45
  35.8 169.77 -65.85 35.53 169.46 -64.22 36.25 169.46 -65.61 36.03 169.21 -64.29
  36.48 169.21 -65.16 36.4 169.11 -64.65 36.4 79.23 -64.65 36.03 79.23 -64.29
@@ -3554,6 +3701,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.17 0 0.18 -1.51 0.18 -1.51 0.17 0 0.18 0 0.2 -1.5 0.2 -1.51 0.18 
@@ -3565,6 +3713,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3575,16 +3724,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3610,6 +3761,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 44.54 163.59 -59.64 44.39 163.49 -59.15 44.96 163.49 -59.94 44.54 163.24 -58.67
  45.47 163.24 -59.94 44.96 162.93 -58.37 45.88 162.93 -59.64 45.47 162.68 -58.37
  46.04 162.68 -59.15 45.88 162.58 -58.67 45.88 79.23 -58.67 45.47 79.23 -58.37
@@ -3618,6 +3770,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.23 0 1.25 -1.4 1.25 -1.4 1.23 0 1.25 0 1.26 -1.4 1.26 -1.4 1.25 
@@ -3629,6 +3782,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3639,16 +3793,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3674,6 +3830,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 52.1 157.92 -53.5 51.88 157.83 -53.04 52.55 157.83 -53.74 51.98 157.57 -52.54
  53.06 157.57 -53.68 52.35 157.26 -52.19 53.43 157.26 -53.32 52.85 157.01 -52.12
  53.52 157.01 -52.82 53.3 156.92 -52.36 53.3 56.56 -52.36 52.85 56.56 -52.12
@@ -3682,6 +3839,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.16 0 0.18 -1.68 0.18 -1.68 0.16 0 0.18 0 0.19 -1.68 0.19 -1.68 0.18 
@@ -3693,6 +3851,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3703,16 +3862,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3738,6 +3899,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 58.8 152.25 -46.42 58.52 152.16 -46 59.27 152.16 -46.61 58.55 151.91 -45.49
  59.77 151.91 -46.47 58.87 151.6 -45.09 60.09 151.6 -46.08 59.36 151.34 -44.96
  60.11 151.34 -45.57 59.84 151.25 -45.14 59.84 56.56 -45.14 59.36 56.56 -44.96
@@ -3746,6 +3908,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.47 0 0.49 -1.59 0.49 -1.59 0.47 0 0.49 0 0.5 -1.58 0.5 -1.59 0.49 
@@ -3757,6 +3920,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3767,16 +3931,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3802,6 +3968,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 64.51 146.59 -38.53 64.18 146.49 -38.15 65 146.49 -38.65 64.14 146.24 -37.64
  65.47 146.24 -38.46 64.4 145.93 -37.2 65.74 145.93 -38.02 64.87 145.68 -37.01
  65.7 145.68 -37.51 65.37 145.58 -37.13 65.37 56.56 -37.13 64.87 56.56 -37.01
@@ -3810,6 +3977,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.04 0 1.05 -1.49 1.05 -1.5 1.04 0 1.05 0 1.06 -1.49 1.06 -1.49 1.05 
@@ -3821,6 +3989,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3831,16 +4000,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3866,6 +4037,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 69.13 140.92 -29.98 68.75 140.83 -29.64 69.64 140.83 -30.03 68.65 140.58 -29.14
  70.08 140.58 -29.77 68.85 140.27 -28.67 70.29 140.27 -29.31 69.3 140.02 -28.41
  70.18 140.02 -28.81 69.8 139.92 -28.47 69.8 56.56 -28.47 69.3 56.56 -28.41
@@ -3874,6 +4046,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.87 0 0.89 -1.4 0.89 -1.4 0.87 0 0.89 0 0.9 -1.4 0.9 -1.4 0.89 
@@ -3885,6 +4058,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3895,16 +4069,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3930,6 +4106,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 72.6 135.26 -20.88 72.18 135.16 -20.59 73.11 135.16 -20.86 72.01 134.91 -20.11
  73.52 134.91 -20.55 72.15 134.6 -19.62 73.66 134.6 -20.06 72.56 134.35 -19.31
  73.49 134.35 -19.58 73.07 134.25 -19.29 73.07 33.9 -19.29 72.56 33.9 -19.31
@@ -3938,6 +4115,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.59 0 0.6 -1.68 0.6 -1.68 0.59 0 0.6 0 0.62 -1.68 0.62 -1.68 0.6 
@@ -3949,6 +4127,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -3959,16 +4138,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -3994,6 +4175,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 74.85 129.59 -11.4 74.4 129.49 -11.17 75.36 129.49 -11.32 74.16 129.24 -10.72
  75.72 129.24 -10.96 74.24 128.93 -10.21 75.8 128.93 -10.46 74.6 128.68 -9.85
  75.56 128.68 -10 75.11 128.58 -9.77 75.11 33.9 -9.77 74.6 33.9 -9.85
@@ -4002,6 +4184,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.45 0 0.46 -1.59 0.46 -1.59 0.45 0 0.46 0 0.47 -1.58 0.47 -1.59 0.46 
@@ -4013,6 +4196,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4023,16 +4207,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4058,6 +4244,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 75.84 123.92 -1.71 75.36 123.83 -1.54 76.33 123.83 -1.57 75.07 123.57 -1.12
  76.64 123.57 -1.16 75.09 123.26 -0.61 76.66 123.26 -0.65 75.4 123.01 -0.21
  76.37 123.01 -0.23 75.88 122.92 -0.06 75.88 33.9 -0.06 75.4 33.9 -0.21
@@ -4066,6 +4253,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.7 0 0.71 -1.49 0.71 -1.5 0.7 0 0.71 0 0.72 -1.49 0.72 -1.49 0.71 
@@ -4077,6 +4265,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4087,16 +4276,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4122,6 +4313,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 75.56 118.26 8.01 75.06 118.16 8.11 76.03 118.16 8.22 74.72 117.91 8.49
  76.28 117.91 8.66 74.67 117.6 9 76.23 117.6 9.17 74.92 117.35 9.44
  75.89 117.35 9.55 75.39 117.25 9.65 75.39 33.9 9.65 74.92 33.9 9.44
@@ -4130,6 +4322,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.6 0 0.61 -1.4 0.61 -1.4 0.6 0 0.61 0 0.62 -1.4 0.62 -1.4 0.61 
@@ -4141,6 +4334,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4151,16 +4345,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4186,6 +4382,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 74.01 112.59 17.62 73.5 112.5 17.66 74.44 112.5 17.89 73.11 112.25 17.99
  74.64 112.25 18.36 72.99 111.93 18.49 74.52 111.93 18.86 73.19 111.68 18.96
  74.13 111.68 19.19 73.62 111.59 19.23 73.62 11.24 19.23 73.19 11.24 18.96
@@ -4194,6 +4391,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.5 0 0.51 -1.68 0.51 -1.68 0.5 0 0.51 0 0.53 -1.68 0.53 -1.68 0.51 
@@ -4205,6 +4403,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4215,16 +4414,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4250,6 +4451,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 71.21 106.92 26.95 70.7 106.83 26.92 71.61 106.83 27.27 70.27 106.58 27.2
  71.74 106.58 27.77 70.09 106.27 27.68 71.55 106.27 28.24 70.22 106.02 28.17
  71.13 106.02 28.52 70.62 105.92 28.49 70.62 11.24 28.49 70.22 11.24 28.17
@@ -4258,6 +4460,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.47 0 0.49 -1.59 0.49 -1.59 0.47 0 0.49 0 0.5 -1.58 0.5 -1.59 0.49 
@@ -4269,6 +4472,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4279,16 +4483,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4314,6 +4520,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 67.22 101.26 35.83 66.72 101.16 35.74 67.57 101.16 36.2 66.25 100.91 35.96
  67.63 100.91 36.71 66.01 100.6 36.41 67.39 100.6 37.16 66.08 100.35 36.91
  66.93 100.35 37.38 66.43 100.25 37.28 66.43 11.24 37.28 66.08 11.24 36.91
@@ -4322,6 +4529,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.35 0 0.36 -1.49 0.36 -1.5 0.35 0 0.36 0 0.37 -1.49 0.37 -1.49 0.36 
@@ -4333,6 +4541,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4343,16 +4552,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4378,6 +4589,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 62.1 95.6 44.11 61.62 95.5 43.95 62.4 95.5 44.52 61.13 95.25 44.11
  62.4 95.25 45.03 60.83 94.94 44.52 62.1 94.94 45.44 60.83 94.69 45.03
  61.61 94.69 45.6 61.13 94.59 45.44 61.13 11.24 45.44 60.83 11.24 45.03
@@ -4386,6 +4598,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.4 0 0.42 -1.4 0.42 -1.4 0.4 0 0.42 0 0.43 -1.4 0.43 -1.4 0.42 
@@ -4397,6 +4610,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4407,16 +4621,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4442,6 +4658,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 55.94 89.93 51.65 55.48 89.83 51.43 56.19 89.83 52.1 54.98 89.58 51.52
  56.12 89.58 52.61 54.63 89.27 51.89 55.77 89.27 52.97 54.56 89.02 52.4
  55.27 89.02 53.07 54.81 88.92 52.85 54.81 -11.43 52.85 54.56 -11.43 52.4
@@ -4450,6 +4667,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.92 0 0.94 -1.68 0.94 -1.68 0.92 0 0.94 0 0.95 -1.68 0.95 -1.68 0.94 
@@ -4461,6 +4679,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4471,16 +4690,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4506,6 +4727,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 48.85 84.26 58.32 48.42 84.16 58.05 49.03 84.16 58.8 47.91 83.91 58.07
  48.9 83.91 59.29 47.52 83.6 58.39 48.5 83.6 59.61 47.38 83.35 58.88
  47.99 83.35 59.64 47.57 83.25 59.36 47.57 -11.43 59.36 47.38 -11.43 58.88
@@ -4514,6 +4736,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.23 0 1.25 -1.59 1.25 -1.59 1.23 0 1.25 0 1.26 -1.58 1.26 -1.59 1.25 
@@ -4525,6 +4748,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4535,16 +4759,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4570,6 +4796,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 40.95 78.59 64.01 40.56 78.5 63.68 41.06 78.5 64.51 40.05 78.24 63.64
  40.87 78.24 64.98 39.61 77.93 63.9 40.43 77.93 65.25 39.42 77.68 64.38
  39.92 77.68 65.2 39.54 77.59 64.87 39.54 -11.43 64.87 39.42 -11.43 64.38
@@ -4578,6 +4805,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.06 0 1.07 -1.49 1.07 -1.5 1.06 0 1.07 0 1.08 -1.49 1.08 -1.49 1.07 
@@ -4589,6 +4817,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4599,16 +4828,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4634,6 +4865,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 32.38 72.93 68.61 32.04 72.83 68.23 32.43 72.83 69.12 31.54 72.58 68.13
  32.17 72.58 69.56 31.07 72.27 68.33 31.7 72.27 69.77 30.81 72.02 68.77
  31.21 72.02 69.66 30.87 71.93 69.28 30.87 -11.43 69.28 30.81 -11.43 68.77
@@ -4642,6 +4874,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.89 0 0.9 -1.4 0.9 -1.4 0.89 0 0.9 0 0.91 -1.4 0.91 -1.4 0.9 
@@ -4653,6 +4886,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4663,16 +4897,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4698,6 +4934,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 23.27 67.26 72.06 22.98 67.17 71.64 23.25 67.17 72.57 22.5 66.92 71.47
  22.94 66.92 72.97 22.01 66.61 71.61 22.45 66.61 73.12 21.7 66.35 72.01
  21.97 66.35 72.94 21.68 66.26 72.52 21.68 -34.09 72.52 21.7 -34.09 72.01
@@ -4706,6 +4943,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.64 0 0.65 -1.68 0.65 -1.68 0.64 0 0.65 0 0.67 -1.68 0.67 -1.68 0.65 
@@ -4717,6 +4955,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4727,16 +4966,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4762,6 +5003,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 13.79 61.6 74.28 13.56 61.5 73.83 13.7 61.5 74.79 13.1 61.25 73.6
  13.34 61.25 75.15 12.6 60.94 73.67 12.84 60.94 75.23 12.24 60.69 74.03
  12.38 60.69 74.99 12.15 60.59 74.54 12.15 -34.09 74.54 12.24 -34.09 74.03
@@ -4770,6 +5012,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.35 0 0.36 -1.59 0.36 -1.59 0.35 0 0.36 0 0.38 -1.58 0.38 -1.59 0.36 
@@ -4781,6 +5024,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4791,16 +5035,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4826,6 +5072,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 4.1 55.93 75.25 3.93 55.83 74.77 3.95 55.83 75.74 3.51 55.58 74.48
  3.54 55.58 76.05 3 55.27 74.49 3.03 55.27 76.06 2.59 55.02 74.8
  2.61 55.02 75.77 2.44 54.92 75.29 2.44 -34.09 75.29 2.59 -34.09 74.8
@@ -4834,6 +5081,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.09 0 1.1 -1.49 1.1 -1.5 1.09 0 1.1 0 1.12 -1.49 1.12 -1.49 1.1 
@@ -4845,6 +5093,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4855,16 +5104,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4890,6 +5141,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -5.63 50.27 74.94 -5.73 50.17 74.44 -5.84 50.17 75.4 -6.11 49.92 74.1
  -6.28 49.92 75.66 -6.62 49.61 74.04 -6.79 49.61 75.6 -7.06 49.36 74.3
  -7.16 49.36 75.26 -7.27 49.26 74.76 -7.27 -34.09 74.76 -7.06 -34.09 74.3
@@ -4898,6 +5150,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.73 0 0.74 -1.4 0.74 -1.4 0.73 0 0.74 0 0.75 -1.4 0.75 -1.4 0.74 
@@ -4909,6 +5162,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4919,16 +5173,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -4954,6 +5210,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -15.24 44.6 73.36 -15.27 44.5 72.85 -15.5 44.5 73.79 -15.6 44.25 72.46
  -15.98 44.25 73.99 -16.1 43.94 72.34 -16.47 43.94 73.87 -16.57 43.69 72.53
  -16.8 43.69 73.48 -16.84 43.59 72.97 -16.84 -56.76 72.97 -16.57 -56.76 72.53
@@ -4962,6 +5219,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.05 0 0.06 -1.68 0.06 -1.68 0.05 0 0.06 0 0.07 -1.68 0.07 -1.68 0.06 
@@ -4973,6 +5231,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -4983,16 +5242,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5018,6 +5279,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -24.56 38.93 70.54 -24.53 38.83 70.03 -24.88 38.83 70.93 -24.8 38.58 69.6
  -25.37 38.58 71.06 -25.28 38.27 69.41 -25.85 38.27 70.88 -25.77 38.02 69.54
  -26.12 38.02 70.45 -26.1 37.93 69.94 -26.1 -56.76 69.94 -25.77 -56.76 69.54
@@ -5026,6 +5288,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.45 0 0.46 -1.59 0.46 -1.59 0.45 0 0.46 0 0.47 -1.58 0.47 -1.59 0.46 
@@ -5037,6 +5300,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5047,16 +5311,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5082,6 +5348,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -33.43 33.26 66.52 -33.33 33.17 66.02 -33.8 33.17 66.87 -33.55 32.92 65.56
  -34.31 32.92 66.93 -34 32.6 65.31 -34.75 32.6 66.69 -34.5 32.35 65.38
  -34.97 32.35 66.23 -34.88 32.26 65.73 -34.88 -56.76 65.73 -34.5 -56.76 65.38
@@ -5090,6 +5357,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.64 0 0.65 -1.49 0.65 -1.5 0.64 0 0.65 0 0.67 -1.49 0.67 -1.49 0.65 
@@ -5101,6 +5369,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5111,16 +5380,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5146,6 +5417,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -41.69 27.6 61.38 -41.53 27.51 60.9 -42.1 27.51 61.68 -41.68 27.25 60.41
  -42.61 27.25 61.68 -42.1 26.94 60.11 -43.02 26.94 61.38 -42.61 26.69 60.11
  -43.18 26.69 60.89 -43.02 26.6 60.41 -43.02 -56.76 60.41 -42.61 -56.76 60.11
@@ -5154,6 +5426,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.78 0 0.8 -1.4 0.8 -1.4 0.78 0 0.8 0 0.81 -1.4 0.81 -1.4 0.8 
@@ -5165,6 +5438,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5175,16 +5449,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5210,6 +5486,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -49.22 21.93 55.2 -48.99 21.84 54.74 -49.66 21.84 55.45 -49.08 21.59 54.24
  -50.17 21.59 55.38 -49.45 21.28 53.89 -50.54 21.28 55.02 -49.96 21.02 53.82
  -50.63 21.02 54.52 -50.41 20.93 54.06 -50.41 -79.42 54.06 -49.96 -79.42 53.82
@@ -5218,6 +5495,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.33 0 0.34 -1.68 0.34 -1.68 0.33 0 0.34 0 0.35 -1.68 0.35 -1.68 0.34 
@@ -5229,6 +5507,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5239,16 +5518,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5274,6 +5555,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -55.87 16.27 48.09 -55.59 16.17 47.67 -56.35 16.17 48.27 -55.61 15.92 47.16
  -56.84 15.92 48.14 -55.93 15.61 46.76 -57.16 15.61 47.74 -56.42 15.36 46.62
  -57.18 15.36 47.23 -56.9 15.26 46.8 -56.9 -79.42 46.8 -56.42 -79.42 46.62
@@ -5282,6 +5564,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.01 0 1.03 -1.59 1.03 -1.59 1.01 0 1.03 0 1.04 -1.58 1.04 -1.59 1.03 
@@ -5293,6 +5576,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5303,16 +5587,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5338,6 +5624,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -61.54 10.6 40.17 -61.2 10.5 39.79 -62.03 10.5 40.29 -61.16 10.25 39.28
  -62.5 10.25 40.09 -61.42 9.94 38.84 -62.77 9.94 39.65 -61.89 9.69 38.64
  -62.72 9.69 39.15 -62.39 9.59 38.76 -62.39 -79.42 38.76 -61.89 -79.42 38.64
@@ -5346,6 +5633,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.12 0 0.13 -1.49 0.13 -1.5 0.12 0 0.13 0 0.15 -1.49 0.15 -1.49 0.13 
@@ -5357,6 +5645,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5367,16 +5656,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5402,6 +5693,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -66.11 4.94 31.59 -65.73 4.84 31.25 -66.62 4.84 31.64 -65.62 4.59 30.75
  -67.06 4.59 31.38 -65.83 4.28 30.28 -67.27 4.28 30.92 -66.27 4.03 30.03
  -67.16 4.03 30.42 -66.78 3.93 30.08 -66.78 -79.42 30.08 -66.27 -79.42 30.03
@@ -5410,6 +5702,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.03 0 0.04 -1.4 0.04 -1.4 0.03 0 0.04 0 0.06 -1.4 0.06 -1.4 0.04 
@@ -5421,6 +5714,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5431,16 +5725,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5466,6 +5762,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -69.53 -0.73 22.47 -69.11 -0.83 22.19 -70.04 -0.83 22.46 -68.94 -1.08 21.71
  -70.45 -1.08 22.14 -69.08 -1.39 21.22 -70.59 -1.39 21.65 -69.48 -1.64 20.9
  -70.42 -1.64 21.17 -69.99 -1.74 20.89 -69.99 -102.09 20.89 -69.48 -102.09 20.9
@@ -5474,6 +5771,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.8 0 0.82 -1.68 0.82 -1.68 0.8 0 0.82 0 0.83 -1.68 0.83 -1.68 0.82 
@@ -5485,6 +5783,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5495,16 +5794,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5530,6 +5831,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -71.73 -6.4 12.98 -71.28 -6.49 12.76 -72.24 -6.49 12.9 -71.04 -6.75 12.3
  -72.59 -6.75 12.54 -71.12 -7.06 11.8 -72.67 -7.06 12.03 -71.48 -7.31 11.44
  -72.44 -7.31 11.58 -71.98 -7.4 11.35 -71.98 -102.09 11.35 -71.48 -102.09 11.44
@@ -5538,6 +5840,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.02 0 1.04 -1.59 1.04 -1.59 1.02 0 1.04 0 1.05 -1.58 1.05 -1.59 1.04 
@@ -5549,6 +5852,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5559,16 +5863,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5594,6 +5900,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -72.67 -12.07 3.29 -72.19 -12.16 3.12 -73.16 -12.16 3.14 -71.9 -12.41 2.71
  -73.47 -12.41 2.74 -71.91 -12.72 2.2 -73.48 -12.72 2.23 -72.22 -12.98 1.79
  -73.19 -12.98 1.81 -72.7 -13.07 1.64 -72.7 -102.09 1.64 -72.22 -102.09 1.79
@@ -5602,6 +5909,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.24 0 1.25 -1.49 1.25 -1.5 1.24 0 1.25 0 1.26 -1.49 1.26 -1.49 1.25 
@@ -5613,6 +5921,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5623,16 +5932,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5658,6 +5969,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -72.34 -17.73 -6.43 -71.84 -17.82 -6.53 -72.8 -17.82 -6.64 -71.49 -18.08 -6.91
  -73.05 -18.08 -7.08 -71.44 -18.39 -7.42 -73 -18.39 -7.59 -71.69 -18.64 -7.86
  -72.65 -18.64 -7.97 -72.15 -18.73 -8.07 -72.15 -102.09 -8.07 -71.69 -102.09 -7.86
@@ -5666,6 +5978,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.62 0 0.64 -1.4 0.64 -1.4 0.62 0 0.64 0 0.65 -1.4 0.65 -1.4 0.64 
@@ -5677,6 +5990,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5687,16 +6001,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5722,6 +6038,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -70.73 -23.4 -16.03 -70.22 -23.49 -16.07 -71.16 -23.49 -16.3 -69.83 -23.74 -16.4
  -71.36 -23.74 -16.78 -69.71 -24.05 -16.9 -71.23 -24.05 -17.27 -69.9 -24.3 -17.37
  -70.84 -24.3 -17.6 -70.33 -24.4 -17.64 -70.33 -124.75 -17.64 -69.9 -124.75 -17.37
@@ -5730,6 +6047,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.12 0 0.14 -1.68 0.14 -1.68 0.12 0 0.14 0 0.15 -1.68 0.15 -1.68 0.14 
@@ -5741,6 +6059,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5751,16 +6070,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5786,6 +6107,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -67.88 -29.06 -25.35 -67.37 -29.16 -25.32 -68.28 -29.16 -25.67 -66.94 -29.41 -25.59
  -68.4 -29.41 -26.17 -66.76 -29.72 -26.07 -68.22 -29.72 -26.64 -66.89 -29.97 -26.56
  -67.79 -29.97 -26.92 -67.28 -30.07 -26.89 -67.28 -124.75 -26.89 -66.89 -124.75 -26.56
@@ -5794,6 +6116,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.07 0 1.08 -1.59 1.08 -1.59 1.07 0 1.08 0 1.1 -1.58 1.1 -1.59 1.08 
@@ -5805,6 +6128,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5815,16 +6139,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5850,6 +6176,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -63.84 -34.73 -34.21 -63.34 -34.83 -34.11 -64.19 -34.83 -34.58 -62.88 -35.08 -34.33
  -64.25 -35.08 -35.09 -62.63 -35.39 -34.78 -64 -35.39 -35.53 -62.69 -35.64 -35.28
  -63.54 -35.64 -35.75 -63.04 -35.74 -35.65 -63.04 -124.75 -35.65 -62.69 -124.75 -35.28
@@ -5858,6 +6185,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.72 0 0.73 -1.49 0.73 -1.5 0.72 0 0.73 0 0.74 -1.49 0.74 -1.49 0.73 
@@ -5869,6 +6197,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5879,16 +6208,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5914,6 +6245,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -58.68 -40.39 -42.46 -58.2 -40.49 -42.29 -58.98 -40.49 -42.87 -57.71 -40.74 -42.45
  -58.97 -40.74 -43.38 -57.41 -41.05 -42.86 -58.67 -41.05 -43.79 -57.4 -41.3 -43.37
  -58.18 -41.3 -43.95 -57.7 -41.4 -43.78 -57.7 -124.75 -43.78 -57.4 -124.75 -43.37
@@ -5922,6 +6254,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.18 0 1.19 -1.4 1.19 -1.4 1.18 0 1.19 0 1.2 -1.4 1.2 -1.4 1.19 
@@ -5933,6 +6266,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -5943,16 +6277,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -5978,6 +6314,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -52.48 -46.06 -49.96 -52.02 -46.16 -49.74 -52.72 -46.16 -50.41 -51.52 -46.41 -49.83
  -52.65 -46.41 -50.92 -51.17 -46.72 -50.2 -52.3 -46.72 -51.29 -51.1 -46.97 -50.7
  -51.79 -46.97 -51.38 -51.34 -47.07 -51.15 -51.34 -147.42 -51.15 -51.1 -147.42 -50.7
@@ -5986,6 +6323,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.33 0 0.35 -1.68 0.35 -1.68 0.33 0 0.35 0 0.36 -1.68 0.36 -1.68 0.35 
@@ -5997,6 +6335,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6007,16 +6346,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6042,6 +6383,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -45.35 -51.73 -56.6 -44.93 -51.82 -56.32 -45.53 -51.82 -57.08 -44.42 -52.08 -56.34
  -45.39 -52.08 -57.57 -44.02 -52.39 -56.66 -45 -52.39 -57.89 -43.88 -52.64 -57.15
  -44.49 -52.64 -57.91 -44.06 -52.73 -57.63 -44.06 -147.42 -57.63 -43.88 -147.42 -57.15
@@ -6050,6 +6392,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.69 0 0.7 -1.59 0.7 -1.59 0.69 0 0.7 0 0.71 -1.58 0.71 -1.59 0.7 
@@ -6061,6 +6404,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6071,16 +6415,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6106,6 +6452,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -37.42 -57.4 -62.24 -37.03 -57.49 -61.91 -37.53 -57.49 -62.74 -36.52 -57.74 -61.87
  -37.33 -57.74 -63.21 -36.09 -58.05 -62.13 -36.89 -58.05 -63.47 -35.89 -58.31 -62.6
  -36.39 -58.31 -63.43 -36 -58.4 -63.1 -36 -147.42 -63.1 -35.89 -147.42 -62.6
@@ -6114,6 +6461,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 1.03 0 1.04 -1.49 1.04 -1.5 1.03 0 1.04 0 1.06 -1.49 1.06 -1.49 1.04 
@@ -6125,6 +6473,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6135,16 +6484,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6170,6 +6521,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -28.82 -63.06 -66.8 -28.48 -63.15 -66.42 -28.87 -63.15 -67.31 -27.98 -63.4 -66.31
  -28.61 -63.4 -67.75 -27.52 -63.72 -66.51 -28.14 -63.72 -67.95 -27.26 -63.97 -66.95
  -27.64 -63.97 -67.84 -27.31 -64.06 -67.46 -27.31 -147.42 -67.46 -27.26 -147.42 -66.95
@@ -6178,6 +6530,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.49 0 0.5 -1.4 0.5 -1.4 0.49 0 0.5 0 0.51 -1.4 0.51 -1.4 0.5 
@@ -6189,6 +6542,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6199,16 +6553,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6234,6 +6590,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -19.69 -68.72 -70.19 -19.41 -68.82 -69.77 -19.68 -68.82 -70.7 -18.93 -69.07 -69.6
  -19.36 -69.07 -71.11 -18.44 -69.38 -69.74 -18.87 -69.38 -71.25 -18.12 -69.63 -70.14
  -18.39 -69.63 -71.07 -18.11 -69.73 -70.65 -18.11 -170.08 -70.65 -18.12 -170.08 -70.14
@@ -6242,6 +6599,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.88 0 0.89 -1.68 0.89 -1.68 0.88 0 0.89 0 0.91 -1.68 0.91 -1.68 0.89 
@@ -6253,6 +6611,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6263,16 +6622,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6298,6 +6659,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -10.2 -74.39 -72.37 -9.97 -74.49 -71.91 -10.12 -74.49 -72.87 -9.52 -74.74 -71.67
  -9.75 -74.74 -73.23 -9.02 -75.05 -71.75 -9.25 -75.05 -73.3 -8.65 -75.3 -72.11
  -8.79 -75.3 -73.07 -8.57 -75.4 -72.61 -8.57 -170.08 -72.61 -8.65 -170.08 -72.11
@@ -6306,6 +6668,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.91 0 0.92 -1.59 0.92 -1.59 0.91 0 0.92 0 0.93 -1.58 0.93 -1.59 0.92 
@@ -6317,6 +6680,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6327,16 +6691,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6362,6 +6728,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -0.5 -80.06 -73.28 -0.34 -80.16 -72.8 -0.35 -80.16 -73.77 0.08 -80.41 -72.5
  0.05 -80.41 -74.07 0.59 -80.72 -72.51 0.56 -80.72 -74.08 1 -80.97 -72.82
  0.98 -80.97 -73.79 1.15 -81.07 -73.31 1.15 -170.08 -73.31 1 -170.08 -72.82
@@ -6370,6 +6737,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.37 0 0.38 -1.49 0.38 -1.5 0.37 0 0.38 0 0.39 -1.49 0.39 -1.49 0.38 
@@ -6381,6 +6749,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6391,16 +6760,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="balusterTex"></texture>
-                  <material use="balusterMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="balusterTex"></texture>
+                  <material is="x3d" use="balusterMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 -1 1 3 4 2 -1 3 5 6 4 -1 5 7 8 6 -1 
 7 9 8 -1 10 11 12 -1 11 13 14 12 -1 13 15 16 14 -1 
 15 17 18 16 -1 17 19 18 -1 19 17 1 0 -1 17 15 3 1 -1 
@@ -6426,6 +6797,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 9.22 -85.72 -72.92 9.32 -85.82 -72.42 9.43 -85.82 -73.38 9.69 -86.07 -72.07
  9.87 -86.07 -73.63 10.2 -86.38 -72.01 10.38 -86.38 -73.57 10.65 -86.63 -72.26
  10.76 -86.63 -73.23 10.86 -86.73 -72.73 10.86 -170.08 -72.73 10.65 -170.08 -72.26
@@ -6434,6 +6806,7 @@ export default function Visualizer3() {
 "
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 0 -0 0.01 0 -0.01 0 0 -0 0.01 -0 -0.03 0 -0.02 0 0 -0.01 0 -0.01 -0.03 0 -0.03 0 0 -0 -0 -0 -0.03 0 -0.03 
 0 0 0 -0.01 0 -0.02 0 0 0.01 -0.01 0 0.02 0 0 0.01 -0 0.01 0.04 0 0.03 0 0 0.01 0 0.01 0.04 0 0.04 
 0 0 0.01 0.01 0.01 0.04 0 0.04 0 0 0.01 0.02 0 0.03 0 0.8 0 0.81 -1.4 0.81 -1.4 0.8 0 0.81 0 0.82 -1.4 0.82 -1.4 0.81 
@@ -6445,6 +6818,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6455,16 +6829,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="wellTex"></texture>
-                  <material use="wellMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="wellTex"></texture>
+                  <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 7 -1 5 8 9 6 -1 8 10 11 9 -1 
 10 12 13 11 -1 12 14 15 13 -1 14 16 17 15 -1 16 18 19 17 -1 
 18 20 21 19 -1 20 22 23 21 -1 22 24 25 23 -1 24 26 27 25 -1 
@@ -6502,6 +6878,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -177.6 94.9 177.15 177.61 94.9 177.15 177.61 101.88 177.15 -177.6 101.88 177.15
  77.61 94.9 6.31 76.13 94.9 16.83 76.13 101.88 16.83 77.61 101.88 6.31
  73.2 94.9 27.05 73.2 101.88 27.05 68.87 94.9 36.77 68.87 101.88 36.77
@@ -6517,6 +6894,7 @@ export default function Visualizer3() {
  -74.61 94.9 0.99 -74.61 101.88 0.99"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -0.17 5.92 -0.17 5.92 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 
 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 
 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 
@@ -6534,6 +6912,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6544,16 +6923,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="wellTex"></texture>
-                  <material use="wellMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="wellTex"></texture>
+                  <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 7 -1 5 4 1 0 -1
 "
                   texcoordindex="0 1 2 3 -1 4 5 6 7 -1 8 9 10 11 -1"
@@ -6569,15 +6950,20 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 177.61 94.9 177.15 177.61 94.9 -177.14 177.61 101.88 -177.14 177.61 101.88 177.15
  77.61 94.9 -4.32 77.61 94.9 6.31 77.61 101.88 6.31 77.61 101.88 -4.32
 "
                   ></coordinate>
-                  <texturecoordinate point="0 -0.17 5.91 -0.17 5.91 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 2.54 3.95 2.54 3.68 4.21 -0.64 4.21 8.22"></texturecoordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="0 -0.17 5.91 -0.17 5.91 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 2.54 3.95 2.54 3.68 4.21 -0.64 4.21 8.22"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6588,16 +6974,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="wellTex"></texture>
-                  <material use="wellMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="wellTex"></texture>
+                  <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 5 6 7 -1 5 8 9 6 -1 8 10 11 9 -1 
 10 12 13 11 -1 12 14 15 13 -1 14 16 17 15 -1 16 18 19 17 -1 
 18 20 21 19 -1 20 22 23 21 -1 22 24 25 23 -1 24 26 27 25 -1 
@@ -6625,6 +7013,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 177.61 94.9 -177.14 -177.6 94.9 -177.14 -177.6 101.88 -177.14 177.61 101.88 -177.14
  -74.61 94.9 0.99 1.59 94.9 0.99 1.59 101.88 0.99 -74.61 101.88 0.99
  1.59 94.9 -75.21 1.59 101.88 -75.21 20.03 94.9 -72.95 20.03 101.88 -72.95
@@ -6635,6 +7024,7 @@ export default function Visualizer3() {
  77.61 94.9 -4.32 77.61 101.88 -4.32"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="0 -0.17 5.92 -0.17 5.92 0 0 0 0 -0.17 1.27 -0.17 1.27 0 0 0 0 -0.17 1.27 -0.17 1.27 0 0 0 0 -0.17 0.31 -0.17 0.31 0 0 0 
 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 
 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 0 -0.17 0.18 -0.17 0.18 0 0 0 
@@ -6647,6 +7037,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6657,16 +7048,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="wellTex"></texture>
-                  <material use="wellMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="wellTex"></texture>
+                  <material is="x3d" use="wellMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1 4 1 0 -1
 "
                   texcoordindex="0 1 2 3 -1 4 5 6 -1"
@@ -6682,14 +7075,19 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -177.6 94.9 -177.14 -177.6 94.9 177.15 -177.6 101.88 177.15 -177.6 101.88 -177.14
  -74.61 94.9 0.99"
                   ></coordinate>
-                  <texturecoordinate point="0 -0.17 5.91 -0.17 5.91 0 0 0 0 3.81 -1.71 8.22 -1.71 -0.64"></texturecoordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="0 -0.17 5.91 -0.17 5.91 0 0 0 0 3.81 -1.71 8.22 -1.71 -0.64"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6700,16 +7098,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="1 2 3 -1 23 24 0 -1 0 22 23 -1 0 21 22 -1 
 0 20 21 -1 0 19 20 -1 0 18 19 -1 0 17 18 -1 
 0 16 17 -1 0 15 16 -1 0 14 15 -1 0 13 14 -1 
@@ -6735,6 +7135,7 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" -177.6 101.88 177.15 177.61 101.88 177.15 77.61 101.88 6.31 76.13 101.88 16.83
  73.2 101.88 27.05 68.87 101.88 36.77 63.24 101.88 45.78 56.41 101.88 53.92
  48.51 101.88 61.04 39.69 101.88 66.98 30.14 101.88 71.64 20.03 101.88 74.93
@@ -6744,6 +7145,7 @@ export default function Visualizer3() {
  -74.61 101.88 0.99"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="4.21 -8.21 2.54 -3.94 2.52 -4.2 0.02 -4.07 0 -3.81 -1.71 -8.21 -1.71 -8.21 0.05 -4.33 0.02 -4.07 -1.71 -8.21 0.11 -4.58 0.05 -4.33 
 -1.71 -8.21 0.2 -4.81 0.11 -4.58 -1.71 -8.21 0.3 -5.03 0.2 -4.81 -1.71 -8.21 0.43 -5.22 0.3 -5.03 -1.71 -8.21 0.56 -5.38 0.43 -5.22 
 -1.71 -8.21 0.72 -5.52 0.56 -5.38 -1.71 -8.21 0.88 -5.62 0.72 -5.52 -1.71 -8.21 1.05 -5.68 0.88 -5.62 -1.71 -8.21 1.23 -5.71 1.05 -5.68 
@@ -6755,6 +7157,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6765,16 +7168,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1
 "
                   texcoordindex="0 1 2 3 -1"
@@ -6790,14 +7195,19 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 177.61 101.88 177.15 177.61 101.88 -177.14 77.61 101.88 -4.32 77.61 101.88 6.31
 "
                   ></coordinate>
-                  <texturecoordinate point="4.21 -8.21 4.21 0.65 2.54 -3.67 2.54 -3.94"></texturecoordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="4.21 -8.21 4.21 0.65 2.54 -3.67 2.54 -3.94"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6808,16 +7218,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="1 2 3 4 -1 4 0 1 -1 13 14 0 -1 0 12 13 -1 
 0 11 12 -1 0 10 11 -1 0 9 10 -1 0 8 9 -1 
 0 7 8 -1 0 6 7 -1 0 5 6 -1 0 4 5 -1
@@ -6839,12 +7251,14 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 177.61 101.88 -177.14 -177.6 101.88 -177.14 -74.61 101.88 0.99 1.59 101.88 0.99
  1.59 101.88 -75.21 20.03 101.88 -72.95 30.14 101.88 -69.66 39.69 101.88 -65
  48.51 101.88 -59.06 56.41 101.88 -51.94 63.24 101.88 -43.8 68.87 101.88 -34.78
  73.2 101.88 -25.07 76.13 101.88 -14.85 77.61 101.88 -4.32"
                   ></coordinate>
                   <texturecoordinate
+                    is="x3d"
                     point="-1.71 0.65 0 -3.81 1.27 -3.81 1.27 -1.9 1.27 -1.9 4.21 0.65 -1.71 0.65 2.52 -3.41 2.54 -3.67 4.21 0.65 4.21 0.65 2.47 -3.15 2.52 -3.41 
 4.21 0.65 2.4 -2.91 2.47 -3.15 4.21 0.65 2.3 -2.69 2.4 -2.91 4.21 0.65 2.19 -2.48 2.3 -2.69 4.21 0.65 2.06 -2.3 2.19 -2.48 
 4.21 0.65 1.91 -2.16 2.06 -2.3 4.21 0.65 1.75 -2.04 1.91 -2.16 4.21 0.65 1.58 -1.96 1.75 -2.04 4.21 0.65 1.27 -1.9 1.58 -1.96
@@ -6854,6 +7268,7 @@ export default function Visualizer3() {
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6864,18 +7279,19 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
-                  coordindex="0 1 2 -1
-"
+                  is="x3d"
+                  coordindex="0 1 2 -1"
                   texcoordindex="0 1 2 -1"
                   solid="true"
                   ccw="true"
@@ -6888,12 +7304,19 @@ export default function Visualizer3() {
                   normalindex=""
                   colorindex=""
                 >
-                  <coordinate point=" -177.6 101.88 -177.14 -177.6 101.88 177.15 -74.61 101.88 0.99"></coordinate>
-                  <texturecoordinate point="-1.71 0.65 -1.71 -8.21 0 -3.81"></texturecoordinate>
+                  <coordinate
+                    is="x3d"
+                    point=" -177.6 101.88 -177.14 -177.6 101.88 177.15 -74.61 101.88 0.99"
+                  ></coordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="-1.71 0.65 -1.71 -8.21 0 -3.81"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6904,16 +7327,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1
 "
                   texcoordindex="0 1 2 3 -1"
@@ -6929,14 +7354,19 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
+                    is="x3d"
                     point=" 177.61 -192.85 177.15 177.61 -192.85 -177.14 -177.6 -192.85 -177.14 -177.6 -192.85 177.15
 "
                   ></coordinate>
-                  <texturecoordinate point="5.92 0 5.92 8.86 0 8.86 0 0"></texturecoordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="5.92 0 5.92 8.86 0 8.86 0 0"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
             <transform
+              is="x3d"
               render="true"
               bboxcenter="0,0,0"
               bboxsize="-1,-1,-1"
@@ -6947,16 +7377,18 @@ export default function Visualizer3() {
               scaleorientation="0,0,0,0"
             >
               <shape
+                is="x3d"
                 render="true"
                 bboxcenter="0,0,0"
                 bboxsize="-1,-1,-1"
                 ispickable="true"
               >
-                <appearance sorttype="auto" alphaclipthreshold="0.1">
-                  <texture use="floorTex"></texture>
-                  <material use="floorMat"></material>
+                <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
+                  <texture is="x3d" use="floorTex"></texture>
+                  <material is="x3d" use="floorMat"></material>
                 </appearance>
                 <indexedfaceset
+                  is="x3d"
                   coordindex="0 1 2 3 -1
 "
                   texcoordindex="0 1 2 3 -1"
@@ -6972,10 +7404,13 @@ export default function Visualizer3() {
                   colorindex=""
                 >
                   <coordinate
-                    point=" -177.6 -192.86 177.15 -177.6 -192.86 -177.14 177.61 -192.86 -177.14 177.61 -192.86 177.15
-"
+                    is="x3d"
+                    point=" -177.6 -192.86 177.15 -177.6 -192.86 -177.14 177.61 -192.86 -177.14 177.61 -192.86 177.15"
                   ></coordinate>
-                  <texturecoordinate point="0 0 0 -8.85 5.92 -8.85 5.92 0"></texturecoordinate>
+                  <texturecoordinate
+                    is="x3d"
+                    point="0 0 0 -8.85 5.92 -8.85 5.92 0"
+                  ></texturecoordinate>
                 </indexedfaceset>
               </shape>
             </transform>
