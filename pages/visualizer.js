@@ -1,5 +1,5 @@
 import styles from '@/styles/Visualizer.module.scss';
-import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useCallback, useEffect, useState } from 'react';
 import { BiExpandAlt } from 'react-icons/bi';
 
@@ -9,6 +9,7 @@ export async function x3DLoad() {
 
 export default function Visualizer() {
   const [showContent, setShowContent] = useState(false);
+  const { router } = useRouter();
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,33 +23,24 @@ export default function Visualizer() {
   }, []);
 
   const handleClick = useCallback((e, path) => {
-    if (path === '/about') {
-      console.log('I clicked');
-    }
-    if (path === '/posts') {
-      console.log('I clicked');
-    }
+    router.push(path);
   }, []);
 
   return (
     <div className={styles.visualizerWrapper}>
       <div className={styles.visualizer}>
-        <Link href="/visualizer3">
-          <BiExpandAlt
-            className={styles.expand}
-            onClick={(e) => handleClick(e, '/visualizer3')}
-          />
-        </Link>
+        <BiExpandAlt
+          className={styles.expand}
+          onClick={(e) => handleClick(e, '/visualizer3')}
+        />
         {showContent && (
           <x3d is="x3d">
             <scene is="x3d">
-              <navigationInfo is="x3d" type="turntable"></navigationInfo>
               <inline
                 is="x3d"
                 nameSpaceName="myScene"
-                mapDEFToID="false"
-                contentType="model/x3d+xml"
-                url="https://prismic-io.s3.amazonaws.com/compleat/360232f2-1735-4cd1-8be7-965db425cfaa_3dspiral.x3d"
+                mapDEFToID="true"
+                url="https://prismic-io.s3.amazonaws.com/compleat/2dfd2e49-a4c1-4b8d-af92-170af1d64a0d_3dspiral.x3d"
               ></inline>
             </scene>
           </x3d>

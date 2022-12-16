@@ -21,7 +21,10 @@ export default function Visualizer3() {
 
         sceneRef.current.setAttribute('render', 'true');
         sceneRef.current.setAttribute('reload', 'true');
-        console.log('reload', x3dom.reload);
+
+        const x3dEl = document.getElementById('X3DElement');
+        console.log('x3dEl', x3dEl);
+
         x3dom.reload();
       });
     }, 1000);
@@ -48,7 +51,6 @@ export default function Visualizer3() {
         version="3.3"
         ref={sceneRef}
       >
-        <param name="disableDoubleClick" value="true" />
         {showContent && (
           <scene
             is="x3d"
@@ -64,7 +66,7 @@ export default function Visualizer3() {
               viewAll="true"
               is="x3d"
               position="0 -30 500"
-              centerofrotation="0 0 0"
+              centerofrotation="0 -30 0"
               fieldofview="0.785398"
               orientation="0,0,0,0"
               znear="-1"
@@ -72,14 +74,14 @@ export default function Visualizer3() {
             ></viewpoint>
             <navigationinfo
               is="x3d"
-              type="turntable"
+              type="'walk'"
               headlight="true"
               typeparams="-0.4,60,0.05,2.8"
               explorationmode="all"
               avatarsize="0.25,1.6,0.75"
-              speed="1"
-              transitiontime="1"
-              transitiontype="LINEAR "
+              speed="3"
+              transitiontime="3"
+              transitiontype="'ANIMATE'"
             ></navigationinfo>
             <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
               <texture
@@ -186,7 +188,6 @@ export default function Visualizer3() {
               ></material>
             </appearance>
             <transform
-              is="x3d"
               is="x3d"
               render="true"
               bboxcenter="0,0,0"
@@ -7339,8 +7340,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1
-"
+                  coordindex="0 1 2 3 -1"
                   texcoordindex="0 1 2 3 -1"
                   solid="true"
                   ccw="true"
@@ -7355,8 +7355,7 @@ export default function Visualizer3() {
                 >
                   <coordinate
                     is="x3d"
-                    point=" 177.61 -192.85 177.15 177.61 -192.85 -177.14 -177.6 -192.85 -177.14 -177.6 -192.85 177.15
-"
+                    point=" 177.61 -192.85 177.15 177.61 -192.85 -177.14 -177.6 -192.85 -177.14 -177.6 -192.85 177.15"
                   ></coordinate>
                   <texturecoordinate
                     is="x3d"
@@ -7389,8 +7388,7 @@ export default function Visualizer3() {
                 </appearance>
                 <indexedfaceset
                   is="x3d"
-                  coordindex="0 1 2 3 -1
-"
+                  coordindex="0 1 2 3 -1"
                   texcoordindex="0 1 2 3 -1"
                   solid="true"
                   ccw="true"
@@ -7414,6 +7412,32 @@ export default function Visualizer3() {
                 </indexedfaceset>
               </shape>
             </transform>
+            <timesensor
+              is="3dx"
+              DEF="time"
+              cycleInterval="2"
+              loop="true"
+            ></timesensor>
+            <positioninterpolator
+              is="3dx"
+              DEF="move"
+              key="0 0.5 1"
+              keyValue="0 0 0  0 30 0  0 0 0"
+            ></positioninterpolator>
+            <route
+              is="3dx"
+              fromNode="time"
+              fromField="fraction_changed"
+              toNode="move"
+              toField="set_fraction"
+            ></route>
+            <route
+              is="3dx"
+              fromNode="move"
+              fromField="value_changed"
+              toNode="ball"
+              toField="translation"
+            ></route>
           </scene>
         )}
       </x3d>

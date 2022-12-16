@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "https://www.web3d.org/specifications/x3d-3.3.dtd">
-<x3d is="x3d" x="0px" y="0px" showlog="false" showstat="false" width="1042px" height="454px" profile='Immersive' version='3.3'
+<x3d is="x3d" x="0px" y="0px" showlog="false" showstat="false" profile='Immersive' version='3.3'
     xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation ='https://www.web3d.org/specifications/x3d-3.3.xsd '>
     <param name="disableDoubleClick" value="true" />
     <Scene is="x3d" id="X3DElement_scene" render="true" visible="true" bboxcenter="0,0,0" bboxsize="-1,-1,-1" pickmode="idBuf" dopickpass="true">
@@ -4298,7 +4298,7 @@
             </shape>
         </transform>
     </Scene>
-    <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="1042" height="458"></canvas>
+    <!-- <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="1042" height="458"></canvas> -->
     <div id="x3dom-state-viewer" style="display: none">
         <div class="x3dom-states-rendermode-hardware">
                   Hardware-Rendering

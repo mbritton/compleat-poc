@@ -2,11 +2,15 @@ import TopNav from '@/components/TopNav';
 import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 export default function Layout({ page, pages, children }) {
   const [pageObj] = useState(JSON.parse(pages));
   const router = useRouter();
+
+  const handleClick = useCallback((e, path) => {
+    router.push(path);
+  }, []);
 
   useEffect(() => {
     console.log('page', page);
@@ -34,6 +38,7 @@ export default function Layout({ page, pages, children }) {
           width={287}
           height={86}
           alt="Compleat Stair"
+          onClick={(e) => handleClick(e, '/')}
         />
       </div>
       <main className={styles.main}>{children}</main>
