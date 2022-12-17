@@ -23,35 +23,16 @@ const fadeInUp = {
   },
 };
 
-const fadeInRight = {
-  initial: {
-    x: 10,
-    opacity: 0,
-  },
-  animate: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.4,
-      ease: easing,
-    },
-  },
-};
-
 const stagger = {
   animate: {
     transition: {
-      staggerChildren: .3,
+      staggerChildren: 0.3,
     },
   },
 };
 
 const RightOverlay = (props) => {
   const carouselContext = useContext(CarouselContext);
-
-  const handleOpen = useCallback((doOpen) => {
-    carouselContext.setOverlayOpen(doOpen);
-  }, [carouselContext]);
 
   return (
     <div

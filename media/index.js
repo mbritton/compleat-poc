@@ -148,7 +148,7 @@ export const getCards = () => {
   ];
 };
 
-export const media = [media1, media2, media3, media4];
+export const media = [media3, media4, media1, media2];
 export const cards = [card1, card2, card3, card4];
 export const cardBottoms = [card7, card7, card7, card7];
 export const stairTypes = [

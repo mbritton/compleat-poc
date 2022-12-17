@@ -56,12 +56,10 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
           />
-          <script>X3DOM_SECURITY_OFF = true;</script>
-          <script async src="https://www.x3dom.org/download/x3dom.js"></script>
-          {/* <script
+          <script
             async
             src="https://prismic-io.s3.amazonaws.com/compleat/c979ba91-d29f-431c-824c-0682701679d9_x3dom.js"
-          ></script> */}
+          ></script>
           <link
             rel="stylesheet"
             href="https://prismic-io.s3.amazonaws.com/compleat/17f5a7fd-4671-4306-8a62-24a5ca2d13ec_x3dom.css"

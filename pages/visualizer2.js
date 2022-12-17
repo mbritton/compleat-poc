@@ -34,7 +34,7 @@ export default function Visualizer2() {
       uri3D,
       (text) => {
         const foo = parser.parseFromString(text, 'text/xml');
-        renderModel(foo);
+        renderModel(text);
       },
       (progress) => {
         console.log('progress', progress);
@@ -44,6 +44,7 @@ export default function Visualizer2() {
 
   const renderModel = useCallback((foo) => {
     console.log('foo', foo);
+    scene.add(foo);
     scene.background = new THREE.Color(0xf2f5ff);
 
     ambientLight = new THREE.AmbientLight(0x404040); // soft white light

@@ -79,7 +79,7 @@ const Hero = () => {
           handleCarouselScrub={handleCarouselActions}
           slides={slides}
         ></Carousel>
-        <HeroSlideInsets slide={slide}></HeroSlideInsets>
+        {/* <HeroSlideInsets slide={slide}></HeroSlideInsets> */}
         {overlayOpen && (
           <RightOverlay
             slide={slide}
