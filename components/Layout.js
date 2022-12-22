@@ -8,9 +8,7 @@ export default function Layout({ page, pages, children }) {
   const [pageObj] = useState(JSON.parse(pages));
   const router = useRouter();
 
-  const handleClick = useCallback((e, path) => {
-    router.push(path);
-  }, []);
+  const handleClick = useCallback((e, path) => router.push(path), []);
 
   useEffect(() => {
     console.log('page', page);

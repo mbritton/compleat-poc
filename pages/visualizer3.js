@@ -28,7 +28,7 @@ export default function Visualizer3() {
       x3dom.reload();
 
       setShowContent(true);
-      switchCamera('default_cam');
+      switchCamera('persp');
     });
   }, []);
 
@@ -133,8 +133,8 @@ export default function Visualizer3() {
                 id="front_cam"
                 DEF="CA_Camera"
                 description="front_cam"
-                orientation="0.000296 0.985499 0.169683 3.14503"
-                position="0, 200, -700"
+                orientation="0.000296 2.5 0.169683 3.14503"
+                position="0 0 -500"
                 centerofrotation="0 0 0"
                 fieldofview="0.785398"
                 znear="-1"
