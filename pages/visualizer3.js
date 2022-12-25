@@ -13,23 +13,17 @@ export async function x3DLoad() {
 
 export default function Visualizer3() {
   const [showContent, setShowContent] = useState(true);
-  const [currentViewpoint, setCurrentViewpoint] = useState();
+  const transitionType = 'FLY';
 
   let elemRef = useRef();
+  let leftMatrix;
 
+  const [currentViewpoint, setCurrentViewpoint] = useState();
   const [currentElement, setCurrentElement] = useState();
 
-  let myCam;
-
   const switchCamera = useCallback((viewpointId) => {
-    myCam = document.getElementById(viewpointId);
-    setCurrentViewpoint(myCam);
-    myCam.setAttribute('set_bind', 'true');
+    document.getElementById(viewpointId).setAttribute('set_bind', 'true');
   }, []);
-
-  const getViewpoint = useCallback(() => {
-    return currentElement.current.runtime.getActiveBindable('viewpoint');
-  }, [currentElement]);
 
   const onNextPrev = useCallback(
     (typeOfCall) => {
@@ -41,32 +35,87 @@ export default function Visualizer3() {
   );
 
   const init = useCallback(() => {
-    const sceneEl = document.getElementById('X3DElement_scene');
-
-    const shapes = sceneEl.getElementsByTagName('shape');
-    for (let i = 0; i < shapes.length; i++) {
-      shapes[i].addEventListener('click', (e) => {
-        console.log('e', elemRef.current.runtime);
-        elemRef.current.runtime.showAll();
-        // console.log('viewpoint', getViewpoint());
-      });
-    }
-
+    parseShapes();
     x3dom ? x3dom.reload() : null;
+  }, [parseShapes]);
+
+  const parseShapes = useCallback(() => {
+    const sceneEl = document.getElementById('X3DElement_scene');
+    const shapes = sceneEl.getElementsByTagName('shape');
+
+    for (let i = 0; i < shapes.length; i++) {
+      shapes[i].addEventListener('click', (e) => {});
+    }
   }, []);
+
+  const setMatrix = useCallback(() => {
+    leftMatrix = elemRef.current.runtime.viewMatrix();
+  }, [leftMatrix]);
+
+  const applyMatrix = useCallback(() => {
+    console.log('leftMatrix', leftMatrix);
+    const axisR = elemRef.current.runtime
+      .getActiveBindable('viewpoint')
+      .getAttribute('orientation');
+
+    let orientationArray = axisR.split(' ').map((x) => {
+      return x ? parseFloat(x) : 0;
+    });
+    console.log('orientationArray', orientationArray);
+    let transformMatrix = new x3dom.fields.SFMatrix4f(
+      orientationArray[0] ? orientationArray[0] : 0,
+      orientationArray[1] ? orientationArray[1] : 0,
+      orientationArray[2] ? orientationArray[2] : 0,
+      orientationArray[3] ? orientationArray[3] : 0,
+      orientationArray[4] ? orientationArray[4] : 0,
+      orientationArray[5] ? orientationArray[5] : 0,
+      orientationArray[6] ? orientationArray[6] : 0,
+      orientationArray[7] ? orientationArray[7] : 0,
+      orientationArray[8] ? orientationArray[8] : 0,
+      orientationArray[9] ? orientationArray[9] : 0,
+      orientationArray[10] ? orientationArray[10] : 0,
+      orientationArray[11] ? orientationArray[11] : 0,
+      orientationArray[12] ? orientationArray[12] : 0,
+      orientationArray[13] ? orientationArray[13] : 0,
+      orientationArray[14] ? orientationArray[14] : 0,
+      orientationArray[15] ? orientationArray[15] : 0,
+    );
+
+    console.log('transformMatrix', transformMatrix);
+
+    let orientationQuat = new x3dom.fields.Quaternion(0, 1, 0, 0);
+    orientationQuat.setValue(transformMatrix);
+    orientationQuat.toAxisAngle(new x3dom.fields.SFVec3f(0, 1, 0), Math.PI / 2);
+    transformMatrix = orientationQuat.toMatrix();
+
+    orientationArray = transformMatrix.toGL();
+    // console.log('orientationArray', orientationArray);
+    let orientation =
+      orientationArray[0] +
+      ' ' +
+      orientationArray[1] +
+      ' ' +
+      orientationArray[2] +
+      ' ' +
+      orientationArray[3];
+
+    console.log('orientation', orientation);
+    elemRef.current.runtime
+      .getActiveBindable('viewpoint')
+      .setAttribute('orientation', orientation);
+  }, [leftMatrix]);
 
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
-    console.log('currentElement', currentElement);
     x3DLoad().then((x3d) => {
       console.log('loaded');
       setTimeout(() => {
         init();
         setShowContent(true);
-        switchCamera('left_cam');
+        elemRef.current.runtime.showAll();
       }, 1000);
     });
-  }, []);
+  }, [init]);
 
   // <script>
   //       var cam_x=0,cam_y=0,cam_z=0;
@@ -90,9 +139,9 @@ export default function Visualizer3() {
           </div>
           <div
             className={styles.control}
-            onClick={() => switchCamera('persp_cam')}
+            onClick={() => elemRef.current.runtime.showAll()}
           >
-            Home
+            Show All
           </div>
           <div
             className={styles.control}
@@ -106,11 +155,11 @@ export default function Visualizer3() {
           >
             Rear
           </div>
-          <div
-            className={styles.control}
-            onClick={() => switchCamera('left_cam')}
-          >
-            Left
+          <div className={styles.control} onClick={() => setMatrix()}>
+            Set Matrix
+          </div>
+          <div className={styles.control} onClick={() => applyMatrix()}>
+            Apply Matrix
           </div>
           <div className={styles.control} onClick={() => onNextPrev()}>
             Next
@@ -193,8 +242,8 @@ export default function Visualizer3() {
                 explorationmode="all"
                 avatarsize="0.25,1.6,0.75"
                 speed="1"
-                transitiontime="1"
-                transitiontype="'ANIMATE'"
+                transitiontime="0.5"
+                transitiontype={`'${transitionType}'`}
               ></navigationinfo>
               <timesensor
                 is="x3d"
