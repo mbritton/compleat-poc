@@ -1,5 +1,11 @@
 import styles from '@/styles/Visualizer3.module.scss';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 
 export async function x3DLoad() {
   return await import('x3dom');
@@ -7,28 +13,58 @@ export async function x3DLoad() {
 
 export default function Visualizer3() {
   const [showContent, setShowContent] = useState(true);
-  let sceneRef = useRef();
-  let myCam;
-  let camX = 0;
-  let camY = 0;
-  let camZ = 0;
+  const [currentViewpoint, setCurrentViewpoint] = useState();
 
-  const switchCamera = useCallback((camId) => {
-    myCam = document.getElementById(camId);
+  let elemRef = useRef();
+
+  const [currentElement, setCurrentElement] = useState();
+
+  let myCam;
+
+  const switchCamera = useCallback((viewpointId) => {
+    myCam = document.getElementById(viewpointId);
+    setCurrentViewpoint(myCam);
     myCam.setAttribute('set_bind', 'true');
-    myCam.position = camX + ' ' + camY + ' ' + camZ;
+  }, []);
+
+  const getViewpoint = useCallback(() => {
+    return currentElement.current.runtime.getActiveBindable('viewpoint');
+  }, [currentElement]);
+
+  const onNextPrev = useCallback(
+    (typeOfCall) => {
+      typeOfCall === 'next'
+        ? currentElement.current.runtime.nextView()
+        : currentElement.current.runtime.prevView();
+    },
+    [currentElement],
+  );
+
+  const init = useCallback(() => {
+    const sceneEl = document.getElementById('X3DElement_scene');
+
+    const shapes = sceneEl.getElementsByTagName('shape');
+    for (let i = 0; i < shapes.length; i++) {
+      shapes[i].addEventListener('click', (e) => {
+        console.log('e', elemRef.current.runtime);
+        elemRef.current.runtime.showAll();
+        // console.log('viewpoint', getViewpoint());
+      });
+    }
+
+    x3dom ? x3dom.reload() : null;
   }, []);
 
   useEffect(() => {
+    elemRef ? setCurrentElement(elemRef) : null;
+    console.log('currentElement', currentElement);
     x3DLoad().then((x3d) => {
-      sceneRef.current.setAttribute('reload', 'true');
-
-      const x3dEl = document.getElementById('X3DElement');
-
-      x3dom.reload();
-
-      setShowContent(true);
-      switchCamera('persp');
+      console.log('loaded');
+      setTimeout(() => {
+        init();
+        setShowContent(true);
+        switchCamera('left_cam');
+      }, 1000);
     });
   }, []);
 
@@ -46,8 +82,17 @@ export default function Visualizer3() {
     <>
       <div className={styles.controlsWrapper}>
         <div className={styles.controlsContainer}>
-          <div className={styles.control} onClick={() => switchCamera('persp')}>
-            Perspective
+          <div
+            className={styles.control}
+            onClick={() => elemRef.current.runtime.prevView()}
+          >
+            Previous
+          </div>
+          <div
+            className={styles.control}
+            onClick={() => switchCamera('persp_cam')}
+          >
+            Home
           </div>
           <div
             className={styles.control}
@@ -57,14 +102,24 @@ export default function Visualizer3() {
           </div>
           <div
             className={styles.control}
-            onClick={() => switchCamera('back_cam')}
+            onClick={() => switchCamera('rear_cam')}
           >
-            Back
+            Rear
+          </div>
+          <div
+            className={styles.control}
+            onClick={() => switchCamera('left_cam')}
+          >
+            Left
+          </div>
+          <div className={styles.control} onClick={() => onNextPrev()}>
+            Next
           </div>
         </div>
       </div>
       <div className={styles.visualizerWrapper}>
         <x3d
+          ref={elemRef}
           is="x3d"
           id="X3DElement"
           x="0px"
@@ -73,7 +128,6 @@ export default function Visualizer3() {
           showstat="false"
           profile="Immersive"
           version="3.3"
-          ref={sceneRef}
         >
           {showContent && (
             <scene
@@ -87,40 +141,22 @@ export default function Visualizer3() {
               dopickpass="true"
             >
               <viewpoint
-                id="myCam"
-                DEF="CA_Camera"
                 is="x3d"
-                position="0 0 0"
-                centerofrotation="0 0 0"
-                fieldofview="0.785398"
-              ></viewpoint>
-              <viewpoint
-                is="x3d"
-                id="persp"
+                id="persp_cam"
                 DEF="CA_Camera"
-                description="persp"
+                description="persp_cam"
                 centerofrotation="0 0 0"
                 orientation="0.105124 0.94807 0.300188 3.78271"
-                position="-268.414 332.496 -350.739"
+                position="-368.414 332.496 -450.739"
                 fieldOfView="0.785398"
                 znear="-1"
                 zfar="-1"
               ></viewpoint>
               <viewpoint
                 is="x3d"
-                id="default_cam"
+                id="rear_cam"
                 DEF="CA_Camera"
-                description="default_cam"
-                centerofrotation="0 0 0"
-                orientation="0.070061 0.977275 0.200062 3.80108"
-                position="-220.745 192.926 -299.071"
-                fieldOfView="0.785398"
-              ></viewpoint>
-              <viewpoint
-                is="x3d"
-                id="back_cam"
-                DEF="CA_Camera"
-                description="back_cam"
+                description="rear_cam"
                 orientation="0.996843 -0.079223 -0.00522 6.15119"
                 position="0 0 500"
                 centerofrotation="0 0 0"
@@ -142,20 +178,12 @@ export default function Visualizer3() {
               ></viewpoint>
               <viewpoint
                 is="x3d"
-                id="top_cam"
-                DEF="CA_Camera"
-                description="top_cam"
-                orientation="0.999996 0.00201 0.001745 4.85308"
-                position="-1.42666 875.72 103.895"
-                fieldOfView="0.785398"
-              ></viewpoint>
-              <viewpoint
-                is="x3d"
                 id="left_cam"
                 DEF="CA_Camera"
                 description="left_cam"
-                orientation="0.000296 0.985499 0.169683 3.14503"
-                position="0, 0, -500"
+                centerofrotation="0 0 0"
+                orientation="0 1 0 3.3"
+                position="0 0 -400"
                 fieldOfView="0.785398"
               ></viewpoint>
               <navigationinfo
@@ -171,7 +199,7 @@ export default function Visualizer3() {
               <timesensor
                 is="x3d"
                 DEF="time"
-                cycleInterval="2"
+                cycleInterval="1"
                 loop="true"
               ></timesensor>
               <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">

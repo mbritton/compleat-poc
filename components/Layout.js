@@ -10,11 +10,11 @@ export default function Layout({ page, pages, children }) {
 
   const handleClick = useCallback((e, path) => router.push(path), []);
 
-  useEffect(() => {
-    console.log('page', page);
-    console.log('router.asPath', router.asPath);
-    console.log('pageObj.pages', pageObj.pages);
-  }, []);
+  // useEffect(() => {
+  //   console.log('page', page);
+  //   console.log('router.asPath', router.asPath);
+  //   console.log('pageObj.pages', pageObj.pages);
+  // }, []);
 
   return (
     <div className={styles.container}>

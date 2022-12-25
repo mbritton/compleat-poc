@@ -4298,64 +4298,6 @@
             </shape>
         </transform>
     </Scene>
-    <!-- <canvas class="x3dom-canvas" id="x3dom-1669505032236-canvas" tabindex="0" width="1042" height="458"></canvas> -->
-    <div id="x3dom-state-viewer" style="display: none">
-        <div class="x3dom-states-rendermode-hardware">
-                  Hardware-Rendering
-        </div>
-        <ul class="x3dom-states-list">
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">FPS</div>
-                <div class="x3dom-states-item-value">0.06</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">ANIM</div>
-                <div class="x3dom-states-item-value">0.00</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">TRAVERSE</div>
-                <div class="x3dom-states-item-value">0.10</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">SORT</div>
-                <div class="x3dom-states-item-value">0.00</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">RENDER</div>
-                <div class="x3dom-states-item-value">1.10</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">DRAW</div>
-                <div class="x3dom-states-item-value">0.01</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">PICKING</div>
-                <div class="x3dom-states-item-value">3.10</div>
-            </li>
-        </ul>
-        <ul class="x3dom-states-list">
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">#NODES:</div>
-                <div class="x3dom-states-item-value">165</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">#SHAPES:</div>
-                <div class="x3dom-states-item-value">82</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">#DRAWS:</div>
-                <div class="x3dom-states-item-value">82</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">#POINTS:</div>
-                <div class="x3dom-states-item-value">14,304</div>
-            </li>
-            <li class="x3dom-states-item">
-                <div class="x3dom-states-item-title">#TRIS:</div>
-                <div class="x3dom-states-item-value">4,768</div>
-            </li>
-        </ul>
-    </div>
     <div class="x3dom-progress" style="display: none">
         <strong>Loading: 0</strong>
         <span style="width: 25%"></span>
