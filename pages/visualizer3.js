@@ -36,18 +36,6 @@ export default function Visualizer3() {
     [currentElement],
   );
 
-  const initWorld = () => {
-    x3dom.Texture.prototype.update = () => {
-      // if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
-      //   this.updateText();
-      // } else {
-      //   this.updateTexture();
-      // }
-      //AP: somehow prevents USE Apperance update
-      //this.node.validateGLObject();
-    };
-  };
-
   const init = useCallback(() => {
     parseShapes();
     x3dom ? x3dom.reload() : null;
@@ -164,15 +152,18 @@ export default function Visualizer3() {
     const targetTextures = document.querySelectorAll(targetTextureIds);
 
     targetTextures.forEach((textItem) => {
-      // console.log('textItem', textItem);
+      console.log('textItem', textItem.parentNode);
+      // textItem.setAttribute();
       textItem.setAttribute(
         'url',
         'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
       );
+      console.log('textItem', textItem.parentNode);
+
       // textItem.setAttribute('repeatS', true);
       // textItem.setAttribute('repeatT', true);
 
-      // elemRef.current.runtime.viewMatrix();
+      // elemRef.current.runtime.validateGLObject();
       // vp.setAttribute('set_bind', 'true');
     });
 
@@ -185,20 +176,18 @@ export default function Visualizer3() {
             'url',
             'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
           );
-          // textItem.setAttribute('repeatS', true);
-          // textItem.setAttribute('repeatT', true);
+          textItem.removeAttribute('use');
+          textItem.setAttribute('def', allTextAr[i] + i);
+          console.log('textItem', textItem);
+          // textItem._x3domNode.updateGLObject();
+          // textItem._x3domNode.invalidateGLObject();
+
+          textItem.setAttribute('repeatS', true);
+          textItem.setAttribute('repeatT', true);
+        } else {
+          console.log('DOES NOT USE:', allTextAr[i]);
         }
       }
-      // if (textItem.getAttribute('use') === 'floorTex') {
-      //   console.log('IS FLOOR');
-      //   // textItem.removeAttribute('use');
-      //   textItem.setAttribute('repeatS', true);
-      //   textItem.setAttribute('repeatT', true);
-      //   textItem.setAttribute(
-      //     'url',
-      //     'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
-      //   );
-      // }
     });
 
     // console.log('textItem.getAttribute("use")', textItem.getAttribute('use'));
@@ -214,8 +203,24 @@ export default function Visualizer3() {
     elemRef ? setCurrentElement(elemRef) : null;
     setCurrentFloorTexture(floor_texture);
     x3DLoad().then((x3d) => {
-      initWorld();
       setTimeout(() => {
+        x3dom.Texture.prototype.update = function () {
+          console.log('x3dom.Texture.prototype.update', this.node);
+          if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
+            this.updateText();
+          } else {
+            this.updateTexture();
+          }
+          // if (x3dom.isa(that.node, x3dom.nodeTypes.Text)) {
+          //   console.log('x3dom.isa(that.node, x3dom.nodeTypes.Text)');
+          //   that.updateText();
+          // } else {
+          //   console.log('x3dom.isa(that.node, x3dom.nodeTypes.Texture)');
+          // that.updateTexture();
+          // }
+          // //AP: somehow prevents USE Apperance update
+          // this.node.invalidateGLObject();
+        };
         init();
         setShowContent(true);
       }, 500);
