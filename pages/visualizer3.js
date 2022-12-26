@@ -87,8 +87,6 @@ export default function Visualizer3() {
       orientationArray[15] ? orientationArray[15] : 0,
     );
 
-    console.log('transformMatrix', transformMatrix);
-
     let orientationQuat = new x3dom.fields.Quaternion(0, 1, 0, 0);
     orientationQuat.setValue(transformMatrix);
     orientationQuat.toAxisAngle(new x3dom.fields.SFVec3f(0, 1, 0), Math.PI / 2);
@@ -129,7 +127,6 @@ export default function Visualizer3() {
       ' ' +
       orientationArray[15];
 
-    console.log('orientation', orientation);
     elemRef.current.runtime
       .getActiveBindable('viewpoint')
       .setAttribute('orientation', orientation);
@@ -171,11 +168,8 @@ export default function Visualizer3() {
       }
     });
 
-    const targetTexturesWithUse = document.querySelectorAll(
-      `texture[use="floorTex"]`,
-    );
     x3dom.reload();
-  }, [currentFloorTexture, floor_texture_dark]);
+  }, [currentFloorTexture, setNewFloorTexture]);
 
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
@@ -196,14 +190,6 @@ export default function Visualizer3() {
       }, 500);
     });
   }, [floor_texture, init]);
-
-  //       var cam_x=0,cam_y=0,cam_z=0;
-  //       function forward(){cam_z=cam_z-0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //       function backward(){cam_z=cam_z+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //       function left(){cam_x=cam_x-0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //       function right(){cam_x=cam_x+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //       function up(){cam_y=cam_y+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //       function down(){cam_y=cam_y-0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
 
   return (
     <>
@@ -233,12 +219,12 @@ export default function Visualizer3() {
           >
             Rear
           </div>
-          <div className={styles.control} onClick={() => setMatrix()}>
+          {/* <div className={styles.control} onClick={() => setMatrix()}>
             Set Matrix
           </div>
           <div className={styles.control} onClick={() => applyMatrix()}>
             Apply Matrix
-          </div>
+          </div> */}
           <div className={styles.control} onClick={() => swapTexture()}>
             Swap Texture
           </div>
