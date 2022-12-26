@@ -1,11 +1,5 @@
 import styles from '@/styles/Visualizer3.module.scss';
-import React, {
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 export async function x3DLoad() {
   return await import('x3dom');
@@ -19,6 +13,8 @@ export default function Visualizer3() {
   let leftMatrix;
   let floor_texture =
     'https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg';
+  let floor_texture_dark =
+    'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg';
 
   const [currentFloorTexture, setCurrentFloorTexture] = useState(floor_texture);
   const [currentElement, setCurrentElement] = useState();
@@ -142,84 +138,58 @@ export default function Visualizer3() {
       .setAttribute('position', '0 0 400');
   }, [leftMatrix]);
 
+  const setNewFloorTexture = useCallback(() => {
+    currentFloorTexture =
+      currentFloorTexture === floor_texture_dark
+        ? floor_texture
+        : floor_texture_dark;
+  }, [floor_texture_dark]);
+
   const swapTexture = useCallback(() => {
     const vp = elemRef.current.runtime.getActiveBindable('viewpoint');
     const allTextures =
-      'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex, balusterTex';
+      'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
     const targetTextureIds =
-      '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex,  #balusterTex';
+      '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex';
 
     const targetTextures = document.querySelectorAll(targetTextureIds);
 
+    setNewFloorTexture();
+
     targetTextures.forEach((textItem) => {
-      console.log('textItem', textItem.parentNode);
-      // textItem.setAttribute();
-      textItem.setAttribute(
-        'url',
-        'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
-      );
-      console.log('textItem', textItem.parentNode);
-
-      // textItem.setAttribute('repeatS', true);
-      // textItem.setAttribute('repeatT', true);
-
-      // elemRef.current.runtime.validateGLObject();
-      // vp.setAttribute('set_bind', 'true');
+      textItem.setAttribute('url', currentFloorTexture);
     });
 
     document.querySelectorAll('texture').forEach((textItem) => {
       const allTextAr = allTextures.split(', ');
       for (let i = 0; i < allTextAr.length; i++) {
         if (textItem.getAttribute('use') === allTextAr[i]) {
-          console.log('USES:', allTextAr[i]);
-          textItem.setAttribute(
-            'url',
-            'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
-          );
-          textItem.removeAttribute('use');
-          textItem.setAttribute('def', allTextAr[i] + i);
-          console.log('textItem', textItem);
-          // textItem._x3domNode.updateGLObject();
-          // textItem._x3domNode.invalidateGLObject();
-
+          textItem.setAttribute('url', currentFloorTexture);
           textItem.setAttribute('repeatS', true);
           textItem.setAttribute('repeatT', true);
-        } else {
-          console.log('DOES NOT USE:', allTextAr[i]);
         }
       }
     });
 
-    // console.log('textItem.getAttribute("use")', textItem.getAttribute('use'));
     const targetTexturesWithUse = document.querySelectorAll(
       `texture[use="floorTex"]`,
     );
-    console.log('targetTexturesWithUse', targetTexturesWithUse);
-    // initWorld();
     x3dom.reload();
-  }, [currentFloorTexture]);
+  }, [currentFloorTexture, floor_texture_dark]);
 
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
     setCurrentFloorTexture(floor_texture);
+
     x3DLoad().then((x3d) => {
       setTimeout(() => {
+        // Workaround for x3dom bug
         x3dom.Texture.prototype.update = function () {
-          console.log('x3dom.Texture.prototype.update', this.node);
           if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
             this.updateText();
           } else {
             this.updateTexture();
           }
-          // if (x3dom.isa(that.node, x3dom.nodeTypes.Text)) {
-          //   console.log('x3dom.isa(that.node, x3dom.nodeTypes.Text)');
-          //   that.updateText();
-          // } else {
-          //   console.log('x3dom.isa(that.node, x3dom.nodeTypes.Texture)');
-          // that.updateTexture();
-          // }
-          // //AP: somehow prevents USE Apperance update
-          // this.node.invalidateGLObject();
         };
         init();
         setShowContent(true);
@@ -467,7 +437,6 @@ export default function Visualizer3() {
                   is="x3d"
                   id="balusterTex"
                   def="balusterTex"
-                  url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                   repeats="true"
                   repeatt="true"
                   hidechildren="true"
