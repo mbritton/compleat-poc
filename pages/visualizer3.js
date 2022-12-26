@@ -17,8 +17,10 @@ export default function Visualizer3() {
 
   let elemRef = useRef();
   let leftMatrix;
+  let floor_texture =
+    'https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg';
 
-  const [currentViewpoint, setCurrentViewpoint] = useState();
+  const [currentFloorTexture, setCurrentFloorTexture] = useState(floor_texture);
   const [currentElement, setCurrentElement] = useState();
 
   const switchCamera = useCallback((viewpointId) => {
@@ -34,6 +36,18 @@ export default function Visualizer3() {
     [currentElement],
   );
 
+  const initWorld = () => {
+    x3dom.Texture.prototype.update = () => {
+      // if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
+      //   this.updateText();
+      // } else {
+      //   this.updateTexture();
+      // }
+      //AP: somehow prevents USE Apperance update
+      //this.node.validateGLObject();
+    };
+  };
+
   const init = useCallback(() => {
     parseShapes();
     x3dom ? x3dom.reload() : null;
@@ -44,16 +58,24 @@ export default function Visualizer3() {
     const shapes = sceneEl.getElementsByTagName('shape');
 
     for (let i = 0; i < shapes.length; i++) {
-      shapes[i].addEventListener('click', (e) => {});
+      shapes[i].addEventListener('click', (e) => handleShapeClick(e));
     }
+  }, []);
+
+  const handleShapeClick = useCallback((e) => {
+    console.log('handleShapeClick :: e.target', e.target);
+    const shape = e.target;
+    console.log('handleShapeClick :: shape', shape);
   }, []);
 
   const setMatrix = useCallback(() => {
     leftMatrix = elemRef.current.runtime.viewMatrix();
   }, [leftMatrix]);
 
+  /**
+   * @description WIP - Not working
+   */
   const applyMatrix = useCallback(() => {
-    console.log('leftMatrix', leftMatrix);
     const axisR = elemRef.current.runtime
       .getActiveBindable('viewpoint')
       .getAttribute('orientation');
@@ -61,7 +83,7 @@ export default function Visualizer3() {
     let orientationArray = axisR.split(' ').map((x) => {
       return x ? parseFloat(x) : 0;
     });
-    console.log('orientationArray', orientationArray);
+
     let transformMatrix = new x3dom.fields.SFMatrix4f(
       orientationArray[0] ? orientationArray[0] : 0,
       orientationArray[1] ? orientationArray[1] : 0,
@@ -89,7 +111,7 @@ export default function Visualizer3() {
     transformMatrix = orientationQuat.toMatrix();
 
     orientationArray = transformMatrix.toGL();
-    // console.log('orientationArray', orientationArray);
+
     let orientation =
       orientationArray[0] +
       ' ' +
@@ -97,27 +119,109 @@ export default function Visualizer3() {
       ' ' +
       orientationArray[2] +
       ' ' +
-      orientationArray[3];
+      orientationArray[3] +
+      ' ' +
+      orientationArray[4] +
+      ' ' +
+      orientationArray[5] +
+      ' ' +
+      orientationArray[6] +
+      ' ' +
+      orientationArray[7] +
+      ' ' +
+      orientationArray[8] +
+      ' ' +
+      orientationArray[9] +
+      ' ' +
+      orientationArray[10] +
+      ' ' +
+      orientationArray[11] +
+      ' ' +
+      orientationArray[12] +
+      ' ' +
+      orientationArray[13] +
+      ' ' +
+      orientationArray[14] +
+      ' ' +
+      orientationArray[15];
 
     console.log('orientation', orientation);
     elemRef.current.runtime
       .getActiveBindable('viewpoint')
       .setAttribute('orientation', orientation);
+    elemRef.current.runtime
+      .getActiveBindable('viewpoint')
+      .setAttribute('position', '0 0 400');
   }, [leftMatrix]);
+
+  const swapTexture = useCallback(() => {
+    const vp = elemRef.current.runtime.getActiveBindable('viewpoint');
+    const allTextures =
+      'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex, balusterTex';
+    const targetTextureIds =
+      '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex,  #balusterTex';
+
+    const targetTextures = document.querySelectorAll(targetTextureIds);
+
+    targetTextures.forEach((textItem) => {
+      // console.log('textItem', textItem);
+      textItem.setAttribute(
+        'url',
+        'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
+      );
+      // textItem.setAttribute('repeatS', true);
+      // textItem.setAttribute('repeatT', true);
+
+      // elemRef.current.runtime.viewMatrix();
+      // vp.setAttribute('set_bind', 'true');
+    });
+
+    document.querySelectorAll('texture').forEach((textItem) => {
+      const allTextAr = allTextures.split(', ');
+      for (let i = 0; i < allTextAr.length; i++) {
+        if (textItem.getAttribute('use') === allTextAr[i]) {
+          console.log('USES:', allTextAr[i]);
+          textItem.setAttribute(
+            'url',
+            'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
+          );
+          // textItem.setAttribute('repeatS', true);
+          // textItem.setAttribute('repeatT', true);
+        }
+      }
+      // if (textItem.getAttribute('use') === 'floorTex') {
+      //   console.log('IS FLOOR');
+      //   // textItem.removeAttribute('use');
+      //   textItem.setAttribute('repeatS', true);
+      //   textItem.setAttribute('repeatT', true);
+      //   textItem.setAttribute(
+      //     'url',
+      //     'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg',
+      //   );
+      // }
+    });
+
+    // console.log('textItem.getAttribute("use")', textItem.getAttribute('use'));
+    const targetTexturesWithUse = document.querySelectorAll(
+      `texture[use="floorTex"]`,
+    );
+    console.log('targetTexturesWithUse', targetTexturesWithUse);
+    // initWorld();
+    x3dom.reload();
+  }, [currentFloorTexture]);
 
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
+    setCurrentFloorTexture(floor_texture);
     x3DLoad().then((x3d) => {
-      console.log('loaded');
+      initWorld();
       setTimeout(() => {
         init();
         setShowContent(true);
-        elemRef.current.runtime.showAll();
-      }, 1000);
+      }, 500);
     });
-  }, [init]);
+  }, [floor_texture, init]);
 
-  // <script>
   //       var cam_x=0,cam_y=0,cam_z=0;
   //       function forward(){cam_z=cam_z-0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
   //       function backward(){cam_z=cam_z+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
@@ -125,7 +229,6 @@ export default function Visualizer3() {
   //       function right(){cam_x=cam_x+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
   //       function up(){cam_y=cam_y+0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
   //       function down(){cam_y=cam_y-0.5;mycam.position= cam_x+" "+cam_y+" "+cam_z;}
-  //   </script>
 
   return (
     <>
@@ -141,7 +244,7 @@ export default function Visualizer3() {
             className={styles.control}
             onClick={() => elemRef.current.runtime.showAll()}
           >
-            Show All
+            Reset
           </div>
           <div
             className={styles.control}
@@ -160,6 +263,9 @@ export default function Visualizer3() {
           </div>
           <div className={styles.control} onClick={() => applyMatrix()}>
             Apply Matrix
+          </div>
+          <div className={styles.control} onClick={() => swapTexture()}>
+            Swap Texture
           </div>
           <div className={styles.control} onClick={() => onNextPrev()}>
             Next
@@ -231,13 +337,13 @@ export default function Visualizer3() {
                 DEF="CA_Camera"
                 description="left_cam"
                 centerofrotation="0 0 0"
-                orientation="0 1 0 3.3"
+                orientation="0 2 0 3.3"
                 position="0 0 -400"
                 fieldOfView="0.785398"
               ></viewpoint>
               <navigationinfo
                 is="x3d"
-                type="'WALK'"
+                type="'FLY'"
                 typeparams="-0.4,60,0.05,2.8"
                 explorationmode="all"
                 avatarsize="0.25,1.6,0.75"
@@ -254,6 +360,7 @@ export default function Visualizer3() {
               <appearance is="x3d" sorttype="auto" alphaclipthreshold="0.1">
                 <texture
                   is="x3d"
+                  id="treadTex"
                   def="treadTex"
                   url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                   repeats="true"
@@ -263,6 +370,7 @@ export default function Visualizer3() {
                 <material
                   is="x3d"
                   def="treadMat"
+                  id="treadMat"
                   diffusecolor="0.01 0.01 0.01"
                   transparency="0"
                   ambientintensity="0.2"
@@ -273,6 +381,7 @@ export default function Visualizer3() {
                 <texture
                   is="x3d"
                   def="handrailTex"
+                  id="handrailTex"
                   url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                   repeats="true"
                   repeatt="true"
@@ -281,6 +390,7 @@ export default function Visualizer3() {
                 <material
                   is="x3d"
                   def="handrailMat"
+                  id="handrailMat"
                   diffusecolor="1 1 1"
                   transparency="0"
                   ambientintensity="0.2"
@@ -288,9 +398,19 @@ export default function Visualizer3() {
                   shininess="0.2"
                   specularcolor="0,0,0"
                 ></material>
+                <texture
+                  is="x3d"
+                  id="stringTex"
+                  def="stringTex"
+                  url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
+                  repeats="true"
+                  repeatt="true"
+                  hidechildren="true"
+                ></texture>
                 <material
                   is="x3d"
                   def="stringMat"
+                  id="stringMat"
                   diffusecolor="0.01 0.01 0.01"
                   transparency="0"
                   ambientintensity="0.2"
@@ -300,6 +420,7 @@ export default function Visualizer3() {
                 ></material>
                 <texture
                   is="x3d"
+                  id="postTex"
                   def="postTex"
                   url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                   repeats="true"
@@ -308,6 +429,7 @@ export default function Visualizer3() {
                 ></texture>
                 <material
                   is="x3d"
+                  id="postMat"
                   def="postMat"
                   diffusecolor="1 1 1"
                   transparency="0"
@@ -318,6 +440,7 @@ export default function Visualizer3() {
                 ></material>
                 <texture
                   is="x3d"
+                  id="floorTex"
                   def="floorTex"
                   url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                   repeats="true"
@@ -326,6 +449,7 @@ export default function Visualizer3() {
                 ></texture>
                 <material
                   is="x3d"
+                  id="floorMat"
                   def="floorMat"
                   diffusecolor="1 1 1"
                   transparency="0"
@@ -334,9 +458,19 @@ export default function Visualizer3() {
                   shininess="0.2"
                   specularcolor="0,0,0"
                 ></material>
+                <texture
+                  is="x3d"
+                  id="balusterTex"
+                  def="balusterTex"
+                  url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
+                  repeats="true"
+                  repeatt="true"
+                  hidechildren="true"
+                ></texture>
                 <material
                   is="x3d"
                   def="balusterMat"
+                  id="balusterMat"
                   diffusecolor="0.01 0.01 0.01"
                   transparency="0"
                   ambientintensity="0.2"
@@ -344,9 +478,19 @@ export default function Visualizer3() {
                   shininess="0.2"
                   specularcolor="0,0,0"
                 ></material>
+                <texture
+                  is="x3d"
+                  id="wellTex"
+                  def="wellTex"
+                  url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
+                  repeats="true"
+                  repeatt="true"
+                  hidechildren="false"
+                ></texture>
                 <material
                   is="x3d"
                   def="wellMat"
+                  id="wellMat"
                   diffusecolor="1 1 1"
                   transparency="0.7"
                   ambientintensity="0.2"
