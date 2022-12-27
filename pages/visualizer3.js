@@ -1,5 +1,6 @@
 import styles from '@/styles/Visualizer3.module.scss';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
+import Woods from '@/components/Woods';
 
 export async function x3DLoad() {
   return await import('x3dom');
@@ -34,6 +35,8 @@ export default function Visualizer3() {
     document.getElementById(viewpointId).setAttribute('set_bind', 'true');
   }, []);
 
+  const switchWood = useCallback((woodType) => {}, []);
+
   const onNextPrev = useCallback(
     (typeOfCall) => {
       typeOfCall === 'next'
@@ -53,13 +56,20 @@ export default function Visualizer3() {
   }, [handleShapeClick]);
 
   const handleShapeClick = useCallback((e) => {
-    const allTextures = document.querySelectorAll(targetTextureIds);
+    const shape = e.target;
+    const appearance = shape.getElementsByTagName('appearance')[0];
+    const textureNeeded = appearance
+      ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
+      : null;
+    const targetTexture =
+      textureNeeded && textureNeeded.length
+        ? document.getElementById(textureNeeded)
+        : null;
 
-    /////// ------------ WIP ------------ ///////
-    const hrTexture = document.getElementById('handrailTex');
+    if (!targetTexture) return;
 
-    const currentURL = hrTexture.getAttribute('url');
-    hrTexture.setAttribute(
+    const currentURL = targetTexture.getAttribute('url');
+    targetTexture.setAttribute(
       'url',
       currentURL === default_texture ? dark_texture : default_texture,
     );
@@ -70,9 +80,9 @@ export default function Visualizer3() {
   }, [leftMatrix, currentElement]);
 
   /**
-   * @description WIP - Not working
+   * @description WIP - Not working correctly
    */
-  const applyMatrix = useCallback(() => {
+  const applyMatrixTransformation = useCallback(() => {
     const axisR = elemRef.current.runtime
       .getActiveBindable('viewpoint')
       .getAttribute('orientation');
@@ -224,6 +234,7 @@ export default function Visualizer3() {
           </div>
         </div>
       </div>
+      <Woods></Woods>
       <div className={styles.visualizerWrapper}>
         <x3d
           ref={elemRef}
