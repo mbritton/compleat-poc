@@ -9,17 +9,17 @@ const transitionType = 'FLY';
 const allTextures =
   'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
 const targetTextureIds =
-  '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex';
+  '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex, #wellTex, #ceilingTex, #wallTex';
+const default_texture =
+  'https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg';
+const dark_texture =
+  'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg';
 
 export default function Visualizer3() {
   const [showContent, setShowContent] = useState(true);
 
   let elemRef = useRef();
   let leftMatrix;
-  let default_texture =
-    'https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg';
-  let dark_texture =
-    'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg';
 
   const [currentFloorTexture, setCurrentFloorTexture] =
     useState(default_texture);
@@ -48,25 +48,26 @@ export default function Visualizer3() {
     const shapes = sceneEl.getElementsByTagName('shape');
 
     for (let i = 0; i < shapes.length; i++) {
-      shapes[i].addEventListener('click', (e) => handleShapeClick(e));
+      shapes[i].addEventListener('click', handleShapeClick);
     }
+  }, [handleShapeClick]);
+
+  const handleShapeClick = useCallback((e) => {
+    const allTextures = document.querySelectorAll(targetTextureIds);
+
+    /////// ------------ WIP ------------ ///////
+    const hrTexture = document.getElementById('handrailTex');
+
+    const currentURL = hrTexture.getAttribute('url');
+    hrTexture.setAttribute(
+      'url',
+      currentURL === default_texture ? dark_texture : default_texture,
+    );
   }, []);
 
-  const handleShapeClick = useCallback(
-    (e) => {
-      const hrTexture = document.getElementById('handrailTex');
-      const currentURL = hrTexture.getAttribute('url');
-      hrTexture.setAttribute(
-        'url',
-        currentURL === default_texture ? dark_texture : default_texture,
-      );
-    },
-    [dark_texture, default_texture],
-  );
-
   const setMatrix = useCallback(() => {
-    leftMatrix = elemRef.current.runtime.viewMatrix();
-  }, [leftMatrix]);
+    leftMatrix = currentElement.current.runtime.viewMatrix();
+  }, [leftMatrix, currentElement]);
 
   /**
    * @description WIP - Not working
@@ -145,7 +146,7 @@ export default function Visualizer3() {
     elemRef.current.runtime
       .getActiveBindable('viewpoint')
       .setAttribute('position', '0 0 400');
-  }, [leftMatrix]);
+  }, []);
 
   const setGlobalTexture = useCallback(() => {
     currentFloorTexture =
@@ -177,9 +178,7 @@ export default function Visualizer3() {
           this.updateTexture();
         }
       };
-
       setShowContent(true);
-
       setCurrentSelectedTexture(currentFloorTexture);
       parseShapes();
       x3dom ? x3dom.reload() : null;
@@ -190,10 +189,7 @@ export default function Visualizer3() {
     <>
       <div className={styles.controlsWrapper}>
         <div className={styles.controlsContainer}>
-          <div
-            className={styles.control}
-            onClick={() => elemRef.current.runtime.prevView()}
-          >
+          <div className={styles.control} onClick={() => onNextPrev()}>
             Previous
           </div>
           <div
