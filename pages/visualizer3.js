@@ -5,18 +5,29 @@ export async function x3DLoad() {
   return await import('x3dom');
 }
 
+const transitionType = 'FLY';
+const allTextures =
+  'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
+const targetTextureIds =
+  '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex';
+
 export default function Visualizer3() {
   const [showContent, setShowContent] = useState(true);
-  const transitionType = 'FLY';
 
   let elemRef = useRef();
   let leftMatrix;
-  let floor_texture =
+  let default_texture =
     'https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg';
-  let floor_texture_dark =
+  let dark_texture =
     'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg';
 
-  const [currentFloorTexture, setCurrentFloorTexture] = useState(floor_texture);
+  const [currentFloorTexture, setCurrentFloorTexture] =
+    useState(default_texture);
+
+  // TODO: Add a state for the handrail texture
+  const [currentSelectedTexture, setCurrentSelectedTexture] =
+    useState(dark_texture);
+
   const [currentElement, setCurrentElement] = useState();
 
   const switchCamera = useCallback((viewpointId) => {
@@ -32,11 +43,6 @@ export default function Visualizer3() {
     [currentElement],
   );
 
-  const init = useCallback(() => {
-    parseShapes();
-    x3dom ? x3dom.reload() : null;
-  }, [parseShapes]);
-
   const parseShapes = useCallback(() => {
     const sceneEl = document.getElementById('X3DElement_scene');
     const shapes = sceneEl.getElementsByTagName('shape');
@@ -46,11 +52,17 @@ export default function Visualizer3() {
     }
   }, []);
 
-  const handleShapeClick = useCallback((e) => {
-    console.log('handleShapeClick :: e.target', e.target);
-    const shape = e.target;
-    console.log('handleShapeClick :: shape', shape);
-  }, []);
+  const handleShapeClick = useCallback(
+    (e) => {
+      const hrTexture = document.getElementById('handrailTex');
+      const currentURL = hrTexture.getAttribute('url');
+      hrTexture.setAttribute(
+        'url',
+        currentURL === default_texture ? dark_texture : default_texture,
+      );
+    },
+    [dark_texture, default_texture],
+  );
 
   const setMatrix = useCallback(() => {
     leftMatrix = elemRef.current.runtime.viewMatrix();
@@ -135,36 +147,29 @@ export default function Visualizer3() {
       .setAttribute('position', '0 0 400');
   }, [leftMatrix]);
 
-  const setNewFloorTexture = useCallback(() => {
+  const setGlobalTexture = useCallback(() => {
     currentFloorTexture =
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-      currentFloorTexture === floor_texture_dark
-        ? floor_texture
-        : floor_texture_dark;
-  }, [floor_texture, floor_texture_dark]);
+      currentFloorTexture === dark_texture ? default_texture : dark_texture;
+  }, [default_texture, dark_texture]);
 
   const swapTexture = useCallback(() => {
-    const allTextures =
-      'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
-    const targetTextureIds =
-      '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex';
-
     const targetTextures = document.querySelectorAll(targetTextureIds);
 
-    setNewFloorTexture();
+    setGlobalTexture();
 
     targetTextures.forEach((textItem) => {
       textItem.setAttribute('url', currentFloorTexture);
       textItem.setAttribute('repeatS', true);
       textItem.setAttribute('repeatT', true);
     });
-  }, [currentFloorTexture, setNewFloorTexture]);
+  }, [currentFloorTexture, setGlobalTexture]);
 
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
-    setCurrentFloorTexture(floor_texture);
+    setCurrentFloorTexture(default_texture);
 
     x3DLoad().then((x3d) => {
+      // X3DOM prototype hack to update texture on the fly
       x3dom.Texture.prototype.update = function () {
         if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
           this.updateText();
@@ -172,10 +177,12 @@ export default function Visualizer3() {
           this.updateTexture();
         }
       };
-      x3dom.reload();
 
-      init();
       setShowContent(true);
+
+      setCurrentSelectedTexture(currentFloorTexture);
+      parseShapes();
+      x3dom ? x3dom.reload() : null;
     });
   }, []);
 
@@ -345,6 +352,26 @@ export default function Visualizer3() {
                   ambientintensity="0.2"
                   emissivecolor="0,0,0"
                   shininess="0.2"
+                  specularcolor="0,0,0"
+                ></material>
+                <texture
+                  is="x3d"
+                  def="handrailTexDark"
+                  id="handrailTexDark"
+                  url="https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg"
+                  repeats="true"
+                  repeatt="true"
+                  hidechildren="true"
+                ></texture>
+                <material
+                  is="x3d"
+                  def="handrailMatDark"
+                  id="handrailMatDark"
+                  diffusecolor="1 1 1"
+                  transparency="0"
+                  ambientintensity="0.2"
+                  emissivecolor="0,0,0"
+                  shininess="0.6"
                   specularcolor="0,0,0"
                 ></material>
                 <texture
@@ -7672,32 +7699,18 @@ export default function Visualizer3() {
                   </indexedfaceset>
                 </shape>
               </transform>
-              <timesensor
-                is="3dx"
-                DEF="time"
-                cycleInterval="2"
-                loop="true"
-              ></timesensor>
-              <positioninterpolator
-                is="3dx"
-                DEF="move"
-                key="0 0.5 1"
-                keyValue="0 0 0  0 30 0  0 0 0"
-              ></positioninterpolator>
-              <route
-                is="3dx"
-                fromNode="time"
-                fromField="fraction_changed"
-                toNode="move"
-                toField="set_fraction"
-              ></route>
-              <route
-                is="3dx"
-                fromNode="move"
-                fromField="value_changed"
-                toNode="ball"
-                toField="translation"
-              ></route>
+              <transform
+                is="x3d"
+                id="transformLeftView"
+                render="true"
+                bboxcenter="0,0,0"
+                bboxsize="-1,-1,-1"
+                center="0,0,0"
+                translation="0,0,0"
+                rotation="0,-1,0,0"
+                scale="1,1,1"
+                scaleorientation="0,0,0,0"
+              ></transform>
             </scene>
           )}
         </x3d>

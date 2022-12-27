@@ -8,7 +8,6 @@
 
 .visualizer {
   display: flex;
-  // flex-direction: column;
   width: 75%;
   height: 620px;
   margin: auto;
@@ -16,6 +15,22 @@
   margin-top: 100px;
   justify-content: center;
   align-content: center;
+}
+
+.visualizerControls {
+  position: absolute;
+  z-index: 900;
+  cursor: pointer;
+  bottom: 70px;
+  text-align: center;
+  left: 0;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  align-items: center;
+  margin: auto;
+  height: 50px;
 }
 
 .visualizerCover {
@@ -31,7 +46,7 @@
   width: 100%;
   height: 100%;
   display: flex;
-  // flex-direction: row;
+  flex-direction: row;
   justify-content: center;
   align-content: center;
 }
