@@ -137,13 +137,13 @@ export default function Visualizer3() {
 
   const setNewFloorTexture = useCallback(() => {
     currentFloorTexture =
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       currentFloorTexture === floor_texture_dark
         ? floor_texture
         : floor_texture_dark;
   }, [floor_texture, floor_texture_dark]);
 
   const swapTexture = useCallback(() => {
-    const vp = elemRef.current.runtime.getActiveBindable('viewpoint');
     const allTextures =
       'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
     const targetTextureIds =
@@ -157,25 +157,6 @@ export default function Visualizer3() {
       textItem.setAttribute('url', currentFloorTexture);
       textItem.setAttribute('repeatS', true);
       textItem.setAttribute('repeatT', true);
-    });
-
-    document.querySelectorAll('texture').forEach((textItem) => {
-      const allTextAr = allTextures.split(', ');
-      allTextAr.forEach((atItm, i) => {
-        if (textItem.getAttribute('use') === atItm) {
-          console.log('currentFloorTexture..........', currentFloorTexture);
-          textItem.setAttribute('url', currentFloorTexture);
-          textItem.setAttribute('def', atItm + i);
-          // textItem.removeAttribute('use');
-          textItem.setAttribute('use', atItm);
-          textItem.setAttribute('repeatS', true);
-          textItem.setAttribute('repeatT', true);
-
-          // textItem.parentNode.setAttribute('use', atItm);
-          // console.log('textItem', textItem.parentNode);
-          x3dom.reload();
-        }
-      });
     });
   }, [currentFloorTexture, setNewFloorTexture]);
 
@@ -191,11 +172,12 @@ export default function Visualizer3() {
           this.updateTexture();
         }
       };
+      x3dom.reload();
 
       init();
       setShowContent(true);
     });
-  }, [floor_texture, init]);
+  }, []);
 
   return (
     <>
