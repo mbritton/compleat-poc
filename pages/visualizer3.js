@@ -140,7 +140,7 @@ export default function Visualizer3() {
       currentFloorTexture === floor_texture_dark
         ? floor_texture
         : floor_texture_dark;
-  }, [floor_texture_dark]);
+  }, [floor_texture, floor_texture_dark]);
 
   const swapTexture = useCallback(() => {
     const vp = elemRef.current.runtime.getActiveBindable('viewpoint');
@@ -155,20 +155,28 @@ export default function Visualizer3() {
 
     targetTextures.forEach((textItem) => {
       textItem.setAttribute('url', currentFloorTexture);
+      textItem.setAttribute('repeatS', true);
+      textItem.setAttribute('repeatT', true);
     });
 
     document.querySelectorAll('texture').forEach((textItem) => {
       const allTextAr = allTextures.split(', ');
-      for (let i = 0; i < allTextAr.length; i++) {
-        if (textItem.getAttribute('use') === allTextAr[i]) {
+      allTextAr.forEach((atItm, i) => {
+        if (textItem.getAttribute('use') === atItm) {
+          console.log('currentFloorTexture..........', currentFloorTexture);
           textItem.setAttribute('url', currentFloorTexture);
+          textItem.setAttribute('def', atItm + i);
+          // textItem.removeAttribute('use');
+          textItem.setAttribute('use', atItm);
           textItem.setAttribute('repeatS', true);
           textItem.setAttribute('repeatT', true);
-        }
-      }
-    });
 
-    x3dom.reload();
+          // textItem.parentNode.setAttribute('use', atItm);
+          // console.log('textItem', textItem.parentNode);
+          x3dom.reload();
+        }
+      });
+    });
   }, [currentFloorTexture, setNewFloorTexture]);
 
   useEffect(() => {
@@ -176,18 +184,16 @@ export default function Visualizer3() {
     setCurrentFloorTexture(floor_texture);
 
     x3DLoad().then((x3d) => {
-      setTimeout(() => {
-        // Workaround for x3dom bug
-        x3dom.Texture.prototype.update = function () {
-          if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
-            this.updateText();
-          } else {
-            this.updateTexture();
-          }
-        };
-        init();
-        setShowContent(true);
-      }, 500);
+      x3dom.Texture.prototype.update = function () {
+        if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
+          this.updateText();
+        } else {
+          this.updateTexture();
+        }
+      };
+
+      init();
+      setShowContent(true);
     });
   }, [floor_texture, init]);
 
@@ -310,7 +316,7 @@ export default function Visualizer3() {
                 avatarsize="0.25,1.6,0.75"
                 speed="1"
                 transitiontime="0.5"
-                transitiontype={`'${transitionType}'`}
+                transitiontype="'LINEAR'"
               ></navigationinfo>
               <timesensor
                 is="x3d"
