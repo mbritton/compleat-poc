@@ -24,9 +24,9 @@ export default function Visualizer() {
 
   const refresh = () => {
     setTimeout(() => {
-      sceneRef ? sceneRef.current.setAttribute('render', 'true') : null;
-      sceneRef ? sceneRef.current.setAttribute('reload', 'true') : null;
-    }, 2000);
+      sceneRef ? sceneRef?.current?.setAttribute('render', 'true') : null;
+      sceneRef ? sceneRef?.current?.setAttribute('reload', 'true') : null;
+    }, 1000);
   };
 
   return (
@@ -45,7 +45,7 @@ export default function Visualizer() {
       </div>
       <div className={styles.visualizerControls}>
         <Link href="/visualizer3">
-          <h3>View in Stair-O-Tron (Premium Members Only)</h3>
+          <h3>View Full Screen</h3>
         </Link>
       </div>
     </div>

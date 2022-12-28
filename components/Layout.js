@@ -18,7 +18,6 @@ export default function Layout({ page, pages, children }) {
   //   console.log('router.asPath', router.asPath);
   //   console.log('pageObj.pages', pageObj.pages);
   // }, []);
-  console.log('page', router.asPath);
 
   return (
     <div className={styles.container}>
