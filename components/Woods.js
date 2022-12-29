@@ -1,46 +1,50 @@
 import styles from '@/styles/Woods.module.scss';
 import { BiEnvelope, BiHelpCircle, BiBrushAlt } from 'react-icons/bi';
 import Image from 'next/image';
+import {
+  red_oak_texture,
+  white_oak_texture,
+  yellow_pine_texture,
+} from './textures_woods';
 
-const Woods = ({ path, pageObjects }) => {
+const Woods = ({ handleWoodPress, selectedTexture }) => {
   return (
     <div className={styles.woodsWrapper}>
+      {/* <div className={styles.woodsPositioner}> */}
       <div className={styles.wood}>
         <Image
+          onClick={() => handleWoodPress('red-oak')}
           objectFit="cover"
           objectPosition="top left"
-          src={
-            'https://images.prismic.io/compleat/556ae943-28ec-4f43-8ffc-b66ee287eeb8_red-oak.jpg?auto=compress,format'
-          }
-          width={154}
-          height={182}
+          src={red_oak_texture}
+          width={80}
+          height={80}
           alt="card"
         />
       </div>
       <div className={styles.wood}>
         <Image
+          onClick={() => handleWoodPress('white-oak')}
           objectFit="cover"
           objectPosition="top left"
-          src={
-            'https://images.prismic.io/compleat/e6ffc913-3b54-4289-8b9e-55b581eb40f6_white-oak.jpeg?auto=compress,format'
-          }
-          width={154}
-          height={182}
+          src={white_oak_texture}
+          width={80}
+          height={80}
           alt="card"
         />
       </div>
       <div className={styles.wood}>
         <Image
+          onClick={() => handleWoodPress('yellow-pine')}
           objectFit="cover"
           objectPosition="top left"
-          src={
-            'https://images.prismic.io/compleat/1a6b9068-8304-4ae5-acd8-dffb81ac07c0_yellow-pine.jpeg?auto=compress,format'
-          }
-          width={154}
-          height={182}
+          src={yellow_pine_texture}
+          width={80}
+          height={80}
           alt="card"
         />
       </div>
+      {/* </div> */}
       <div className={styles.brushWrapper}>
         <BiBrushAlt />
       </div>
