@@ -16,17 +16,99 @@ export async function x3DLoad() {
 export default function Visualizer3() {
   const [showContent, setShowContent] = useState(true);
   const [selectedTexture, setSelectedTexture] = useState(default_texture);
-  const [targetTexture, setTargetTexture] = useState();
+  const [targetTextureElement, setTargetTextureElement] = useState();
 
   let elemRef = useRef();
   let leftMatrix;
 
   const [currentElement, setCurrentElement] = useState();
 
+  const clearBrush = useCallback(() => {
+    setSelectedTexture(null);
+    console.log('clearBrush', selectedTexture);
+  }, [selectedTexture]);
+
+  const doSetTargetTexture = useCallback((textureEl) => {
+    let targ = !textureEl
+      ? document.getElementById(targetTextureIds[0])
+      : textureEl;
+    setTargetTextureElement(targ);
+  }, []);
+
+  const deselectTargetTexture = useCallback(() => {
+    setTargetTextureElement(null);
+  }, []);
+
+  const handleShapeMouseOver = useCallback((e) => {
+    const shape = e.target;
+    const appearance = shape.getElementsByTagName('appearance')[0];
+    const materialElement = appearance
+      ? appearance.getElementsByTagName('material')[0].getAttribute('use')
+      : null;
+    const textureElement = appearance
+      ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
+      : null;
+    const targetTextureInstance = textureElement
+      ? document.getElementById(textureElement)
+      : null;
+    const targetMaterialInstance = materialElement
+      ? document.getElementById(materialElement)
+      : null;
+  }, []);
+
+  const handleShapePress = useCallback(
+    (e) => {
+      const shape = e.target;
+      const appearance = shape.getElementsByTagName('appearance')[0];
+
+      const textureElement = appearance
+        ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
+        : null;
+
+      const targetTextureInstance =
+        textureElement && textureElement.length
+          ? document.getElementById(textureElement)
+          : null;
+
+      doSetTargetTexture(targetTextureInstance);
+
+      setTimeout(() => {
+        deselectTargetTexture();
+      }, 1000);
+    },
+    [deselectTargetTexture, doSetTargetTexture],
+  );
+
+  const onNextPrev = useCallback(
+    (typeOfCall) => {
+      typeOfCall === 'next'
+        ? currentElement.current.runtime.nextView()
+        : currentElement.current.runtime.prevView();
+    },
+    [currentElement],
+  );
+
+  const parseShapes = useCallback(() => {
+    const sceneEl = document.getElementById('X3DElement_scene');
+    const shapes = sceneEl.getElementsByTagName('shape');
+
+    for (let i = 0; i < shapes.length; i++) {
+      shapes[i].addEventListener('click', handleShapePress);
+      shapes[i].addEventListener('mouseover', handleShapeMouseOver);
+    }
+  }, [handleShapeMouseOver, handleShapePress]);
+
   const switchCamera = useCallback((viewpointId) => {
     document.getElementById(viewpointId).setAttribute('set_bind', 'true');
   }, []);
 
+  const switchBrush = useCallback(() => {
+    deselectTargetTexture();
+  }, [deselectTargetTexture]);
+
+  /**
+   * @description Switches the texture of the wood
+   */
   const switchWood = useCallback((woodType) => {
     let textureURL = '';
     switch (woodType) {
@@ -46,55 +128,16 @@ export default function Visualizer3() {
     setSelectedTexture(textureURL);
   }, []);
 
-  const onNextPrev = useCallback(
-    (typeOfCall) => {
-      typeOfCall === 'next'
-        ? currentElement.current.runtime.nextView()
-        : currentElement.current.runtime.prevView();
-    },
-    [currentElement],
-  );
-
-  const parseShapes = useCallback(() => {
-    const sceneEl = document.getElementById('X3DElement_scene');
-    const shapes = sceneEl.getElementsByTagName('shape');
-
-    for (let i = 0; i < shapes.length; i++) {
-      shapes[i].addEventListener('click', handleShapeClick);
-    }
-  }, [handleShapeClick]);
-
-  const doSetTargetTexture = useCallback((textureEl) => {
-    let targ = !textureEl
-      ? document.getElementById(targetTextureIds[0])
-      : textureEl;
-    setTargetTexture(targ);
-  }, []);
-
-  const handleShapeClick = useCallback((e) => {
-    const shape = e.target;
-    const appearance = shape.getElementsByTagName('appearance')[0];
-
-    const textureElement = appearance
-      ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
-      : null;
-
-    const targetTextureInstance =
-      textureElement && textureElement.length
-        ? document.getElementById(textureElement)
-        : null;
-
-    // Set the element
-    setTargetTexture(targetTextureInstance);
-  }, []);
-
-  const deselectTargetTexture = useCallback(() => {
-    setTargetTexture(null);
-  }, []);
-
   useEffect(() => {
-    targetTexture ? targetTexture.setAttribute('url', selectedTexture) : null;
-  }, [selectedTexture, targetTexture]);
+    targetTextureElement
+      ? targetTextureElement.setAttribute('url', selectedTexture)
+      : null;
+  }, [
+    clearBrush,
+    deselectTargetTexture,
+    selectedTexture,
+    targetTextureElement,
+  ]);
 
   const setMatrix = useCallback(() => {
     leftMatrix = currentElement.current.runtime.viewMatrix();
@@ -179,16 +222,6 @@ export default function Visualizer3() {
       .setAttribute('position', '0 0 400');
   }, []);
 
-  const swapTexture = useCallback(() => {
-    const targetTextures = document.querySelectorAll(targetTextureIds);
-
-    targetTextures.forEach((textItem) => {
-      textItem.setAttribute('url', selectedTexture);
-      textItem.setAttribute('repeatS', true);
-      textItem.setAttribute('repeatT', true);
-    });
-  }, [selectedTexture]);
-
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
 
@@ -206,7 +239,7 @@ export default function Visualizer3() {
     x3DLoad().then((x3d) => {
       setShowContent(true);
       parseShapes();
-      x3dom !== null ? x3dom.reload() : null;
+      x3dom !== undefined && x3dom !== null ? x3dom.reload() : null;
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -236,20 +269,14 @@ export default function Visualizer3() {
           >
             Rear
           </div>
-          {/* View Display Animation WIP <div className={styles.control} onClick={() => setMatrix()}>
-            Set Matrix
+          <div className={styles.control} onClick={() => clearBrush()}>
+            Clear Brush
           </div>
-          <div className={styles.control} onClick={() => applyMatrix()}>
-            Apply Matrix
-          </div> */}
           <div
             className={styles.control}
             onClick={() => deselectTargetTexture()}
           >
             Deselect Item
-          </div>
-          <div className={styles.control} onClick={() => swapTexture()}>
-            Swap Texture
           </div>
           <div className={styles.control} onClick={() => onNextPrev()}>
             Next
@@ -258,6 +285,7 @@ export default function Visualizer3() {
       </div>
       <Woods
         handleWoodPress={switchWood}
+        handleBrushPress={switchBrush}
         selectedTexture={selectedTexture}
       ></Woods>
       <div className={styles.visualizerWrapper}>
@@ -459,7 +487,7 @@ export default function Visualizer3() {
                 id="floorMat"
                 def="floorMat"
                 diffusecolor="1 1 1"
-                transparency="0"
+                transparency="1"
                 ambientintensity="0.2"
                 emissivecolor="0,0,0"
                 shininess="0.2"

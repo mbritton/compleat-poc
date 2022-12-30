@@ -1,16 +1,15 @@
 import styles from '@/styles/Woods.module.scss';
-import { BiEnvelope, BiHelpCircle, BiBrushAlt } from 'react-icons/bi';
 import Image from 'next/image';
+import { BiBrushAlt } from 'react-icons/bi';
 import {
   red_oak_texture,
   white_oak_texture,
   yellow_pine_texture,
 } from './textures_woods';
 
-const Woods = ({ handleWoodPress, selectedTexture }) => {
+const Woods = ({ handleWoodPress, handleBrushPress, selectedTexture }) => {
   return (
     <div className={styles.woodsWrapper}>
-      {/* <div className={styles.woodsPositioner}> */}
       <div className={styles.wood}>
         <Image
           onClick={() => handleWoodPress('red-oak')}
@@ -44,8 +43,7 @@ const Woods = ({ handleWoodPress, selectedTexture }) => {
           alt="card"
         />
       </div>
-      {/* </div> */}
-      <div className={styles.brushWrapper}>
+      <div className={styles.brushWrapper} onClick={() => handleBrushPress()}>
         <BiBrushAlt />
       </div>
     </div>
