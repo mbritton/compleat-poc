@@ -7,6 +7,8 @@ import {
   red_oak_texture,
   white_oak_texture,
   yellow_pine_texture,
+  blackTexture,
+  whiteTexture,
 } from '../components/textures_woods';
 
 export async function x3DLoad() {
@@ -25,8 +27,7 @@ export default function Visualizer3() {
 
   const clearBrush = useCallback(() => {
     setSelectedTexture(null);
-    console.log('clearBrush', selectedTexture);
-  }, [selectedTexture]);
+  }, []);
 
   const doSetTargetTexture = useCallback((textureEl) => {
     let targ = !textureEl
@@ -60,7 +61,14 @@ export default function Visualizer3() {
     (e) => {
       const shape = e.target;
       const appearance = shape.getElementsByTagName('appearance')[0];
+      console.log(
+        'appearance',
+        shape.parentElement.getAttribute('translation'),
+      );
+      const transform = shape.parentElement;
+      console.log('transforms', transform);
 
+      transform.setAttribute('rotation', '0 1 0');
       const textureElement = appearance
         ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
         : null;
@@ -70,6 +78,8 @@ export default function Visualizer3() {
           ? document.getElementById(textureElement)
           : null;
 
+      // Get the object's transform element
+
       doSetTargetTexture(targetTextureInstance);
 
       setTimeout(() => {
@@ -78,6 +88,13 @@ export default function Visualizer3() {
     },
     [deselectTargetTexture, doSetTargetTexture],
   );
+
+  const moveBaluster = useCallback((e) => {
+    const shape = e.target;
+    const appearance = shape.getElementsByTagName('appearance')[0];
+    const transformElement = appearance.parentNode;
+    console.log('transformElement', transformElement);
+  }, []);
 
   const onNextPrev = useCallback(
     (typeOfCall) => {
@@ -93,8 +110,16 @@ export default function Visualizer3() {
     const shapes = sceneEl.getElementsByTagName('shape');
 
     for (let i = 0; i < shapes.length; i++) {
-      shapes[i].addEventListener('click', handleShapePress);
-      shapes[i].addEventListener('mouseover', handleShapeMouseOver);
+      let newNamePrefix = shapes[i]
+        ?.getElementsByTagName('appearance')[0]
+        ?.getElementsByTagName('texture')[0]
+        ?.getAttribute('use')
+        .split('Tex')[0];
+
+      shapes[i]?.parentElement?.setAttribute('id', newNamePrefix + 'Transform');
+      shapes[i].setAttribute('id', newNamePrefix + 'Shape');
+      shapes[i]?.addEventListener('click', handleShapePress);
+      shapes[i]?.addEventListener('mouseover', handleShapeMouseOver);
     }
   }, [handleShapeMouseOver, handleShapePress]);
 
@@ -112,8 +137,14 @@ export default function Visualizer3() {
   const switchWood = useCallback((woodType) => {
     let textureURL = '';
     switch (woodType) {
+      case 'black':
+        textureURL = blackTexture;
+        break;
       case 'red-oak':
         textureURL = red_oak_texture;
+        break;
+      case 'white':
+        textureURL = whiteTexture;
         break;
       case 'white-oak':
         textureURL = white_oak_texture;
@@ -122,9 +153,12 @@ export default function Visualizer3() {
         textureURL = yellow_pine_texture;
         break;
       default:
-        textureURL = default_texture;
+        textureURL = whiteTexture;
         break;
     }
+    // Deselect the target element
+    deselectTargetTexture();
+    // Deselect the target texture
     setSelectedTexture(textureURL);
   }, []);
 
@@ -255,7 +289,7 @@ export default function Visualizer3() {
             className={styles.control}
             onClick={() => elemRef.current.runtime.showAll()}
           >
-            Reset
+            Home
           </div>
           <div
             className={styles.control}
@@ -267,16 +301,7 @@ export default function Visualizer3() {
             className={styles.control}
             onClick={() => switchCamera('rear_cam')}
           >
-            Rear
-          </div>
-          <div className={styles.control} onClick={() => clearBrush()}>
-            Clear Brush
-          </div>
-          <div
-            className={styles.control}
-            onClick={() => deselectTargetTexture()}
-          >
-            Deselect Item
+            Back
           </div>
           <div className={styles.control} onClick={() => onNextPrev()}>
             Next
@@ -480,17 +505,17 @@ export default function Visualizer3() {
                 url="https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg"
                 repeats="true"
                 repeatt="true"
-                hidechildren="true"
+                hidechildren="false"
               ></texture>
               <material
                 is="x3d"
                 id="floorMat"
                 def="floorMat"
                 diffusecolor="1 1 1"
-                transparency="1"
-                ambientintensity="0.2"
+                transparency="0"
+                ambientintensity="1"
                 emissivecolor="0,0,0"
-                shininess="0.2"
+                shininess="1"
                 specularcolor="0,0,0"
               ></material>
               <texture
@@ -509,7 +534,7 @@ export default function Visualizer3() {
                 transparency="0"
                 ambientintensity="0.2"
                 emissivecolor="0,0,0"
-                shininess="0.2"
+                shininess="1"
                 specularcolor="0,0,0"
               ></material>
               <texture

@@ -1,5 +1,9 @@
 export const allTextures =
   'wallTex, ceilingTex, floorTex, treadTex, handrailTex, postTex, stringTex, wellTex';
+export const blackTexture =
+  'https://images.prismic.io/compleat/0f3cf5ae-4100-413f-9a6b-a921aa5c25fe_black.png?auto=compress,format';
+export const whiteTexture =
+  'https://images.prismic.io/compleat/8a4a2fc8-0588-4ebd-997e-87f0b2c3b654_white.png?auto=compress,format';
 export const targetTextureIds =
   '#treadTex, #handrailTex, #postTex, #stringTex, #wellTex, #floorTex, #wellTex, #ceilingTex, #wallTex';
 export const default_texture =
@@ -7,8 +11,8 @@ export const default_texture =
 export const dark_texture =
   'https://images.prismic.io/compleat/01d8b279-01a4-4eb1-947a-d9e44ad41be6_1d08b162-0c61-43db-9d9c-6591102d7d7f_DARK.jpg';
 export const red_oak_texture =
-  'https://images.prismic.io/compleat/556ae943-28ec-4f43-8ffc-b66ee287eeb8_red-oak.jpg?auto=compress,format';
+  'https://images.prismic.io/compleat/c4792849-c130-4ede-b46c-587800e82087_ro_tile.png?auto=compress,format';
 export const white_oak_texture =
   'https://images.prismic.io/compleat/e6ffc913-3b54-4289-8b9e-55b581eb40f6_white-oak.jpeg?auto=compress,format';
 export const yellow_pine_texture =
-  'https://images.prismic.io/compleat/1a6b9068-8304-4ae5-acd8-dffb81ac07c0_yellow-pine.jpeg?auto=compress,format';
+  'https://images.prismic.io/compleat/d5573ee5-1014-4e4c-9235-e51c13076a2e_yp_tile.png?auto=compress,format';
