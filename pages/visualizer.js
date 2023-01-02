@@ -1,7 +1,7 @@
 import styles from '@/styles/Visualizer.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 export async function x3DLoad() {
   return await import('x3dom');
@@ -46,6 +46,9 @@ export default function Visualizer() {
       <div className={styles.visualizerControls}>
         <Link href="/visualizer3">
           <h3>View Full Screen</h3>
+        </Link>
+        <Link href="/balusterVisualizer">
+          <h3>Baluster Visualizer</h3>
         </Link>
       </div>
     </div>

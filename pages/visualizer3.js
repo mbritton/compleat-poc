@@ -25,6 +25,26 @@ export default function Visualizer3() {
 
   const [currentElement, setCurrentElement] = useState();
 
+  const animateTranslation = useCallback((x, y, z, speed, shape) => {
+    const transform = shape.parentElement;
+    let distanceX = 0;
+    let distanceY = 0;
+    let distanceZ = 0;
+    const animate = () => {
+      distanceX = distanceX += speed;
+      distanceY = distanceY += speed;
+      distanceZ = distanceZ += speed;
+      transform.setAttribute(
+        'translation',
+        `${distanceX} ${distanceY} ${distanceZ}`,
+      );
+      x > distanceX && y > distanceY && z > distanceZ
+        ? requestAnimationFrame(playStuff)
+        : null;
+    };
+    animate();
+  }, []);
+
   const clearBrush = useCallback(() => {
     setSelectedTexture(null);
   }, []);
@@ -42,33 +62,12 @@ export default function Visualizer3() {
 
   const handleShapeMouseOver = useCallback((e) => {
     const shape = e.target;
-    const appearance = shape.getElementsByTagName('appearance')[0];
-    const materialElement = appearance
-      ? appearance.getElementsByTagName('material')[0].getAttribute('use')
-      : null;
-    const textureElement = appearance
-      ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
-      : null;
-    const targetTextureInstance = textureElement
-      ? document.getElementById(textureElement)
-      : null;
-    const targetMaterialInstance = materialElement
-      ? document.getElementById(materialElement)
-      : null;
   }, []);
 
   const handleShapePress = useCallback(
     (e) => {
       const shape = e.target;
       const appearance = shape.getElementsByTagName('appearance')[0];
-      console.log(
-        'appearance',
-        shape.parentElement.getAttribute('translation'),
-      );
-      const transform = shape.parentElement;
-      console.log('transforms', transform);
-
-      transform.setAttribute('rotation', '0 1 0');
       const textureElement = appearance
         ? appearance.getElementsByTagName('texture')[0].getAttribute('use')
         : null;
@@ -78,8 +77,6 @@ export default function Visualizer3() {
           ? document.getElementById(textureElement)
           : null;
 
-      // Get the object's transform element
-
       doSetTargetTexture(targetTextureInstance);
 
       setTimeout(() => {
@@ -88,13 +85,6 @@ export default function Visualizer3() {
     },
     [deselectTargetTexture, doSetTargetTexture],
   );
-
-  const moveBaluster = useCallback((e) => {
-    const shape = e.target;
-    const appearance = shape.getElementsByTagName('appearance')[0];
-    const transformElement = appearance.parentNode;
-    console.log('transformElement', transformElement);
-  }, []);
 
   const onNextPrev = useCallback(
     (typeOfCall) => {
@@ -131,9 +121,6 @@ export default function Visualizer3() {
     deselectTargetTexture();
   }, [deselectTargetTexture]);
 
-  /**
-   * @description Switches the texture of the wood
-   */
   const switchWood = useCallback((woodType) => {
     let textureURL = '';
     switch (woodType) {
@@ -325,6 +312,7 @@ export default function Visualizer3() {
           profile="Immersive"
           version="3.3"
         >
+          <param name="disableDoubleClick" value="true"></param>
           <scene
             is="x3d"
             id="X3DElement_scene"
