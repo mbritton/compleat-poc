@@ -3,7 +3,7 @@ import styles from '@/styles/Layout.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useState } from 'react';
 import { BiChevronLeft } from 'react-icons/bi';
 
 export default function Layout({ page, pages, children }) {

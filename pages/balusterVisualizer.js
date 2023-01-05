@@ -16,12 +16,13 @@ export async function x3DLoad() {
   return await import('x3dom');
 }
 
+const X3D_NAMESPACE = 'https://www.web3d.org/specifications/x3d-3.3.xsd';
+
 export default function BalusterVisualizer() {
   const [selectedTexture, setSelectedTexture] = useState(default_texture);
   const [targetTextureElement, setTargetTextureElement] = useState();
 
   let elemRef = useRef();
-  let leftMatrix;
 
   const [currentElement, setCurrentElement] = useState();
 
@@ -78,7 +79,6 @@ export default function BalusterVisualizer() {
 
   const handleShapePress = useCallback(
     (e) => {
-      console.log('handleShapePress', e);
       const shape = e.target;
       const appear = shape.getElementsByTagName('Appearance')[0];
       const targetTexture = appear
@@ -91,25 +91,81 @@ export default function BalusterVisualizer() {
         deselectTargetTexture();
       }, 1000);
     },
-    [deselectTargetTexture, doSetTargetTexture, getTexture],
+    [deselectTargetTexture, doSetTargetTexture, getTexture, selectedTexture],
   );
 
   const insertTextures = useCallback(() => {
     setTimeout(() => {
       let sceneEl = document.getElementById('inline_scene');
-      const appear = sceneEl.getElementsByTagName('appearance')[0];
-
+      const appear = sceneEl.getElementsByTagName('Appearance')[0];
       for (let j = 0; j < TEXTURE_TYPES.length; j++) {
         const textName = TEXTURE_TYPES[j].name;
         const textURL = TEXTURE_TYPES[j].url;
-        let newTexture = document.createElement('Texture');
+        let newTexture = document.createElementNS(X3D_NAMESPACE, 'Texture');
         newTexture.setAttribute('DEF', textName);
         newTexture.setAttribute('url', textURL);
-        appear.appendChild(newTexture);
+        appear ? appear.appendChild(newTexture) : null;
       }
-      console.log('appear', appear);
     }, 500);
   }, []);
+
+  const insertViewpoints = () => {
+    let sceneEl = document.getElementById('inline_scene');
+    console.log('sceneEl', sceneEl);
+
+    const foo = document.getElementById('leftCam');
+    console.log('foo === null', foo === null);
+
+    if (sceneEl !== undefined && sceneEl !== null && x3dom && foo === null) {
+      console.log('sceneEl present');
+      setTimeout(() => {
+        const transformElement = document.createElement('Transform');
+        transformElement.setAttribute('id', 'leftCam');
+        transformElement.setAttribute('name', 'leftCam');
+        transformElement.setAttribute('render', true);
+        transformElement.setAttribute('bboxSize', '-1,-1,-1');
+        transformElement.setAttribute('bboxCenter', '-1,-1,-1');
+        transformElement.setAttribute('scale', '2 2 2');
+        transformElement.setAttribute('rotation', '0,0,0,0');
+        transformElement.setAttribute('center', '0,0,0');
+        transformElement.setAttribute('translation', '-4,0,0');
+
+        const shapeElement = document.createElementNS(X3D_NAMESPACE, 'Shape');
+        shapeElement.setAttribute('render', 'true');
+        shapeElement.setAttribute('bboxCenter', '0,0,0');
+        shapeElement.setAttribute('bboxSize', '-1,-1,-1');
+        shapeElement.setAttribute('scaleOrientation', '0,0,0,0');
+        shapeElement.setAttribute('scale', '1,1,1');
+        shapeElement.setAttribute('translation', '0,0,0');
+        // shapeElement.setAttribute('isPickable', true);
+
+        const sphereElement = document.createElementNS(X3D_NAMESPACE, 'Sphere');
+        sphereElement.setAttribute('radius', '0.9');
+        // shapeElement.appendChild(sphereElement);
+
+        const appear = document.createElementNS(X3D_NAMESPACE, 'Appearance');
+        const material = document.createElementNS(X3D_NAMESPACE, 'Material');
+        const texture = document.createElementNS(X3D_NAMESPACE, 'Texture');
+        texture.setAttribute('url', red_oak_texture);
+        material.setAttribute('diffuseColor', '0 0 0');
+        appear.appendChild(texture);
+        appear.appendChild(material);
+
+        shapeElement.appendChild(appear);
+        shapeElement.appendChild(sphereElement);
+
+        console.log('NEW shape', shapeElement);
+        transformElement.appendChild(shapeElement);
+
+        sceneEl.insertBefore(transformElement, sceneEl.firstChild);
+        console.log('sceneEl.current', sceneEl.firstChild);
+        // document.getElementById('x3d').append(transformElement);
+        x3dom.reload();
+        // let newScene = document.getElementById('x3d').append(leftCam);
+        // document.getElementById('x3d').appendChild(leftCam);
+      }, 500);
+    }
+  };
 
   const onNextPrev = useCallback(
     (typeOfCall) => {
@@ -128,15 +184,15 @@ export default function BalusterVisualizer() {
         if (shapes) {
           for (let i = 0; i < shapes.length; i++) {
             let newNamePrefix = shapes[i]
-              ?.getElementsByTagName('Appearance')[0]
+              ?.getElementsByTagName('appearance')[0]
               ?.getElementsByTagName('Texture')[0]
               ?.getAttribute('USE')
               .split('Tex')[0];
 
-            shapes[i]?.parentElement?.setAttribute(
-              'id',
-              newNamePrefix + 'Transform',
-            );
+            // shapes[i]?.parentElement?.setAttribute(
+            //   'id',
+            //   newNamePrefix + 'Transform',
+            // );
 
             shapes[i].setAttribute('id', newNamePrefix + 'Shape');
             shapes[i]?.addEventListener('click', handleShapePress);
@@ -156,33 +212,39 @@ export default function BalusterVisualizer() {
     deselectTargetTexture();
   }, [deselectTargetTexture]);
 
-  const switchWood = useCallback((woodType) => {
-    let textureURL = '';
-    switch (woodType) {
-      case 'black':
-        textureURL = blackTexture;
-        break;
-      case 'red-oak':
-        textureURL = red_oak_texture;
-        break;
-      case 'white':
-        textureURL = whiteTexture;
-        break;
-      case 'white-oak':
-        textureURL = white_oak_texture;
-        break;
-      case 'yellow-pine':
-        textureURL = yellow_pine_texture;
-        break;
-      default:
-        textureURL = whiteTexture;
-        break;
-    }
-    // Deselect the target element
-    deselectTargetTexture();
-    // Deselect the target texture
-    setSelectedTexture(textureURL);
-  }, []);
+  const switchWood = useCallback(
+    (woodType) => {
+      let textureURL = '';
+
+      // Deselect the target element
+      deselectTargetTexture();
+
+      switch (woodType) {
+        case 'black':
+          textureURL = blackTexture;
+          break;
+        case 'red-oak':
+          textureURL = red_oak_texture;
+          break;
+        case 'white':
+          textureURL = whiteTexture;
+          break;
+        case 'white-oak':
+          textureURL = white_oak_texture;
+          break;
+        case 'yellow-pine':
+          textureURL = yellow_pine_texture;
+          break;
+        default:
+          textureURL = whiteTexture;
+          break;
+      }
+
+      // Deselect the target texture
+      setSelectedTexture(textureURL);
+    },
+    [deselectTargetTexture],
+  );
 
   useEffect(() => {
     targetTextureElement
@@ -198,21 +260,37 @@ export default function BalusterVisualizer() {
   useEffect(() => {
     elemRef ? setCurrentElement(elemRef) : null;
 
-    if (x3dom !== undefined && x3dom !== null) {
-      // X3DOM prototype hack to update texture on the fly
-      x3dom.Texture.prototype.update = function () {
-        if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
-          this.updateText();
-        } else {
-          this.updateTexture();
-        }
-      };
-    }
+    // if (x3dom !== undefined && x3dom !== null && x3dom.runtime.ready) {
+    //   // X3DOM prototype hack to update texture on the fly
+    //   x3dom.Texture.prototype.update = function () {
+    //     if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
+    //       this.updateText();
+    //     } else {
+    //       this.updateTexture();
+    //     }
+    //   };
+    // }
 
     x3DLoad().then((x3d) => {
-      parseShapes();
+      if (x3dom !== undefined && x3dom !== null) {
+        // X3DOM prototype hack to update texture on the fly
+        x3dom.Texture.prototype.update = function () {
+          if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
+            this.updateText();
+          } else {
+            this.updateTexture();
+          }
+        };
+      }
+
       insertTextures();
-      x3dom !== undefined && x3dom !== null ? x3dom.reload() : null;
+      parseShapes();
+      insertViewpoints();
+      x3dom.reload();
+
+      return () => {
+        console.log('unmounting');
+      };
     });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -253,14 +331,14 @@ export default function BalusterVisualizer() {
         selectedTexture={selectedTexture}
       ></Woods>
       <div className={styles.visualizerWrapper}>
-        <x3d is="x3d" ref={elemRef}>
+        <x3d id="x3d" is="x3d" ref={elemRef}>
           <scene is="x3d" id="container_scene">
             <inline
               is="x3d"
               id="inline_scene"
               nameSpaceName="balusterScene"
               mapDEFToID="true"
-              url="https://prismic-io.s3.amazonaws.com/compleat/bb7ae962-0427-48a2-9f2c-e9a1b91982d5_3dcurve.x3d"
+              url="https://prismic-io.s3.amazonaws.com/compleat/9138e104-f005-473d-9afc-d90585b1b52a_3dcurve.x3d"
             ></inline>
           </scene>
         </x3d>
