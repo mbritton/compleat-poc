@@ -79,6 +79,7 @@ export default function BalusterVisualizer() {
 
   const handleShapePress = useCallback(
     (e) => {
+      console.log('handleShapePress');
       const shape = e.target;
       const appear = shape.getElementsByTagName('Appearance')[0];
       const targetTexture = appear
@@ -109,63 +110,69 @@ export default function BalusterVisualizer() {
     }, 500);
   }, []);
 
-  const insertViewpoints = () => {
+  const insertViewpoints = useCallback(() => {
     let sceneEl = document.getElementById('inline_scene');
-    console.log('sceneEl', sceneEl);
+    let x3domRuntime = elemRef.current.runtime;
 
-    const foo = document.getElementById('leftCam');
-    console.log('foo === null', foo === null);
+    const leftTransform = document.getElementById('leftTransform');
 
-    if (sceneEl !== undefined && sceneEl !== null && x3dom && foo === null) {
-      console.log('sceneEl present');
+    if (
+      sceneEl !== undefined &&
+      sceneEl !== null &&
+      x3dom &&
+      leftTransform === null
+    ) {
       setTimeout(() => {
         const transformElement = document.createElement('Transform');
-        transformElement.setAttribute('id', 'leftCam');
-        transformElement.setAttribute('name', 'leftCam');
-        transformElement.setAttribute('render', true);
+        transformElement.setAttribute('id', 'leftTransform');
+        console.log(
+          'transformElement',
+          document.getElementById('leftTransform'),
+        );
+
+        // if (document.getElementById('undefinedTransform') !== null) {
+        //   sceneEl.removeChild(document.getElementById('undefinedTransform'));
+        // }
+
+        transformElement.setAttribute('name', 'leftTransform');
+        transformElement.setAttribute('render', 'true');
         transformElement.setAttribute('bboxSize', '-1,-1,-1');
         transformElement.setAttribute('bboxCenter', '-1,-1,-1');
-        transformElement.setAttribute('scale', '2 2 2');
+        transformElement.setAttribute('scale', '1,1,1');
         transformElement.setAttribute('rotation', '0,0,0,0');
         transformElement.setAttribute('center', '0,0,0');
-        transformElement.setAttribute('translation', '-4,0,0');
-
+        transformElement.setAttribute('translation', '-1,0,0');
         const shapeElement = document.createElementNS(X3D_NAMESPACE, 'Shape');
+        // shapeElement.setAttribute('id', 'true');
         shapeElement.setAttribute('render', 'true');
         shapeElement.setAttribute('bboxCenter', '0,0,0');
         shapeElement.setAttribute('bboxSize', '-1,-1,-1');
         shapeElement.setAttribute('scaleOrientation', '0,0,0,0');
         shapeElement.setAttribute('scale', '1,1,1');
-        shapeElement.setAttribute('translation', '0,0,0');
-        // shapeElement.setAttribute('isPickable', true);
-
+        shapeElement.setAttribute('translation', '-1,0,0');
+        shapeElement.setAttribute('isPickable', true);
         const sphereElement = document.createElementNS(X3D_NAMESPACE, 'Sphere');
         sphereElement.setAttribute('radius', '0.9');
-        // shapeElement.appendChild(sphereElement);
+        sphereElement.setAttribute('scale', '20 20 20'); // TODO Scale, position and orientation
 
         const appear = document.createElementNS(X3D_NAMESPACE, 'Appearance');
+        appear.setAttribute('sortType', 'auto');
+        appear.setAttribute('alphaClipThreshold', '1');
         const material = document.createElementNS(X3D_NAMESPACE, 'Material');
         const texture = document.createElementNS(X3D_NAMESPACE, 'Texture');
         texture.setAttribute('url', red_oak_texture);
         material.setAttribute('diffuseColor', '0 0 0');
         appear.appendChild(texture);
         appear.appendChild(material);
-
         shapeElement.appendChild(appear);
         shapeElement.appendChild(sphereElement);
-
-        console.log('NEW shape', shapeElement);
         transformElement.appendChild(shapeElement);
-
-        sceneEl.insertBefore(transformElement, sceneEl.firstChild);
-        console.log('sceneEl.current', sceneEl.firstChild);
-        // document.getElementById('x3d').append(transformElement);
-        x3dom.reload();
-        // let newScene = document.getElementById('x3d').append(leftCam);
-        // document.getElementById('x3d').appendChild(leftCam);
-      }, 500);
+        if (document.getElementById('leftTransform') === null) {
+          sceneEl.appendChild(transformElement);
+        }
+      }, 700);
     }
-  };
+  }, []);
 
   const onNextPrev = useCallback(
     (typeOfCall) => {
@@ -181,6 +188,7 @@ export default function BalusterVisualizer() {
       let sceneEl = document.getElementById('inline_scene');
       const shapes = sceneEl.getElementsByTagName('Shape');
       setTimeout(() => {
+        // Need to check for shapes because the scene is not fully loaded
         if (shapes) {
           for (let i = 0; i < shapes.length; i++) {
             let newNamePrefix = shapes[i]
@@ -189,12 +197,14 @@ export default function BalusterVisualizer() {
               ?.getAttribute('USE')
               .split('Tex')[0];
 
-            // shapes[i]?.parentElement?.setAttribute(
-            //   'id',
-            //   newNamePrefix + 'Transform',
-            // );
+            // if (newNamePrefix === 'undefined') {
+            //   shapes[i]?.parentElement?.setAttribute(
+            //     'id',
+            //     newNamePrefix + 'Transform',
+            //   );
+            // }
 
-            shapes[i].setAttribute('id', newNamePrefix + 'Shape');
+            // shapes[i].setAttribute('id', newNamePrefix + 'Shape');
             shapes[i]?.addEventListener('click', handleShapePress);
             shapes[i]?.addEventListener('mouseover', handleShapeMouseOver);
           }
@@ -258,19 +268,6 @@ export default function BalusterVisualizer() {
   ]);
 
   useEffect(() => {
-    elemRef ? setCurrentElement(elemRef) : null;
-
-    // if (x3dom !== undefined && x3dom !== null && x3dom.runtime.ready) {
-    //   // X3DOM prototype hack to update texture on the fly
-    //   x3dom.Texture.prototype.update = function () {
-    //     if (x3dom.isa(this.node, x3dom.nodeTypes.Text)) {
-    //       this.updateText();
-    //     } else {
-    //       this.updateTexture();
-    //     }
-    //   };
-    // }
-
     x3DLoad().then((x3d) => {
       if (x3dom !== undefined && x3dom !== null) {
         // X3DOM prototype hack to update texture on the fly
@@ -282,12 +279,14 @@ export default function BalusterVisualizer() {
           }
         };
       }
-
-      insertTextures();
-      parseShapes();
-      insertViewpoints();
+      setTimeout(() => {
+        elemRef ? setCurrentElement(elemRef) : null;
+        insertTextures();
+        parseShapes();
+        insertViewpoints();
+      }, 500);
+      // Must reload for proper rendering
       x3dom.reload();
-
       return () => {
         console.log('unmounting');
       };
