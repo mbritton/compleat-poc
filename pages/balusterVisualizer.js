@@ -50,6 +50,60 @@ export default function BalusterVisualizer() {
     setSelectedTexture(null);
   }, []);
 
+  const createObject = useCallback((objectName) => {
+    let sceneEl = document.getElementById('inline_scene');
+    const leftTransform = document.getElementById('leftTransform');
+
+    if (
+      objectName &&
+      sceneEl !== undefined &&
+      sceneEl !== null &&
+      x3dom &&
+      leftTransform === null
+    ) {
+      setTimeout(() => {
+        const transformElement = document.createElement('Transform');
+        transformElement.setAttribute('id', objectName);
+        transformElement.setAttribute('name', objectName);
+        transformElement.setAttribute('render', 'true');
+        transformElement.setAttribute('bboxSize', '-1,-1,-1');
+        transformElement.setAttribute('bboxCenter', '-1,-1,-1');
+        transformElement.setAttribute('scale', '2 2 2');
+        transformElement.setAttribute('rotation', '0,0,0,0');
+        transformElement.setAttribute('center', '0,0,0');
+        transformElement.setAttribute('translation', '-10,0,0');
+        const shapeElement = document.createElementNS(X3D_NAMESPACE, 'Shape');
+        shapeElement.setAttribute('render', 'true');
+        shapeElement.setAttribute('bboxCenter', '0,0,0');
+        shapeElement.setAttribute('bboxSize', '-1,-1,-1');
+        shapeElement.setAttribute('scaleOrientation', '0,0,0,0');
+        shapeElement.setAttribute('scale', '1,1,1');
+        shapeElement.setAttribute('translation', '0,0,0');
+        shapeElement.setAttribute('isPickable', true);
+        const sphereElement = document.createElementNS(X3D_NAMESPACE, 'Sphere');
+        sphereElement.setAttribute('id', objectName);
+        sphereElement.setAttribute('radius', '0.9');
+        sphereElement.setAttribute('scale', '20 20 20'); // TODO Scale, position and orientation
+
+        const appear = document.createElementNS(X3D_NAMESPACE, 'Appearance');
+        appear.setAttribute('sortType', 'auto');
+        appear.setAttribute('alphaClipThreshold', '1');
+        const material = document.createElementNS(X3D_NAMESPACE, 'Material');
+        const texture = document.createElementNS(X3D_NAMESPACE, 'Texture');
+        texture.setAttribute('url', red_oak_texture);
+        material.setAttribute('diffuseColor', '0 0 0');
+        appear.appendChild(texture);
+        appear.appendChild(material);
+        shapeElement.appendChild(appear);
+        shapeElement.appendChild(sphereElement);
+        transformElement.appendChild(shapeElement);
+        if (document.getElementById('leftTransform') === null) {
+          sceneEl.appendChild(transformElement);
+        }
+      }, 500);
+    }
+  }, []);
+
   const deselectTargetTexture = useCallback(() => {
     setTargetTextureElement(null);
   }, []);
@@ -112,8 +166,6 @@ export default function BalusterVisualizer() {
 
   const insertViewpoints = useCallback(() => {
     let sceneEl = document.getElementById('inline_scene');
-    let x3domRuntime = elemRef.current.runtime;
-
     const leftTransform = document.getElementById('leftTransform');
 
     if (
@@ -123,54 +175,51 @@ export default function BalusterVisualizer() {
       leftTransform === null
     ) {
       setTimeout(() => {
-        const transformElement = document.createElement('Transform');
-        transformElement.setAttribute('id', 'leftTransform');
-        console.log(
-          'transformElement',
-          document.getElementById('leftTransform'),
-        );
+        let viewpoint_BOTTOM;
+        let viewpoint_LEFT;
+        let viewpoint_RIGHT;
+        let viewpoint_TOP;
 
-        // if (document.getElementById('undefinedTransform') !== null) {
-        //   sceneEl.removeChild(document.getElementById('undefinedTransform'));
-        // }
-
-        transformElement.setAttribute('name', 'leftTransform');
-        transformElement.setAttribute('render', 'true');
-        transformElement.setAttribute('bboxSize', '-1,-1,-1');
-        transformElement.setAttribute('bboxCenter', '-1,-1,-1');
-        transformElement.setAttribute('scale', '1,1,1');
-        transformElement.setAttribute('rotation', '0,0,0,0');
-        transformElement.setAttribute('center', '0,0,0');
-        transformElement.setAttribute('translation', '-1,0,0');
-        const shapeElement = document.createElementNS(X3D_NAMESPACE, 'Shape');
-        // shapeElement.setAttribute('id', 'true');
-        shapeElement.setAttribute('render', 'true');
-        shapeElement.setAttribute('bboxCenter', '0,0,0');
-        shapeElement.setAttribute('bboxSize', '-1,-1,-1');
-        shapeElement.setAttribute('scaleOrientation', '0,0,0,0');
-        shapeElement.setAttribute('scale', '1,1,1');
-        shapeElement.setAttribute('translation', '-1,0,0');
-        shapeElement.setAttribute('isPickable', true);
-        const sphereElement = document.createElementNS(X3D_NAMESPACE, 'Sphere');
-        sphereElement.setAttribute('radius', '0.9');
-        sphereElement.setAttribute('scale', '20 20 20'); // TODO Scale, position and orientation
-
-        const appear = document.createElementNS(X3D_NAMESPACE, 'Appearance');
-        appear.setAttribute('sortType', 'auto');
-        appear.setAttribute('alphaClipThreshold', '1');
-        const material = document.createElementNS(X3D_NAMESPACE, 'Material');
-        const texture = document.createElementNS(X3D_NAMESPACE, 'Texture');
-        texture.setAttribute('url', red_oak_texture);
-        material.setAttribute('diffuseColor', '0 0 0');
-        appear.appendChild(texture);
-        appear.appendChild(material);
-        shapeElement.appendChild(appear);
-        shapeElement.appendChild(sphereElement);
-        transformElement.appendChild(shapeElement);
-        if (document.getElementById('leftTransform') === null) {
-          sceneEl.appendChild(transformElement);
+        if (document.getElementById('viewpoint_top') === null) {
+          viewpoint_TOP = document.createElement('viewpoint');
+          viewpoint_TOP.setAttribute('id', 'viewpoint_top');
+          viewpoint_TOP.setAttribute('position', '0 0 10');
+          viewpoint_TOP.setAttribute('orientation', '1 0 0 1.57');
+          viewpoint_TOP.setAttribute('zNear', '0.1');
+          viewpoint_TOP.setAttribute('zFar', '100');
+          sceneEl.insertBefore(viewpoint_TOP, sceneEl.firstChild);
         }
-      }, 700);
+
+        if (document.getElementById('viewpoint_bottom') === null) {
+          viewpoint_BOTTOM = document.createElement('viewpoint');
+          viewpoint_BOTTOM.setAttribute('id', 'viewpoint_bottom');
+          viewpoint_BOTTOM.setAttribute('position', '0 0 10');
+          viewpoint_BOTTOM.setAttribute('orientation', '1 0 0 -1.57');
+          viewpoint_BOTTOM.setAttribute('zNear', '0.1');
+          viewpoint_BOTTOM.setAttribute('zFar', '100');
+          sceneEl.insertBefore(viewpoint_BOTTOM, sceneEl.firstChild);
+        }
+
+        if (document.getElementById('viewpoint_bottom') === null) {
+          viewpoint_LEFT = document.createElement('viewpoint');
+          viewpoint_LEFT.setAttribute('id', 'viewpoint_left');
+          viewpoint_LEFT.setAttribute('position', '0 0 10');
+          viewpoint_LEFT.setAttribute('orientation', '1 0 0 3.14');
+          viewpoint_LEFT.setAttribute('zNear', '0.1');
+          viewpoint_LEFT.setAttribute('zFar', '100');
+          sceneEl.insertBefore(viewpoint_LEFT, sceneEl.firstChild);
+        }
+
+        if (document.getElementById('viewpoint_right') === null) {
+          viewpoint_RIGHT = document.createElement('viewpoint');
+          viewpoint_RIGHT.setAttribute('id', 'viewpoint_right');
+          viewpoint_RIGHT.setAttribute('position', '0 0 10');
+          viewpoint_RIGHT.setAttribute('orientation', '1 0 0 0');
+          viewpoint_RIGHT.setAttribute('zNear', '0.1');
+          viewpoint_RIGHT.setAttribute('zFar', '100');
+          sceneEl.insertBefore(viewpoint_RIGHT, sceneEl.firstChild);
+        }
+      }, 200);
     }
   }, []);
 
@@ -183,7 +232,7 @@ export default function BalusterVisualizer() {
     [currentElement],
   );
 
-  const parseShapes = useCallback(
+  const processShapes = useCallback(
     (e) => {
       let sceneEl = document.getElementById('inline_scene');
       const shapes = sceneEl.getElementsByTagName('Shape');
@@ -192,19 +241,18 @@ export default function BalusterVisualizer() {
         if (shapes) {
           for (let i = 0; i < shapes.length; i++) {
             let newNamePrefix = shapes[i]
-              ?.getElementsByTagName('appearance')[0]
+              ?.getElementsByTagName('Appearance')[0]
               ?.getElementsByTagName('Texture')[0]
               ?.getAttribute('USE')
               .split('Tex')[0];
 
-            // if (newNamePrefix === 'undefined') {
-            //   shapes[i]?.parentElement?.setAttribute(
-            //     'id',
-            //     newNamePrefix + 'Transform',
-            //   );
-            // }
+            if (
+              shapes[i]?.getAttribute('id') === undefined &&
+              newNamePrefix !== 'undefined'
+            ) {
+              shapes[i].setAttribute('id', `${newNamePrefix}Shape${i}}`);
+            }
 
-            // shapes[i].setAttribute('id', newNamePrefix + 'Shape');
             shapes[i]?.addEventListener('click', handleShapePress);
             shapes[i]?.addEventListener('mouseover', handleShapeMouseOver);
           }
@@ -214,6 +262,17 @@ export default function BalusterVisualizer() {
     [handleShapeMouseOver, handleShapePress],
   );
 
+  const prepareAppearances = useCallback(() => {
+    let appearEl = document
+      .getElementById('inline_scene')
+      .getElementsByTagName('Appearance')[0];
+    if (appearEl) {
+      if (appearEl.getAttribute('id') !== 'mainAppear') {
+        appearEl.setAttribute('id', 'mainAppear');
+      }
+    }
+  }, []);
+
   const switchCamera = useCallback((viewpointId) => {
     document.getElementById(viewpointId).setAttribute('set_bind', 'true');
   }, []);
@@ -222,7 +281,7 @@ export default function BalusterVisualizer() {
     deselectTargetTexture();
   }, [deselectTargetTexture]);
 
-  const switchWood = useCallback(
+  const handleWoodClick = useCallback(
     (woodType) => {
       let textureURL = '';
 
@@ -285,9 +344,11 @@ export default function BalusterVisualizer() {
       }
       setTimeout(() => {
         elemRef ? setCurrentElement(elemRef) : null;
+        prepareAppearances();
         insertTextures();
-        parseShapes();
+        processShapes();
         insertViewpoints();
+        createObject();
       }, 500);
       // Must reload for proper rendering
       x3dom.reload();
@@ -332,7 +393,7 @@ export default function BalusterVisualizer() {
         </div>
       </div>
       <Woods
-        handleWoodPress={switchWood}
+        handleWoodPress={handleWoodClick}
         handleBrushPress={switchBrush}
         selectedTexture={selectedTexture}
       ></Woods>
