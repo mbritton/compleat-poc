@@ -256,6 +256,10 @@ export default function BalusterVisualizer() {
     [deselectTargetTexture],
   );
 
+  const toggleWireframe = useCallback(() => {
+    elemRef.current.runtime.togglePoints(true);
+  }, [elemRef]);
+
   useEffect(() => {
     targetTextureElement
       ? targetTextureElement.setAttribute('url', selectedTexture)
@@ -318,6 +322,9 @@ export default function BalusterVisualizer() {
             onClick={() => switchCamera('rear_cam')}
           >
             Back
+          </div>
+          <div className={styles.control} onClick={() => toggleWireframe()}>
+            Wireframe
           </div>
           <div className={styles.control} onClick={() => onNextPrev()}>
             Next
