@@ -5,7 +5,7 @@
     <scene id="X3DElement_scene">
         <viewpoint position='0 0 1461.4' centerofrotation="0 0 0"></viewpoint>
         <navigationinfo type="turntable"></navigationinfo>
-        <appearance>
+        <Appearance>
             <Texture DEF='treadTex' url='https://images.prismic.io/compleat/79d4f6c1-1407-42dd-80a8-2a2e9898f2f2_1d08b162-0c61-43db-9d9c-6591102d7d7f.jpeg'></Texture>
             <Material DEF='treadMat' diffuseColor='0.01 0.01 0.01' transparency='0'></Material>
             <Material DEF='riserMat' diffuseColor='1 1 1' transparency='0'></Material>
@@ -22,7 +22,7 @@
             <Material DEF='balusterMat' diffuseColor='0.01 0.01 0.01' transparency='0'></Material>
             <Material DEF='wellMat' diffuseColor='1 1 1' transparency='0.7'></Material>
             <Material DEF='wallMat' diffuseColor='0.51 0.51 0.51' transparency='0'></Material>
-        </appearance>
+        </Appearance>
         <transform>
             <Shape>
                 <Appearance>
